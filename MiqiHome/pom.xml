@@ -40,7 +40,7 @@
         <jstl.version>1.2</jstl.version>
         <jsp-api.version>2.1</jsp-api.version>
         <commons-io.version>2.4</commons-io.version>
-        <commons-fileupload.version>1.3.1</commons-fileupload.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
         <json-simple.version>1.1.1</json-simple.version>
         <standard.version>1.1.2</standard.version>
         <spring-test.version>4.3.18.RELEASE</spring-test.version>
