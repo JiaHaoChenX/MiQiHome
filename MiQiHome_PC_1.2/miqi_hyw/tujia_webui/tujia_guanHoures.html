@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>房屋管理</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+	</head>
+
+	<body>
+		<div class="hourse">
+			<div class="" style="overflow: hidden;">
+				<div class="border_bottom hourse_addbtn" style="padding-bottom: 10px;font-size: 20px;">
+					<h4>房屋管理</h4>
+					
+					<a href="tujia_fwAdd_hoursing.html" target="iframecontent" class="btn btn-primary" style="height: 30px; line-height: 15px;" >+发布新房屋</a>
+					
+				</div>
+				<span class="floor5_p_color hourse_detail_head" style="">完成发布，你的房屋才能在途家上售卖</span>
+					
+				<div class="homeAllInformation" style="overflow: overlay;height: 1375px;">
+					
+				</div>
+			</div>
+			
+			<script src="../js/jquery-1.11.3.js"></script>
+			<script type="text/javascript">
+				$(function(){
+					ipconfig();
+					select_ui_HomeAllInformation();
+				})
+				
+				//获取IP地址
+				var ip='';
+				function ipconfig() {
+					$.ajax({
+						type: "get",
+						url: "../../js/ipconfig.json",
+						async: false,
+						success: function(data) {
+							ip = data.ip;
+						}
+					});
+				}
+				//根据用户id查询该用户的房源
+				function select_ui_HomeAllInformation(){
+					$.ajax({
+						type: "get",
+						url: "http://" + ip + ":8080/HomeAllInformation/select_ui_HomeAllInformation",
+						async: false,
+						contentType: "application/json;charset=utf-8",
+						dataType: "json",
+						xhrFields: {
+							withCredentials: true
+						},
+						success: function(data) {
+								console.log(data)
+							$(".homeAllInformation").html("");
+							$.each(data, function(i,obj) {
+								//根据房源id获取房间信息
+								var select_all_img='';
+								$.ajax({
+									type:"post",
+									url:"http://" + ip + ":8080/pictureController/select_all_img",
+									async:false,
+									data:{
+										haiId:obj.haiId
+									},
+									success:function(data){
+										if(data.length>0){
+											select_all_img=data[0].pUrl;
+										}else{
+											select_all_img='';
+										}
+										
+									}
+								});
+								
+								$(".homeAllInformation").append('<div class="border_bottom">'
+															+'	<ul>'
+															+'		<li style="width: 930px;">'
+															+'			<div  style="margin: 20px 0;display: flex;justify-content: space-between;">'
+															+'				<div>'
+															+'					<div class="hourse_detail">'
+															+'						<img src="http://' + ip + ':8080/'+select_all_img+'" />'
+															+'					</div>'
+															+'					<div class="hourse_detail_content">'
+															+'						<span class="hourse_detail_title">'+obj.housedecription.hdpName+'</span>'
+															+'						<div class="house_detail_middle">'
+															+'							<span class="fontSize12 floor5_p_color">还差<span class="orangeCol">0</span>步</span>'
+															+'						</div>'
+															+'					</div>'
+															+'				</div>'
+															+'				<div class="hourse_detail_operate">'
+															+'					<div class="house_detail_operate_status">'
+															+'						<a href="tujia_fwAdd_hoursing.html?haiid='+obj.haiId+'" target="iframecontent"><button class="btn btn-primary" >修改</button></a>'
+															+'					</div>'
+															+'					<span class="house_detail_operate_del">删除</span>'
+															+'				</div>'
+															+'			</div>'
+															+'			<div class="unit_commit_time hourse_detail_dealine">'
+															+'				<span >最后提交时间：2019-02-16 10:47:08 </span>'
+															+'				<span >房源编号：HN3402889</span>'
+															+'			</div>'
+															+'		</li>'
+															+'	</ul>'
+															+'</div>');
+							
+							});
+						},
+						error() {
+							console.log("错误");
+						}
+		
+					});
+				}
+				
+			</script>
+	</body>
+
+</html>

@@ -1,0 +1,1121 @@
+
+@charset "UTF-8";
+#blate-container {
+  width: 1190px;
+  margin-top: 30px;
+}
+.u-text-btn {
+  cursor: pointer;
+}
+.step-content {
+  width: 200px;
+  float: left;
+  border-top: 2px solid #6e80e3;
+}
+.step-ul {
+  box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15);
+  margin-bottom: 10px;
+}
+.step-ul li {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #999;
+  position: relative;
+  padding-left: 43px;
+  cursor: pointer;
+}
+.step-ul li:hover {
+  background: #f8f8f8;
+  color: #6e80e3;
+}
+.step-ul li .icon-img {
+  float: right;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+.distance-step {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  text-align: center;
+  color: #999;
+  border-radius: 2px;
+}
+.step-img {
+  float: left;
+  position: absolute;
+  left: 15px;
+  top: 11px;
+}
+.stepList1 {
+  background-image: url(~page-blate.png);
+  background-position: -774px -568px;
+  width: 16px;
+  height: 16px;
+}
+.stepList2 {
+  background-image: url(~page-blate.png);
+  background-position: -1250px -934px;
+  width: 16px;
+  height: 16px;
+}
+.stepList3 {
+  background-image: url(~page-blate.png);
+  background-position: -1250px -968px;
+  width: 16px;
+  height: 16px;
+}
+.stepList4 {
+  background-image: url(~page-blate.png);
+  background-position: -1243px -760px;
+  width: 16px;
+  height: 16px;
+}
+.stepList5 {
+  background-image: url(~page-blate.png);
+  background-position: -1256px -850px;
+  width: 16px;
+  height: 16px;
+}
+.stepList6 {
+  background-image: url(~page-blate.png);
+  background-position: -1243px -780px;
+  width: 16px;
+  height: 16px;
+}
+.stepList7 {
+  background-image: url(~page-blate.png);
+  background-position: -1216px -1002px;
+  width: 16px;
+  height: 16px;
+}
+.stepList8 {
+  background-image: url(~page-blate.png);
+  background-position: -1250px -900px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li:hover .stepList1 {
+  background-image: url(~page-blate.png);
+  background-position: -1236px -850px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li:hover .stepList2 {
+  background-image: url(~page-blate.png);
+  background-position: -1243px -720px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li:hover .stepList3 {
+  background-image: url(~page-blate.png);
+  background-position: -1243px -800px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li:hover .stepList4 {
+  background-image: url(~page-blate.png);
+  background-position: -1236px -1002px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li:hover .stepList5 {
+  background-image: url(~page-blate.png);
+  background-position: -1256px -1002px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li:hover .stepList6 {
+  background-image: url(~page-blate.png);
+  background-position: -1216px -850px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li:hover .stepList7 {
+  background-image: url(~page-blate.png);
+  background-position: -1243px -820px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li:hover .stepList8 {
+  background-image: url(~page-blate.png);
+  background-position: -1243px -740px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li.active {
+  background: #f8f8f8;
+  color: #6e80e3;
+}
+.step-ul li.active .stepList1 {
+  background-image: url(~page-blate.png);
+  background-position: -1236px -850px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li.active .stepList2 {
+  background-image: url(~page-blate.png);
+  background-position: -1243px -720px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li.active .stepList3 {
+  background-image: url(~page-blate.png);
+  background-position: -1243px -800px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li.active .stepList4 {
+  background-image: url(~page-blate.png);
+  background-position: -1236px -1002px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li.active .stepList5 {
+  background-image: url(~page-blate.png);
+  background-position: -1256px -1002px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li.active .stepList6 {
+  background-image: url(~page-blate.png);
+  background-position: -1216px -850px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li.active .stepList7 {
+  background-image: url(~page-blate.png);
+  background-position: -1243px -820px;
+  width: 16px;
+  height: 16px;
+}
+.step-ul li.active .stepList8 {
+  background-image: url(~page-blate.png);
+  background-position: -1243px -740px;
+  width: 16px;
+  height: 16px;
+}
+.operation-content {
+  width: 960px;
+  float: right;
+}
+.title-con {
+  width: 920px;
+  height: 60px;
+  border-bottom: 2px solid #eee;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.title-con h1 {
+  font-size: 18px;
+  color: #333;
+  line-height: 60px;
+  margin-right: 10px;
+  float: left;
+}
+.title-con h2 {
+  font-size: 12px;
+  color: #999;
+  line-height: 65px;
+  margin-right: 10px;
+  float: left;
+}
+.floor1,
+.floor2,
+.floor3,
+.floor4,
+.floor5,
+.floor6,
+.floor7,
+.floor8 {
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15);
+}
+.position-floor {
+  width: 920px;
+  margin: 0 auto;
+}
+.detail-floor {
+  width: 920px;
+  margin: 0 auto;
+}
+.describe-floor {
+  width: 920px;
+  margin: 0 auto;
+}
+.service-floor {
+  width: 920px;
+  margin: 0 auto;
+}
+.service-floor .u-facilities-info {
+    margin: 20px 0 0px 0;
+    padding-bottom: 20px;
+    color: red;
+    border-bottom: 1px solid #eeeeee;
+}
+.photo-floor {
+  width: 920px;
+  margin: 0 auto;
+}
+.price-floor {
+  width: 920px;
+  margin: 0 auto;
+}
+.identity-floor {
+  width: 920px;
+  margin: 0 auto;
+}
+
+/*1楼*/
+.position-floor p {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+}
+.position-floor span {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+}
+.position-floor p span {
+  color: #6e80e3;
+}
+.position-floor h6 {
+  margin-top: -10px;
+  font-size: 12px;
+  color: #999;
+  font-weight: normal;
+}
+.baidu-map {
+  position: relative;
+}
+#map-content {
+  width: 920px;
+  height: 420px;
+}
+.map-center-point {
+  background-image: url(~page-blate.png);
+  background-position: -1216px -720px;
+  width: 23px;
+  height: 126px;
+  position: absolute;
+  height: 23px;
+  top: 210px;
+  left: 460px;
+  margin-left: -12px;
+  margin-top: -12px;
+  z-index: 10;
+}
+.map-center-point.prompt {
+  animation: prompt 1.2s ease-in-out 0s 5;
+}
+.left-map {
+  float: left;
+  margin-right: 100px;
+}
+@keyframes prompt {
+0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-14px);
+}
+to {
+    transform: translateY(0);
+}
+}
+
+/*2楼*/
+.detail-floor p {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+}
+.housingResourcesType-ul li {
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+  text-align: center;
+}
+.housingResourcesType-ul li.active {
+  background: #f3f5ff;
+  border: 1px solid #6e80e3;
+  color: #6e80e3;
+}
+.housingResourcesType-ul li p {
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+}
+.addBed-btn {
+  width: 145px;
+  height: 35px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/*3楼*/
+.describe-floor p {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+}
+.describe-floor a {
+  margin-left: 10px;
+  color: #f90;
+}
+.textRight {
+  display: block;
+  width: 500px;
+  text-align: right;
+  color: #999;
+}
+.textRightTop {
+  display: block;
+  width: 500px;
+  text-align: right;
+  color: #999;
+  margin-top: -20px;
+}
+.textRight1 {
+  display: block;
+  width: 400px;
+  text-align: right;
+  color: #999;
+}
+
+/*4楼*/
+.service-floor p {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+}
+.service-floor .checkboxLi {
+  width: 150px;
+  height: 30px;
+  float: left;
+  margin: 0 10px 10px 0;
+  border: 1px solid #eee;
+  background: #f8f8f8;
+  line-height: 27px;
+  padding-left: 10px;
+}
+.add-receptionTime {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.clearHouse {
+  float: left;
+  margin-right: 10px;
+}
+
+/*5楼*/
+.text-msg-long {
+  width: 400px;
+}
+.textRight2 {
+  display: block;
+  width: 50%;
+  float: left;
+  text-align: left;
+  color: #999;
+}
+.textRight3 {
+  display: block;
+  width: 100%;
+  text-align: right;
+  color: #999;
+}
+.textRight4 {
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: right;
+  color: #999;
+}
+.residentCon {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.residentCon p {
+  float: left;
+  margin-right: 157px;
+}
+
+/*6楼*/
+.photo-floor p {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+}
+.houMuchPhoto {
+  float: left;
+}
+.houMuchPhoto p {
+  font-size: 18px;
+  color: #666;
+}
+.houMuchPhoto p span {
+  font-size: 14px;
+  color: #666;
+}
+.photo-List {
+  float: left;
+  width: 214px;
+  height: 255px;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  margin: 0 15px 15px 0;
+}
+.photo-List:hover {
+  border: 1px solid #6e80e3;
+}
+.photo-List .img-con {
+  width: 100%;
+  height: 140px;
+  position: relative;
+}
+.photo-List .img-con .operation {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  overflow: hidden;
+}
+.photo-List .uploadImg {
+  width: 100%;
+  height: 140px;
+  border: none;
+}
+.photo-List:hover .operation {
+  display: block;
+}
+.photo-List:hover .del-img {
+  display: block;
+}
+.photo-List:hover .cover-img {
+  display: inline-block;
+}
+.photo-List .operation .left-rotate {
+  width: 50%;
+  float: left;
+}
+.photo-List .operation .right-del {
+  width: 100%;
+  float: left;
+}
+.addPhotoList {
+  border: 1px dashed #ddd;
+}
+.addPhotoList .add-symbol {
+  font-size: 42px;
+  color: #999;
+  text-align: center;
+  margin: 90px 0 5px;
+}
+.addPhotoList .add-text {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+.addPhotoList:hover .add-symbol {
+  color: #6e80e3;
+}
+.addPhotoList:hover .add-text {
+  color: #6e80e3;
+}
+.m-add-photo-list {
+  border: 0px;
+}
+.m-add-photo-list:hover {
+    border: 0px;
+}
+.m-add-photo-list .add-symbol {
+    padding-top: 90px;
+    font-size: 42px;
+    color: #999;
+    text-align: center;
+}
+.m-add-photo-list .add-text {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+.m-add-photo-list:hover .add-symbol {
+    color: #6e80e3;
+}
+.m-add-photo-list:hover .add-text {
+    color: #6e80e3;
+}
+.meetConditions {
+  width: 920px;
+  height: 120px;
+  margin: 0 auto;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+.meetConditions p {
+  margin: 10px 0 0 20px;
+}
+.meetConditions span {
+  display: inline-block;
+  margin-left: 20px;
+  width: 100px;
+  color: #333;
+}
+.meetConditions h2 {
+  color: #999;
+  font-weight: normal;
+  margin-left: 20px;
+}
+.display-ul {
+  overflow: hidden;
+  margin-top: 20px;
+}
+.display-ul li {
+  float: left;
+  width: 210px;
+  height: 235px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  margin-right: 20px;
+}
+.houseList1 {
+  width: 210px;
+  height: 140px;
+  background-image: url(~page-blate.png);
+  background-position: -1062px -288px;
+  width: 210px;
+  height: 140px;
+}
+.houseList2 {
+  width: 210px;
+  height: 140px;
+  background-image: url(~page-blate.png);
+  background-position: -1062px -576px;
+  width: 210px;
+  height: 140px;
+}
+.houseList3 {
+  width: 210px;
+  height: 140px;
+  background-image: url(~page-blate.png);
+  background-position: -224px -880px;
+  width: 210px;
+  height: 140px;
+}
+.houseList4 {
+  width: 210px;
+  height: 140px;
+  background-image: url(~page-blate.png);
+  background-position: -1062px -432px;
+  width: 210px;
+  height: 140px;
+}
+.display-ul li h2 {
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  margin-top: 10px;
+  font-weight: normal;
+}
+.display-ul li h3 {
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+  font-weight: normal;
+  line-height: 20px;
+  padding: 0 15px;
+}
+.photo-list-null {
+  width: 100%;
+  height: 300px;
+  text-align: center;
+}
+.photo-img-null {
+  font-size: 60px;
+  color: #c9ced1;
+  margin-top: 70px;
+}
+.photo-list-null p {
+  text-align: center;
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 20px;
+}
+.addPicture {
+  font-size: 16px;
+  width: 140px;
+}
+.blate-first-img-icon {
+  background-image: url(~page-blate.png);
+  background-position: -1216px -874px;
+  width: 51px;
+  height: 22px;
+}
+
+/*7楼*/
+.price-floor p {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+}
+.price-floor .explain {
+  color: #000;
+}
+.price-floor p span {
+  margin-left: 10px;
+  font-size: 12px;
+}
+.sale-con {
+  overflow: hidden;
+}
+.currency-con {
+  float: left;
+  margin-right: 10px;
+}
+.selectPrice {
+  float: left;
+}
+.sale-mode-ul {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.sale-mode-ul li {
+  cursor: pointer;
+  width: 160px;
+  height: 50px;
+  border: 1px solid #ddd;
+  float: left;
+  line-height: 50px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+.sale-mode-ul li.active {
+  background: #f3f5ff;
+  border: 1px solid #6e80e3;
+  color: #6e80e3;
+}
+.live-discount-content {
+  width: 960px;
+  /*border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; */
+  margin-left: -20px;
+  overflow: hidden;
+}
+.residentH1 {
+  margin: 20px 0;
+  font-size: 14px;
+  color: #333;
+}
+.live-discount-content div {
+  float: left;
+  margin-right: 10px;
+}
+.add-discount-btn {
+  clear: both;
+  margin: 20px 0;
+}
+.aLink {
+  font-size: 12px;
+  margin-left: 5px;
+  color: #f90;
+}
+
+/*8楼*/
+.identity-floor p {
+  font-size: 14px;
+  text-align: left;
+}
+.identity-floor p span {
+  font-size: 12px;
+  color: #999;
+  margin-left: 10px;
+}
+.identity-floor p a {
+  font-size: 12px;
+  color: #f90;
+  margin-left: 5px;
+}
+.uploadImg-con {
+  width: 150px;
+  height: 150px;
+  border: 1px dashed #ccc;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+}
+.headImg {
+  width: 100%;
+}
+.uploadImg-con .posit {
+  width: 150px;
+  height: 150px;
+}
+.logoposit {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 0;
+  top: 0;
+}
+.relogoposit {
+  position: absolute;
+  width: 150px;
+  left: 0;
+  top: 33px;
+}
+.uploadImg-con .add-img {
+  font-size: 40px;
+  color: #999;
+  text-align: center;
+  margin-top: 40px;
+}
+.uploadImg-con .reupload {
+  font-size: 10px;
+  color: #999;
+  text-align: center;
+  margin-top: 84px;
+  background-color: lightgray;
+}
+.uploadImg-con p {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+.uploadRequire {
+  margin-left: 25px;
+  float: left;
+}
+.uploadRequire p {
+  font-size: 12px;
+  color: #999;
+  line-height: 20px;
+}
+.prove-ul {
+  overflow: hidden;
+}
+.prove-ul li {
+  float: left;
+  width: 98px;
+  height: 98px;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+}
+.prove-ul li p {
+  text-align: center;
+  font-size: 12px;
+}
+.prove-ul li.active {
+  background: #f3f5ff;
+  border: 1px solid #6e80e3;
+  color: #6e80e3;
+}
+.prove-icon1 {
+  background-image: url(~page-blate.png);
+  background-position: -1216px -968px;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto 0;
+}
+.proves-icon1 {
+  background-image: url(~page-blate.png);
+  background-position: -709px -342px;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto 0;
+}
+.prove-icon2 {
+  background-image: url(~page-blate.png);
+  background-position: -675px -410px;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto 0;
+}
+.proves-icon2 {
+  background-image: url(~page-blate.png);
+  background-position: -709px -376px;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto 0;
+}
+.prove-icon3 {
+  background-image: url(~page-blate.png);
+  background-position: -675px -376px;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto 0;
+}
+.proves-icon3 {
+  background-image: url(~page-blate.png);
+  background-position: -1216px -900px;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto 0;
+}
+.prove-icon4 {
+  background-image: url(~page-blate.png);
+  background-position: -1216px -934px;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto 0;
+}
+.proves-icon4 {
+  background-image: url(~page-blate.png);
+  background-position: -675px -342px;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto 0;
+}
+.credit-success-icon {
+  width: 200px;
+  float: left;
+  background-image: url(~page-blate.png);
+  background-position: -675px -298px;
+  width: 88px;
+  height: 40px;
+}
+.credit-success-text {
+  float: left;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #29ab91;
+  line-height: 45px;
+}
+.sesameCredit p {
+  color: #666;
+}
+.info-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.identity-left {
+  float: left;
+}
+.identity-right {
+  float: left;
+  margin-left: 30px;
+  width: 220px;
+  position: relative;
+  top: -190px;
+}
+.IDCardimgList1 {
+  width: 220px;
+  height: 150px;
+  background-image: url(~page-blate.png);
+  background-position: -512px -596px;
+  width: 220px;
+  height: 150px;
+}
+.IDCardimgList2 {
+  width: 220px;
+  height: 150px;
+  background-image: url(~page-blate.png);
+  background-position: -736px -596px;
+  width: 220px;
+  height: 150px;
+}
+.identity-right span {
+  margin-left: 40px;
+  color: #999;
+}
+.just {
+  float: left;
+  width: 260px;
+  height: 170px;
+  border-radius: 4px;
+  margin-right: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.back {
+  float: left;
+  width: 260px;
+  height: 170px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.just img,
+.back img {
+  width: 100%;
+  height: 100%;
+}
+.positrelpos {
+  position: absolute;
+  width: 260px;
+  height: 170px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.upload-cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.just .add-img,
+.back .add-img {
+  font-size: 46px;
+  text-align: center;
+  color: #999;
+  margin: 50px 0 10px;
+}
+.just p,
+.back p {
+  text-align: center;
+  color: #666;
+}
+.just:hover,
+.back:hover {
+  background: #f3f5ff;
+  color: #8c9eff;
+}
+.just:hover .add-img,
+.back:hover .add-img {
+  color: #8c9eff;
+}
+.just:hover p,
+.back:hover p {
+  color: #8c9eff;
+}
+.dragCard .ivu-upload.ivu-upload-drag {
+  border: none;
+  background: none;
+}
+.drag .ivu-upload.ivu-upload-drag {
+  border: none;
+  margin-top: 40px;
+  background: none;
+}
+.tip .ivu-poptip-body {
+  padding: 8px 9px;
+}
+.lastChild .ivu-cascader-menu:last-child {
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+.passport-left {
+  float: left;
+}
+.passport-right {
+  position: absolute;
+  right: 75px;
+  top: 75px;
+}
+.passportImg {
+  width: 220px;
+  height: 150px;
+  background-image: url(~page-blate.png);
+  background-position: 0px -880px;
+  width: 220px;
+  height: 150px;
+}
+.licenseImg {
+  width: 220px;
+  height: 150px;
+  background-image: url(~page-blate.png);
+  background-position: -288px -596px;
+  width: 220px;
+  height: 150px;
+}
+.upload-passport {
+  width: 358px;
+  height: 228px;
+  border: 1px dashed #ccc;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.upload-passport img {
+  width: 100%;
+  height: 100%;
+}
+.positrel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.upload-passport .add-img {
+  font-size: 46px;
+  text-align: center;
+  color: #999;
+  margin: 75px 0 10px;
+}
+.upload-passport p {
+  text-align: center;
+  color: #666;
+}
+.upload-passport:hover {
+  border: 1px dashed #8c9eff;
+  background: #f3f5ff;
+  color: #8c9eff;
+}
+.upload-passport:hover .add-img {
+  color: #8c9eff;
+}
+.upload-passport:hover p {
+  color: #8c9eff;
+}
+.goSesameVerification {
+  width: 130px;
+  height: 35px;
+  border: 1px solid #ddd;
+  text-align: center;
+  line-height: 35px;
+  display: block;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+.contract-content {
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #ddd;
+}
+.marTop {
+  margin: 20px 0 0 150px;
+}
+
+/*底部下一步按钮样式*/
+.nextStep {
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid #ddd;
+}
+.nextStep-btn {
+  float: right;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+.nextStep-btn span {
+  color: #fff;
+}
+.price-floor .ivu-btn-primary span,
+.position-floor .ivu-btn-primary span {
+  color: #fff;
+}

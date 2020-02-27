@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    发布者：one
+    命名空间应该是对应接口的包名+接口名
+-->
+
+<mapper namespace="com.miqi.miqihome.dao.IPictureDao"><!--接口名-->
+
+    <!--
+        查询结果集合
+    -->
+    <resultMap id="select_all_picture_map" type="Picture">
+        <id column="pId" property="pId"></id>
+        <result column="pUrl" property="pUrl"></result>
+        <result column="pPagePicture" property="pPagePicture"></result>
+        <result column="ptId" property="ptId"></result>
+        <!--一对多关系-->
+        <collection property="picturetype" javaType="Picturetype">
+            <id column="ptId" property="ptId"></id>
+            <result column="ptName" property="ptName"></result>
+            <result column="haiId" property="haiId"></result>
+        </collection>
+    </resultMap>
+
+    <!--查询全部图片-->
+    <select id="select_all_picture" resultMap="select_all_picture_map">
+       select * from picture as p join picturetype as t on p.ptId=t.ptId;
+    </select>
+
+    <!--通过主键查询全部图片-->
+    <select id="select_picture_by_pId" resultMap="select_all_picture_map" parameterType="int">
+         select * from picture as p join picturetype as t on p.ptId=t.ptId where p.pId=#{pId};
+    </select>
+    
+    <!--通过外键ptId查询全部图片-->
+    <select id="select_picture_by_ptId" resultMap="select_all_picture_map" parameterType="int">
+        select * from picture as p join picturetype as t on p.ptId=t.ptId where p.ptId=#{ptId};
+    </select>
+    <!--根据房源id获取图片-->
+    <select id="select_all_img" resultType="Picture">
+        select * from pictureType pt join homeAllInformation hai on pt.haiId=hai.haiId
+							 join picture p on p.ptId=pt.ptId where hai.haiId=#{haiId};
+    </select>
+    <!--
+        新增
+    -->
+    <insert id="insert_picture" parameterType="java.util.Map">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="pId">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into picture
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pUrl != null">
+                pUrl,
+            </if>
+            <if test="pPagePicture != null">
+                pPagePicture,
+            </if>
+            <if test="ptId != null">
+                ptId,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="pUrl != null">
+                #{pUrl},
+            </if>
+            <if test="pPagePicture != null">
+                #{pPagePicture},
+            </if>
+            <if test="ptId != null">
+                #{ptId}
+            </if>
+        </trim>
+    </insert>
+
+    <!--
+        修改
+    -->
+    <update id="update_picture" parameterType="java.util.Map">
+        update picture
+        <set>
+            <if test="pUrl!=null and pUrl!=''">
+                pUrl=#{pUrl},
+            </if>
+            <if test="pPagePicture!=null">
+                pPagePicture=#{pPagePicture},
+            </if>
+            <if test="ptId!=null and ptId gt 0">
+                ptId=#{ptId}
+            </if>
+        </set>
+        <where>
+            pId=#{pId};
+        </where>
+    </update>
+    <!--删除图片-->
+    <delete id="delete_picture">
+        delete from picture where pId=#{pId};
+    </delete>
+</mapper>

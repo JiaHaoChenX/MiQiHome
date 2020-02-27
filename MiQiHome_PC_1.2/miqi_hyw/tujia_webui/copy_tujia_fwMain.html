@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>房源管理主页</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<script src="../js/tujia.js"></script>
+	</head>
+
+	<body>
+		<!--biggest div-->
+		<div>
+			<!--head-->
+			<header class="head">
+				<div class="head_Margin">
+					<div class="" style="display: flex;justify-content:space-between;">
+						<div style="float: left;">
+							<span class="icon icon_hourse"></span>
+							<span class="g_merchant">【途家房东】190119094011</span>
+						</div>
+						<div style="margin-top: 3px;float: right;" class="head_right">
+							<ul style="float: left;" class="floor_header_ul">
+								<li>
+									<span class="icon icon_s icon_user"></span>
+									<a href="##">15089418450</a>
+								</li>
+								<li>
+									<span class="icon icon_s icon_zhang"></span>
+									<a href="##">结算管理</a>
+								</li>
+								<li>
+									<span class="icon icon_s icon_shang"></span>
+									<a href="##">商家管理</a>
+								</li>
+								<li>
+									<span class="icon icon_s icon_fdong"></span>
+									<a href="##">房东指引</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!--content-->
+			<div class="content display_flex" style="display: none;">
+				<!--left setion-->
+				<div class="con_left">
+					<div>
+						<div class="con_line"></div>
+						<ul class="con_ul" id="main1">
+							<li>
+								<div class="left_icon left_icon1"></div>
+								<span class="con_ul_span">房屋位置</span>
+								<i class="left_sel"></i>
+
+							</li>
+							<li>
+								<div class="left_icon left_icon2"></div>
+								<span class="con_ul_span">房屋详情</span>
+								<i class="left_sel"></i>
+
+							</li>
+							<li>
+								<div class="left_icon left_icon3"></div>
+								<span class="con_ul_span">房屋描述</span>
+								<i class="left_sel"></i>
+							</li>
+							<li>
+
+								<div class="left_icon left_icon4"></div>
+								<span class="con_ul_span">设施服务</span>
+								<i class="left_sel"></i>
+
+							</li>
+							<li>
+
+								<div class="left_icon left_icon5"></div>
+								<span class="con_ul_span">入住规则</span>
+								<i class="left_sel"></i>
+
+							</li>
+							<li>
+
+								<div class="left_icon left_icon7"></div>
+								<span class="con_ul_span">房屋照片</span>
+								<i class="left_sel"></i>
+
+							</li>
+							<li>
+
+								<div class="left_icon left_icon6"></div>
+								<span class="con_ul_span">价格 </span>
+								<i class="left_sel"></i>
+
+							</li>
+							<li>
+								<div class="left_icon left_icon8"></div>
+								<span class="con_ul_span">身份验证</span>
+								<i class="left_sel"></i>
+							</li>
+						</ul>
+						<div class="con_step">还差7步</div>
+					</div>
+
+				</div>
+				<!--right setion-->
+				<div class="con_right" style="margin-bottom: 20px; margin-left: -20px;" >
+					<iframe src="tujia_guanMoney_box.html" name="addHourse" width="960" frameborder="0" scrolling="no"></iframe>
+					<!--1、房屋位置-->
+					<div class="con_floor1" style="display: none;">
+						<div class="right_tit">
+							<h1 class="right_tith1">房屋位置</h2>
+							<h2 class="right_tith2" >房客会使用位置信息来找到您的房子</h3>			
+						</div>
+						<div class="right_tips_wapper">
+							<form class="tips_form">
+								<div class="right_tips">
+									<div class="right_tip1">
+										<p class="tip_tit"><span class="tip_xing">*</span>地区/城市</p>
+										<div>
+											<select class="form-control" >
+												<option>请选择</option>
+												<option>中国大陆</option>
+											</select>
+											<select class="form-control" style="width: 250px;">
+												<option>北京</option>
+
+												<option>上海</option>
+											</select>
+										</div>
+										<span class="tip_tishi">该信息审核通过后不可修改</span>
+									</div>
+									
+									<div class="right_tip2">
+										<p class="tip_tit"><span class="tip_xing">*</span>地址</p>
+										<div>
+											 <input type="text" class="form-control" aria-describedby="helpBlock" style="width: 100%;">
+										</div>
+										<span class="tip_tishi">该信息审核通过后不可修改</span>
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">补充说明（选填）</p>
+										<div>
+											 <input type="text" class="form-control" aria-describedby="helpBlock" placeholder="不可与地址重复（例：万达广场对面）" style="width: 100%;">
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">门牌号（选填）</p>
+										<div>
+											 <input type="text" class="form-control" placeholder="房客预定成功后才显示此信息" style="width: 100%;">
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">地图定位（选填）</p>
+										<div class="tip_map" >
+											 审核通过后不可修改。房客会根据此位置来找到您，拖动地图完成精准定位，不可定位在水里、路上等。
+										</div>
+										<div class="map">
+											
+										</div>
+										<p style="font-size: 18px;margin-top: 7px;letter-spacing: 3px;height: 50px;line-height: 50px;">201;120</p>
+										<p class="tip_tit" style="font-size: 12px;line-height: 1px;"><input type="checkbox" />房屋地址与接待房客的地址不一致</p>
+									</div>
+									<div class="tip_bottom" style="width: 204%;">
+										 <button type="button" class="btn btn-primary nextbtn" >下一步</button>
+									</div>
+								</div>
+								<div class="tishi">
+									<div class="tishi_msg">
+										<h2 style="font-size: 14px;font-weight: bold;">房客会使用此信息来寻找地点合适的房源。</h2>
+										<span style="font-size: 13px;">您的门牌号是您的隐私，房客预订前将为您保密。房客可以通过您的房屋位置，了解您房屋的周边信息。房屋发布成功后，我们会对您的地址信息进行核对。</span>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+						
+					<!--2、房屋详情-->
+					<div class="con_floor2" id="div02" style="display: none;">
+						<div class="right_tit">
+							<h1 class="right_tith1">房屋详情</h2>
+							<h2 class="right_tith2">客房一般根据房型、户型等信息，选择合适的房屋。</h3>			
+						</div>
+						<div class="right_tips_wapper">
+							<form class="tips_form">
+								<div class="floor2_content">
+									<div class="right_tip1">
+										<p class="tip_tit">出租方式</p>
+										<div>
+											<ul class="floor2_ul">
+											<li style="background: #F3F5FF;">
+												<div class="left_icon housingtype housingtype1"></div>
+												<span class="blue">整套房屋</span>
+											</li>
+											<li >
+												<div class="left_icon housingtype housingtype2"></div>
+												<span>独立房间</span>
+											</li>
+										</ul>
+										</div><br /><br /><br />
+										<span class="tip_tishi" style="margin-left: -220px;top: 20px	;">该信息审核通过后不可修改</span>
+									</div>									
+									<div class="right_tip2">
+										<p class="tip_tit">房屋类型</p>
+										<div class="xiang_span">
+											 <p>
+											 	<span><input type="radio" name="" value="" checked="checked"/>公寓</span>
+												<span><input type="radio" name="" value="" />客栈</span>
+												<span><input type="radio" name="" value="" />别墅</span>
+												<span><input type="radio" name="" value="" />其他/特色</span>
+											</p>
+											<p>
+												<div>
+													<select class="form-control" >
+														<option>普通公寓</option>
+													</select>
+												</div>
+											</p>
+											<p>
+												<div style="font-size: 12px;margin-top: 14px;">
+													<p>房屋面积</p>
+													<input type="text" class="form-control select_style"  placeholder="整套房屋的使用面积">平米
+												</div>
+											</p>
+										</div>
+										
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">房屋景观</p>
+										<div >
+											 <select class="form-control select_style">
+												<option style="font-size: 12px;">无</option>
+												<option style="font-size: 12px;">海景</option>
+											</select>
+											
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">房屋户型</p>
+										<div class="xiang_span" style="font-size: 12px;width: 880px;">
+											<span>
+												卧室<input type="text" class="form-control" value="1" style="width: 100px;">
+											</span>
+											<span>
+												卫生间<input type="text" class="form-control" value="1" style="width: 100px;">
+											</span>
+											<span>
+												客厅<input type="text" class="form-control" value="1" style="width: 100px;">
+											</span>
+											<span>
+												厨房<input type="text" class="form-control" value="1" style="width: 100px;">
+											</span>
+											<span>
+												书房<input type="text" class="form-control" value="1" style="width: 100px;">
+											</span>
+											<span>
+												阳台<input type="text" class="form-control" value="1" style="width: 100px;">
+											</span>
+											<p style="margin-top: 5px;"><span class="tip_tishi">该信息审核通过后不可修改</span></p>
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">床型</p>
+										<div class="xiang_span" style="font-size: 12px;width: 880px;">
+											<p>
+												<select class="form-control select_style">
+													<option style="font-size: 12px;">大床</option>
+												</select>
+												<select class="form-control select_style" >
+													<option style="font-size: 12px;">2*1.8</option>
+												</select>
+												<select class="form-control select_style" >
+													<option style="font-size: 12px;">1</option>
+												</select>
+												<span class="floor5_del" <!--style="font-size: 14px;color: #6E80E3;margin-left: 4px;"--> >删除</span>
+											</p>
+											<button type="button" class="btn btn-primary" style="width: 150px;margin-top: 10px;">+继续添加床型</button>
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">宜住人数</p>
+										<div >
+											 <input class="form-control" value="1" />
+										</div>
+										<p style="font-size: 12px; margin-top: 15px;"><span class="tip_xing">*</span>同房类型数量</p>
+										
+										<p><span class="tip_tishi">房屋数量是指相同类型房屋的数量，最终会以库存的形式呈现。</span></p>
+										<div style="font-size: 12px;">
+											 <input type="text"  class="form-control" style="width: 210px;">套
+										</div>
+										<p><span class="tip_tishi" >该信息审核通过后不可修改</span></p>
+										<div class="tip_bottom">
+										 <button type="button" class="btn btn-primary nextbtn">下一步</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+						
+					<!--3、房屋描述-->
+					<div class="con_floor3" style="display: none;">
+						<div class="right_tit">
+							<h1 class="right_tith1">房屋描述</h2>
+						</div>
+						<div class="right_tips_wapper">
+							<form class="tips_form" style="width: 500px;">
+								<div class="width">
+									<div class="right_tip1" style="margin-top: 20px;">
+										<p class="tip_tit fontSize12"><span class="tip_xing">*</span>房屋名称</p>
+										<div>
+											<input type="text" class="form-control" style="width: 500px;" placeholder="建议：地标+特色/亮点+户型">
+											<section class="tese_msg">
+												<span>房屋名称需在2-20个字符</span>
+											</section>
+										</div>
+									</div>
+									
+									<div class="right_tip2">
+										<p class="tip_tit fontSize12"><span class="tip_xing">*</span>房屋特色</p>
+										<div>
+											<textarea autocomplete="off" spellcheck="false" placeholder="可描述房屋软装风格，家居配套，小区环境，物业管理等" rows="6" maxlength="1000" class="ivu-input"></textarea>
+											<section class="tese_msg">
+												<span class="tese_left">房屋特色需在30-1000个字符</span>
+												<span class="tese_number">0/1000</span>
+											</section>
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="">交通位置（选填）</p>
+										<div>
+											<textarea autocomplete="off" spellcheck="false" placeholder="位于朝阳门外大街，从朝阳门地铁站A口5分钟到达。楼下有38路、101路等多条公交线路，十分方便。" rows="6" maxlength="500" class="ivu-input"></textarea>
+											<section class="tese_msg">
+												<span class="tese_left">交通位置需在30-1000个字符</span>
+												<span class="tese_number">0/1000</span>
+											</section>
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="">周边介绍（选填）</p>
+										<div>
+											 <textarea autocomplete="off" spellcheck="false" placeholder="小区东侧有条美食街，特别推荐冒牌火锅菜、海鲜烧烤；附近配有超市便利店、辉煌量贩式KTV、24小时药店、建行ATM，生活便利；最近的医院是**医院，距离2公里，车程仅5分钟，出租车起步价就到。" rows="6" maxlength="500" class="ivu-input"></textarea>
+											 <section class="tese_msg">
+												<span class="tese_left">周边介绍需在30-1000个字符</span>
+												<span class="tese_number">0/1000</span>
+											</section>
+										</div>
+									</div>
+									<div class="tip_bottom" style="width:180%;margin-top: 60px;">
+										 <button type="button" class="btn btn-primary nextbtn">下一步</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+						
+					<!--4、设施服务-->
+					<div class="con_floor4" style="display: none;">
+						<div class="right_tit">
+							<h1 class="right_tith1">设施服务</h2>
+							<h2 class="right_tith2" >房客可以按照他们想要的配套设施选择房屋。因此，请在页面上尽可能地全面展示您的房屋的配套设施。</h3>
+						</div>
+						<div >
+							<div class="floor4_warpper_margin">
+								<form >
+									<div class="">
+										<div class="floor4_line">
+											<p class="floor4_tit">居家</p>
+											<div class="floor4_sel">
+												<label>
+													<span class="floor4_check floor4_label">
+														<span>
+															<input type="checkbox" class="floor4_label" name="" id="" value="" />
+															<!--<labels></label>-->
+														</span>有线网络
+													</span>
+												</label>
+												<label>
+													<span class="floor4_check floor4_label">
+														<span>
+															<input type="checkbox" class="floor4_label" name="" id="" value="" />
+														</span>有线网络
+													</span>
+												</label>
+											</div>
+										</div>
+										
+										<div class="floor4_line">
+											<p class="floor4_tit">卫浴</p>
+											<div class="floor4_sel">
+												<label>
+													<span class="floor4_check floor4_label">
+														<span>
+															<input type="checkbox" class="floor4_label" name="" id="" value="" />
+														</span>有线网络
+													</span>
+												</label>
+											</div>
+										</div>
+										<div class="floor4_line">
+											<p class="floor4_tit">卫浴</p>
+											<div class="floor4_sel">
+												<label>
+													<span class="floor4_check floor4_label">
+														<span>
+															<input type="checkbox" class="floor4_label" name="" id="" value="" />
+														</span>有线网络
+													</span>
+												</label>
+											</div>
+										</div>
+										<div class="floor4_line">
+											<p class="floor4_tit">卫浴</p>
+											<div class="floor4_sel">
+												<label>
+													<span class="floor4_check floor4_label">
+														<span>
+															<input type="checkbox" class="floor4_label" name="" id="" value="" />
+														</span>有线网络
+													</span>
+												</label>
+											</div>
+										</div>
+										<div class="floor4_line">
+											<p class="floor4_tit">卫浴</p>
+											<div class="floor4_sel">
+												<label>
+													<span class="floor4_check floor4_label">
+														<span>
+															<input type="checkbox" class="floor4_label" name="" id="" value="" />
+														</span>有线网络
+													</span>
+												</label>
+											</div>
+										</div>
+										<div class="floor4_line">
+											<p class="floor4_tit">卫浴</p>
+											<div class="floor4_sel">
+												<label>
+													<span class="floor4_check floor4_label">
+														<span>
+															<input type="checkbox" class="floor4_label" name="" id="" value="" />
+														</span>有线网络
+													</span>
+												</label>
+											</div>
+										</div>
+										<div class="floor4_line">
+											<p class="floor4_tit">其他</p>
+											<div class="floor4_sel">
+												<label>
+													<span class="floor4_check floor4_label">
+														<span>
+															<input type="checkbox" class="floor4_label" name="" id="" value="" />
+														</span>行李寄存
+													</span>
+												</label>
+												<label>
+													<span class="floor4_check floor4_label">
+														<span>
+															<input type="checkbox" class="floor4_label" name="" id="" value="" />
+														</span>急救包
+													</span>
+												</label>											
+											</div>
+											
+										</div>
+										<div style="float: right;margin-bottom: 20px;">
+											<input type="button" class="btn btn-primary nextbtn" value="下一步"/>
+										</div>
+									</div>
+									
+								</form>
+							</div>
+						</div>
+					
+					</div>
+					
+						
+					<!--5、入住规则-->
+					<div class="con_floor4" style="display: none;">
+						<div class="right_tit">
+							<h1 class="right_tith1">入住规则</h2>
+							<h2 class="right_tith2" >请注明您的房屋入住相关说明，以保证能收到合适的订单。</h3>
+						</div>
+						<div >
+							<div class="floor4_warpper_margin">
+								<form>
+									<div class="">
+										<div class="floor4_line">
+											<div class="floor5_inline">												
+												<div class="floor5_margin-right" >
+													<p class="floor5_p_color">房客入住时间</p>
+													<select name="" class="form-control">
+														<option value="">14:00</option>
+													</select>
+												</div>
+												<div class="">
+													<p class="floor5_p_color">房客退房时间</p>
+													<select name="" class="form-control">
+														<option value="">22:00</option>
+														<option value="">22:00</option>
+														<option value="">22:00</option>
+													</select>
+												</div>									
+											</div>		
+											<!--接待房客的时间-->
+											<div class=" floor5_margin-top">												
+												<div class=" floor5_margin" >
+													<p class="floor5_p_color">接待房客的时间</p>
+													<p>
+														<select name="" class="form-control">
+															<option value="">14:00</option>
+														</select><span style="font-size: 12px;margin: 0 4px;">至</span>
+														<select name="" class="form-control">
+															<option value="">22:00</option>
+														</select>
+														<span class="floor5_del">删除</span>
+													</p>
+													<p><button type="button" class="btn btn-primary" style="margin-top: 10px;">+添加接待时段</button></p>
+												</div>
+											</div>
+											<!--是否有前台-->
+											<div class=" floor5_margin-top">												
+												<div class=" floor5_margin" >
+													<p class="floor5_p_color">是否有前台</p>
+													<div class="floor5_inline" style="font-size: 12px;">
+														<div class=" floor5_margin-right">
+															<input type="radio" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />是
+														</div>
+														
+														<div class="">
+															<input type="radio" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />否
+														</div>
+													</div>
+												</div>
+											</div>
+											<!--接待性别-->
+											<div class=" floor5_margin-top">												
+												<div class=" floor5_margin" >
+													<p class="floor5_p_color">接待性别</p>
+													<div class="floor5_inline" style="font-size: 12px;">
+														<div class=" floor5_margin-right">
+															<input type="radio" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" checked="checked"/>不限
+														</div>
+														<div class="floor5_margin-right">
+															<input type="radio" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />男
+														</div>
+														<div class="">
+															<input type="radio" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />女
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<!--接待特殊年龄段-->
+											<div class=" floor5_margin-top">												
+												<div class=" floor5_margin" >
+													<p class="floor5_p_color">接待特殊年龄段</p>
+													<div class="floor5_inline dd" style="font-size: 12px;">
+														<div class=" floor5_margin-right">
+															<input type="checkbox" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" checked="checked"/><label>儿童<span>(0-12岁)</span></label>
+														</div>
+														<div class="floor5_margin-right">
+															<input type="checkbox" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" /><label >老人<span>(65岁以上)</span></label>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<!--是否接待外宾-->
+											<div class=" floor5_margin-top">												
+												<div class=" floor5_margin" >
+													<p class="floor5_p_color">是否接待外宾</p>
+													<div class="floor5_inline" style="font-size: 12px;">
+														<div class=" floor5_margin-right">
+															<input type="radio" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />是
+														</div>
+														
+														<div class="">
+															<input type="radio" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />否
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--打扫换洗方式-->
+										<div class="floor4_line">
+											<p class="floor5_p_color">打扫换洗方式</p>
+											<div class="floor5_inline">		
+												<div class="floor5_margin-right" >
+													<p class="floor5_p_color">多久提供打扫卫生</p>
+													<select name="" class="form-control">
+														<option value="">1客1扫</option>
+													</select>
+												</div>
+												<div class="">
+													<p class="floor5_p_color">多久提供被单更换</p>
+													<select name="" class="form-control">
+														<option value="">1客1换</option>
+													</select>
+												</div>
+											</div>		
+										</div>
+										
+										<!--对房客的要求-->
+										<div class="floor4_line">
+											<p class="floor5_p_color">对房客的要求</p>
+											<div class="fontSize12 floor5_require">
+												<p><input type="checkbox" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />允许吸烟</p>
+												<p><input type="checkbox" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />允许带宠物</p>
+												<p><input type="checkbox" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />允许做饭</p>
+												<p><input type="checkbox" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />允许吸烟</p>
+												<p><input type="checkbox" style="vertical-align:middle;margin-top: 0;" name="" id="" value="" />允许吸烟</p>
+											</div>	
+										</div>
+										<!--其他入住提示-->
+										<div class="floor4_line">
+											<p class="floor5_p_color">其他入住提示（选填）</p>
+											<div class="fontSize12 floor5_require" style="width: 400px;">
+												<textarea spellcheck="false" placeholder="不可录入“发票”“押金”等信息，不可与已录入信息矛盾，否则不会审核通过哦~若对客有其他入住要求，请说明。例如：水电燃气费、额外打扫费用、入住所需证件等。" rows="4" maxlength="500" class="ivu-input"></textarea>
+												<section class="tese_msg">
+													<span class="tese_number">0/500</span>
+												</section>
+											</div>	
+										</div>
+										<div style="float: right;margin-bottom: 20px;">
+											<input type="button" class="btn btn-primary nextbtn" value="下一步"/>
+										</div>
+										
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					<!--6、房屋照片-->
+					<div class="con_floor4" style="display: none;">
+						<div class="right_tit">
+							<h1 class="right_tith1">房屋照片</h2>
+							<h2 class="right_tith2" >上传真实、漂亮的房屋照片更能吸引房客</h3>
+						</div>
+						<div >
+							<div class="floor4_warpper_margin">
+								<form>
+									<div class="">
+										<div class="floor6_msg">
+											<div class="floor6_msg2">
+												<p>照片需满足以下类型，拖动照片可调整顺序</p>
+												<p class="fontSize12 floor6_margin_right">
+													<span>卧室：1张</span>
+													<span>卫生间：1张</span>
+												</p>
+												<p class="fontSize12 spanColor">
+													<span>请保证上传的图片高清、无水印、无logo和联系方式；为了避免房屋图片与户型不符产生客诉，请根据所选户型上传。</span><br />
+													<span>如未找到图片所属类型，可返回房屋详情修改户型信息</span>
+												</p>
+											</div>
+											
+										</div>
+										
+										<div class="floor6_msg3">
+											<ul class="floor6_ul">
+												<li>
+													<div class="floor6_li_tit " >
+														<!--卧室 题头-->
+														<div class="">
+															<div class="floor6_msg floor6_msg3 floor6_margin">
+																<p class="">
+																	<label>卧室</label>
+																	<span class="fontSize12 spanColor">1/20</span>																
+																</p>
+																<p>
+																	<span class="floor6_tt">至少上传1张，展现完整床铺</span>															
+																</p>
+																<span class="floor6_shilitu">示例图</span>
+															</div>															
+														</div>														
+													</div>
+													<!--图片-->
+													<div class="floor6_image">
+														<ul>
+															<li class="floor6_img">
+																<img src="../img/house/24e2c6debb5c66cc0d1d9db5af2dfe84 - 副本 - 副本 (2).jpg"/>
+															</li>
+															<li class="floor6_img">
+																<img src="../img/house/24e2c6debb5c66cc0d1d9db5af2dfe84 - 副本 - 副本 (2).jpg"/>
+															</li>
+															<li class="floor6_img">
+																<img src="../img/house/24e2c6debb5c66cc0d1d9db5af2dfe84 - 副本 - 副本 (2).jpg"/>
+															</li>
+															<li class="floor6_img">
+																<img src="../img/house/24e2c6debb5c66cc0d1d9db5af2dfe84 - 副本 - 副本 (2).jpg"/>
+															</li>
+															<li class="floor6_img">
+																<img src="../img/house/24e2c6debb5c66cc0d1d9db5af2dfe84 - 副本 - 副本 (2).jpg"/>
+															</li>
+															<li class="floor6_img">
+																<img src="../img/house/24e2c6debb5c66cc0d1d9db5af2dfe84 - 副本 - 副本 (2).jpg"/>
+															</li>
+															<li class="floor6_img floor6_img_add">
+															+
+															<p class="fontSize14" style="margin-top: -17px;">继续上传</p></li>
+														</ul>
+													</div>
+												</li>
+												
+													<!--卫生间-->
+												<li>
+													<div class="floor6_li_tit " >
+														<!--卫生间 题头-->
+														<div class="">
+															<div class="floor6_msg floor6_msg3 floor6_margin">
+																<p class="">
+																	<label>卫生间</label>
+																	<span class="fontSize12 spanColor">1/20</span>																
+																</p>
+																<p>
+																	<span class="floor6_tt">至少上传1张，卫浴设施完整，地面整洁</span>															
+																</p>
+																<span class="floor6_shilitu">示例图</span>
+															</div>															
+														</div>														
+													</div>
+													<!--卫生间 图片-->
+													<div class="floor6_image" >
+														<div class="floor6_img">
+															<img src="../img/house/24e2c6debb5c66cc0d1d9db5af2dfe84 - 副本 - 副本 (2).jpg"/>
+														</div>
+														
+														<div class="floor6_img floor6_img_add">
+															+
+															<p class="fontSize14" style="margin-top: -17px;">继续上传</p>
+														</div>
+													</div>
+												</li>
+												<!--其他-->
+												<li>
+													<div class="floor6_li_tit " >
+														<!--题头-->
+														<div class="">
+															<div class="floor6_msg floor6_msg3 floor6_margin" style="height: 60px;">
+																<p class="">
+																	<label>其他</label>
+																	<span class="fontSize12 spanColor">1/20</span>																
+																</p>
+															</div>															
+														</div>														
+													</div>
+													<!--图片-->
+													<div class="floor6_image">
+														<div class="floor6_img">
+															<img src="../img/house/24e2c6debb5c66cc0d1d9db5af2dfe84 - 副本 - 副本 (2).jpg"/>
+														</div>
+														<div class="floor6_img floor6_img_add">
+															+
+															<p class="fontSize14" style="margin-top: -17px;">继续上传</p>
+														</div>
+													</div>
+												</li>											
+											</ul>
+										</div>
+									
+										<div class="floor6_li_tit " >
+											<div class="floor6_msg  floor6_margin" style="height: 1px;padding: 0;background: #DDD;"></div>											
+										</div>
+										<div style="float: right;margin-bottom: 20px;">
+											<input type="button" class="btn btn-primary nextbtn" value="下一步"/>
+										</div>
+									</div>
+									
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					
+					<!--7、价格-->
+					<div class="con_floor4"  >
+						<div class="right_tit">
+							<h1 class="right_tith1">价格</h2>
+						</div>
+						<div >
+							<div class="floor4_warpper_margin">
+								<form>
+									<div class="">
+										<div class="floor4_line">											
+												<p class="floor7_tit">基础价</p>				
+												<p class="fontSize12">基础价是基本售卖价格，长期有效，如果您在房态日历中修改了特定日期的价格，则特定日期之外的所有日期按照此价格售卖</p>
+										
+											<!--售卖币种-->
+											<div class=" floor5_margin-top">												
+												<div class=" floor5_margin" >
+													<p class="floor5_p_color">售卖币种</p>
+													<p>
+														<select name="" class="form-control" style="width: 200px;" disabled="disabled">
+															<option value="">人民币</option>
+														</select><br />
+														<span class="fontSize12">国内房屋只能通过人民币售卖，不可更改</span>
+													</p>
+												</div>
+											</div>
+											<!--售卖价格-->
+											<div class=" floor5_margin-top">												
+												<div class=" floor5_margin" >
+													<p class="floor5_p_color"><span style="color: red;">*</span>售卖价格</p>
+													<div class="floor5_inline" style="font-size: 12px;">
+														<input type="text" class="form-control" style="width: 100px;" placeholder="320" name="" id="" value="" /><span style="height: 30px;line-height: 30px;margin-left: 2px;">元</span>
+													</div>
+												</div>
+											</div>											
+										</div>
+										<!--连住折扣-->
+										<div class="floor4_line">
+											<p class="floor7_tit">连住折扣</p>
+											<div class="floor5_inline">		
+												<div class="floor5_margin-right"  style="width: 180px;">
+													<p class="floor5_p_color">连住天数</p>
+													<select name="" class="form-control">
+														<option value="">2天</option>
+													</select>
+												</div>
+												<div class="">
+													<p class="floor5_p_color">折扣设置</p>
+													<input type="text" class="form-control" placeholder="请选择" name="" id="" value="" />
+													<span class="floor5_del">删除</span>
+													
+												</div>
+											</div>	
+											<div >
+												<button type="button" class="btn btn-primary" style="margin-top: 40px;">+添加连住折扣</button>
+											</div>
+										</div>
+										
+										<div class="floor4_line">
+											<p class="floor7_tit" style="font-weight: normal;"><span style="color: red;">*</span>最少起订天数<span class="fontSize12"> 起订天数越少，越能满足更多人预订</span></p>
+											<div class="fontSize12 floor5_require">
+												<input type="text" class="form-control" name="" id="" value="" placeholder="1"/><span style="height: 30px;line-height: 30px;margin-left: 2px;">天</span>
+											</div>	
+											<div class="floor7_day">
+												<input type="checkbox" style="vertical-align: middle;margin-top: 0;" name="" id="" value="" />收取住房押金
+												
+											</div>
+											<p class="floor5_p_color">押金金额<span class="fontSize12"> 途家网目前仅支持线上收取押金</span></p>
+											<input type="text" class="form-control" style="vertical-align: middle;margin-top: 0;" name="" id="" value="" placeholder="100"/>元
+											
+											<p class="floor7_day fontSize14">收款方式：全额预付<br><span class="fontSize12" style="margin: 13px 0;">途家网目前仅支持全额预付房费，并且通过平台线上收取</span></p>
+											<p class="floor7_tit" style="font-weight: normal;">退款规则<span class="fontSize12"> 宽松的退款规则会让更多的人预订您的房屋</span></p>
+											<p class="floor5_p_color floor7_backMoney">
+												入住<select class="form-control" style="width: 100px;"><option>前1天</option></select>12点前取消订单，房屋可全额退还；
+											</p>
+											<p class="floor5_p_color floor7_backMoney">
+												在此之后取消订单，将收取未住宿房费的 <select class="form-control" style="width: 100px;"><option>20%</option></select>作为违约金支付给房东。（包含未入住和提前离店）
+											</p>
+											<div class="floor7_day">
+												<p class=""><input type="checkbox" style="vertical-align: middle;margin: 0;" name="" id="" value="" />支持信用免押金</p>
+												<p class="fontSize12 floor5_p_color " style="text-indent: 1rem;">支持信用免押会提高房屋排序和推荐<span style="color: orange;"> 什么是信用免押金？</span></p>
+											</div>
+											<div class="floor7-tehui floor7_day">
+												<p class="floor5_p_color" style="font-weight: bold;">新房特惠</p>
+												<p class="fontSize12"><input type="checkbox" style="vertical-align: middle;margin: 0;" name="" id="" value="" />  为前三位房客提供折扣优惠</p>
+												<p>
+													<select class="form-control" disabled="" style="width: 120px;">
+														<option value="">8.0折</option>
+													</select>
+													
+												</p>
+												<p class="fontSize12 floor5_p_color " >参加后，此房的前三位房客享受折扣优惠，同时此房享受搜索推荐、排名优先和专属筛选标签 <span style="color: orange;"> 了解更多</span></p>
+											</div>
+										</div>
+										<div style="float: right;margin-bottom: 20px;">
+											<input type="button" class="btn btn-primary nextbtn" value="下一步"/>
+										</div>
+										
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					
+					<!--8、身份验证-->
+					<div class="con_floor4" style="display: none;">
+						<div class="right_tit">
+							<h1 class="right_tith1">身份验证</h2>
+							<h2 class="right_tith2" >请注明您的房屋入住相关说明，以保证能收到合适的订单。</h3>
+						</div>
+						<div >
+							<div class="floor4_warpper_margin">
+								<form>
+									<div class="">
+										<div class="floor4_line" style="padding-bottom: 120px;">
+											<p class="floor7_tit" style="font-weight: normal;">房东昵称/门店名称<span class="fontSize12"> 客人可通过名称快速搜索到您的小家</span></p>
+											<div class="fontSize12 floor5_require">
+												<input type="text" class="form-control" style="width: 300px;" name="" id="" value="" placeholder="真是姓名或个性昵称，如\"漫画之家\" "/><span class="fontSize12 orangeCol" style="height: 30px;line-height: 30px;margin-left: 12px;">怎么取一个好的名称</span>
+											</div>	
+											<div class="floor7_day">
+												
+												<p class="floor7_tit fontSize13" style="font-weight: normal;">您的电话  <span class="fontSize12"> 此电话在客房预订成功后可见</span><span class="fontSize13 orangeCol"> 关于此电话的用途</span></p>
+												<input type="text" class="form-control" style="width: 300px;" placeholder="请输入您的电话..."/>
+												<!--<p class="fontSize12" style="color: red;">电话格式不正确</p>-->
+												
+											</div>
+											<div class="">
+												<p class="fontSize14">房东头像/门店标志</p><br />
+												<div class="floor8_zhaopian">
+													<div class="floor6_img floor6_img_add floor8_touxiang">
+														+
+														<p class="fontSize14" style="margin-top: -17px;">上传头像</p>
+													</div>
+													<div class="floor7_backMoney fontSize12 floor5_p_color floor8_upRequire">
+														<p>上传请求：</p>
+														<p>1、请上传真实头像，若有营业执照也可以上传品牌logo，否则审核不会通过哟</p>
+														<p>2、请上传2MB以内的JPG、JPEG、GIF、PNG格式图片文件</p>
+													</div>
+												</div>
+											</div>
+											<div class="floor7_day">
+												<p class="">资质认证 <span class="fontSize12 floor5_p_color">验证您的身份，能提升客人对您的信任</span></p>
+												
+											</div>
+											<div >
+												<p style="margin-top: -18px;">资质认证方式</p>
+												<ul class="floor8_rzfs">
+													<li>
+														<div class="floor8_icon floor8_icon1"></div>
+														<p class="fontSize12 floor5_p_color">身份证</p>
+													</li>
+													<li>
+														<div class="floor8_icon floor8_icon2"></div>
+														<p class="fontSize12 floor5_p_color">护照</p>
+													</li>
+													<li>
+														<div class="floor8_icon floor8_icon3"></div>
+														<p class="fontSize12 floor5_p_color">营业执照</p>
+													</li>
+												</ul>
+												<!--<div class="">
+													<div class="floor8_rzfs">
+														
+													</div>
+												</div>-->
+												
+											</div>
+										</div>
+										<div class="" style="float: left;border: none;margin-top: 20px;">
+											<input type="checkbox"  style="vertical-align: middle;margin-top: 0;">
+												<span class="fontSize13">同意并接受</span>
+												<span class="orangeCol fontSize12">《法律声明及服务条款》</span>
+										</div>
+										<div style="float: right;margin-bottom: 20px;">
+											
+										
+											<input type="button" class="btn btn-primary nextbtn" value="提交发布"/>
+										</div>
+										
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+						
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

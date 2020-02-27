@@ -1,0 +1,519 @@
+﻿@charset:"utf-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+body{
+/*-moz-user-select:none;火狐
+-webkit-user-select:none;webkit浏览器
+-ms-user-select:none;IE10
+-khtml-user-select:none;早期浏览器
+user-select:none;*/
+font-size:14px;
+font-family: "Microsoft yahei";
+}
+i{
+	font-style: normal;
+}
+input{
+	outline:none;
+	border:none;
+}
+a{
+	text-decoration: none;
+	color:#666;
+}
+li{
+	list-style: none;
+}
+img{
+	border:none;
+}
+/*去除input后面的×*/
+input::-ms-clear,input -ms-clear {
+	display: none;
+}
+table{
+	border-collapse: collapse;
+    border-spacing: 0;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.clearfloat:after{
+	display:block;
+	clear:both;
+	content:"";
+	visibility:hidden;
+	height:0
+} 
+.clearfloat{
+	zoom:1
+} 
+.relave{
+	position:relative;
+	left:0;
+	top:0;
+	
+}
+.asote{
+	position:absolute;
+}
+.fontSize{
+	font-size:14px;
+	color:#302c29;
+}
+
+body{
+	background:#f5f5f5 !important;
+	color:#777776;
+}
+.content,.footer{
+	width:1190px;
+	margin:0  auto;
+}
+.content{
+	margin-top:6px;
+}
+
+/*顶部流程图*/
+.one_workflow{
+	height:42px;
+	padding-top:58px;
+	width:100%;
+	background:#fff;
+	border-bottom:1px solid #dce0e0;
+}
+.workflow{
+	width:498px;
+	height:4px;
+	padding:3px 0;
+	margin:0 auto;
+	background:#dce0e0;
+}
+.workflow b{
+	position:absolute;
+	font-size:14px;
+	line-height:18px;
+	top:-40px;
+}
+.workflow1{
+	left:-26px;
+}
+.workflow2{
+	left:142px;
+}
+.workflow3{
+	left:302px;
+}
+.workflow4{
+	right:-26px;
+}
+.workflow span{
+	position: absolute;
+	width:36px;
+	height:36px;
+	border-radius: 20px;
+	border:1px solid #d9dcdd;
+	background:#dce0e0;
+	top:-13px;
+}
+.workflow1_1{
+	left:-18px;
+}
+.workflow1_2{
+	left:148px;
+}
+.workflow1_3{
+	left:314px;
+}
+.workflow1_4{
+	right:-18px;
+}
+.workflow span a{
+	position:relative;
+	display:block;
+	margin:3px 3px;
+	width:30px;
+	height:30px;
+	text-align: center;
+	line-height:30px;
+	border-radius: 16px;
+	font-size:18px;
+	color:#fff;
+	z-index:3;
+	
+}
+.workflow span .duigo{
+	background-image:url(../../Images/bj2.png);
+	background-repeat: no-repeat;
+	background-position:-126px 7px;
+}
+.progress{
+	height:4px;
+	width:33.333%;
+	background:#22bb61;
+	position:relative;
+	z-index:2;
+}
+.progress_2{
+	width:66.666% !important;
+}
+.progress_3{
+	width:99.999% !important;
+}
+.a_after{
+	background-color:#22bb61;
+}
+.min_h{
+	min-height:600px;
+}
+
+/*入住人信息*/
+.cnt1 .marTop{
+	margin-top:-10px;
+}/*
+.check_in{
+	width:712px;
+
+}*/
+.td_div_1{
+	width:124px;
+	padding-left:8px;
+}
+.tr1_1 td{
+	padding-left:8px;
+}
+.pub_ruz .check_in1 .tab_in{
+	margin-bottom:14px;
+}
+.tab_in input{
+	margin-left:6px;
+	width:88px;
+}
+.tr1_1 .pd_20{
+	padding-left:20px;
+}
+.td_div_2{
+	width:122px;
+}
+.td_div_3{
+	width:206px;
+}
+.td_div_4{
+	width:124px;
+}
+.tab_in .td3 .td_div_5 {
+	width:74px;
+	text-align: center;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.td_div_5:hover span{
+	color:#ff7043;
+	border-bottom-color:#ff7043;
+}
+.td_div_5 span{
+	display:inline-block;
+	text-align:center;
+	border-bottom:1px dashed #777776;
+	line-height: 16px;
+	height:16px;
+}
+/*入住人下拉菜单*/
+.pd_n{
+	padding-left:0 !important;
+}
+.in_tab,.dianj_tab{
+	height:24px;
+}
+.tab_in .in_tab{
+	margin:0 6px;
+	width:84px;
+	font-size:14px;
+	line-height: 24px;
+	color:#322c27;
+	padding-left:10px;
+	padding-right:20px;
+	height:24px;
+}
+.tab_in .in_tab i{
+	display:block;
+	display:block;
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+}
+.tab_in .dingw_tab{
+	top:10px !important;
+}
+.people_tab{
+	top:24px !important;
+	width:114px !important;
+}
+.tab_in .people_tab li {
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 24px !important;
+    color: #6e6e6e;
+    cursor: pointer;
+}
+.tab_in .tab_in .td2_1_sfzh input{
+	width:166px;
+	padding-left:3px;
+	padding-right:3px;
+}
+.tab_in .shenfz{
+	width:190px;
+	padding:2px 6px;
+	margin-left:6px;
+}
+/*证件号码输入错误时显示内容*/
+.input_h{
+	border:1px solid #ff5d51 !important;
+}
+.yout{
+	display:none;
+	width:176px;
+	background:#fff;
+	border:1px solid #c1bcbc;
+	line-height: 24px;
+	color:#ff5d51;
+	padding-left:26px;
+	margin-left:6px;
+	left:0;
+	top:33px;
+	z-index:198;
+}
+.yout span{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    left:8px;
+    top:5px;
+    background: url(../../Images/bj2.png) no-repeat;
+    background-position: -35px -49px;
+}
+/*添加入住人数按钮*/
+.check_in1 .insurance_xix1{
+	width:600px;
+}
+.add_peop{
+	float:right;
+}
+.sub_ruz{
+	display:inline-block;
+	text-align: center;
+	height: 24px;
+	font-size: 14px;
+	margin-right:10px;
+	line-height:24px;
+	border:1px solid #c1bcbc;
+	cursor:pointer;
+	padding:0 10px;
+}
+/*保存按钮不可用*/
+.no_sub{
+	color:#bdbdbd;
+}
+/*保存按钮可用*/
+.on_sub{
+	background:#22bb61;
+	color:#fff;
+}
+.add_btn{
+	bottom:6px;
+	right:10px;
+	cursor:pointer;
+	color:#22bb61;
+	margin-top:6px;
+	line-height:22px;
+}
+
+/*超出的下拉菜单*/
+
+.overXl{
+	height:213px;
+	overflow:auto;
+}
+.overXl li{
+	display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right:10px;
+}
+/*入住人信息*/
+.ruzhu_par .content{
+	border-top:1px solid #dce0e0;
+	border-bottom: 1px solid #dce0e0;
+}
+.pub_ruz{
+	padding-left:144px !important;
+	border-top:none !important;
+}
+.ruz_tis{
+	padding-top:4px;
+	
+}
+.ruz_tis strong{
+	font-size:18px;
+	font-weight: normal;
+	color:#322c27;
+}
+.tab_in_sure{
+	margin-top:10px;
+}
+.tab_in_sure tr td div{
+	text-align: center;;
+}
+.tr1_1_1 td{
+	padding-left:0 !important;
+}
+.td_div_5{
+	width:170px;
+}
+.td_div_6{
+	width:162px;
+}
+.td_div_7{
+	width:218px;
+}
+.td_div_8{
+	width:164px;
+}
+.pb_20{
+	padding-bottom:20px;
+}
+/*app下载 start*/
+.order_head_pop{
+	display:none;
+	text-align:center;
+	background:#fff;
+	border:1px solid #e0e1e6;
+	padding:3px 9px 0;
+	width:200px;
+	height:auto;
+	position:absolute;
+	left:0;
+	top:48px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.order_head_pop h4{
+	font-size:12px;
+	line-height:16px;
+	margin:5px 0;
+	color:#ff5d51;
+	font-weight:normal;
+}
+.App_download span{
+	width:18px;
+	height:18px;
+	right:0;
+	top:17px;
+	background:url(../Images/pub_erwm.png) no-repeat;
+	background-position:2px 1px;
+}
+.APP_li{
+	width:100px;
+	text-align:center;
+}
+.erwm_order li img{
+	display:block;
+	margin:0 auto;
+}
+.erwm_order li p{
+	text-align: center;
+	color:#403a35;
+	display:block;
+	font-size:12px;
+	line-height:16px;
+	margin:5px 0;
+}
+	.App_download{
+		position:relative;
+		left:0;
+		top:0;
+		margin-top:52px;
+		margin-left:36px;
+		padding:14px 20px 14px 0;
+	}
+	.App_download a{
+		line-height: 20px;
+		color:#ff5d51;
+	}
+	.tri_rig{
+		position:absolute;
+		width:0;
+		height:0;
+		border-width:0 8px 11px; 
+		border-color:transparent transparent #dce0e0 transparent; 
+		border-style:dashed dashed solid dashed; 
+		overflow:hidden; 
+		top:-11px; 
+		left:10px;
+	}
+	.tri_rig_b{
+		position:absolute;
+		width:0; 
+		height:0; 
+		border-width:0 8px 11px; 
+		border-color:transparent transparent #fff transparent; 
+		border-style:dashed dashed solid dashed; 
+		overflow:hidden; 
+		top:-9px; 
+		left:10px;
+	}
+	.td_div_5{
+	width:106px;
+	}
+	.td_div_6{
+		width:144px;
+	}
+	.td_div_7{
+		width:184px;
+	}
+	.td_div_8{
+		width:120px;
+	}
+	.pb_20{
+		padding-bottom:20px;
+	}
+	.tab_in_add .td_div_1{
+		width:74px;
+	}
+	.tab_in_add input{
+		width:56px;
+	}
+	.tab_in_add .td_div_2{
+		width:100px;
+	}
+	.tab_in_add .in_tab{
+		width:68px;
+	}
+	.tab_in_add .people_tab {
+	    width: 98px !important;
+	}
+	.tab_in_add input.date_birth{
+		width:88px;
+	}
+	.tab_in_add .td3 .td_div_5{
+		width:42px;
+	}
+	.tab_in_add .td_div_4 {
+	    width: 90px;
+	}
+	.tab_in_add .sex{
+		width:48px;
+	}
+	.tab_in_add .sex ul.people_tab{
+		width:78px !important;
+	}
+	.tab_in_add .td_div_4_sex{
+		width:80px;
+	}
+/*app下载 end*/

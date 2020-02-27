@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>上房2</title>
+
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+	</head>
+
+	<body>
+		<div class="content display_flex">
+
+			<div class="con_left">
+				<div class="con_line"></div>
+				<ul class="con_ul" id="main1">
+					<li>
+						<a href="tujia_addHourse1.html" class="addHourse1" target="addHourse">
+							<div class="left_icon left_icon1"></div>
+							<span class="con_ul_span">房屋位置</span>
+							<i class="left_sel"></i>
+							
+						</a>
+						<i class="con_ul_after"></i>
+					</li>
+					<li>
+						<a href="tujia_addHourse2.html" class="addHourse2" target="addHourse">
+							<div class="left_icon left_icon2"></div>
+							<span class="con_ul_span">房屋详情</span>
+							<i class="left_sel"></i>
+						</a>
+					</li>
+					<li>
+						<a href="tujia_addHourse3.html" class="addHourse3" target="addHourse">
+							<div class="left_icon left_icon3"></div>
+							<span class="con_ul_span">房屋描述</span>
+							<i class="left_sel"></i>
+						</a>
+					</li>
+					<li>
+						<a href="tujia_addHourse4.html" class="addHourse4" target="addHourse">
+							<div class="left_icon left_icon4"></div>
+							<span class="con_ul_span">设施服务</span>
+							<i class="left_sel"></i>
+						</a>
+
+					</li>
+					<li>
+
+						<a href="tujia_addHourse5.html" class="addHourse5" target="addHourse">
+							<div class="left_icon left_icon5"></div>
+							<span class="con_ul_span">入住规则</span>
+							<i class="left_sel"></i>
+						</a>
+
+					</li>
+					<li>
+
+						<a href="tujia_addHourse6.html" class="addHourse6" target="addHourse">
+							<div class="left_icon left_icon7"></div>
+							<span class="con_ul_span">房屋照片</span>
+							<i class="left_sel"></i>
+						</a>
+
+					</li>
+					<li>
+
+						<a href="tujia_addHourse7.html" class="addHourse7" target="addHourse">
+							<div class="left_icon left_icon6"></div>
+							<span class="con_ul_span">价格 </span>
+							<i class="left_sel"></i>
+						</a>
+
+					</li>
+					<li>
+						<a href="tujia_addHourse8.html" class="addHourse8" target="addHourse">
+							<div class="left_icon left_icon8"></div>
+							<span class="con_ul_span">身份验证</span>
+							<i class="left_sel"></i>
+						</a>
+					</li>
+				</ul>
+				<div class="con_step">还差7步</div>
+			</div>
+
+			<!--右侧内容-->
+			<div>
+				<iframe src="" class="addHourse" width="960" height="1800" name="addHourse" frameborder="0" scrolling="no"></iframe>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$("body").on("click",".con_ul",function(){
+				var headli=$(this).children("a");
+				$(".con_ul li:first-child").css({"background":"#fff"});
+				$(headli).css({"background":"#f8f8f8"});
+			})
+			var addHourse_id=undefined;
+			function addHourse_ids(id){
+				$(".addHourse").attr("src","tujia_addHourse1.html?haiid="+id);
+				$(".addHourse1").attr("href","tujia_addHourse1.html?haiid="+id);
+				$(".addHourse2").attr("href","tujia_addHourse2.html?haiid="+id);
+				$(".addHourse3").attr("href","tujia_addHourse3.html?haiid="+id);
+				$(".addHourse4").attr("href","tujia_addHourse4.html?haiid="+id);
+				$(".addHourse5").attr("href","tujia_addHourse5.html?haiid="+id);
+				$(".addHourse6").attr("href","tujia_addHourse6.html?haiid="+id);
+				$(".addHourse7").attr("href","tujia_addHourse7.html?haiid="+id);
+				$(".addHourse8").attr("href","tujia_addHourse8.html?haiid="+id);
+			}
+			$(function(){
+				if(addHourse_id!=undefined){
+					
+				}else{
+					$(".addHourse").attr("src","tujia_addHourse1.html?haiid="+GetRequest("haiid"));
+					$(".addHourse1").attr("href","tujia_addHourse1.html?haiid="+GetRequest("haiid"));
+					$(".addHourse2").attr("href","tujia_addHourse2.html?haiid="+GetRequest("haiid"));
+					$(".addHourse3").attr("href","tujia_addHourse3.html?haiid="+GetRequest("haiid"));
+					$(".addHourse4").attr("href","tujia_addHourse4.html?haiid="+GetRequest("haiid"));
+					$(".addHourse5").attr("href","tujia_addHourse5.html?haiid="+GetRequest("haiid"));
+					$(".addHourse6").attr("href","tujia_addHourse6.html?haiid="+GetRequest("haiid"));
+					$(".addHourse7").attr("href","tujia_addHourse7.html?haiid="+GetRequest("haiid"));
+					$(".addHourse8").attr("href","tujia_addHourse8.html?haiid="+GetRequest("haiid"));
+				}
+			})
+			
+			 //获取id
+		    function GetRequest(s) {
+		        var url = location.search; 		//获取url中"?"符后的字串
+		        var theRequest = new Object();
+		
+		        if (url.indexOf("?") != -1) {
+		            var str = url.substr(1);
+		            strs = str.split("&");
+		            for (var i = 0; i < strs.length; i++) {
+		                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+		            }
+		        }
+		        if (s) {
+		            return theRequest[s];
+		        }
+		        return theRequest;
+		    }
+		</script>
+	</body>
+
+</html>

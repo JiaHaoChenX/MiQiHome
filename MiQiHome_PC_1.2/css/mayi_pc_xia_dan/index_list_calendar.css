@@ -1,0 +1,48 @@
+﻿@charset "utf-8";
+/** 日历组件*/
+.f-text{ border:none; background:none;}
+.calendar-bounding-box{position:relative;color:#322c27;font-size:14px;z-index:100000000;}
+.calendar-bounding-box .container{background-color:#FFF;zoom:1;border:1px solid #ccc;}
+.calendar-bounding-box iframe{position:absolute;top:0;left:0;z-index:-1;border-width:0;}
+.calendar-bounding-box .message-box{position:relative;z-index:1;margin-bottom:-1px;padding:5px 10px;line-height:19px;border:1px solid #FF8080;background-color:#FFF2F2;display:none;zoom:0;text-align:left;}
+.calendar-bounding-box .content-box{position:relative;zoom:1;padding:0px 0px 25px 0px;border:1px;border-color:#85BEE5 #3485C0 #3485C0 #85BEE5;letter-spacing:-0.31em;*letter-spacing:normal;word-spacing:-0.43em; }
+.calendar-bounding-box .content-box .arrow span{position:absolute;top:19px;z-index:9;width:20px;height:38px;cursor:pointer;margin-top:-19px;text-indent:-99999px;background:#FFF;}
+.calendar-bounding-box .content-box .arrow span.prev-btn{left:10px;background:url(../Images/cal_icon_left_on.png) no-repeat;}
+.calendar-bounding-box .content-box .arrow span.next-btn{right:10px;background:url(../Images/cal_icon_right_on.png) no-repeat;}
+.calendar-bounding-box .content-box .arrow span.prev-btn-disabled{left:10px;cursor:default;background:url(../Images/cal_icon_left_none.png) no-repeat;}
+.calendar-bounding-box .content-box .arrow span.next-btn-disabled{right:10px;cursor:default;background:url(../Images/cal_icon_right_none.png) no-repeat;background: none;}
+.calendar-bounding-box .content-box .inner{position:relative;background-color:#FFF;display:inline-block;padding:0px;zoom:1;*display:inline;letter-spacing:normal;word-spacing:normal;vertical-align:top;}
+.calendar-bounding-box .content-box .inner h4{margin:0;padding:0;font-size:14px;line-height:40px;text-align:center;border-bottom:1px solid #E4E4E4;color:#322c27;font-weight: bold}
+.calendar-bounding-box .content-box .inner h4 select{font:12px/1.5 Arial;margin:0 5px;}
+.calendar-bounding-box .content-box .inner table{border-spacing:0;border-collapse:collapse;padding:0 10px;display:inline-block;box-sizing:border-box;width:260px}
+.calendar-bounding-box .content-box .inner table th{height:25px;}
+.calendar-bounding-box .content-box .inner table td{padding:0;width:32px;height:32px;border:2px solid #fff;text-align:center;}
+.calendar-bounding-box td a{width:32px;height:32px;display:block;color:#322c27;line-height:32px;text-decoration:none;font-weight:bold;}
+.calendar-bounding-box td.disabled a{color:#DCDCDC!important;background-color:transparent!important;}
+.calendar-bounding-box td.disabled a:hover{color:#fff;cursor:default; background:#ffa300;}
+.calendar-bounding-box td a:hover,
+.calendar-bounding-box td.start-date a,
+.calendar-bounding-box td.end-date a,
+.calendar-bounding-box td.end-date a:hover,
+.calendar-bounding-box td.selected-date a,
+.calendar-bounding-box td.selected-range a:hover,
+.calendar-bounding-box-style td a:hover,
+.calendar-bounding-box-style td.end-date a:hover,
+.calendar-bounding-box-style td.start-date a:hover,
+.calendar-bounding-box-style td.selected-range a:hover,
+.calendar-bounding-box-style td.hover a,
+.calendar-bounding-box td.selected-range a{background-color:#00c670;color:#fff;}
+.calendar-bounding-box .hidden{display:none;zoom:0;}
+.calendar-bounding-box .visible{display:block;zoom:1;}
+.calendar-input-wrap{position:relative;display:inline-block;zoom:1;*display:inline;}
+.calendar-input-wrap span{position:absolute;cursor:text;top:50%;right:-20px;height:21px;color:#A1A1A1;overflow:hidden;margin-top:-11px;background:none !important;display: none}
+.calendar-input-wrap .calendar-start-icon{padding-right:25px;cursor:pointer;}
+.calendar-input-wrap .calendar-end-icon{padding-right:25px;cursor:pointer;}
+
+.calendar-bounding-box td .today {color:#22bb62;}
+.tit{ margin-left:10px; line-height:40px; height:40px; border:none;}
+div .close-btn{position:absolute;bottom:0px;color: #959ea7;clear: both;cursor: pointer;width: 65px;letter-spacing:0px;word-spacing:0px;height:25px;left:15px;}
+.calendar-bounding-box .content-box .inner table th{font-weight:normal;}
+.calendar-bounding-box .content-box .inner table th.weekend{color:#ff7043;}
+.calendar-bounding-box td.start-date a{background:url(../Images/start_date.png) no-repeat;background-size:32px 32px;}
+.calendar-bounding-box td.selected-date a,.calendar-bounding-box td.end-date a{background:url(../Images/end_date.png) no-repeat;background-size:32px 32px;}

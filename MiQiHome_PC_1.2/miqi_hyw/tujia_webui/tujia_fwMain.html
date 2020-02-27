@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>上房</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<script src="../js/tujia.js"></script>
+		<script src="../../js/public_js/utils_hyw.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<!--biggest div-->
+		<div>
+			<!--head-->
+			<header class="head">
+				<div class="head_Margin">
+					<div class="" style="display: flex;justify-content:space-between;">
+						<div style="float: left;">
+							<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/mqhouse/index.html" style="color: white;"><span class="g_merchant" style="left: 100px;font-size: 20px;">妙妙屋管家</span></a>
+							<span class="g_merchant">【妙妙屋房东】<span class="uPhone">190119094011</span></span>
+						</div>
+						<div style="margin-top: 3px;float: right;" class="head_right">
+							<ul style="float: left;" class="floor_header_ul">
+								<li id="drop_li">
+									<span class="icon icon_s icon_user"></span>
+									<a class="head_right_a" id="user_funtion"><span class="uPhone">15089418450</span>
+										<div class="drop border" id="drops" style="display: none;">
+											<!--<a href="tujia_personal_data.html" class="drop_a" target="iframecontent">个人资料</a>-->
+											<!--<a href="tujia_edit_password.html" class="drop_a" target="iframecontent">修改密码</a>-->
+											<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html" class="drop_a">切换到游客</a>
+											<a href="https://passport.tujia.com/Landlord/Login?returnUrl=https%3A%2F%2Fguanjia.tujia.com%2Fcreateunithouse%3FuncompletedStepIndex%3D7%26houseUnitId%3D5c428246fbfa163453475145" class="drop_a">退出</a>
+										</div>
+									</a>
+								</li>
+								<li>
+									<span class="icon icon_s icon_shang"></span>
+									<a class="head_right_a" href="tujia_fwGuanLi.html" target="iframecontent" style="color: white;">房东管理</a>
+								</li>
+								<li>
+									<span class="icon icon_s icon_fdong"></span>
+									<a class="head_right_a" href="https://providereditor.tujia.com/edit-web/menu/landlordguideindex">房东指引</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+			<iframe style="margin: 0;" src="tujia_fwGuanLi.html" name="iframecontent" width="1349" height="1800" frameborder="0" scrolling="no" id="iframecontent"></iframe>
+			<!--右侧固定-->
+			<section class="">
+
+				<ul class="tool_li tool_fixed">
+					<li>
+						<i class="tool_icon tool_icon1"></i>
+						<span class="label_text">app</span>
+					</li>
+					<li>
+						<i class="tool_icon tool_icon2"></i>
+						<span class="label_text">客服</span>
+					</li>
+					<li>
+						<i class="tool_icon tool_icon3"></i>
+						<span class="label_text">聊天</span>
+					</li>
+					<li>
+						<i class="tool_icon tool_icon4"></i>
+						<span class="label_text">通知</span>
+					</li>
+					<li id="scollTop">
+
+						<i class="tool_icon tool_icon5"></i>
+						<span class="label_text">顶部</span>
+					</li>
+				</ul>
+			</section>
+		</div>
+		<script type="text/javascript">
+			$("body").on("click", "#drop_li", function() {
+				$("#drops").toggle();
+			});
+			$("body").on("click", "#scollTop", function() {
+				$(window).scrollTop(0);
+			});
+
+			$(".tool_li li").mouseover(function() {
+				var span = $(this).children("span");
+				$(span).css("display", "block");
+				var i = $(this).children("i");
+				$(i).css({
+					"margin-top": "5px"
+				}, {
+					"background-position": "25px -144px"
+				});
+			});
+
+			$(".tool_li li").mouseout(function() {
+				var span = $(this).children("span");
+				$(span).css("display", "none");
+				var i = $(this).children("i");
+				$(i).css({
+					"margin-top": "18px"
+				});
+
+			});
+		</script>
+
+		<!--判断是否登陆-->
+		<script type="text/javascript">
+			var logon = {
+				init() {
+					logon.logon_status()
+					logon.binding();
+				},
+				logon_status() {
+					$.ajax({
+						type: "get",
+						url: "http://" + util_hyw.getIpconfig() + ":8080/UserInformation/logon_status",
+						async: false,
+						contentType: "application/json;charset=utf-8",
+						dataType: "json",
+						xhrFields: {
+							withCredentials: true
+						},
+						success: function(data) {
+							if(data != null) {
+								$(".uPhone").text(data.uPhone);
+								console.log(data)
+							} else {
+								window.location.href = "http://127.0.0.1:8020/MiQiHome_PC_1.2/mqhouse/index.html";
+							}
+						},
+						error() {
+							window.location.href = "http://127.0.0.1:8020/MiQiHome_PC_1.2/mqhouse/index.html";
+						}
+
+					});
+				},
+				binding() {}
+			}
+			logon.init();
+
+			$(function() {
+				if(util_hyw.getUrlParam("iframecontent") != "" && util_hyw.getUrlParam("iframecontent") != null) {
+					$("#iframecontent").attr("src", ""+util_hyw.getUrlParam("iframecontent")+"?iframeRight="+util_hyw.getUrlParam("iframeRight")+"")
+				}
+			})
+		</script>
+	</body>
+
+</html>

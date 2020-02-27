@@ -1,0 +1,339 @@
+<!--
+	页面：妙妙屋短租首页-按照地图查找类型。
+	起：2019年1月26日。结：2019年1月28日。
+	by：罗立一。
+-->
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>【妙妙屋短租】短租房_短租公寓_民宿_家庭旅馆_日租房-预订首选</title>
+		<meta name="baidu-site-verification" content="yjzOLunz2Q" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="applicable-device" content="pc">
+		<meta name="mobile-agent" content="format=html5;url=http://m.mayi.com" />
+		<meta name="mobile-agent" content="format=xhtml;url=http://m.mayi.com" />
+		<meta name="mobile-agent" content="format=wml;url=http://m.mayi.com" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="短租房,短租公寓,民宿,家庭旅馆,日租房" />
+		<meta name="description" content="妙妙屋短租(mayi.com)是国内领先的公寓,民宿,家庭旅馆在线短租平台,
+	    	致力于为休闲度假旅游人群提供高性价比的住宿服务,房源配备客厅厨房,可洗衣做饭,是家庭出游新选择。" />
+		<!--图标-->
+		<link rel="shortcut icon" href="img/index/logo.png" type="image/x-icon">
+		<!--样式重置 reset-->
+		<link rel="stylesheet" href="css/reset.css" />
+		<!--样式-->
+		<link rel="stylesheet" href="css/mapSelect.css" />
+		<!--layui样式-->
+		<link rel="stylesheet" href="js/layui-2.4.5/dist/css/layui.css" />
+	</head>
+
+	<body>
+		<!--最大div 用来固定宽高-->
+		<div class="index_maxContainer">
+			<!--头部-->
+			<div class="index_header">
+				<!--logo-->
+				<div class="nav index_nav line_h50">
+					<div class="logo fl f20 c_gray_dark fw600 lineht34">
+						<img src="img/select/logo.png" />
+						<span class="title">妙妙屋短租</span>
+					</div>
+					<!--右边导航栏-->
+					<ul class="fr nav-list clearfloat">
+						<li>
+							<a href="index.html">首页</a>
+						</li>
+						<li>
+							<i class="layui-icon layui-icon-cellphone"></i>
+							<a href="">客服热线</a>
+						</li>
+						<li>
+							<i class="layui-icon layui-icon-download-circle"></i>
+							<a href="">下载APP送500元大礼包</a>
+							<i class="layui-icon layui-icon-down"></i>
+						</li>
+						<li>
+							<a href="">商旅合作</a>
+						</li>
+						<li>
+							<a href="">帮助中心</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/select/default_head.png" />
+							</a>
+							<span id="yourname">yourname</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--主体部分-->
+			<div class="index_center">
+				<!--主体部分容器-->
+				<div class="index_center_container">
+					<!--中间顶部-->
+					<div class="index_center_container_top">
+						<!--顶部左边-->
+						<div class="index_center_container_top_left">
+							<input type="text" placeholder="位置、标题、房东等" />
+							<i class="layui-icon layui-icon-search"></i>
+						</div>
+						<!--顶部右边-->
+						<div class="index_center_container_top_right">
+							<ul>
+								<li>
+									<input class="myplace" type="text" placeholder="北京"></input>
+								</li>
+								<li>
+									<input class="mystartday" type="text" placeholder="入住日期"></input>
+									<img src="img/mapSelect/night-count.png" />
+									<span id="myorderday">0晚</span>
+									<input class="myendday" type="text" placeholder="退房日期"></input>
+								</li>
+								<li class="normal">
+									<span class="normal_cgcolor">不限</span>
+									<i></i>
+								</li>
+								<li class="normal">
+									<span>推荐</span>
+									<i></i>
+								</li>
+								<li class="normal">
+									<span>位置</span>
+									<i></i>
+								</li>
+								<li class="normal">
+									<span>价格</span>
+									<i></i>
+								</li>
+								<li class="normal">
+									<span>户型</span>
+									<i></i>
+								</li>
+								<li class="normal surprice">
+									<span>特色房型</span>
+									<i></i>
+								</li>
+								<li class="normal">
+									<span>设施</span>
+									<i></i>
+								</li>
+								<li class="normal_last">
+									<span class="normal_cgcolor">清空</span>
+									<span class="normal_cgcolor" style="margin-left: 10px;">去列表找房</span>
+									<i class="layui-icon layui-icon-right"></i>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--中间内容-->
+					<div class="index_center_container_content">
+						<!--中间左边-->
+						<div class="index_center_container_content_left">
+							<span id="howmuch" style="display: block;margin-top: 5px;">56800+套房屋符合条件</span>
+							<div id="sortDiv">
+								<a class="rt-on">推荐排序</a>
+								<a class="room_price_choice">价格</a>
+								<i class=""></i>
+								<a class="">评论数</a>
+								<i class="pr-arrows"></i>
+								<a class="">预定数</a>
+								<i class="pr-arrows"></i>
+							</div>
+							<!--推荐的内容-->
+							<div class="roomScroll">
+								<!--一个房子-->
+								<div class="oneroominfo">
+									<!--图片-->
+									<div class="room-img fl">
+										<img id="852299579" class="lazy lodgelazy" title="天安门  故宫 北京站 同仁  协和医院" src="//i1.mayi.com/mayi80/M74/GZ/NX/CW9VJUTZY4P2AU7P3Q64ZPAY47SUTX.jpg_566x377c.jpg" data-original="//i1.mayi.com/mayi80/M74/GZ/NX/CW9VJUTZY4P2AU7P3Q64ZPAY47SUTX.jpg_566x377c.jpg" alt="北京短租房天安门  故宫 北京站 同仁  协和医院" style="display: inline;">
+										<div class="collect_love"></div>
+										<span class="f20 c_gray_dark fw600 three">￥448</span>
+									</div>
+									<!--信息-->
+									<div class="room-detail  clearfloat fr">
+										<p>天安门 故宫 北京站 同仁 协和医院</p>
+										<p class="c_orange f14">
+											<span class="c_orange_p">5.0分</span>
+											<span class="c_orange_p">完美!</span> ·
+											<span class="mr10">76条评价</span>
+											<span class="mr10">|</span>
+											<span class="mr10">1居</span><span class="mr10">|</span>
+											<span class="mr10">成都</span>
+										</p>
+										<div class="room_intro_p">
+											<span class="biaoqian_style" style="background: rgba(255,205,76,0.25);color: #FA9A00;">速订</span>
+											<span class="biaoqian_style" style="background:#f4f4f4;">实拍</span>
+											<span class="biaoqian_style" style="background:#f4f4f4;"> 可做饭</span>
+										</div>
+									</div>
+								</div>
+
+								<!--一个房子-->
+								<div class="oneroominfo">
+									<!--图片-->
+									<div class="room-img fl">
+										<img id="852299579" class="lazy lodgelazy" title="天安门  故宫 北京站 同仁  协和医院" src="//i1.mayi.com/mayi80/M74/GZ/NX/CW9VJUTZY4P2AU7P3Q64ZPAY47SUTX.jpg_566x377c.jpg" data-original="//i1.mayi.com/mayi80/M74/GZ/NX/CW9VJUTZY4P2AU7P3Q64ZPAY47SUTX.jpg_566x377c.jpg" alt="北京短租房天安门  故宫 北京站 同仁  协和医院" style="display: inline;">
+										<div class="collect_love"></div>
+										<span class="f20 c_gray_dark fw600 three">￥448</span>
+									</div>
+									<!--信息-->
+									<div class="room-detail  clearfloat fr">
+										<p>天安门 故宫 北京站 同仁 协和医院</p>
+										<p class="c_orange f14">
+											<span class="c_orange_p">5.0分</span>
+											<span class="c_orange_p">完美!</span> ·
+											<span class="mr10">76条评价</span>
+											<span class="mr10">|</span>
+											<span class="mr10">1居</span><span class="mr10">|</span>
+											<span class="mr10">成都</span>
+										</p>
+										<div class="room_intro_p">
+											<span class="biaoqian_style" style="background: rgba(255,205,76,0.25);color: #FA9A00;">速订</span>
+											<span class="biaoqian_style" style="background:#f4f4f4;">实拍</span>
+											<span class="biaoqian_style" style="background:#f4f4f4;"> 可做饭</span>
+										</div>
+									</div>
+								</div>
+								<!--一个房子-->
+								<div class="oneroominfo">
+									<!--图片-->
+									<div class="room-img fl">
+										<img id="852299579" class="lazy lodgelazy" title="天安门  故宫 北京站 同仁  协和医院" src="//i1.mayi.com/mayi80/M74/GZ/NX/CW9VJUTZY4P2AU7P3Q64ZPAY47SUTX.jpg_566x377c.jpg" data-original="//i1.mayi.com/mayi80/M74/GZ/NX/CW9VJUTZY4P2AU7P3Q64ZPAY47SUTX.jpg_566x377c.jpg" alt="北京短租房天安门  故宫 北京站 同仁  协和医院" style="display: inline;">
+										<div class="collect_love"></div>
+										<span class="f20 c_gray_dark fw600 three">￥448</span>
+									</div>
+									<!--信息-->
+									<div class="room-detail  clearfloat fr">
+										<p>天安门 故宫 北京站 同仁 协和医院</p>
+										<p class="c_orange f14">
+											<span class="c_orange_p">5.0分</span>
+											<span class="c_orange_p">完美!</span> ·
+											<span class="mr10">76条评价</span>
+											<span class="mr10">|</span>
+											<span class="mr10">1居</span><span class="mr10">|</span>
+											<span class="mr10">成都</span>
+										</p>
+										<div class="room_intro_p">
+											<span class="biaoqian_style" style="background: rgba(255,205,76,0.25);color: #FA9A00;">速订</span>
+											<span class="biaoqian_style" style="background:#f4f4f4;">实拍</span>
+											<span class="biaoqian_style" style="background:#f4f4f4;"> 可做饭</span>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+
+							<!--轮播图-->
+							<div id="demo1"></div>
+						</div>
+						<!--中间右边-->
+						<div class="index_center_container_content_right">
+							<!-- 地图盒子 -->
+    <div id="allmap"></div>
+    <!-- 搜索显示框 -->
+    <div id="r-result">
+        地址: <input id="cityName" type="text" style="width:100px; margin-right:10px;" />
+        <input type="button" value="搜索" onclick="theLocation()" /> 经度:
+        <input type="text" id="lng" /> 纬度：
+        <input type="text" id="lat" />
+        <button onclick="submit()">提交</button>
+    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--尾部-->
+			<!--<div class="foot">
+				
+			</div>-->
+		</div>
+		<!--在线聊天-->
+		<a class="IM_btn" style="display: block;" href="javascript:;" _mayi_rp="webaround|other|online"><span class="IM_btn_span"><i style="display:none;">0</i></span>在线聊天</a>
+		<div style="" class="Online_btn">
+			<span class="border-left"></span>
+			<a href="javascript:void(0)" id="live800iconlink" _mayi_rp="room|sem_contact|message"><img border="0" onclick="qimoChatClick()" src="http://i1.mayi.com/mayi98/M99/OK/GL/5635PVPKQGH6CND3UTE6WAYHLUXAXB.jpg" id="live800icon" name="live800icon"></a>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="js/layui-2.4.5/dist/layui.js"></script>
+
+	<script>
+		layui.use('laypage', function() {
+			var laypage = layui.laypage;
+
+			//执行一个laypage实例
+			//总页数大于页码总数
+			laypage.render({
+				elem: 'demo1',
+				count: 70, //数据总数
+				jump: function(obj) {
+					console.log(obj)
+				}
+			});
+		});
+		//收藏
+		$(".oneroominfo").on("click", ".collect_love", function() {
+			if(!$(this).hasClass("collect_check_love")) {
+				$(this).addClass("collect_check_love")
+			} else {
+				$(this).removeClass("collect_check_love")
+			}
+			return false;
+		})
+	</script>
+	 <!-- js文件 -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.3&services=true"></script>
+    <!-- 页面地图js方法 -->
+    <script type="text/javascript">
+        // 在指定容器创建地图实例并设置最大最小缩放级别
+        var map = new BMap.Map("allmap", {
+            minZoom: 5,
+            maxZoom: 19
+        });
+
+        // 初始化地图，设置中心点和显示级别
+        map.centerAndZoom(new BMap.Point(121.36564, 31.22611), 19);
+
+        // 开启鼠标滚轮缩放功能，仅对PC上有效
+        map.enableScrollWheelZoom(true);
+
+        // 将控件（平移缩放控件）添加到地图上
+        map.addControl(new BMap.NavigationControl());
+
+        // 为地图增加点击事件，为input赋值
+        map.addEventListener("click", function(e) {
+            document.getElementById('lat').value = e.point.lat;
+            document.getElementById('lng').value = e.point.lng;
+
+        });
+
+        // 创建位置检索、周边检索和范围检索
+        var local = new BMap.LocalSearch(map, {
+            renderOptions: {
+                map: map
+            }
+        });
+
+        // 发起检索
+        function theLocation() {
+            var city = document.getElementById("cityName").value;
+            if (city != "") {
+                local.search(city);
+            }
+        };
+
+        // 弹出经纬度 
+        function submit() {
+            var lat = document.getElementById('lat');
+            var lng = document.getElementById('lng');
+            alert("经度：" + lng.value + "\n" + "纬度：" + lat.value);
+        };
+    </script>
+
+</html>

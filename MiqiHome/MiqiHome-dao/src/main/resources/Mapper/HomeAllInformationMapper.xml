@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    发布者：丁火钦
+    房屋全部信息表（房源表）
+-->
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="com.miqi.miqihome.dao.IHomeAllInformationDao">
+    <!--根据id查询-->
+    <select id="select_Homeallinformation" resultMap="HomeallinformationMap">
+            select * from
+			homeAllInformation hai
+			                -- 用户
+							left join userInformation 	ui on ui.uiId=hai.uiId
+							-- 房屋位置
+							left join houseSite 		hs  on hai.haiId=hs.haiId
+                            -- 房屋详细表
+							left join houseDetails 		hd on hai.haiId=hd.haiId
+								-- 床型
+                            left join houseBed 			hb on hd.hdId=hb.hdId
+							left join houseBedSize 		hbs on hb.hdsId=hbs.hdsId
+							left join houseBedType 		hbt on hbt.hbtId=hbs.hbtId
+								-- 出租方式表
+							left join rentalMode 		rm on hd.rmId=rm.rmId
+								-- 关联房屋类型
+							left join houseTypeDetails 	htd on hd.htdId=htd.htdId
+								-- 房屋类型
+                            left join houseType 		ht on ht.htId=htd.htId
+								-- 房屋景观
+                            left join houseScenery 		hsc on hsc.hcId=hd.hcId
+								-- 房屋户型【卧室、卫生间、客厅、厨房、书房、阳台】
+                            left join houseApartment 	ha on ha.haId=hd.haId
+                            -- 房屋描述
+                            left join houseDecription	hdp on hdp.haiId=hai.haiId
+                            -- 设施服务
+							left join HouseFacilitiesReflect hfr on hfr.haiId=hai.haiId
+							left join HouseFacilitiesDetails hfd on hfr.hfdId=hfd.hfdId
+                            left join HouseFacilities hf on hfd.hfId=hf.hfId
+                            -- 入住规则
+                            left join homeRules hr on hr.haiId=hai.haiId
+							left join homeRequirementReflect hrr on hrr.hrId=hr.hrId
+							left join homeRequirement 	hre on hrr.hreId=hre.hreId
+							left join receptionTime 	rt on rt.hrId=hr.hrId
+                            -- 房屋照片
+							left join pictureType pt on pt.haiId=hai.haiId
+							left join picture p  on p.ptId=pt.ptId
+                            -- 价格设置
+                            left join homePrice hp on hp.hpId=hai.haiId
+                            left join continuousDiscount cd on hp.hpId=cd.hpId
+                            -- 身份验真
+                            left join identityVerification iv on iv.haiId=hai.haiId
+            where hai.haiId=#{haiId};
+    </select>
+    <!--查询多个【多条件查询房源】-->
+    <select id="select_multi_HomeAllInformation" resultMap="HomeallinformationMap">
+        select distinct hai.haiId,ui.uiId,uNickName,upicture,hpPrice,hdpName,haBedroom,hdLiveNumber,hpPrice,hsLongitude,hsLatitude,hsCity from
+        homeAllInformation hai
+        -- 用户
+        left join userInformation 	ui on ui.uiId=hai.uiId
+        -- 房屋位置
+        left join houseSite 		hs  on hai.haiId=hs.haiId
+        -- 房屋详细表
+        left join houseDetails 		hd on hai.haiId=hd.haiId
+        -- 床型
+        left join houseBed 			hb on hd.hdId=hb.hdId
+        left join houseBedSize 		hbs on hb.hdsId=hbs.hdsId
+        left join houseBedType 		hbt on hbt.hbtId=hbs.hbtId
+        -- 出租方式表
+        left join rentalMode 		rm on hd.rmId=rm.rmId
+        -- 关联房屋类型
+        left join houseTypeDetails 	htd on hd.htdId=htd.htdId
+        -- 房屋类型
+        left join houseType 		ht on ht.htId=htd.htId
+        -- 房屋景观
+        left join houseScenery 		hsc on hsc.hcId=hd.hcId
+        -- 房屋户型【卧室、卫生间、客厅、厨房、书房、阳台】
+        left join houseApartment 	ha on ha.haId=hd.haId
+        -- 房屋描述
+        left join houseDecription	hdp on hdp.haiId=hai.haiId
+        -- 设施服务
+        left join HouseFacilitiesReflect hfr on hfr.haiId=hai.haiId
+        left join HouseFacilitiesDetails hfd on hfr.hfdId=hfd.hfdId
+        left join HouseFacilities hf on hfd.hfId=hf.hfId
+        -- 入住规则
+        left join homeRules hr on hr.haiId=hai.haiId
+        left join homeRequirementReflect hrr on hrr.hrId=hr.hrId
+        left join homeRequirement 	hre on hrr.hreId=hre.hreId
+        left join receptionTime 	rt on rt.hrId=hr.hrId
+        -- 房屋照片
+        left join pictureType pt on pt.haiId=hai.haiId
+        left join picture p  on p.ptId=pt.ptId
+        -- 价格设置
+        left join homePrice hp on hp.hpId=hai.haiId
+        left join continuousDiscount cd on hp.hpId=cd.hpId
+        -- 身份验真
+        left join identityVerification iv on iv.haiId=hai.haiId
+        -- 评论数
+        left join evaluate r on r.uiId=hai.uiId
+        -- 预定
+        left join reserve rv on rv.haiId=hai.uiId
+        <where>
+            <if test="haiId!='' and haiId!=null">  <!--房源编号-->
+                and hai.haiId=#{haiId}
+            </if>
+            <if test="htName !='' and htName !=null">  <!--房屋类型【特色房型】-->
+                and ht.htName=#{htName}
+            </if>
+            <if test="htdName !='' and htdName !=null">  <!--房屋类型详细名称-->
+                and htd.htdName=#{htdName}
+            </if>
+            <if test="hsProvince !='' and hsProvince !=null">  <!--目的地【位置{省}】-->
+                and hs.hsProvince like concat(concat("%",#{hsProvince}),"%")
+            </if>
+            <if test="hsCity !='' and hsCity !=null">  <!--目的地【位置{市}】-->
+                and hs.hsCity like concat(concat("%",#{hsCity}),"%")
+            </if>
+            <if test="hsArea!='' and hsArea!=null">  <!--目的地【位置{区}】-->
+                and hs.hsArea like concat(concat("%",#{hsArea}),"%")
+            </if>
+            <if test="hdLiveNumber !='' and hdLiveNumber !=null">  <!--入住人数-->
+                and hd.hdLiveNumber=#{hdLiveNumber}
+            </if>
+            <if test="hSite!='' and hSite!=null">  <!--关键词【位置、标题、房东】-->
+                and
+                (
+                -- 位置
+                hs.hsSite like concat(concat("%",#{hSite}),"%")		            -- 地址
+                or hs.hsSupplementary like concat(concat("%",#{hSite}),"%")	    -- 补充说明
+                -- 标题
+                or	hdp.hdpName like concat(concat("%",#{hSite}),"%")		    -- 标题
+                -- 房东
+                or ui.uNickName like concat(concat("%",#{hSite}),"%")			-- 用户名???
+                )
+            </if>
+            <if test="hsSite !='' and hsSite !=null">  <!--位置-->
+                and
+                (
+                    -- 位置
+                    hs.hsSite like concat(concat("%",#{hsSite}),"%")		            -- 地址
+                    or hs.hsSupplementary like concat(concat("%",#{hsSite}),"%")	    -- 补充说明
+                )
+            </if>
+            <if test="haBedroom !='' and haBedroom !=null">  <!--户型-->
+                and ha.haBedroom=#{haBedroom}
+            </if>
+            <!--价格-->
+            <if test="hpPrice1 &gt;=0 and hpPrice2 &lt;=1000 and hpPrice1 !=null and hpPrice1 !='' and hpPrice2 !=null and hpPrice2 !=''">
+                and (hpPrice &gt;=#{hpPrice1} and hpPrice &lt;=#{hpPrice2})
+            </if>
+            <if test="hpPrice2 &gt;1000 and hpPrice2 !=null and hpPrice2 !=''">
+                and hpPrice &gt;=#{hpPrice1}
+            </if>
+            <if test="hfdId !='' and hfdId !=null">  <!--设施-->
+                and hfr.hfdId in
+                <foreach collection="hfdId" item="hfdId" open="(" separator="," close=")">
+                    #{hfdId}
+                </foreach>
+            </if>
+        </where>
+        <if test="sort!='' and sort!=null and sort>0">
+            -- 按价格降序
+            <if test="sort==1">
+                order by hpPrice desc
+            </if>
+            -- 按价格升序
+            <if test="sort==2">
+                order by hpPrice
+            </if>
+            -- 根据评论排行
+            <if test="sort==3">
+                GROUP BY hai.haiId
+                ORDER BY count(eId) DESC
+            </if>
+            -- 根据预定数排行
+            <if test="sort==4">
+                GROUP BY hai.haiId
+                ORDER BY count(rvId) DESC
+            </if>
+        </if>
+        limit #{pages},#{limit}
+    </select>
+    <!--多条件查询数量-->
+    <select id="select_HomeAllInformation_count" resultType="int">
+        select count(distinct uNickName) from
+        homeAllInformation hai
+        -- 用户
+        left join userInformation 	ui on ui.uiId=hai.uiId
+        -- 房屋位置
+        left join houseSite 		hs  on hai.haiId=hs.haiId
+        -- 房屋详细表
+        left join houseDetails 		hd on hai.haiId=hd.haiId
+        -- 床型
+        left join houseBed 			hb on hd.hdId=hb.hdId
+        left join houseBedSize 		hbs on hb.hdsId=hbs.hdsId
+        left join houseBedType 		hbt on hbt.hbtId=hbs.hbtId
+        -- 出租方式表
+        left join rentalMode 		rm on hd.rmId=rm.rmId
+        -- 关联房屋类型
+        left join houseTypeDetails 	htd on hd.htdId=htd.htdId
+        -- 房屋类型
+        left join houseType 		ht on ht.htId=htd.htId
+        -- 房屋景观
+        left join houseScenery 		hsc on hsc.hcId=hd.hcId
+        -- 房屋户型【卧室、卫生间、客厅、厨房、书房、阳台】
+        left join houseApartment 	ha on ha.haId=hd.haId
+        -- 房屋描述
+        left join houseDecription	hdp on hdp.haiId=hai.haiId
+        -- 设施服务
+        left join HouseFacilitiesReflect hfr on hfr.haiId=hai.haiId
+        left join HouseFacilitiesDetails hfd on hfr.hfdId=hfd.hfdId
+        left join HouseFacilities hf on hfd.hfId=hf.hfId
+        -- 入住规则
+        left join homeRules hr on hr.haiId=hai.haiId
+        left join homeRequirementReflect hrr on hrr.hrId=hr.hrId
+        left join homeRequirement 	hre on hrr.hreId=hre.hreId
+        left join receptionTime 	rt on rt.hrId=hr.hrId
+        -- 房屋照片
+        left join pictureType pt on pt.haiId=hai.haiId
+        left join picture p  on p.ptId=pt.ptId
+        -- 价格设置
+        left join homePrice hp on hp.hpId=hai.haiId
+        left join continuousDiscount cd on hp.hpId=cd.hpId
+        -- 身份验真
+        left join identityVerification iv on iv.haiId=hai.haiId
+        -- 评论数
+        left join evaluate r on r.uiId=hai.uiId
+        -- 预定
+        left join reserve rv on rv.haiId=hai.uiId
+        <where>
+            <if test="haiId!='' and haiId!=null">  <!--房源编号-->
+                and hai.haiId=#{haiId}
+            </if>
+            <if test="htName !='' and htName !=null">  <!--房屋类型【特色房型】-->
+                and ht.htName=#{htName}
+            </if>
+            <if test="htdName !='' and htdName !=null">  <!--房屋类型详细名称-->
+                and htd.htdName=#{htdName}
+            </if>
+            <if test="hsProvince !='' and hsProvince !=null">  <!--目的地【位置{省}】-->
+                and hs.hsProvince like concat(concat("%",#{hsProvince}),"%")
+            </if>
+            <if test="hsCity !='' and hsCity !=null">  <!--目的地【位置{市}】-->
+                and hs.hsCity like concat(concat("%",#{hsCity}),"%")
+            </if>
+            <if test="hsArea!='' and hsArea!=null">  <!--目的地【位置{区}】-->
+                and hs.hsArea like concat(concat("%",#{hsArea}),"%")
+            </if>
+            <if test="hdLiveNumber !='' and hdLiveNumber !=null">  <!--入住人数-->
+                and hd.hdLiveNumber=#{hdLiveNumber}
+            </if>
+            <if test="hSite!='' and hSite!=null">  <!--关键词【位置、标题、房东】-->
+                and
+                (
+                -- 位置
+                hs.hsSite like concat(concat("%",#{hSite}),"%")		            -- 地址
+                or hs.hsSupplementary like concat(concat("%",#{hSite}),"%")	    -- 补充说明
+                -- 标题
+                or	hdp.hdpName like concat(concat("%",#{hSite}),"%")		    -- 标题
+                -- 房东
+                or ui.uNickName like concat(concat("%",#{hSite}),"%")			-- 用户名???
+                )
+            </if>
+            <if test="hsSite !='' and hsSite !=null">  <!--位置-->
+                and
+                (
+                -- 位置
+                hs.hsSite like concat(concat("%",#{hsSite}),"%")		            -- 地址
+                or hs.hsSupplementary like concat(concat("%",#{hsSite}),"%")	    -- 补充说明
+                )
+            </if>
+            <if test="haBedroom !='' and haBedroom !=null">  <!--户型-->
+                and ha.haBedroom=#{haBedroom}
+            </if>
+            <!--价格-->
+            <if test="hpPrice1 &gt;=0 and hpPrice2 &lt;=1000 and hpPrice1 !=null and hpPrice1 !='' and hpPrice2 !=null and hpPrice2 !=''">
+                and (hpPrice &gt;=#{hpPrice1} and hpPrice &lt;=#{hpPrice2})
+            </if>
+            <if test="hpPrice2 &gt;1000 and hpPrice2 !=null and hpPrice2 !=''">
+                and hpPrice &gt;=#{hpPrice1}
+            </if>
+            <if test="hfdId !='' and hfdId !=null">  <!--设施-->
+                and hfr.hfdId in
+                <foreach collection="hfdId" item="hfdId" open="(" separator="," close=")">
+                    #{hfdId}
+                </foreach>
+            </if>
+        </where>
+    </select>
+    <!--？？？？-->
+    <select id="select_multi_HomeAllInformation_order" resultMap="HomeallinformationMap" >
+        select distinct hai.haiId,ui.uiId,uNickName,upicture,hpPrice,hdpName,haBedroom,
+        hdLiveNumber,hpPrice,hsProvince,hsCity,hsArea,hsSite,pUrl from
+        homeAllInformation hai
+        -- 用户
+        left join userInformation 	ui on ui.uiId=hai.uiId
+        -- 房屋位置
+        left join houseSite 		hs  on hai.haiId=hs.haiId
+        -- 房屋详细表
+        left join houseDetails 		hd on hai.haiId=hd.haiId
+        -- 床型
+        left join houseBed 			hb on hd.hdId=hb.hdId
+        left join houseBedSize 		hbs on hb.hdsId=hbs.hdsId
+        left join houseBedType 		hbt on hbt.hbtId=hbs.hbtId
+        -- 出租方式表
+        left join rentalMode 		rm on hd.rmId=rm.rmId
+        -- 关联房屋类型
+        left join houseTypeDetails 	htd on hd.htdId=htd.htdId
+        -- 房屋类型
+        left join houseType 		ht on ht.htId=htd.htId
+        -- 房屋景观
+        left join houseScenery 		hsc on hsc.hcId=hd.hcId
+        -- 房屋户型【卧室、卫生间、客厅、厨房、书房、阳台】
+        left join houseApartment 	ha on ha.haId=hd.haId
+        -- 房屋描述
+        left join houseDecription	hdp on hdp.haiId=hai.haiId
+        -- 设施服务
+        left join HouseFacilitiesReflect hfr on hfr.haiId=hai.haiId
+        left join HouseFacilitiesDetails hfd on hfr.hfdId=hfd.hfdId
+        left join HouseFacilities hf on hfd.hfId=hf.hfId
+        -- 入住规则
+        left join homeRules hr on hr.haiId=hai.haiId
+        left join homeRequirementReflect hrr on hrr.hrId=hr.hrId
+        left join homeRequirement 	hre on hrr.hreId=hre.hreId
+        left join receptionTime 	rt on rt.hrId=hr.hrId
+        -- 房屋照片
+        left join pictureType pt on pt.haiId=hai.haiId
+        left join picture p  on p.ptId=pt.ptId
+        -- 价格设置
+        left join homePrice hp on hp.hpId=hai.haiId
+        left join continuousDiscount cd on hp.hpId=cd.hpId
+        -- 身份验真
+        left join identityVerification iv on iv.haiId=hai.haiId
+        -- 评论数
+        left join evaluate r on r.uiId=hai.uiId
+        -- 预定
+        left join reserve rv on rv.haiId=hai.uiId
+        <where>
+            <if test="uiId!=null and uiId gt 0">
+                 ui.uiId=#{uiId}
+            </if>
+            <if test="haiId!=null and haiId gt 0">
+                and hai.haiId=#{haiId}
+            </if>
+        </where>
+        limit 0,1;
+    </select>
+    <!--根据用户id查询该用户发布的房源-->
+    <select id="select_ui_HomeAllInformation" resultMap="HomeallinformationMap">
+           select distinct hai.haiId,ui.uiId,uNickName,upicture,hpPrice,hdpName,haBedroom,hdLiveNumber,hpPrice,hsLongitude,hsLatitude,hsCity from
+			homeAllInformation hai
+							-- 用户
+							 left join userInformation 	ui on ui.uiId=hai.uiId
+							-- 房屋位置
+							 left join houseSite 		hs  on hai.haiId=hs.haiId
+                            -- 房屋详细表
+							 left join houseDetails 		hd on hai.haiId=hd.haiId
+								-- 床型
+                             left join houseBed 			hb on hd.hdId=hb.hdId
+							 left join houseBedSize 		hbs on hb.hdsId=hbs.hdsId
+							 left join houseBedType 		hbt on hbt.hbtId=hbs.hbtId
+								-- 出租方式表
+							 left join rentalMode 		rm on hd.rmId=rm.rmId
+								-- 关联房屋类型
+							 left join houseTypeDetails 	htd on hd.htdId=htd.htdId
+								-- 房屋类型
+                             left join houseType 		ht on ht.htId=htd.htId
+								-- 房屋景观
+							 left join houseScenery 		hsc on hsc.hcId=hd.hcId
+								-- 房屋户型【卧室、卫生间、客厅、厨房、书房、阳台】
+                             left join houseApartment 	ha on ha.haId=hd.haId
+                            -- 房屋描述
+                             left join houseDecription	hdp on hdp.haiId=hai.haiId
+                            -- 设施服务
+							 left join HouseFacilitiesReflect hfr on hfr.haiId=hai.haiId
+							 left join HouseFacilitiesDetails hfd on hfr.hfdId=hfd.hfdId
+                             left join HouseFacilities hf on hfd.hfId=hf.hfId
+                            -- 入住规则
+                             left join homeRules hr on hr.haiId=hai.haiId
+							 left join homeRequirementReflect hrr on hrr.hrId=hr.hrId
+							 left join homeRequirement 	hre on hrr.hreId=hre.hreId
+							 left join receptionTime 	rt on rt.hrId=hr.hrId
+                            -- 房屋照片
+							 left join pictureType pt on pt.haiId=hai.haiId
+							 left join picture p  on p.ptId=pt.ptId
+                            -- 价格设置
+                             left join homePrice hp on hp.hpId=hai.haiId
+                             left join continuousDiscount cd on hp.hpId=cd.hpId
+                            -- 身份验真
+                             left join identityVerification iv on iv.haiId=hai.haiId
+                            -- 评论数
+                             left join evaluate r on r.uiId=hai.uiId
+                             -- 预定
+                             left join reserve rv on rv.haiId=hai.uiId
+                             where ui.uiId=#{uiId}
+    </select>
+    <!--房屋全部信息表-->
+    <resultMap id="HomeallinformationMap" type="Homeallinformation">
+        <id column="haiId" property="haiId"></id>
+        <result column="uiId" property="uiId"></result>
+        <!--用户信息表-->
+        <association property="userinformation" javaType="Userinformation">
+            <id column="uiId" property="uiId"></id>
+            <result column="uPhone" property="uPhone"></result>
+            <result column="upicture" property="upicture"></result>
+            <result column="uPassword" property="uPassword"></result>
+            <result column="upicture" property="upicture"></result>
+            <result column="uNickName" property="uNickName"></result>
+            <result column="uEmail" property="uEmail"></result>
+            <result column="uTime" property="uTime"></result>
+            <result column="uName" property="uName"></result>
+            <result column="uSex" property="uSex"></result>
+            <result column="uAge" property="uAge"></result>
+            <result column="uDocumentType" property="uDocumentType"></result>
+            <result column="uCardId" property="uCardId"></result>
+            <result column="uNation" property="uNation"></result>
+            <result column="uConstellation" property="uConstellation"></result>
+            <result column="uBloodType" property="uBloodType"></result>
+            <result column="uProvince" property="uProvince"></result>
+            <result column="uCity" property="uCity"></result>
+            <result column="uOccupation" property="uOccupation"></result>
+            <result column="uDesc" property="uDesc"></result>
+            <result column="uState" property="uState"></result>
+        </association>
+        <association property="housesite" javaType="Housesite">
+            <id column="hsId" property="hsId"></id>
+            <result column="hsCountry" property="hsCountry"></result>
+            <result column="hsProvince" property="hsProvince"></result>
+            <result column="hsCity" property="hsCity"></result>
+            <result column="hsArea" property="hsArea"></result>
+            <result column="hsSite" property="hsSite"></result>
+            <result column="hsSupplementary" property="hsSupplementary"></result>
+            <result column="hsHousenumber" property="hsHousenumber"></result>
+            <result column="hsLongitude" property="hsLongitude"></result>
+            <result column="hsLatitude" property="hsLatitude"></result>
+            <result column="haiId" property="haiId"></result>
+        </association>
+        <!--房屋详细表-->
+        <association property="housedetails" javaType="Housedetails">
+            <id column="hdId" property="hdId"></id>
+            <result column="hdArea" property="hdLiveNumber"></result>
+            <result column="hdLiveNumber" property="hdLiveNumber"></result>
+            <result column="hdHouseNumebr" property="hdHouseNumebr"></result>
+            <result column="rmId" property="rmId"></result>
+            <result column="htdId" property="htdId"></result>
+            <result column="hcId" property="hcId"></result>
+            <result column="haId" property="haId"></result>
+            <result column="haiId" property="haiId"></result>
+            <!--关联出租方式表-->
+            <association property="rentalmode" javaType="Rentalmode">
+                <id column="rmId" property="rmId"></id>
+                <result column="rmName" property="rmName"></result>
+            </association>
+            <!--关联房屋类型详细表-->
+            <association property="housetypedetails" javaType="Housetypedetails">
+                <id column="htdId" property="htdId"></id>
+                <result column="htdName" property="htdName"></result>
+                <result column="htdDese" property="htdDese"></result>
+                <result column="htId" property="htId"></result>
+                <!--关联房屋类型表-->
+                <association property="housetype" javaType="Housetype">
+                    <id column="htId" property="htId"></id>
+                    <result column="htName" property="htName"></result>
+                </association>
+            </association>
+            <!--关联房屋景观表-->
+            <association property="housescenery" javaType="Housescenery">
+                <id column="hcId" property="hcId"></id>
+                <result column="hcName" property="hcName"></result>
+            </association>
+            <!--关联房屋户型表-->
+            <association property="houseapartment" javaType="Houseapartment">
+                <id column="haId" property="haId"></id>
+                <result column="haBedroom" property="haBedroom"></result>
+                <result column="haBathroom" property="haBathroom"></result>
+                <result column="haLounage" property="haLounage"></result>
+                <result column="haKitchen" property="haKitchen"></result>
+                <result column="haBookStudy" property="haBookStudy"></result>
+                <result column="haBalcony" property="haBalcony"></result>
+            </association>
+        </association>
+        <!--房屋描述-->
+        <association property="housedecription" javaType="Housedecription">
+            <id column="hdpId" property="hdpId"></id>
+            <result column="hdpName" property="hdpName"></result>
+            <result column="hdpCharacteristic" property="hdpCharacteristic"></result>
+            <result column="hdpTraffic" property="hdpTraffic"></result>
+            <result column="hdpRound" property="hdpRound"></result>
+            <result column="haiId" property="haiId"></result>
+        </association>
+        <!--入住规则-->
+        <association property="homerules" javaType="Homerules">
+            <id column="hrId" property="hrId"></id>
+            <result column="hrCheckin" property="hrCheckin"></result>
+            <result column="hrCheckout" property="hrCheckout"></result>
+            <result column="hrproscenium" property="hrproscenium"></result>
+            <result column="hrSex" property="hrSex"></result>
+            <result column="hrSpecialage" property="hrSpecialage"></result>
+            <result column="hrHygiene" property="hrHygiene"></result>
+            <result column="hrSheets" property="hrSheets"></result>
+            <result column="hrTip" property="hrTip"></result>
+            <result column="haiId" property="haiId"></result>
+            <!--接待房客时间-->
+            <collection property="receptiontime" ofType="Receptiontime">
+                <id column="rtId" property="rtId"></id>
+                <result column="rtStartTime" property="rtStartTime"></result>
+                <result column="rtEndTime" property="rtEndTime"></result>
+                <result column="hrId" property="hrId"></result>
+            </collection>
+            <!--对房客的要求表对应表-->
+            <collection property="homerequirementreflect" ofType="Homerequirementreflect">
+                <id column="hrrId" property="hrrId"></id>
+                <result column="hrId" property="hrId"></result>
+                <result column="hreId" property="hreId"></result>
+                <!--对房客的要求表-->
+                <association property="homerequirement" javaType="Homerequirement">
+                    <id column="hreId" property="hreId"></id>
+                    <result column="hreName" property="hreName"></result>
+                </association>
+            </collection>
+        </association>
+
+        <!--房屋价格表-->
+        <association property="homeprice" javaType="Homeprice">
+            <id column="hpId" property="hpId"></id>
+            <result column="hpPrice" property="hpPrice"></result>
+            <result column="cdLeastDay" property="cdLeastDay"></result>
+            <result column="cdDeposit" property="cdDeposit"></result>
+            <result column="cdFullrefund" property="cdFullrefund"></result>
+            <result column="cdSomeRefund" property="cdSomeRefund"></result>
+            <result column="cdThreeDiscount" property="cdThreeDiscount"></result>
+            <result column="haiId" property="haiId"></result>
+            <!--连住折扣表-->
+            <collection property="continuousdiscount" ofType="Continuousdiscount">
+                <id column="cdId" property="cdId"></id>
+                <result column="cdDay" property="cdDay"></result>
+                <result column="cdDiscount" property="cdDiscount"></result>
+                <result column="hpId" property="hpId"></result>
+            </collection>
+        </association>
+        <!--身份验真-->
+        <association property="identityverification" javaType="Identityverification">
+            <id column="ivId" property="ivId"></id>
+            <result column="ivName" property="ivName"></result>
+            <result column="ivUrl" property="ivUrl"></result>
+            <result column="ivUIDName" property="ivUIDName"></result>
+            <result column="IvUIDNo" property="IvUIDNo"></result>
+            <result column="haiId" property="haiId"></result>
+        </association>
+        <!--房屋照片-->
+        <!--房屋图片类型表-->
+        <collection property="picturetype" ofType="Picturetype">
+            <id column="ptId" property="ptId"></id>
+            <result column="ptName" property="ptName"></result>
+            <result column="haiId" property="haiId"></result>
+            <collection property="pictures" ofType="Picture">
+                <id column="pId" property="pId"></id>
+                <result column="pUrl" property="pUrl"></result>
+                <result column="pPagePicture" property="pPagePicture"></result>
+                <result column="ptId" property="ptId"></result>
+            </collection>
+        </collection>
+        <!--床型-->
+        <collection property="housebed" ofType="Housebed">
+            <id column="hbId" property="hbId"></id>
+            <result column="hdsId" property="hdsId"></result>
+            <result column="hbtNumber" property="hbtNumber"></result>
+            <result column="hdId" property="hdId"></result>
+            <association property="housebedsize" javaType="Housebedsize">
+                <id column="hdsId" property="hdsId"></id>
+                <result column="hbsSize" property="hbsSize"></result>
+                <result column="hbtId" property="hbtId"></result>
+                <association property="housebedtype" javaType="Housebedtype">
+                    <id column="hbtId" property="hbtId"></id>
+                    <result column="hbtName" property="hbtName"></result>
+                </association>
+            </association>
+        </collection>
+        <!--设施服务-->
+        <collection property="houseFacilities" ofType="HouseFacilities">
+            <id column="hfId" property="hfId"></id>
+            <result column="hfName" property="hfName"></result>
+            <collection property="housefacilitiesdetails" ofType="Housefacilitiesdetails">
+                <id column="hfdId" property="hfdId"></id>
+                <result column="hfdName" property="hfdName"></result>
+                <result column="hfId" property="hfId"></result>
+            </collection>
+        </collection>
+
+    </resultMap>
+
+
+    <!--添加房源-->
+    <insert id="insert_HomeAllInformation" parameterType="Housefacilitiesdetails">
+        <selectKey keyProperty="haiId" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+        insert into homeAllInformation(uiId) values(#{uiId});
+    </insert>
+</mapper>
+

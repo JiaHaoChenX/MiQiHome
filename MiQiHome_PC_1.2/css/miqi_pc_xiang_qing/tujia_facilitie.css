@@ -1,0 +1,326 @@
+﻿.facility_list{
+    width:688px;
+    float: right;
+}
+
+.facility_list h3{
+    font-size: 18px;
+    color: #312C27;
+    margin-bottom: 20px;
+    margin-top: 3px;
+}
+.facility_ul{
+    margin-bottom: 40px;
+}
+.facility_ul li{
+   padding-left: 34px;
+    width: 25%;
+    line-height: 36px;
+    font-size: 14px;
+    color: #322c27;
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.facility_more{
+    margin-top: 20px;
+    text-align: left;
+    font-size: 14px;
+}
+.facility_more a{
+    font-size: 14px;
+    color: #FF5D56;
+}
+
+.tujia_more_btn {
+    right:-14px;
+    top: 6px;
+    width: 10px;
+    height: 8px;
+    background: url(../../Images/more_btn.png) no-repeat;
+    background-position: -3px -1px;
+}
+.up_moreBtn {
+    background-position: -3px -22px;
+}
+.height_value{
+    height: 222px;
+    overflow: hidden;
+}
+.facility_ul li .fac_span {
+    width:24px;
+    height:24px;
+    left: 0;
+    top: 4px;
+    background-image: url(../../Images/tujia_facility.png);
+    background-repeat: no-repeat;
+}
+.absot {
+    position: absolute;
+}
+.无线网络 {
+    background-position: 0 -1225px;
+}
+.电熨斗/挂烫机{
+    background-position: 0 -528px;
+}
+.电视{
+    background-position: 0 -1105px;
+}
+.空调{
+    background-position: 0 -1394px;
+}
+.电热水壶{
+    background-position: 0 -1081px;
+}
+
+.提款机{
+    background-position: 0 -0;
+}
+.调料{
+    background-position: 0 -24px;
+}
+.私家泳池{
+    background-position: 0 -48px;
+}
+.地毯{
+    background-position: 0 -72px;
+}
+.投影设备{
+    background-position: 0 -96px;
+}
+.卫生纸{
+    background-position: 0 -120px;
+}
+.休闲椅{
+    background-position: 0 -144px;
+}
+.拖鞋{
+    background-position: 0 -168px;
+}
+.微波炉{
+    background-position: 0 -192px;
+}
+.私家温泉{
+    background-position: 0 -216px;
+}
+.灭火器{
+    background-position: 0 -240px;
+}
+.暖气{
+    background-position: 0 -264px;
+}
+.门禁系统{
+    background-position: 0 -288px;
+}
+.保险箱{
+    background-position: 0 -312px;
+}
+
+
+.烹饪锅具{
+    background-position: 0 -336px;
+}
+.烧烤器具{
+    background-position: 0 -360px;
+}
+.私家花园{
+    background-position: 0 -384px;
+}
+.全天热水{
+    background-position: 0 -408px;
+}
+.燃气灶{
+    background-position: 0 -432px;
+}
+.浴缸{
+     background-position: 0 -456px;
+ }
+.浴巾{
+      background-position: 0 -480px;
+  }
+.游戏机{
+    background-position: 0 -504px;
+}
+.facility_yxjh{
+    background-position: 0 -552px;
+}
+
+.智能门锁{
+    background-position: 0 -576px;
+}
+
+.免费停车{
+    background-position: 0 -600px;
+}
+
+
+.facility_yxxy{
+    background-position: 0 -624px;
+}
+
+.药店{
+    background-position: 0 -648px;
+}
+.泳池{
+    background-position: 0 -672px;
+}
+.洗衣机{
+    background-position: 0 -696px;
+}
+.洗衣粉/液{
+    background-position: 0 -720px;
+}
+.洗涤用具{
+    background-position: 0 -744px;
+}
+.洗发水/沐浴露{
+    background-position: 0 -768px;
+}
+.香皂/洗手液{
+    background-position: 0 -792px;
+}
+.药店{
+    background-position: 0 -816px;
+}
+
+
+.净水机/滤水系统{
+    background-position: 0 -841px;
+}
+.牙具{
+    background-position: 0 -865px;
+}
+.中央空调{
+    background-position: 0 -889px;
+}
+.音响/蓝牙音箱{
+    background-position: 0 -913px;
+}
+.电饭煲{
+    background-position: 0 -937px;
+}
+.打扫工具{
+    background-position: 0 -961px;
+}
+.刀具菜板{
+    background-position: 0 -985px;
+}
+.facility_dn{
+    background-position: 0 -1009px;
+}
+.电梯{
+    background-position: 0 -1033px;
+}
+.独立卫浴{
+    background-position: 0 -1057px;
+}
+.吹风机{
+     background-position: 0 -1129px;
+ }
+.保安{
+      background-position: 0 -1153px;
+  }
+
+.冰箱{
+    background-position: 0 -1177px;
+}
+/*��������*/
+.30㎡以上独立客厅{
+    background-position: 0 -1201px;
+}
+
+.菜市场{
+    background-position: 0 -1249px;
+}
+.超市{
+    background-position: 0 -1274px;
+}
+.有窗户{
+    background-position: 0 -1298px;
+}
+.餐具{
+    background-position: 0 -1322px;
+}
+.餐厅{
+    background-position: 0 -1346px;
+}
+.空气净化器{
+    background-position: 0 -1370px;
+}
+.烘干机/干衣机{
+    background-position: 0 -1177px;
+}
+.facility_kkfp{
+    background-position: 0 -1418px;
+}
+.晾衣架 {
+    background-position: 0 -1442px;
+}
+.facility_mybj{
+    background-position: 0 -1466px;
+}
+/*ë��/ԡ��*/
+.毛巾{
+    background-position: 0 -1490px;
+}
+.整体厨柜{
+    background-position: 0 -1514px;
+}
+.facility_mjj{
+    background-position: 0 -1538px;
+}
+.麻将机{
+    background-position: 0 -1562px;
+}
+
+.卡拉OK/家庭影院{
+    background-position: 0 -1586px;
+}
+
+.facility_fsdrs{
+    background-position: 0 -1610px;
+}
+
+.facility_gjlt{
+    background-position: 0 -1634px;
+}
+
+.facility_djxt{
+    background-position: 0 -1658px;
+}
+
+.儿童乐园{
+    background-position: 0 -1682px;
+}
+
+.行李寄存{
+    background-position: 0 -1706px;
+}
+
+.facility_hzbjq{
+    background-position: 0 -1730px;
+}
+
+.加湿器{
+    background-position: 0 -1754px;
+}
+
+.欢迎老人{
+    background-position: 0 -1778px;
+}
+
+.欢迎小孩{
+    background-position: 0 -1802px;
+}
+
+
+
+
+
+
+
+
+

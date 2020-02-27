@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    发布者：xyz
+    手机端房东上房查询
+-->
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="com.miqi.miqihome.dao.IAppMainRoomsDao">
+    
+    <select id="selectmainrooms" resultType="MainRooms">
+        select uiId,homeAllInformation.haiId,hsId,hdId,hdpId,hfrId,hrId,ptId,hpId,ivId from homeAllInformation
+            LEFT JOIN houseSite on housesite.haiId = homeAllInformation.haiId
+            LEFT JOIN houseDetails on houseDetails.haiId= homeAllInformation.haiId
+            LEFT JOIN houseDecription on houseDecription.haiId= homeAllInformation.haiId
+            LEFT JOIN HouseFacilitiesReflect on HouseFacilitiesReflect.haiId = homeAllInformation.haiId
+            LEFT JOIN homeRules on homeRules.haiId= homeAllInformation.haiId
+            LEFT JOIN pictureType on pictureType.haiId= homeAllInformation.haiId
+            LEFT JOIN homePrice on homePrice.haiId= homeAllInformation.haiId
+            LEFT JOIN identityVerification on identityVerification.haiId= homeAllInformation.haiId
+            where homeAllInformation.haiId = (select haiId from homeAllInformation where uiId = #{uiId}
+            and haiId not in (select haiId from identityVerification) LIMIT 0 ,1)
+    </select>
+    
+    
+    
+</mapper>
+

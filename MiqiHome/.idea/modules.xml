@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MiqiHome.iml" filepath="$PROJECT_DIR$/MiqiHome.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MiqiHome-common/MiqiHome-common.iml" filepath="$PROJECT_DIR$/MiqiHome-common/MiqiHome-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MiqiHome-dao/MiqiHome-dao.iml" filepath="$PROJECT_DIR$/MiqiHome-dao/MiqiHome-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MiqiHome-entity/MiqiHome-entity.iml" filepath="$PROJECT_DIR$/MiqiHome-entity/MiqiHome-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MiqiHome-service/MiqiHome-service.iml" filepath="$PROJECT_DIR$/MiqiHome-service/MiqiHome-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MiqiHome-ui/MiqiHome-ui.iml" filepath="$PROJECT_DIR$/MiqiHome-ui/MiqiHome-ui.iml" />
+    </modules>
+  </component>
+</project>

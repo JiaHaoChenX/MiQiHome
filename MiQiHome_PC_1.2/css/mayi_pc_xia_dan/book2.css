@@ -1,0 +1,187 @@
+﻿/*新增*/
+.c_person{
+	float:left;
+	cursor: pointer;
+	/* width:114px; */
+	width:140px;
+	color:#2b2f33;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	height:30px;
+}
+.c_person span{
+	width:16px;
+	height:16px;
+	background: url("../../Images/uncheck_icon.png") no-repeat;
+	background-size:16px 16px;
+	display: inline-block;
+	position:relative;
+	top:2px;
+	margin-right:10px;
+	margin-top:10px;
+}
+.c_person.checked span {
+	background: url("../../Images/checked_icon.png") no-repeat;
+	background-size:16px 16px;
+}
+.total_person{
+	text-indent:10px;
+	color:#2b2f33
+}
+.select_parent{
+	border: 1px solid #c1bcbc;
+	display: inline-block;
+	position: relative;
+}
+.select_parent:after,.tel_type:after,.dingw:after{
+	content: "";
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -3px;
+	width: 0;
+	height: 0;
+	border-width: 6px 4px;
+	border-style: solid;
+	border-color: #22bb62 transparent transparent;
+	background: none;
+}
+select.select_css{
+	-webkit-appearance:button;
+	-moz-appearance:button;
+	border:none;
+	font-size: 14px;
+	height: 34px;
+	line-height: 26px;
+	padding: 4px 10px;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+select.select_css option{
+	height:30px;
+}
+.invoice_label{display:inline-block}
+.invoice_label input{display:none !important;}
+.radioSpan{
+	background-color:#fff;
+	border:1px solid rgba(0,0,0,0.15);
+	border-radius:100%;
+	display:inline-block;
+	height:16px;
+	margin-right:10px;
+	margin-top:-1px;
+	vertical-align:middle;
+	width:16px;
+	line-height:1;
+}
+.invoice_label input:checked + .radioSpan:after{
+	background-color:#22bb62;
+	border-radius:100%;
+	content:"";
+	display:inline-block;
+	height:12px;
+	margin:2px;
+	width:12px
+}
+.mt15{
+	margin-top:15px;
+}
+.border_t{
+	border-top:1px solid #dce0e0;
+}
+.border_r_no{
+	border-right:0 !important;
+}
+.add_newperson{
+	border-bottom:1px solid #dce0e0;
+	padding-bottom:10px;
+}
+
+
+/*修改*/
+.insurance,.no_yanz .yanz_status, .success_yanz .yanz_status, .nosupport_yanz .yanz_status{
+	color:#b4b9bf !important;
+}
+.verifier_list,.vf_remove,.cnt1_dl dt,.cnt1_dl dd input{
+	color:#2b2f33
+}
+.error i{
+	margin-top: -5px;
+}
+.img_yan{
+	margin-left: 0;
+	border-left:0
+}
+.tel_box dd input{
+	width:236px;
+	box-sizing:border-box;
+	line-height: 22px;
+	height:36px;
+}
+.tel_box dt {
+	font-size: 14px;
+	line-height: 40px;
+	width: 124px;
+	color: #322c27;
+}
+.img_yan{
+	width:92px !important;
+}
+.cnt1_dl dd .yanzm{
+	width:92px !important;
+	font-size:14px;
+}
+.vf_table{
+	background: #fbfbfb;
+	padding-bottom:0
+}
+.cnt1_dl dd input,.select_IDcord, .selectNation,#checkinOfWeek, #checkoutOfWeek{
+	font-size:14px !important;
+}
+.optional .cnt1_dl dt{
+	width:124px;
+}
+.roomer{
+	font-size:14px;
+	color:#5e646b;
+}
+.cnt1_dl dt{
+	text-indent:10px;
+}
+.vf_name{
+	text-indent:10px;
+}
+
+/* �����ƹ� */
+.tel_box dd input.email_input{
+	width: 328px;
+}
+.passport .verifier_list+.verifier_list{
+	margin-left: 20px;
+}
+.passport .verifier_list.vf_passport{
+	margin-left: 0;
+}
+.passport .verifier_list.vf_remove{
+	float: right;
+	margin-left: 0;
+	margin-right: 40px;
+}
+.overseas .rz_lastName{ width: 132px;}
+.overseas .rz_firstName{ width: 122px;}
+.w70{ width: 70px;}
+.rzr_list.w70{ padding-left: 4px;}
+.add_newperson dd{
+	width: 620px;
+}
+.add_newperson .absot{right: 0;top: 0;}
+.rzr_list.w122{ width: 122px;}
+.birthday.w80{ width: 80px;}
+.rzr_list.w62{ width: 62px;}
+.rzr_list.w112{ width: 112px;}
+.rzr_list.w254{ width: 254px;vertical-align: top;}
+.passport_modal .ruzT{
+	height: 274px;
+}

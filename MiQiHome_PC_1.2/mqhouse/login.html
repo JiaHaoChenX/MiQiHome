@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/public_css/login.css" />
+	</head>
+
+	<body>
+		
+		<!--全部-->
+		<div class='all' style="display: block;">
+			<!--中间的div开始-->
+			<div class='middle'>
+				<div class='middle_close' style='float: right;font-size: 25px; '>X</div>
+				<!--左边的登录开始-->
+				<div class='reg-left'>
+					<form method='post' class='form-field'>
+						<!--手机号或账号登录的开始<-->
+						</-->
+						<div class='reg-left-type'>
+							<button type='button' class='note-login' id='inote-login'>手机验证码登录</button>
+							<button type='button' id='inormal-login'>账号密码登录</button>
+							<!--手机号或账号登录的结束-->
+						</div>
+						<!--手机号的开始-->
+						<div class='form-field-text'>
+							<i class='i-input fa fa-user-circle' aria-hidden='true'></i>
+							<input type='text' placeholder='手机号' class='text' id='uid' />
+
+						</div>
+						<!--短信验证的开始-->
+						<div class='form-field-text note-show'>
+
+							<i class='i-input fa fa-lock fa-lg'></i>
+							<input type='text' placeholder='动态码' class='text' />
+							<input type='button' value='获取手机动态码' class='button--mini' />
+							<input type='checkbox' checked='checked' /><span class='reg-left-span1'> 自动登录</span>
+							<p class='reg-left-p1'>未注册的手机号将自动创建为蚂蚁短租帐户</p>
+							<input type='button' value='登录' class='button' />
+							<!--短信验证的结束-->
+						</div>
+						<!--账号登录的开始-->
+						<div hidden='hidden' class='form-field-text inormal-show'>
+
+							<i class='i-input fa fa-lock fa-lg'></i>
+							<input type='password' placeholder='密码' class='upassword text' id='pwd' />
+						
+			<p>
+								<span>验证码：</span>
+								<button  type='button' data-appid='2011065062' id='TencentCaptcha' data-cbfn='callback'>滑动验证</button>
+							</p>
+
+							<input type='checkbox' checked='checked' /><span class='reg-left-span1'> 自动登录</span>
+							<span id='logging_status'></span>
+							<input type='button' value='登录' class='button' id='register02' />
+							<p><span class='reg-left-span2'>没有账号密码请</span> <span class='reg-left-span3'>使用手机验证码登录</span></p>
+							<!--账号登录的结束-->
+						</div>
+
+					</form>
+					<!--左边的登录结束-->
+				</div>
+				<!--中间的div结束-->
+				<!--右边的其他登录开始-->
+				<div class='reg-right'>
+					<p class='reg-right-p1'>其他登录方式</p>
+					<!--微信登录-->
+					<p class='reg-right-p2 reg-right-p'>
+						<a class='reg-right-span reg-right-span1'>
+							<i class='i-span1 i-span fa fa-weixin' aria-hidden='true'></i>
+						</a>
+						<span class='reg-right-weixin reg-right-font'>微信登录</span>
+					</p>
+					<!--qq登录-->
+					<p class='reg-right-p3 reg-right-p'>
+						<a class='reg-right-span reg-right-span2'>
+							<i class='i-span2 i-span fa fa-qq' aria-hidden='true'></i>
+						</a>
+						<span class='reg-right-qq reg-right-font'>Q Q登录</span>
+					</p>
+					<!--微博登录-->
+					<p class='reg-right-p4 reg-right-p'>
+						<a class='reg-right-span reg-right-span3'>
+							<i class='i-span3 i-span fa fa-weibo' aria-hidden='true'></i>
+						</a>
+						<span class='reg-right-weibo reg-right-font'>微博登录</span>
+					</p>
+					<!--右边的其他登录结束-->
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public_js/login.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+
+		<script type="text/javascript">
+			window.callback = function(res) {
+				if(res.ret === 0) {
+					$("#TencentCaptcha").html("验证成功");
+					$("#TencentCaptcha").css("background-color", "darkcyan");
+					$("#TencentCaptcha").css("color", "#fff")
+					$("#TencentCaptcha").prop('disabled', 'disabled');
+					//					$("#TencentCaptcha").addClass("layui-btn-disabled");
+					//					slides.close().remove();
+					//					slide = true;
+				}
+			}
+		</script>
+	</body>
+
+</html>

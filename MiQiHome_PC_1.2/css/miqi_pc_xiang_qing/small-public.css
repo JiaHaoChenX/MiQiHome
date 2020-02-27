@@ -1,0 +1,82 @@
+﻿@charset:'utf-8';
+*{
+	margin:0;
+	padding:0;
+}
+body, button, input, select, textarea, li, div, ul, h4{
+    font-family:"Hiragino Sans GB","Century Gothic",system, Arial, Verdana, Tahoma,"微软雅黑"  !important;
+}
+a{
+	text-decoration: none;
+}
+input{
+	outline: none;
+	
+}
+/*去除IE10+文本框后面的小叉叉*/
+input::-ms-clear {
+    display: none;
+}
+
+img{
+	border:none;
+}
+li{
+	list-style: none;
+}
+i{
+	font-style: normal;
+}
+b,strong{
+	font-weight: normal;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.fn{
+ 	float:none;
+}
+.center{
+	text-align: center;
+}
+.dis_in{
+	display:inline-block;
+}
+.dis_block{
+	display:block;
+}
+.dis_none{
+	display:none;
+}
+.over_hid{
+	overflow: hidden;
+}
+.clearfloat:after{
+	display:block;
+	clear:both;
+	content:"";
+	visibility:hidden;
+	height:0
+} 
+.clearfloat{
+	zoom:1
+} 
+.cursor{
+	cursor:pointer;
+}
+.relative{
+	position:relative;
+}
+.absolute{
+	position:absolute;
+}
+.fixed{
+	position:fixed;
+}
+.auto{
+	margin:0 auto;
+}
+

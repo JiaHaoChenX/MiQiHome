@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>门店设置</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/dialog.css"/>
+	</head>
+
+	<body>
+		<div>
+			<!--标题-->
+			<div class="border_bottom" style="padding-bottom: 10px;font-size: 20px;">
+				<h4>宾客管理</h4>
+			</div>
+			<!--信息审核提示-->
+			<div class="height_margin store_audit">
+				<div class="floor4_warpper_margin">
+					<p class="fontSize12">门店信息审核中<span class="floor5_p_color">&nbsp;修改的信息，需通过审核后，才会在外网生效，请等待</span></p>
+				</div>
+			</div>
+			<!--门店信息-->
+			<div class="height_margin">
+				<p class="store_tit"><i></i>门店信息</p>
+				<!--图片上传-->
+				<div class="margin_bottom">
+					<div>
+						<p class="store_item_title floor5_p_color fontSize14">房东头像 <span class="red">*</span></p>
+					</div>
+					<div class="display_flex">
+						<div>
+							<img src="../img/icon/download.jpg" class="img-circle" height="150px" width="150px" ;/>
+						</div>
+						<div class="fontSize12 floor4_warpper_margin imgup_require">
+							<p>上传要求：</p>
+							<p>1、请上传真实头像，若有营业执照也可以上传品牌logo,否则审核不会通过呦 </p>
+							<p>2、请上传2MB以内的JPG、JPEG、GIF、PNG格式的图片文件</p>
+						</div>
+					</div>
+				</div>
+				<!--房东昵称-->
+				<div class="margin_bottom">
+					<div>
+						<p class="store_item_title floor5_p_color fontSize14">房东昵称
+							<span class="red">*</span>
+							<span class="floor5_p_color fontSize12">客人可通过名称快速搜索到您的小家</span>
+						</p>
+					</div>
+					<div class="display_flex">
+						<input type="text" style="width:300px" class="form-control" />
+						<a class="orangeCol fontSize12 store_setname_rel">怎么取一个好的名称？</a>
+					</div>
+				</div>
+				<!--地区/城市-->
+				<div class="margin_bottom">
+					<div>
+						<p class="store_item_title floor5_p_color fontSize14">地区/城市
+							<span class="red">*</span>
+						</p>
+					</div>
+					<div class="display_flex">
+						<select class="form-control fontSize12" style="width: 118px;margin-right: 10px;">
+							<option>中国大陆</option>
+						</select>
+						<select class="form-control fontSize12" style="width: 230px;">
+							<option>中国大陆</option>
+						</select>
+					</div>
+				</div>
+				<!--欢迎语-->
+				<div class="margin_bottom">
+					<div>
+						<p class="store_item_title floor5_p_color fontSize14">欢迎语
+							<span class="floor5_p_color fontSize12">一句您对客人的欢迎语</span>
+						</p>
+					</div>
+					<div class="display_flex fontSize12">
+						<input type="text" style="width:400px" class="form-control" />
+					</div>
+				</div>
+				<!--介绍-->
+
+				<div class="margin_bottom">
+					<div>
+						<p class="store_item_title floor5_p_color fontSize14">欢迎语
+							<span class="floor5_p_color fontSize12">一句您对客人的欢迎语</span>
+						</p>
+					</div>
+					<div class="display_flex fontSize12">
+						<textarea class="form-control" autocomplete="off" spellcheck="false" rows="2" maxlength="1000" style="width:400px;height: 115px; min-height: 115px; max-height: 115px;"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<!--经营信息-->
+			<div class="height_margin run_content">
+				<p class="store_tit"><i></i>经营信息</p>
+				<div class="margin_bottom">
+					<div class="margin_bottom10">
+						<p class="store_item_title floor5_p_color fontSize14 run_margin_bottom">是否接待外宾</p>
+						<span class="width150"><input type="radio" style="vertical-align: middle;margin: 0;"/>是</span>
+						<span><input type="radio" style="vertical-align: middle;margin: 0;"/>否</span>
+					</div>
+					<div class="margin_bottom10">
+						<p class="store_item_title floor5_p_color fontSize14 run_margin_bottom">接待语言</p>
+						<span class="width150"><input type="checkbox" style="vertical-align: middle;margin: 0;"/>中文</span>
+						<span><input type="checkbox" style="vertical-align: middle;margin: 0;"/>英文</span>
+					</div>
+					<div class="margin_bottom10">
+						<p class="store_item_title floor5_p_color fontSize14 run_margin_bottom">是否免费提供发票（住宿类）<span class="orangeCol fontSize12">&nbsp;开具说明</span></p>
+						<span class="width150"><input type="radio" style="vertical-align: middle;margin: 0;"/>是</span>
+						<span><input type="radio" style="vertical-align: middle;margin: 0;"/>否</span>
+					</div>
+					<div class="margin_bottom10">
+						<p class="store_item_title floor5_p_color fontSize14 run_margin_bottom">信用免押金<span class="fontSize12">了解信用免押金 </span></p>
+						<span class="width150"><input type="radio" style="vertical-align: middle;margin: 0;"/>支持</span>
+						<span><input type="radio" style="vertical-align: middle;margin: 0;"/>不支持</span>
+					</div>
+					<div class="margin_bottom10">
+						<p class="store_item_title floor5_p_color fontSize14 run_margin_bottom">是否接待失信房客<span class="orangeCol fontSize12">&nbsp;什么是失信房客？</span></p>
+						<span class="width150"><input type="radio" style="vertical-align: middle;margin: 0;"/>接待 </span>
+						<span><input type="radio" style="vertical-align: middle;margin: 0;"/>不接待</span>
+					</div>
+					<div class="margin_bottom10">
+						<p class="store_item_title floor5_p_color fontSize14 run_margin_bottom">是否有前台</p>
+						<span class="width150"><input type="radio" style="vertical-align: middle;margin: 0;"/>是</span>
+						<span><input type="radio" style="vertical-align: middle;margin: 0;"/>否</span>
+					</div>
+				</div>
+			</div>
+
+			<!--联系方式-->
+
+			<div class="height_margin">
+				<p class="store_tit"><i></i>联系方式</p>
+				<!--联系电话-->
+				<div class="margin_bottom">
+					<div>
+						<p class="store_item_title floor5_p_color fontSize14">联系电话
+							<span class="red">*</span>
+							<span class="fontSize13 floor5_p_color">此电话在房客预订成功时显示 </span>
+							<span class="orangeCol fontSize12">关于此电话的用途?</span>
+						</p>
+					</div>
+					<div>
+						<input type="text" class="form-control fontSize12" style="width: 200px;" name="" id="" value="" />
+					</div>
+				</div>
+				<!--接听时间-->
+				<div class="margin_bottom">
+					<div>
+						<p class="store_item_title floor5_p_color fontSize14">接听时间
+							<span class="red">*</span>
+						</p>
+					</div>
+					<div class="display_flex">
+						<select class="form-control" style="width: 200px;">
+							<option>00:00</option>
+							<option>00:00</option>
+							<option>00:00</option>
+						</select>
+						<span class="fontSize12" style="margin: 0 6px;padding-top: 8px;">至</span>
+						<select class="form-control" style="width: 200px;">
+							<option>00:00</option>
+							<option>00:00</option>
+							<option>00:00</option>
+						</select>
+					</div>
+				</div>
+
+				<!--客户服务-->
+				<div class="margin_bottom">
+					<div>
+						<p class="store_item_title floor5_p_color fontSize14">客户服务
+							<span class="red">*</span>
+							<span class="floor5_p_color fontSize12">&nbsp;负责与游客通过消息在线交流，沟通预订相关事宜</span>
+						</p>
+					</div>
+					<div class="display_flex">
+						<select class="form-control" style="width: 200px;">
+							<option>15089418450</option>
+						</select>
+					</div>
+				</div>
+				<!--运营电话-->
+				<div class="margin_bottom">
+					<div>
+						<p class="store_item_title floor5_p_color fontSize14">运营电话
+							<span class="red">*</span>
+							<span class="floor5_p_color fontSize12">&nbsp;用于途家和商户沟通业务的联系电话</span>
+						</p>
+					</div>
+					<div class="fontSize12">
+						<p>
+							<span class="border_noleft call">15089418450</span>
+							<span class="border_noleft method">全部职能</span>
+							<span class="border_noleft operate blue"><a>编辑</a>&nbsp;<a>删除</a></span>
+						</p>
+						<input type="button" class="btn blue btn-primary" name="" id="" onclick="add_phone()"  value="+添加运营电话" />
+					</div>
+				</div>
+				<!--运营邮箱-->
+				<div class="margin_bottom">
+					<div>
+						<p class="store_item_title floor5_p_color fontSize14">运营邮箱
+							<span class="red">*</span>
+							<span class="floor5_p_color fontSize12">&nbsp;途家和商户联系的邮箱，用于商户接收途家的各种通知</span>
+						</p>
+					</div>
+					<div class="fontSize12">
+						<input type="email" class="form-control" style="width: 200px;" name="" id="" />
+					</div>
+				</div>
+			</div>
+			<div class="tip_bottom" >
+				<button type="button" class="btn btn-primary nextbtn">提交</button>
+			</div>
+		</div><script src="../js/jquery-1.11.3.js"></script>
+		<script src="../js/dialog.js"></script>
+		<script>
+			function add_phone(){
+				var d=dialog({
+					title:'运营电话',
+					content:'<div class="fontSize12"><div class="height_margin"><p>电话类型 *</p><span style="margin-right: 14px;"><input type="radio" style="vertical-align: middle;margin: 0;" />手机</span><span><input type="radio" style="vertical-align: middle;margin: 0;" />座机</span></div><div class="height_margin"><p>电话号码 *</p><span style="margin-right: 14px;"><input type="text" style="width: 200px;" class="form-control fontSize12"/></span></div><div class="height_margin"><p>运营职能 *主要业务联系电话，包括以下全部职能，以及与途家沟通其他业务事项全部职能</p><span style="margin-right: 14px;"><input type="checkbox" style="vertical-align: middle;margin: 0 3px 0 0;"/>全部职能</span><ul class="function_run"><li><div><input type="checkbox" style="vertical-align: middle;margin: 0 3px 0 0;"/>订单处理<span>&nbsp;与途家核对订单相关问题的电话</span></div></li><li><div><input type="checkbox" style="vertical-align: middle;margin: 0 3px 0 0;"/>点评处理<span>&nbsp;与途家沟通差评相关问题的电话  </span></div></li><li><div><input type="checkbox" style="vertical-align: middle;margin: 0 3px 0 0;"/>房源维护<span>&nbsp;与途家核对房屋信息相关的电话</span></div></li><li><div><input type="checkbox" style="vertical-align: middle;margin: 0 3px 0 0;"/>基础职能<span>&nbsp;与途家沟通店铺、用户等信息的电话</span></div></li></ul></div></div>',
+					width:520,
+					okValue:"确定",
+					cancelValue:'取消',
+					ok:function(){
+						
+					},
+					cancel:function(){
+						
+					}
+					
+				});
+				d.show();
+			}
+		</script>
+	</body>
+
+</html>

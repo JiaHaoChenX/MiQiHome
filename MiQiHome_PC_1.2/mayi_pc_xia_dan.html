@@ -1,0 +1,781 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>下单页</title>
+
+		<link href="css/mayi_pc_xia_dan/order.css" rel="stylesheet" />
+		<link href="css/public_css/public_element.css" rel="stylesheet">
+		<link href="css/mayi_pc_xia_dan/order_public.css" rel="stylesheet">
+		<link href="css/mayi_pc_xia_dan/tel_type.css" rel="stylesheet">
+		<link href="css/mayi_pc_xia_dan/index_list_calendar.css" rel="stylesheet" type="text/css">
+		<link href="css/mayi_pc_xia_dan/layer.css" rel="stylesheet" type="text/css">
+		<link href="css/mayi_pc_xia_dan/fdbx.css" rel="stylesheet">
+		<link href="css/mayi_pc_xia_dan/book2.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/mayi_pc_xia_dan/im.css" />
+		<script src="js/public_js/utils.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--右侧滚动效果-->
+		<script type="text/javascript" src="js/mayi_pc_xia_dan/scroll_zi.js"></script>
+		<script type="text/javascript" src="js/mayi_pc_xia_dan/util.js"></script>
+
+	</head>
+
+	<body>
+		<!--隐藏信息-->
+		<input class="hpPrice" hidden />
+		<link href="css/mayi_pc_xia_dan/laxin.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/mayi_pc_xia_dan/index_searchlist_public.js"></script>
+		<!--<script type="text/javascript" src="js/mayi_pc_xia_dan/list_header.js"></script>-->
+		<div class='header relave'>
+			<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/mqhouse/index.html" rel='nofollow'>
+				<div class='asote head_left' style="text-align: center;line-height: 54px;color: #22bb61;font-size: 30px;font-weight: bold;">妙妙屋短租</div>
+			</a>
+			<div class='head_cnt relave'>
+				<span class='search'></span>
+				<ul class="nav_R asote nav_right">
+					<li class="logon_status">
+
+					</li>
+					<li>
+						<!-- 四元组控制下载元素显示情况 -->
+						<div class="showinfo">
+							<a href="/activity/app50" rel="nofollow" target="_blank" _mayi_rp="webaround|activity|firstorder">下载APP送500元大礼包</a>
+							<div class="b-app-img head_pop "><img src="Picture/8besrpvfmvrmlwf5dmmqjpxz3hdepj.jpg_110x110c.jpg" class='app_download_qr' style="width:110px;"></div>
+						</div>
+					</li>
+					<li>
+						<a class="recruit" rel="nofollow" href="/company/index" target="_blank" _mayi_rp="webaround|activity|company">商旅合作</a>
+					</li>
+					<li>
+						<a rel="nofollow" href="javascript:publish(0)" class="room-btn f16 t-center" _mayi_rp="webaround|activity|freepublish">免费发布房源</a>
+
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<!--公共头部结束-->
+		<!-- 拉新弹层 -->
+
+		<!--内容部分开始-->
+		<!--流程图-->
+		<div class='one_workflow'>
+			<div class='workflow relave'>
+				<div id="progress" class='progress progress_0'></div>
+				<b class='workflow1'>提交订单</b>
+				<b class='workflow2'>支付订金</b>
+				<b class='workflow3'>房东确认</b>
+				<b class='workflow4'>预订成功</b>
+				<span class='workflow1_1'><a href="javascript:;"  id="a_after_1" class='a_after'>1</a></span>
+				<span class='workflow1_2'><a href="javascript:;"  id="a_after_2" class="">2</a></span>
+				<span class='workflow1_3'><a href="javascript:;"  id="a_after_3" class="">3</a></span>
+				<span class='workflow1_4'><a href="javascript:;"  id="a_after_4" class='duigo '></a></span>
+
+			</div>
+		</div>
+
+		<div class='content clearfloat'>
+			<div class="content clearfloat" id="content_clearfloat_qrcode" style="width: 100%;height: 700px;position: relative;display: none;">
+				<div id="qrcode" style="background: red;position: absolute;left:50%; top: 50%;transform: translate(-50%,-50%);"></div>
+				<p style="text-align: center; color: #22BB61;font-size: 30px;">请使用微信扫码付款!!!</p>
+			</div>
+			<div class="content clearfloat" id="content_clearfloat_websocket" style="width: 100%;height: 700px;position: relative;display: none;">
+				<div style="color:#22BB61;font-size: 30px;position: absolute;left:50%; top: 50%;transform: translate(-50%,-50%);">预定成功！！<span id="setIntervalTime">3</span>秒后返回主页</div>
+			</div>
+			<div class='fl content_left' id="content_left_fl">
+				<div class='cnt'>
+
+					<div class='cnt1 clearfloat'>
+						<!--预订信息-->
+						<h2>预订信息</h2>
+						<div class='fl bt-border'>
+							<dl class='cnt1_dl clearfloat mt15'>
+								<dt class='fl'>预订日期</dt>
+								<dd class='fl roomer_cnt'><input type="date" class="rvStartTime rvTime" /><span style="margin: 0 5px 0 5px;">至</span><input type="date" class="rvEndTime rvTime" /><span style="margin-left: 5px;"></span>共<span class='totlenight3'></span>晚
+								</dd>
+								<script type="text/javascript">
+									$(".rvStartTime").attr("min", util.getNowFormatDate());
+									$(".rvEndTime").attr("min", util.getNowFormatDate());
+									$(".rvStartTime").val(util.getUrlParam("rvStartTime"));
+									$(".rvEndTime").val(util.getUrlParam("rvEndTime"));
+									$(".rvStartTime").data("StartTime", util.getUrlParam("rvStartTime"));
+									$(".rvEndTime").data("EndTime", util.getUrlParam("rvEndTime"));
+
+									$(".rvTime").change(function() {
+										let rvStartTime = $(".rvStartTime").val();
+										let rvEndTime = $(".rvEndTime").val();
+										if(rvStartTime > rvEndTime) {
+											$(".rvStartTime").val($(".rvStartTime").data("StartTime"));
+											$(".rvEndTime").val($(".rvEndTime").data("EndTime"));
+											$("#msgTime").text("选择正确的日期");
+										} else {
+											$("#checkindayr").text($(".rvStartTime").val());
+											$("#checkoutOfWeekr").text($(".rvEndTime").val());
+											$(".totlenight3").text(util.getCalcDate($(".rvStartTime").val(), $(".rvEndTime").val()));
+											$("#msgTime").text("");
+											$(".showtotalprice2").text($(".hpPrice").val() * util.getCalcDate($(".rvStartTime").val(), $(".rvEndTime").val()))
+										}
+										$(".rvStartTime").data("StartTime", $(".rvStartTime").val());
+										$(".rvEndTime").data("EndTime", $(".rvEndTime").val());
+									})
+								</script>
+							</dl>
+							<div id="msgTime" style="text-indent: 130px;color: red;"></div>
+							<!--预订套数-->
+							<!--预订套数-->
+							<dl class="cnt1_dl clearfloat mt15">
+								<dt class="fl">预订套数</dt>
+								<dd class="fl relave">
+									<!--<div class="dianj2 fl"><i id="roomNum">1</i></div>-->
+									<div class="select_parent w92 mar_r_6 fl">
+										<select class="select_css w92" autocomplete="off" id="roomNum">
+											<option value="1">1套</option>
+										</select>
+									</div>
+								</dd>
+							</dl>
+							<!-- 联系人手机号 -->
+							<dl class="cnt1_dl clearfloat tel_box mt15">
+								<dt class="fl">联系人手机号</dt>
+								<dd class='fl relative'>
+									<input type="text" placeholder="必填" class='import fl' tabindex="3" id="tenantmobile" name="tenantmobile" value="" autocomplete="off" />
+									<input type="hidden" id="mobileareacode" name="mobileareacode" value="86" />
+									<div class="tel_type other">
+										<i id="areaCode" code="86">+86</i>
+										<!-- <span class="UP_down choice_nation_open"></span> -->
+									</div>
+									<span class='relave error error_mobile'><i class='absot gou'></i><b>手机号错误，请重新尝试！</b></span>
+								</dd>
+							</dl>
+							<dl class='cnt1_dl clearfloat tel_box mt15' id="imgcode">
+								<dt class='fl'>&nbsp;</dt>
+								<dd class='fl' style="width: 340px;">
+									<input type="text" placeholder="图片验证码" id="bookimagecode" value="" class='import fl' tabindex="3" /><img src="Picture/29f5ded24c394fd5b3b666eaf0c302f7.gif" id="bookauthimage" title="点击刷新" class="img_yan" />
+									<span class='relave fl error error_img'><i class='absot gou'></i><b>图片验证码错误，请重新尝试！</b></span>
+								</dd>
+							</dl>
+							<dl class='cnt1_dl clearfloat tel_box mt15' id="mobilecode">
+								<dt class='fl'>&nbsp;</dt>
+								<dd class='fl'>
+									<!--验证码错误时span的class="gou" ，， 正确时class='gou dui'-->
+									<input class="fl" type="text" tabindex="4" placeholder="短信验证码" id="phonecode" name="phonecode" /> &nbsp;&nbsp;<input type="button" style="cursor: pointer;" value='获取验证码' name='egetmobilecode' class='yanzm fl' id='egetmobilecode' /><input type="submit" value='60s' name='验证码' class='yanzm_s' /><span id="errorMessage"></span>&nbsp;&nbsp;<span id="checkinfo" class="gou dui" style="display:none;"></span>
+								</dd>
+							</dl>
+							<!--海外及港澳台地区需要填写邮箱-->
+							<!--是否开发票-->
+							<input type="hidden" id="isOnlineInvoice" name="isOnlineInvoice" value="1" />
+							<dl class='cnt1_dl clearfloat mt15' id="orderinvoiceDiv">
+								<dt class='fl'>是否需要发票</dt>
+								<dd class='fl relave clearfloat'>
+									<label class="invoice_label invoice_label mr40 invoice_yes"><input type="radio" name="invoice"/><span class="radioSpan"></span>需要</label>
+									<label class="invoice_label invoice_label mr26 invoice_no"><input type="radio" name="invoice" checked/><span class="radioSpan"></span>不需要</label>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+
+				<!--优惠券-->
+				<div id="user_coupon" class='cnt1 cnt2 clearfloat' style="display: none">
+					<h2>优惠</h2>
+					<div class='fl bt-border'>
+						<dl class='cnt1_dl clearfloat'>
+							<dt class='fl'>优惠券</dt>
+							<dd class='fl relave people_in people_in1 IE_border'>
+								<div class='dianj4' style='background:#fff;'><i></i><span class='asote dingw'></span></div>
+								<ul class='people havDai' style='display:none'>
+								</ul>
+							</dd>
+							<b class='fl room_pice'><span class="couponcun"></span>优惠券可用</b>
+						</dl>
+					</div>
+				</div>
+
+				<!--start-->
+				<div id="insuranceDiv" class='cnt1 cnt2 cnt3 cnt4 clearfloat'>
+					<h2 class='need'> 入住人信息 </h2>
+					<!--意外险部分-->
+					<div class='fl cle bt-border'>
+						<!--入住人数-->
+						<dl class="cnt1_dl clearfloat mt15">
+							<dt class="fl">入住人数</dt>
+							<dd class="fl relave people_in">
+								<input type="hidden" id="maxguest" value="4" />
+								<div class="select_parent w92 mar_r_6 fl">
+									<select class="select_css w92 rens" autocomplete="off">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</div>
+							</dd>
+						</dl>
+						<dl class="cnt1_dl clearfloat mt15">
+							<dt class="fl">选择入住人</dt>
+							<dd class="fl relave clearfloat p_list relave_clearfloat_p_list" style="width:570px;">
+
+							</dd>
+						</dl>
+						<div class="relave accident1 clearfloat ">
+							<div class="optional">
+								<!--已有保险人列表-->
+								<div class="pb10 clearfloat">
+									<ul class="vf_table border_t mt15 vf_table_border_t_mt15">
+
+									</ul>
+								</div>
+								<!--已有保险人列表end-->
+								<dl class="cnt1_dl clearfloat add_newperson"><dt class="fl">添加入住人</dt>
+									<dd class="fl clearfloat" style="position:relative">
+										<div class="fl ruzhu_form">
+											<div class="clearfloat"><input type="text" placeholder="真实姓名" class="rzr_list w108 mr10 fl rz_name lpName" value="">
+												<div class="border w70 border_r_no fl">
+													<select class="rzr_list pad_l_4 select_IDcord w70" autocomplete="off">
+														<option name="cardtypevalue" value="111">身份证</option>
+														<!--<option name="cardtypevalue" value="414">护照</option>-->
+													</select>
+												</div>
+												<input type="text" placeholder="证件号码" class="rzr_list w190 fl lpCardId">
+											</div>
+											<div id="msg" style="color: red;"></div>
+											<div class="absot"><span class="rzr_submit fl c22bb62 rzr_submit_fl_c22bb62 ">保存</span><span class="rzr_remove fl dis_no">取消</span>
+											</div>
+
+										</div>
+									</dd>
+								</dl>
+
+							</div>
+							<div class="add_person_details">
+								<div class="surveYY">
+								</div>
+								<div class="offmax" id="offmax">
+									<div class="dp_header"> 填写投保人信息</div>
+									<div class="dp_daypicker">
+										<span class="color666 mgb10">
+	                      * 您添加的被保险人都为未成年人，根据相关法规，您还需填写一个成年人的身份信息作为保险的投保人，否则将无法完成投保。
+	                    </span>
+										<p>
+											<font class="width150">投保人真实姓名：</font>
+											<input style="width:200px;border-radius:3px" maxlength="15" class="alterInputName" id="policyholdernameF" name="policyholdernameF" value="" autocomplete="off">
+										</p>
+										<p>
+											<font class="width150"> 投保人身份证号码：</font>
+											<input style="width:200px;border-radius:3px" maxlength="18" class="alterInputName" id="policyholderidcardF" name="policyholderidcardF" value="" autocomplete="off">
+										</p>
+										<p class="orange textcenter" id="policyholderspan"></p>
+									</div>
+									<a class="cancel_btn" style="cursor:hand;cursor:pointer;">取消</a>
+									<a class="makeSure_btn" style="cursor:hand;cursor:pointer;">确定</a>
+								</div>
+							</div>
+							<p class="c_333 vf_selected dis_no">已选择 <span class="choice_vfnum c_green">2位</span> 入住人</p>
+						</div>
+					</div>
+				</div>
+				<!--end-->
+
+				<div class='cnt1_dl cnt1 clearfloat landlord '>
+					<h2 class='fl need need2'>房东规定</h2>
+					<div class='fl relave need2 bt-border'>
+						<div class='roomer refundRull'>
+							<p>退款政策：下单后取消订单，将收取未住房费的50%作为违约金支付给房东。</p>
+						</div>
+					</div>
+				</div>
+				<div class='cnt_foot' style="position:relative;">
+					<!--温馨提示暂时无特色服务相关的费用 ，以及您选定房东提供的特色服务费用 -->
+					<div class='order_sub_parent'>
+						<a class='submit fl' id="insertReserve">提交订单</a>
+					</div>
+				</div>
+
+			</div>
+			<!--右侧开始-->
+			<div class="fr content_right  pin" id="pin1">
+				<div class='right_cnt'>
+					<img class="picturetype" width="338px" height="228px" style="vertical-align: middle" />
+					<!--右侧房间开始-->
+					<div class='room_intro relave clearfloat'>
+						<strong class="hdpName">千家福豪华双床房</strong>
+						<span class="hsProvince">珠海香洲区花苑新村(迎宾南路1043)</span>
+					</div>
+					<div class='time_true'>
+						<p><span id="checkindayr">209-2-1</span><span id="checkinOfWeekr"></span>&nbsp;至&nbsp;<span id="checkoutdayr"></span><span id="checkoutOfWeekr">2019-1-1</span></p>
+						<p>共<span class="totlenight3">2</span>晚&nbsp;&nbsp;<span id="roomNumr">1</span>套<span id="guestnum"></span></p>
+					</div>
+					<!--右侧表格开始-->
+					<table class='tab_fr'>
+						<tr class='room_tr'>
+							<td>
+								<div style='wvidth:178px;'>房费</div>
+							</td>
+							<td class='relave bon tab_tex'>
+								<div style='width:130px;'>¥<i class="showtotalprice2"></i></div>
+							</td>
+						</tr>
+
+					</table>
+
+				</div>
+				<div class='online_2'>
+					<a href="/supportplan/" target="_blank" class="f16">房客安心计划，100%入住保障</a>
+				</div>
+				<p class="f14 c999">房屋描述失真、到店无房、房东恶意涨价，全部退房费并补偿</p>
+			</div>
+		</div>
+		</form>
+
+		<div class="foot index-foot">
+			<div class="footer pt30 over-hidden pb20">
+				<ul>
+					<li class="pl60 w30">
+						<h3 class="f16 mb10">联系我们</h3>
+						<p>客户服务</p>
+						<p class="f20">400-028-6868</p>
+						<p>Email：service@mayi.com</p>
+						<p>商务合作</p>
+						<p>QQ：2656860348</p>
+						<p>Email：marketing@mayi.com</p>
+					</li>
+					<li class="pl60 w20">
+						<h3 class="f16 mb10">帮助中心</h3>
+						<p>
+							<a href="/platprofile/" target="_blank">我是房客</a>
+						</p>
+						<p>
+							<a href="/platprofile/" target="_blank">我是房东</a>
+						</p>
+						<p>
+							<a href="/roomauditrule/" target="_blank">房源审核规范</a>
+						</p>
+						<p>
+							<a href="/supportplan/" target="_blank">房客安心计划</a>
+						</p>
+						<p>
+							<a href="/sitemap/" target="_blank">房客安心计划</a>
+						</p>
+					</li>
+					<li class="pl40 w10">
+						<h3 class="f16 mb10">公司信息</h3>
+						<p>
+							<a href="/aboutcompany/" target="">关于蚂蚁</a>
+						</p>
+						<p>
+							<a href="/mediareport/" target="_blank">媒体报道</a>
+						</p>
+						<p>
+							<a href="/agreement/" target="_blank">服务协议</a>
+						</p>
+						<p>
+							<a href="/privacypolicy/" target="_blank">隐私条款</a>
+						</p>
+					</li>
+					<li class="pl80 w20">
+						<h3 class="f16 mb10">APP下载</h3>
+						<p><img class="mt10" src="Picture/4ewt2xj5ww6cz4jn35w8pdpz5kcfsm.jpg_110x110c.jpg" style="width:104px;"></p>
+						<p>
+							<a class="app mt10 t-center" rel="nofollow" href="/download/android/update">Android下载</a>
+						</p>
+						<p>
+							<a class="app mt10 t-center" rel="nofollow" href="/download/ios/update" target="_blank">iOS下载</a>
+						</p>
+					</li>
+					<li class="w20">
+						<h3 class="f16 mb10">关注我们</h3>
+						<p class="fl mr20 cursorpt showinfo"><img src="Picture/weixin_logo.png"><img src="Picture/weixin.jpg" class="head_pop absot"></p>
+						<p class="cursorpt"><img src="Picture/xinlang_logo.png" onclick="sinaWeibo();"></p>
+					</li>
+				</ul>
+			</div>
+			<div class="w1190 pb20">
+				<!--公司切换-->
+				<p class="t-center f12 c777776">网站备案/许可证号：京ICP证130021号
+					<a class="c777776" href="https://i1.mayi.com/mayi41/M99/YJ/EZ/UFM6JS6W3CJCKVTKB7XZBH7QEPN4ZY.jpg" target="_blank">营业执照编号：102585576</a> 易云游网络技术（北京）有限公司</p>
+			</div>
+			<div class="email" style="display:none">
+				<a href="javascript:void(0)" id="talksLogin"><img src="Picture/email.png" />在线聊天(0)</a>
+			</div>
+		</div>
+
+		<!--生成支付二维码-->
+		<!--<script src="js/qrcode.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/qrcode.js" type="text/javascript" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/public_css/login.css" />
+
+		<!--<script src="js/public_js/cander/jquery.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/public_js/loginHtml.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public_js/login.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+
+		<script type="text/javascript">
+			//弹出/关闭登录页面
+			$("body").on("click", "#loginshow", function() {
+				$(".all").css("display", "block")
+			})
+
+			window.callback = function(res) {
+				if(res.ret === 0) {
+					$("#TencentCaptcha").html("验证成功");
+					$("#TencentCaptcha").css("background-color", "darkcyan");
+					$("#TencentCaptcha").css("color", "#fff")
+					$("#TencentCaptcha").prop('disabled', 'disabled');
+				}
+			}
+
+			//<!--登录-->
+			var login = {
+				init() {
+					login.logon_status();
+					login.binding();
+				},
+				//判断是否登录
+				logon_status() {
+					$.ajax({
+						type: "get",
+						url: "http://" + util.getIpconfig() + ":8080/UserInformation/logon_status",
+						async: false,
+						contentType: "application/json;charset=utf-8",
+						dataType: "json",
+						xhrFields: {
+							withCredentials: true
+						},
+						success: function(data) {
+							console.log(data);
+							if(data != null) {
+								login.islogin(data);
+								login._islandlord(data);
+
+							} else {
+								$(".logon_status").prepend('<a id="loginshow">登录</a>');
+							}
+						},
+						error() {
+							$(".logon_status").prepend('<a id="loginshow">登录</a>');
+						}
+
+					})
+				},
+				//登录后的房东管理
+				_islandlord() {
+					$(".logon_status").after('' +
+						'<li>' +
+						'<div class="showinfo">' +
+						'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html" target="_self" class="stclick">我是房东</a>' +
+						'<div class="head_pop">' +
+						'<div class="pop_column plr10">' +
+						'<p>' +
+						'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanOrder_list.html">订单管理</a>' +
+						'</p>' +
+						'<p>' +
+						'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanHoures.html">房源管理</a>' +
+						'</p>' +
+						'<p>' +
+						'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanComments.html">点评管理</a>' +
+						'</p>' +
+						'<p>' +
+						'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanHourse_price.html">价格管理</a>' +
+						'</p>' +
+						'<p>' +
+						'<a href="">关注房东微信</a>' +
+						'</p>' +
+						'<p>' +
+						'<a href="">下载APP</a>' +
+						'</p>' +
+						'<p hidden="" id="s_micro" style="display: block;">' +
+						'<a href="/user/landlord/microshopmanager/">房东微店</a>' +
+						'</p>' +
+						'<p>' +
+						'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html">我的设置</a>' +
+						'</p>' +
+						'</div>' +
+						'</div>' +
+						'</div>' +
+						'</li>');
+				},
+				//登录与未登录的切换
+				islogin(data) {
+					$(".logon_status").prepend('' +
+						'<div class="showinfo">' +
+//						'<a  href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html" target="_self"><img src="' + data.upicture + '"  class="user_img">' +
+						'<a  href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html" target="_self"><img src="Picture/cgehp1cxdoxuq,q-aabd0owykf8682.jpg_150x150c.jpg"  class="user_img">' +
+						'	<span class="name" id="head_nickname">' + data.uNickName + '</span></a>' +
+						'<div class="head_pop">' +
+						'	<div class="pop_column">' +
+						'		<p>' +
+						'			<a  href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html?article=article-div2-orders" target="_self" id="myorder" rel="nofollow">我的订单</a>' +
+						'		</p>' +
+						'		<p>' +
+						'			<a  href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html?article=article-div2-balance"  target="_self" id="myorder" rel="nofollow" class="slideactive">我的账户</a>' +
+						'		</p>' +
+						'		<p>' +
+						'			<a  href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html?article=active-div2-collect" target="_self" id="mycollect" rel="nofollow">我的收藏</a>' +
+						'		</p>' +
+						'		<p>' +
+						'			<a  href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html?article=active-div2-inform" target="_self" id="mymsg" rel="nofollow">消息通知</a>' +
+						'		</p>' +
+						'		<p class="Invite_friends">邀请好友</p>' +
+						'		<p class="textCt">' +
+						'			<a id="loginoutbut" target="_self" class="stclick" clicktag="1_6">退出登录</a>' +
+						'		</p>' +
+						'	</div>' +
+						'</div>' +
+						'</div>');
+				},
+				binding() {
+					//登录
+					$("#register02").click(function() {
+						$.ajax({
+							type: "get",
+							url: "http://" + util.getIpconfig() + ":8080/UserInformation/users_login",
+							async: true,
+							data: {
+								uPhone: $("#uid").val(),
+								uPassword: $("#pwd").val()
+							},
+							contentType: "application/json;charset=utf-8",
+							dataType: "json",
+							xhrFields: {
+								withCredentials: true
+							},
+							success: function(data) {
+								if(data > 0) {
+									$("#loginshow").css("display", "none");
+									$(".all").css("display", "none");
+									login.logon_status();
+								} else {
+									$("#logging_status").html("用户名或密码错误");
+								}
+							}
+						});
+					})
+				}
+			}
+			login.init();
+			//<!--登录end-->
+		</script>
+
+		<!--获取房间信息-->
+		<script type="text/javascript">
+			var HomeAllInformation = {
+				init() {
+					HomeAllInformation.select_multi_HomeAllInformation_order();
+				},
+				select_multi_HomeAllInformation_order() {
+					$.ajax({
+						type: "get",
+						url: "http://" + util.getIpconfig() + ":8080/HomeAllInformation/select_multi_HomeAllInformation_order",
+						data: {
+							uiId: 0,
+							haiId: util.getUrlParam("haiid")
+						},
+						async: false,
+						traditional: true,
+						xhrFields: {
+							withCredentials: true
+						},
+						success: function(data) {
+							console.log(data);
+							if(data.length > 0) {
+								$(".hdpName").text(data[0].housedecription.hdpName);
+								$(".hpPrice").val(data[0].homeprice.hpPrice);
+								$(".hsProvince").text(data[0].housesite.hsProvince + data[0].housesite.hsCity + data[0].housesite.hsArea + data[0].housesite.hsSite)
+								//$(".picturetype").attr("src", "Picture/" + data[0].picturetype[0].pictures[0].pUrl + "");
+								$(".picturetype").attr("src", "Picture/kwuezdc2shmlhreykcbrs8khl4q2mm.jpg_732x480c.jpg");
+								$(".showtotalprice2").text(data[0].homeprice.hpPrice * util.getCalcDate($(".rvStartTime").val(), $(".rvEndTime").val()))
+
+							}
+						},
+						error() {
+							console.log("错误")
+						}
+					});
+				},
+				binding() {
+
+				}
+			}
+			HomeAllInformation.init();
+		</script>
+
+		<!--收集用户信息下单-->
+		<script type="text/javascript">
+			var reserve = {
+				init() {
+					reserve.binding();
+				},
+				insertReserve(entity) {
+					$.ajax({
+						type: "post",
+						url: "http://" + util.getIpconfig() + ":8080/reserve/insertReserve",
+						contentType: 'application/json;charset=utf-8',
+						dataType: 'json',
+						async: true,
+						xhrFields: {
+							withCredentials: true //允许带上凭据
+						},
+						data: JSON.stringify(entity),
+						success: function(data) {
+							if(data != null && data != "") {
+								window.scrollTo(0, 0)
+								$("#content_left_fl").css("display", "none");
+								$("#pin1").css("display", "none");
+								$("#content_clearfloat_qrcode").css("display", "inline-block");
+								$("#a_after_2").addClass("a_after");
+								$("#progress").removeClass("progress_0");
+								$("#progress").addClass("progress_1");
+								reserve.makeCode(data, $("#head_nickname").text(), $(".showtotalprice2").text());
+							}
+						}
+					})
+				},
+				//生成二维码
+				makeCode(rvId, uNickName, sumPrice) {
+					var url = location.search;
+					//生成二维码
+					qrCode = document.getElementById("qrcode");
+					// var txtContent = jsdata;
+					qrcode = new QRCode(qrCode, {
+						render: "canvas",
+						width: 150,
+						height: 150,
+						correctLevel: 3,
+						text: "http://172.20.10.4:8020/MiQiHome_PC_1.2/affirm.html?rvId=" + rvId + "&sumPrice=" + sumPrice + "",
+						correctLevel: QRCode.CorrectLevel.L,
+					});
+
+				},
+				binding() {
+					$(".rzr_submit_fl_c22bb62").click(function() {
+						if($('.lpName').val() != "" && $('.lpCardId').val() != "") {
+							$(".vf_table_border_t_mt15").append('<li class="borb verifier clearfloat success_yanz on_check"><div class="vf_list_div" ><div class="verifier_list w72 vf_name">' + $('.lpName').val() + '</div><div class="verifier_list w346 vf_ID">身份证号：<span class="IDcord">' + $('.lpCardId').val() + '</span></div><div class="verifier_list w234 relave"><span class="yanz_status" yanstate="1">验证通过，不可修改</span></div><div class="verifier_list cursorpt w60"><span class="vf_edit gray"></span></div><div class="verifier_list vf_remove cursorpt gray"><span class="vf_remove gray vf_remove_gray" >删除</span></div></div></li>');
+							$(".relave_clearfloat_p_list").append('<div class="c_person checked" data-lpCardId="' + $(".lpCardId").val() + '"><span></span>' + $('.lpName').val() + '</div>');
+							$('.lpName').val("");
+							$('.lpCardId').val("");
+							$("#msg").text("");
+						} else {
+							$("#msg").text("不能为空!!");
+						}
+					})
+
+					$("body").on("click", ".vf_remove_gray", function() {
+						$(this).closest('li').remove();
+					})
+					$("body").on("click", ".c_person", function() {
+						if($(this).attr("class") == "c_person checked") {
+							$(this).removeClass("checked");
+						} else {
+							$(this).addClass("checked");
+						}
+					})
+
+					$("#insertReserve").click(function() {
+						if($(".checked").length > 0) {
+							var entity = {};
+							//预定开始日期
+							entity.rvStartTime = $(".rvStartTime").val();
+							//预定结束日期
+							entity.rvEndTime = $(".rvEndTime").val();
+							//预定总额
+							entity.rvSumMoney = $(".showtotalprice2").text();
+							//预定号码
+							entity.rvPhone = $("#tenantmobile").val();
+							//是否需要发票 0:不需要 1:需要
+							entity.rvInvoice = 0;
+							//入住人数
+							entity.rvLiveNumber = $("#roomNum").val();
+							//预定天数
+							entity.rvTotalDay = $(".totlenight3").text();
+							//预定房间套数
+							entity.rvHouseNumeb = 1;
+							//关联房屋全部信息表
+							entity.haiId = util.getUrlParam("haiid");
+							//入住信息数组
+							entity.livepeopleList = [];
+							$.each($(".checked"), function(index, data) {
+								entity.livepeopleList.push({
+									lpName: $(this).text(),
+									lpCardId: $(this).data("lpcardid")
+								});
+
+							});
+							console.log(entity);
+
+							reserve.insertReserve(entity);
+						} else {
+							alert("不能为空！！");
+						}
+
+					})
+
+				}
+			}
+			reserve.init();
+		</script>
+
+		<script type="text/javascript">
+			
+			//计秒
+			function setIntervalTime(){		
+				if($("#setIntervalTime").text()=="1"){
+					window.clearInterval(clearlntervsId);
+					location.href="http://127.0.0.1:8020/MiQiHome_PC_1.2/mqhouse/index.html";
+				}
+				$("#setIntervalTime").text($("#setIntervalTime").text()-1);		
+			}
+		
+			var websocket = null;
+			//判断当前浏览器是否支持WebSocket
+			if('WebSocket' in window) {
+				//建立连接，这里的/websocket ，是Servlet中注解中的那个值
+				websocket = new WebSocket("ws://" + util.getIpconfig() + ":8080/websocketController");
+			} else {
+				alert('当前浏览器 Not support websocket');
+			}
+			//连接发生错误的回调方法
+			websocket.onerror = function() {
+				console.log("WebSocket连接发生错误");
+			};
+			//连接成功建立的回调方法
+			websocket.onopen = function() {
+
+				console.log("WebSocket连接成功");
+			}
+			//接收到消息的回调方法
+			websocket.onmessage = function(event) {
+
+				if(event.data == "1") {
+					$("#content_clearfloat_qrcode").css("display", "none");
+					$("#content_clearfloat_websocket").css("display", "inline-block");
+					$("#a_after_3").addClass("a_after");
+					$("#a_after_4").addClass("a_after");
+					$("#progress").removeClass("progress_1");
+					$("#progress").addClass("progress_2");
+					$("#progress").addClass("progress_3");
+					clearlntervsId=setInterval(setIntervalTime,1000);
+					console.log("数据更新啦");
+					
+				}
+			}
+			//连接关闭的回调方法
+			websocket.onclose = function() {
+				console.log("WebSocket连接关闭");
+			}
+			//监听窗口关闭事件，当窗口关闭时，主动去关闭WebSocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+			window.onbeforeunload = function() {
+				closeWebSocket();
+			}
+			//关闭WebSocket连接
+			function closeWebSocket() {
+				websocket.close();
+			}
+		</script>
+	</body>
+
+</html>

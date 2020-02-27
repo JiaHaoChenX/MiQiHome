@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+		<title></title>
+		<script src="js/public_js/utils.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			$(function() {
+				$.ajax({
+					type: "get",
+					url: "http://127.0.0.1:8080/Computer_typeController/selectAllCType",
+					async: true,
+					contentType: "application/json;charset=utf-8",
+					dataType: "json",
+					xhrFields: {
+						withCredentials: true
+					},
+					success: function(data) {
+						console.log(data);
+					}
+				});
+
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Date Picker Demo</title>
+		<link rel="stylesheet" href="dist/daterangepicker.min.css" />
+		<link rel="stylesheet" type="text/css" href="dist/daterangepicker.min.css" />
+	</head>
+
+	<body>
+		<input id="demo" />
+		<div id="demo1"></div>
+		<script src="../jquery/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/moment.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/jquery.daterangepicker.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var index = 0;
+			$('#demo').dateRangePicker({
+				inline: true,
+				container: '#demo1',
+				showDateFilter: function(time, date) {
+					index += 1;
+					if(index % 2 == 0) {
+						return '<div style="padding:0 5px; "   v-on:click="jd">\
+						<span style="font-weight:bold">' + date + '</span>\
+						<div style="opacity:0.3;">$' + Math.round(Math.random() * 999) + '</div>\
+					</div>';
+					} else {
+						return '<div style="padding:0 5px; "   v-on:click="jd">\
+						<span style="font-weight:bold">无房</span>\
+					</div>';
+					}
+					console.log(index);
+				},
+				startDate: '2019-02-20',
+				endDate: '2019-05-10'
+
+			});
+		</script>
+	</body>
+
+</html>

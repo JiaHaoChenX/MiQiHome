@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>钱箱</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/dialog.css" />
+	</head>
+
+	<body>
+		<div>
+			<!--标题-->
+			<div style="overflow: hidden;">
+				<div class="border_bottom">
+					<h4 style="margin-bottom: 15px;">门店钱箱 
+					<span style="float: right;display: flex;cursor: pointer;"><span class="blue">设置</span></span></h4>
+				</div>
+
+			</div>
+			<!--余额-->
+			<div class="border height_margin money_box_detail">
+				<label class="price-label">
+        				我的钱箱余额：
+					<sup class="money_sup">￥</sup>
+					<strong class="money_strong">10.00</strong>
+				</label>
+				<a><input type="button" class="btn btn-primary" value="提现" /></a>
+			</div>
+			<!--列表-->
+			<div class="height_margin">
+				<ul class="coupon_tab">
+					<li>
+						<a href="##">全部收支</a>
+					</li>
+					<li>
+						<a href="##">当面付</a>
+					</li>
+					<li>
+						<a href="##">服务单</a>
+					</li>
+					<li>
+						<a href="##">体现</a>
+					</li>
+					<li>
+						<a href="##">现结款</a>
+					</li>
+					<li>
+						<a href="##">其他收入</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+
+			<div class="height_margin  border" style="border: 2px solid #eee;margin-top:80px;">
+				<div class="service_tab money_box_content">
+					<div class="service_tab height_margin">
+						<div class="fontSize13">
+							<a href="##" class="service_tab_a">全部</a>
+							<a href="##">支出</a>
+							<a href="##">收入</a>
+						</div>
+					</div>
+					<div style="float: right;display: flex;margin-top: 10px;">
+						<span class="fontSize12" style="margin-top: 10px;">日期 ：</span>
+						<div class="fontSize13 service_data" style="height: 40px;line-height: 40px">
+							<input type="date" class="form-control" name="" id="" value="" />
+							<span style="margin: 0 5px;">至</span>
+							<input type="date" class="form-control" name="" id="" value="" />
+							<input type="button" class="btn btn-primary" style="border-radius: 0;" name="" id="" value="查询 " />
+						</div>
+					</div>
+				</div>
+				<div id="coupon3" style="margin-bottom: 80px;">
+					<table class="table table-striped">
+						<tr>
+							<th>类型 </th>
+							<th>创建时间</th>
+							<th>项目信息 | 商品信息 | 订单编号</th>
+							<th>金额</th>
+							<th>状态</th>
+						</tr>
+						<tr>
+						</tr>
+					</table>
+				</div>
+				
+			</div>
+		</div>
+
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script src="../js/dialog.js"></script>
+		<script>
+			function btnClick() {
+				var d = dialog({
+					title: '途家优选介绍',
+					content: '<div class="height_margin"><div class="optimization_rule"><p>途家优选规则</p><ul class="floor5_p_color fontSize12"><li>1、达成开通闪订、房屋质量分数≥3、图片质量分数≥3、近3个月内点评平均分≥4.8、近3个月内差评率&lt;10%，即可成为途家优选房源</li><li>2、每月20日更新数据，届时可以登录途家管家系统，在【经营管理】-【途家优选】中查看最新数据。</li></ul></div><div class="optimization_rule"><p>途家优选推广支持</p><ul class="floor5_p_color fontSize12"><li>1、专属标签：<ul><li>符合优选标准的房源均自动添加“途家优选”标识；</li><li>享有优选专属筛选项；</li><li>享有APP及PC首页优选专属展示区。</li></ul></li><li>2、排序加权：<ul><li>排序加权30%以上，让您的房源获得更多的展示机会；</li><li>成单率增加3倍，房客对优选房源更加信赖，能大大提升成单率。</li></ul></li><li>3、活动优先：<ul><li>途家的各类活动优先参加，包括大促及每周四特卖活动。</li></ul></li><li>4、多渠道推广：<ul><li>优先展示在携程、去哪儿、艺龙、微信、支付宝、飞猪、蚂蚁搜索内。</li></ul></li></ul></div>',
+				});
+				d.show();
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>点评管理</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+	</head>
+
+	<body>
+		<div>
+			<div  style="overflow: hidden;">
+				<div style="border-bottom: 2px solid #ddd;padding-bottom: 10px;font-size: 20px;">
+					<h4>点评管理</h4>
+				</div>
+				<div class="order_ul">
+					<ul class="order_content_ul">
+						<li class="active">全部</li>
+						<li>待回复</li>
+						<li>待评价</li>
+						<li>未通过审核</li>
+					</ul>
+					<ul class="order_content_ul2" style="float: right;">
+						<li style="display: flex;">
+							<label>订单号：<input type="text" class="form-control" style="width: 180px;"/></label>
+							<div class="" style="margin: 0 5px;">
+								<i></i>
+								
+							</div>
+							<input type="button" class="btn btn-primary" value="搜索" />
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="height_margin">
+				<!--<p class="blue fontSize12">暂无相关订单</p>-->
+				<table class="diary_table" border="1px">
+					<tbody>
+						<tr>
+							<th>编号</th>
+							<th>姓名</th>
+							<th>内容</th>
+							<th>时间</th>
+							<th>状态</th>
+							<th>订单号</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				$("body").on("click", ".order_content_ul li", function() {
+
+					$(this).siblings('li').removeClass('active'); // 删除其他兄弟元素的样式
+
+					$(this).addClass('active'); // 添加当前元素的样式
+
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

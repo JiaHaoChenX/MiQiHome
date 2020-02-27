@@ -1,0 +1,38 @@
+﻿.landlordDes {
+  position: relative;
+}
+.landlordDes .landlordDesR {
+  position: relative;
+}
+.landlordDes .landlordDesR .onlineHouseMaster {
+  width: 177px;
+  height: 31px;
+  background-color: #2eba65;
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+  line-height: 31px;
+  color: #fff;
+  border-radius: 2px;
+}
+.landlordDes .hfCodeBox {
+  display: none; 
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  z-index: 99999999;
+  left: 124px;
+  top: 115px;
+  text-align: center;
+  background-image: url('../../Images/shaderectangle.png');
+}
+.landlordDes .hfCodeBox .codeImgBox {
+  background-image: url('../../Images/housemastercode1_03.png');
+  background-repeat: no-repeat;
+  margin: 30px auto 17px;
+  width: 88px;
+  height: 88px;
+}
+.landlordDes .hfCodeBox .codeImgBox .codePhone {
+  margin-bottom: 11px;
+}

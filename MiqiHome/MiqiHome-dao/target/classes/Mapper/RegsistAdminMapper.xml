@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    发布者：张育威
+-->
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="com.miqi.miqihome.dao.IRegsistAdminDao"><!--接口名-->
+    <!--查询所有管理员(也可按条件，分页)-->
+    <select id="select_regsistAdmin" resultType="Regsistadmin">
+        select *from regsistAdmin
+        <where>
+            <if test="raName !=null and raName !=''">
+                raName=#{raName}
+            </if>
+            <if test="raPhone !=null and raPhone !=''">
+                and  raPhone=#{raPhone}
+            </if>
+            <if test="raEmail !=null and raEmail !=''">
+                and raEmail=#{raEmail}
+            </if>
+            <if test="raRole !=null and raRole !=''">
+                and raRole=#{raRole}
+            </if>
+            <if test="raState !=null and raState !=''">
+                and raState=#{raState}
+            </if>
+        </where>
+        limit ${page},${limit}
+    </select>
+    <!--查询管理员数量-->
+    <select id="select_regsistAdmin_count" resultType="int">
+        select count(*)from regsistAdmin
+        <where>
+            <if test="raName !=null and raName !=''">
+                raName=#{raName}
+            </if>
+            <if test="raPhone !=null and raPhone !=''">
+                and  raPhone=#{raPhone}
+            </if>
+            <if test="raEmail !=null and raEmail !=''">
+                and raEmail=#{raEmail}
+            </if>
+            <if test="raRole !=null and raRole !=''">
+                and raRole=#{raRole}
+            </if>
+            <if test="raState !=null and raState !=''">
+                and raState=#{raState}
+            </if>
+        </where>
+    </select>
+
+    <!--根据 电话号码 单个查询-->
+    <select id="select_one_regsistAdmin" parameterType="string" resultType="RegsistAdmin">
+         select * from regsistAdmin where raPhone=#{raPhone};
+    </select>
+
+    <!--管理员登录,账号密码登录-->
+    <select id="login_regsistAdmin" resultType="int">
+        select count(*)from regsistAdmin where raPhone=#{raPhone} and raPassword=#{raPassword} and raState=1
+    </select>
+    <!--管理员添加-->
+    <insert id="insert_regsistAdmin" parameterType="Regsistadmin">
+        insert into regsistAdmin(raName,raPhone,raEmail,raPassword,raRole) values(#{raName},#{raPhone},#{raEmail},000000,#{raRole})
+    </insert>
+    <!--管理员修改-->
+    <update id="update_regsistAdmin" parameterType="Regsistadmin">
+        update regsistAdmin set raName=#{raName},raPhone=#{raPhone},raEmail=#{raEmail},raPassword=#{raPassword},raRole=#{raRole} where raId=#{raId}
+    </update>
+    <!--管理员注销与启用-->
+    <update id="update_regsistAdmin_raState">
+        update regsistAdmin set raState=#{raState} where raId=#{raId}
+    </update>
+    <!--密码重置-->
+    <update id="update_regsistAdmin_RraPassword" parameterType="int">
+        update regsistAdmin set raPassword='000000' where raId=#{raId}
+    </update>
+    <!--密码修改-->
+    <update id="update_regsist_raPassword">
+        update regsistAdmin set raPassword=#{raPassword} where raId=#{raId} and raPhone=#{raPhone}
+    </update>
+</mapper>
+

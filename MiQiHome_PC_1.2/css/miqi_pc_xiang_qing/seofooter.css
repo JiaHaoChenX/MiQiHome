@@ -1,0 +1,185 @@
+﻿.foot {
+    width: 100%;
+    padding-top: 10px;
+    background-color: #322c27;
+    color: #fff;
+}
+
+.city_classify {
+    margin-top: 10px;
+}
+
+.city_classify ul li {
+    font-size: 12px;
+    color: #C1C1C1;
+    float: left;
+    width: 90px;
+    height: 36px;
+    background: #3E3731;
+    border-radius: 3px;
+    line-height: 36px;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.rt-app1{
+	right:82px;
+	width: 145px
+}
+.app-img1{ 
+	position: absolute;
+    z-index: 10000;
+    top: -87px;
+    right: 75px;
+    background: url(../Images/cgu3vz8x9d57lpgws3expxsf963pqs.jpg) no-repeat;
+    background-size: 415px 308px;
+    width: 415px;
+    height: 308px;
+    padding: 40px 40px;
+    box-sizing: border-box;
+}
+.app-img1-fl{
+	margin-right: 40px; 
+	width: 145px;
+}
+.app-img1-uup{
+	font-size:18px;
+	margin-bottom: 16px;
+	text-align: center;
+	color: #312c28;
+}
+.app-img1-udp{
+	font-size: 16px;
+	margin-top: 10px;
+	text-align: center;
+	color: #312c28;
+}
+
+.city_classify ul li a {
+    font-size: 12px;
+    color: #C1C1C1;
+    float: left;
+    width: 90px;
+    height: 36px;
+    background: #3E3731;
+    border-radius: 3px;
+    line-height: 36px;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+    overflow: hidden
+}
+
+.choiced_bg_color {
+    background: #4C443C !important;
+}
+
+.big_classify_box {
+    margin-top: 20px;
+}
+
+.classify_box ul li {
+    float: left;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    margin-right: 10px;
+
+}
+
+.classify_box ul li a {
+    font-size: 12px;
+    color: #C1C1C1;
+    display: inline-block;
+}
+
+.classify_box ul li a:hover {
+    text-decoration: underline;
+}
+
+.other_name {
+    position: relative;
+    overflow: hidden;
+}
+
+/*展开与收起箭头*/
+.footer_open, .footer_close {
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    cursor: pointer;
+    background: url(../Images/link_up_down.png) no-repeat;
+}
+
+.footer_open {
+    background-position: 0 -6px;
+}
+
+.footer_close {
+    background-position: 0 0;
+}
+
+/*订单轮播*/
+.winBox {
+    width: 1100px;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel_box span {
+    width: 65px;
+    display: inline-block;
+    line-height: 40px;
+    float: left;
+    font-size: 12px;
+    color: #C1C1C1;
+}
+
+.cont-ul {
+    /*width的大小是根据下面li的长度和多少个li而定的*/
+    width: 4880px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cont-ul li {
+    width: 300px;
+    float: left;
+    line-height: 40px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+.cont-ul li a {
+    color: #C1C1C1;
+    font-size: 12px;
+}
+
+.cont-ul li a:hover {
+    text-decoration: underline;
+}
+
+.c777776 {
+    color: #777776;
+}
+
+.t-center {
+    text-align: center;
+}
+.f12 {
+    font-size: 12px;
+}
+
+/*订单轮播结束*/

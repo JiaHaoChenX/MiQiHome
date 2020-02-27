@@ -1,0 +1,78 @@
+﻿.tel_type{
+    width: 92px;
+    display: inline-block;
+    height: 34px;
+    border: 1px solid #ccc;
+    border-left: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #322c27;
+    text-align: center;
+    line-height: 34px;
+    position: relative;
+}
+.tel_type:after{
+    content: '';
+    width: 11px;
+    height: 6px;
+    background: url("../Images/sanjiao_icon.png") no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+.nation_list_order{
+    position: absolute;
+    width: 271px;
+    height: auto;
+    background: #fff;
+    left: 48.5%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    /*padding: 0 10px;*/
+    z-index: 1000;
+    display: none;
+    overflow-y: hidden;
+}
+.continent_list_order {
+    height: 36px;
+    line-height: 36px;
+}
+.continent_list_order li{
+    float: left;
+    font-size: 15px;
+    color: #000000;
+    padding: 0 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #eeeeee;
+    width: 21%;
+}
+.nation_tel_list_order li{
+    font-size: 15px;
+    color: #000000;
+}
+.nation_tel_list_order li a{
+    display: inline-block;
+    float: left;
+    padding: 0 8px;
+    height: 32px;
+    line-height: 32px;
+    width: 43%;
+    text-decoration: none;
+}
+.avtive_green_order{
+    color: #22bb62!important;
+    border-bottom: 1px solid #22bb62!important;
+
+}
+.avtive_green_a{
+    color: #22bb62!important;
+}
+.dis_show{
+    display: block;
+
+}
+.dis_no{
+   display: none;
+}
+.relative{
+	position: relative;
+}
+	

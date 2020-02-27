@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>妙妙屋</title>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<!--<script src="../js/public_js/utils.js type="text/javascript" charset="utf-8"></script>-->
+		<script src="../js/public_js/utils_lly.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script type="text/javascript" src="js/jquery-1.11.3.js"></script>-->
+		<!--<script type="text/javascript" src="js/Date.js"></script>-->
+		<script type="text/javascript" src="js/city2.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			img {
+				vertical-align: middle;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			.t-top {
+				height: 60px;
+				background-color: #fff;
+				box-shadow: 1px 1px 3px rgba(0, 0, 0, .15);
+				border-bottom: 1px solid #ccc\9;
+				position: relative;
+				padding: 0 80px;
+				font-size: 14px;
+			}
+			
+			.t-top-left {
+				float: left;
+				width: 25%;
+				height: 60px;
+				line-height: 60px;
+				font-size: 30px;
+				color: #337ab7;
+				font-weight: bold;
+			}
+			
+			.t-top-middle {
+				float: left;
+				width: 50%;
+			}
+			
+			.t-top-right {
+				float: right;
+				width: 25%;
+			}
+			
+			.t-top-middle-span1 {
+				float: left;
+				display: block;
+				line-height: 60px;
+				width: 50px;
+				text-align: center;
+			}
+			
+			.t-top-middle-span1:hover {
+				border-bottom: 2px solid #ED6D00;
+			}
+			
+			.t-top-right>a {
+				line-height: 60px;
+				margin: 0 15px;
+			}
+			
+			.t-top-right>a:hover {
+				text-decoration: underline;
+			}
+			
+			.t-top-right-a1 {
+				padding: 3px 11px;
+				background-color: #3B83CB;
+				color: white;
+				border-radius: 4px;
+			}
+			
+			.t-middle {
+				height: 100%;
+				background-color: #FFFFFF;
+			}
+			
+			.t-middle-cent {
+				width: 77%;
+				margin: 0 auto;
+				font-size: 13px;
+				color: #666666;
+			}
+			
+			.t-middle-cent-div1 {
+				margin: 15px 0;
+			}
+			
+			.t-middle-cent-div2 {
+				height: 825px;
+			}
+			
+			.t-bottom {
+				text-align: center;
+				padding: 70px 0 20px 0;
+				background-color: #F8F8F8;
+				color: #666666;
+				font-size: 12px;
+				margin-top: 40px;
+			}
+			
+			.t-bottom>p>a {
+				margin: 0 10px;
+			}
+			
+			.t-bottom>p>a:hover {
+				text-decoration: underline;
+			}
+			
+			.cent-div2-article {
+				float: left;
+				width: 20%;
+				height: 100%;
+				border-top: 2px solid #ED6D00;
+				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+				margin: 10px;
+				font-size: 12px;
+			}
+			
+			.cent-div2-content {
+				float: left;
+				width: 75%;
+				height: 100%;
+				margin: 10px;
+				overflow: scroll;
+			}
+			
+			.article-div1-left {
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				margin: 20px;
+			}
+			
+			.article-div1-right {
+				float: right;
+				text-align: left;
+				color: #2E7DD0;
+				margin: 15px 12px 0 0px;
+			}
+			
+			.article-div1-right>p {
+				margin: 5px 0;
+			}
+			
+			.article-div1-right>p>a:hover {
+				text-decoration: underline;
+			}
+			
+			.article-div2-p1 {
+				height: 40px;
+				line-height: 40px;
+				font-size: 14px;
+				background-color: #F8F8F8;
+				border: 1px solid #F1F1F1;
+				color: #333333;
+				margin: 10px 0;
+			}
+			
+			.i-order {
+				font-size: 16px;
+				color: #FF9A00;
+				margin: 0 10px 0 20px;
+			}
+			
+			.article-div2-ul1>li {
+				height: 35px;
+				line-height: 35px;
+				margin-left: 50px;
+			}
+			
+			.article-div2-ul1>li:hover {
+				color: #FF9A00;
+			}
+			
+			.content-personal,
+			.content-remarkOn-strong2 {
+				color: #333333;
+			}
+			
+			.content-personal-div1 {
+				margin: 20px 0;
+				width: 100%;
+				height: 200px;
+				border: 1px solid #DDDDDD;
+			}
+			
+			.content-personal-div1-p1 {
+				height: 40px;
+				line-height: 40px;
+				border-bottom: 1px solid #DDDDDD;
+				font-size: 17px;
+				padding-left: 20px;
+				background-color: #F8F8F8;
+			}
+			
+			.content-personal-div1-img1 {
+				float: left;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				margin: 30px;
+			}
+			
+			.content-personal-div1-div1 {
+				float: left;
+				margin: 20px 0;
+			}
+			
+			.content-personal-div1-a1 {
+				color: #3B83CB;
+			}
+			
+			.content-personal-div1-div1>p {
+				margin: 10px 0;
+			}
+			
+			.content-personal-div2 {
+				padding: 20px 0px 0 80px;
+			}
+			
+			.content-personal-div2-txt1 {
+				width: 270px;
+				height: 30px;
+				border-radius: 5px;
+				border: 1px solid #DDDDDD;
+			}
+			
+			.content-personal-div2-lab1 {
+				width: 50px;
+				text-align: left;
+			}
+			
+			.content-personal-div2-td1 {
+				width: 100px;
+				text-align: right;
+				padding-right: 10px;
+			}
+			
+			.content-personal-div2-tr1 {
+				height: 55px;
+			}
+			
+			.content-personal-div2-form1>select {
+				width: 90px;
+				height: 30px;
+				border: 1px solid #DDDDDD;
+				border-radius: 5px;
+			}
+			
+			.content-personal-div2-a1 {
+				padding: 9px 105px;
+				background-color: #FF6600;
+				color: white;
+				border-radius: 5px;
+			}
+			
+			.content-personal-div2-a1:hover {
+				background-color: #FF9A00;
+				color: white;
+			}
+			
+			.modal-header-div1 {
+				height: 40px;
+				padding: 10px 20px 10px 30px;
+				background-color: #DDDDDD;
+				color: #666666;
+				font-size: 14px;
+			}
+			
+			.modal-body-set,
+			.modal-body-email {
+				padding: 10px 30px 30px 40px;
+			}
+			
+			.modal-footer-btn1 {
+				font-size: 18px;
+				width: 150px;
+				border: 1px solid #3EB382;
+				margin-right: 90px;
+			}
+			
+			.modal-footer-btn2 {
+				color: #3EB382;
+				background-color: white;
+			}
+			
+			.modal-footer-btn3 {
+				color: white;
+				background-color: #3EB382;
+			}
+			
+			.modal-body-set-txt1 {
+				width: 250px;
+				height: 30px;
+				border-radius: 5px;
+				border: 1px solid #D0D0D0;
+				margin-left: 10px;
+			}
+			
+			.modal-body-set-txt2 {
+				width: 100px;
+				height: 30px;
+				border-radius: 5px;
+				border: 1px solid #D0D0D0;
+				margin-left: 10px;
+			}
+			
+			.modal-body-set-a1 {
+				padding: 7px 113px;
+				border-radius: 5px;
+				background-color: #FF6600;
+				color: white;
+				margin-left: 50px;
+			}
+			
+			.modal-body-set-a1:hover,
+			.modal-body-email-a1:hover {
+				background-color: #F0AD4E;
+				color: white;
+			}
+			
+			.modal-body-set>p,
+			.modal-body-email>p {
+				margin: 25px 0;
+			}
+			
+			.modal-body-email-txt1 {
+				width: 240px;
+				height: 30px;
+				border-radius: 5px;
+				border: 1px solid #D0D0D0;
+				margin-left: 10px;
+			}
+			
+			.modal-body-email-a1 {
+				padding: 8px 113px;
+				border-radius: 5px;
+				background-color: #FF6600;
+				color: white;
+				margin-left: 60px;
+			}
+			
+			.form-control {
+				display: inline;
+				padding: 0;
+			}
+			
+			.article-div2-ul1>li>a {
+				color: #666666;
+			}
+			
+			.article-div2-ul1>li>a:hover {
+				color: #FF6600;
+				text-decoration: none;
+			}
+			
+			.content-diamond-div1 {
+				font-size: 16px;
+				color: #FF6600;
+				padding: 0 0 10px 0px;
+				box-shadow: 0px 4px 5px #E7E7E7;
+			}
+			
+			.content-diamond-div2 {
+				margin-top: 20px;
+				border: 1px solid #D0D0D0;
+				height: 300px;
+			}
+			
+			.content-diamond-div2-div1 {
+				width: 80%;
+				height: 180px;
+				margin: 80px 0 0 110px;
+			}
+			
+			.content-diamond-div2-div1>p {
+				margin-top: 20px;
+			}
+			
+			.content-diamond-div2-input1 {
+				padding-left: 5px;
+				margin-left: 15px;
+				height: 30px;
+				width: 270px;
+				border-radius: 4px;
+				border: 1px solid #DDDDDD;
+			}
+			
+			.content-diamond-div2-btn1 {
+				height: 30px;
+				width: 270px;
+				border-radius: 4px;
+				margin-left: 42px;
+				border: none;
+				background-color: #FF9900;
+				color: white;
+			}
+			
+			.content-diamond-div2-btn1:hover {
+				background-color: #FF6600;
+			}
+			
+			.content-diamond-div2-div1>p>span {
+				margin-left: 10px;
+				color: #FF6600;
+			}
+			
+			.nav-tabs2 {
+				border-bottom: 2px solid #ff6600;
+			}
+			
+			.nav-tabs2>li {
+				float: left;
+				margin-bottom: -2px;
+				margin-left: 5px;
+			}
+			
+			.active2 {
+				border: 2px solid #ff6600;
+				color: #555;
+				cursor: default;
+				background-color: #fff;
+				border-bottom-color: transparent;
+			}
+			
+			.content-orders-div2 {
+				margin: 20px 0;
+			}
+			
+			.content-orders-div2-div1 {
+				margin: 10px 0;
+				color: #333333;
+				font-size: 12px;
+			}
+			
+			.content-orders-div2-div2 {
+				margin: 10px 0;
+				border-top: 2px solid #FF6600;
+				height: 150px;
+			}
+			
+			.content-orders-div2-div3 {
+				padding: 0 10px;
+				height: 30px;
+				line-height: 30px;
+				background-color: #FFF9EF;
+			}
+			
+			.content-orders-div2-div4 {
+				float: right;
+			}
+			
+			.content-orders-div2-div4>a {
+				color: #333333;
+				margin: 0 10px;
+			}
+			
+			.content-orders-div2-div5 {
+				border-top: 1px solid #DDDDDD;
+				border-bottom: 1px solid #DDDDDD;
+				height: 115px;
+				padding: 10px 0;
+			}
+			
+			.content-orders-div2-tr1>td {
+				vertical-align: top;
+				line-height: 25px;
+				padding-right: 25px;
+			}
+			
+			.content-orders-div2-tr1>td>a {
+				color: #333333;
+			}
+			
+			.content-orders-div2-td1 {}
+			
+			.content-orders-div2-img1 {
+				width: 70px;
+				height: 43px;
+			}
+			
+			.content-orders-div2-span2 {
+				color: #FF6600;
+			}
+			
+			.content-remarkOn>div>strong {
+				padding: 0 15px;
+			}
+			
+			.content-remarkOn-div2-p1 {
+				text-align: center;
+			}
+			
+			.content-remarkOn-div2-p1>img {
+				margin-top: 30px;
+			}
+			
+			.content-balance-div2 {
+				margin: 10px 0;
+				border: 1px solid #E9E9E9;
+			}
+			
+			.content-balance-div2-p1 {
+				height: 35px;
+				line-height: 35px;
+				margin-bottom: 1px solid #E9E9E9;
+				border: 1px solid #DDDDDD;
+				box-shadow: 0px 3px 5px #E9E9E9;
+				/*阴影*/
+				background-image: linear-gradient(to top, #fff 1%, #f3f3f3 8%, #fffeff 49%);
+				/*背景颜色渐变*/
+				padding: 0 10px;
+			}
+			
+			.content-balance-div2-span1 {
+				margin-left: 200px;
+			}
+			
+			.content-balance-div2-span2 {
+				float: right;
+				box-shadow: 0px 0px 3px #FF6600;
+				color: #FF6600;
+				width: 40px;
+				height: 22px;
+				line-height: 22px;
+				margin-top: 5px;
+				text-align: center;
+			}
+			
+			.content-balance-div2-txt1 {
+				width: 100px;
+				height: 30px;
+				border: 1px solid #CCCCCC;
+			}
+			
+			.content-balance-div2-btn1 {
+				border: none;
+				width: 44px;
+				height: 30px;
+				background-color: #F79F31;
+				color: white;
+			}
+			
+			.content-balance-div2-table1 {
+				border-top: 2px solid #FF6600;
+				width: 100%;
+			}
+			
+			.content-balance-div2-tr1 {
+				height: 30px;
+				border: 1px solid #CCCCCC;
+				background-color: #FBFBFB;
+			}
+			
+			.content-balance-div2-tr1>th {
+				width: 25%;
+				color: #8C7A5B;
+				border: 1px solid #CCCCCC;
+				text-align: center;
+				background-color: #FFF9EF;
+			}
+			
+			.content-gathering-div2 {
+				padding-bottom: 20px;
+				border: 1px solid #CCCCCC;
+			}
+			
+			.content-gathering-div2-span1 {
+				color: #FF0000;
+			}
+			
+			.content-gathering-div2-p1 {
+				margin: 20px 10px;
+			}
+			
+			.content-gathering-div2-span1 {
+				margin-left: 20px;
+			}
+			
+			.content-gathering-zfb-td1 {
+				width: 150px;
+				text-align: right;
+			}
+			
+			.content-gathering-zfb-span1 {
+				background-color: #DDDDDD;
+				padding: 6px 10px;
+				margin-left: 5px;
+			}
+			
+			.content-gathering-zfb-txt1 {
+				width: 250px;
+				height: 30px;
+				border: 1px solid #C0C0C0;
+				padding: 0 5px;
+			}
+			
+			.content-gathering-zfb-td2 {
+				padding: 0 10px;
+			}
+			
+			.content-gathering-zfb-btn1 {
+				width: 250px;
+				height: 30px;
+				color: #FF6F0F;
+				border: 1px solid #FF6F0F;
+				background-color: #FFE8D3;
+				box-shadow: 0px 0px 3px #FF6F0F;
+				border-radius: 2px;
+			}
+			
+			.content-gathering-zfb-tr1 {
+				height: 40px;
+			}
+			
+			.content-travel-div2,
+			.modal-body-commonlyUsed {
+				margin: 20px 0;
+			}
+			
+			.content-travel-a1 {
+				float: right;
+				font-size: 14px;
+				line-height: 30px;
+			}
+			
+			.content-travel-div3-table1 {
+				border-top: 2px solid #FF6600;
+				width: 100%;
+				margin: 10px 0;
+			}
+			
+			.content-travel-div3-tr1>th {
+				background-color: #FFF9EF;
+				padding-left: 10px;
+				height: 28px;
+				color: #8C7A5B;
+				border-bottom: 1px solid #C0C0C0;
+			}
+			
+			.content-travel-div2-p2 {
+				float: right;
+				color: white;
+				padding: 5px 25px;
+				background-color: #FF9900;
+				border-radius: 4px;
+				margin-right: 20px;
+			}
+			
+			.content-travel-div2-p2:hover {
+				color: white;
+				background-color: #FF6600;
+			}
+			
+			.content-travel-div3-tr2 {
+				height: 34px;
+				border-bottom: 1px solid #C0C0C0;
+			}
+			
+			.content-travel-div3-tr2>td {
+				height: 12px;
+				overflow: hidden;
+			}
+			
+			.content-integral-div3 {
+				width: 100%;
+				height: 280px;
+				border: 1px solid #F5DCBC;
+				background-color: #FFFBF6;
+				padding: 5px 0 0 10px;
+			}
+			
+			.content-integral-div3>h4 {
+				font-size: 12px;
+				color: #6E3333;
+				margin: 15px 0 0 0;
+			}
+			
+			.content-integral-div3>p {
+				margin: 0px;
+				color: #333333;
+			}
+			
+			.content-changePassword-div2 {
+				margin: 40px 0;
+			}
+			
+			.content-collect-div2-div1 {
+				float: left;
+				width: 48%;
+				height: 290px;
+				margin: 15px 15px 0 0;
+				border: 1px solid #DDDDDD;
+			}
+			
+			.content-collect-div2-div1>p {
+				margin: 8px;
+			}
+			
+			.content-collect-div2-div2 {
+				width: 371px;
+				height: 232px;
+				overflow: hidden;
+			}
+			
+			.content-collect-div2-span1 {
+				float: right;
+				color: #FD3333;
+			}
+			
+			.content-collect-div2-span2 {
+				font-size: 16px;
+			}
+			
+			.content-collect-div2-float1 {
+				position: absolute;
+				transform: translateX(1755%);
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				color: white;
+				background-color: #8a7a7a;
+			}
+			
+			.content-collect-div2-float2 {
+				position: absolute;
+				color: white;
+				text-align: center;
+				width: 371px;
+				height: 30px;
+				line-height: 30px;
+				background: rgba(255, 102, 0, 0.8);
+				transform: translateY(-100%);
+			}
+			
+			.content-commonlyUsed-table1 {
+				width: 100%;
+			}
+			
+			.content-commonlyUsed-table1>tbody>tr {
+				height: 37px;
+				border: 1px solid #F1F1F1;
+			}
+			
+			.content-commonlyUsed-table1>tbody>tr>td {
+				height: 37px;
+				padding-left: 10px;
+			}
+			
+			.content-commonlyUsed-tr1>th {
+				background-color: #F8F8F8;
+				padding-left: 10px;
+			}
+			
+			.ontent-commonlyUsed-p1 {
+				margin: 20px;
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				border: 1px solid #DFDFDF;
+				border-radius: 5px;
+				color: #333333;
+				text-align: center;
+			}
+			
+			.ontent-commonlyUsed-p1:hover {
+				border: 1px solid #FF6F0F;
+				color: #8F7ABE;
+			}
+			
+			.ontent-commonlyUsed-i1 {
+				color: #FF6600;
+			}
+			
+			.content-information-div2-ul1>li {
+				height: 40px;
+				border-top: 1px solid #E7E7E7;
+				line-height: 40px;
+			}
+			
+			.content-information-div2-a1 {
+				margin: 0 10px;
+				color: #333333;
+			}
+			
+			.content-binding-div2 {
+				margin: 20px 0;
+				height: 200px;
+				padding: 30px 0;
+				border: 1px solid #E7E7E7;
+			}
+			
+			.content-binding-a1 {
+				float: right;
+				font-size: 12px;
+				border-radius: 3px;
+				margin-top: 5px;
+				padding: 1px 10px;
+				background-color: #999999;
+				color: white;
+			}
+			
+			.content-binding-a1:hover {
+				color: white;
+			}
+			
+			.t-top-left-img1 {
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--全部的开始-->
+		<div class="t-all">
+			<!--头部的开始-->
+			<div class="t-top">
+				<!--头部的左边开始-->
+				<div class="t-top-left">
+					<!--<img class="t-top-left-img1" src="img/tujia-logo.png" />-->
+					<a style="color: #337ab7;" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/mqhouse/index.html">我的妙妙屋</a>
+					<!--头部的左边结束-->
+				</div>
+				<!--头部的中间开始-->
+				<div class="t-top-middle">
+					<span class="t-top-middle-span1"><a>首页</a></span>
+					<span class="t-top-middle-span1">发现</span>
+					<!--头部的中间结束-->
+				</div>
+				<!--头部的右边开始-->
+				<div class="t-top-right">
+					<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html">切换房东</a>
+					<a>退出</a>
+					<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html" class="t-top-right-a1">免费发布房屋</a>
+					<!--头部的右边结束-->
+				</div>
+				<!--头部的结束-->
+			</div>
+			<!--中间部分开始-->
+			<div class="t-middle">
+				<!--居中70%部分开始-->
+				<div class="t-middle-cent">
+					<!--开头导航的开始-->
+					<div class="t-middle-cent-div1">
+						<span></span>旅途网</a>
+						<span><</span>
+						<span>我的途家</span>
+						<span><</span>
+						<span class="t-middle-cent-span1">我的订单</span>
+						<!--开头导航的结束-->
+					</div>
+					<!--中间的内容开始-->
+					<div class="t-middle-cent-div2">
+						<!--左边的条目开始-->
+						<div class="cent-div2-article">
+							<div class="cent-div2-article-div1">
+								<img class="article-div1-left" src="img/user-default.png" />
+								<div class="article-div1-right">
+									<!--用户手机号-->
+									<p>
+										<a><strong>188****4972</strong></a>
+									</p>
+									<p>
+										<a class="article-div1-personal">修改个人资料</a>
+									</p>
+									<p>
+										<a class="article-div1-diamond">钻石卡绑定</a>
+									</p>
+								</div>
+							</div>
+							<!--我的订单开始-->
+							<div class="cent-div2-article-div2">
+								<p class="article-div2-p1">
+									<i class="i-order fa fa-outdent" aria-hidden="true"></i>
+									<span><strong>我的订单</strong></span>
+								</p>
+								<ul class="article-div2-ul1">
+									<li>
+										<a class="article-div2-orders">订单管理</a>
+									</li>
+									<li>
+										<a class="article-div1-remarkOn">点评管理</a>
+									</li>
+								</ul>
+								<!--我的订单结束-->
+							</div>
+
+							<!--我的资产开始-->
+							<div class="cent-div2-article-div2">
+								<p class="article-div2-p1">
+									<i class="i-order fa fa-outdent" aria-hidden="true"></i>
+									<span><strong>我的资产</strong></span>
+								</p>
+								<ul class="article-div2-ul1">
+									<li>
+										<a class="article-div2-balance">帐户余额</a>
+									</li>
+									<li>
+										<a class="article-div2-gathering">收款账号</a>
+									</li>
+									<li>
+										<a class="artice-div2-travel">我的旅途卡</a>
+									</li>
+									<li>
+										<a class="artice-div2-redPacket">我的红包</a>
+									</li>
+									<li>
+										<a class="active-div2-integral">我的积分</a>
+									</li>
+								</ul>
+								<!--我的资产结束-->
+							</div>
+							<!--个人中心开始-->
+							<div class="cent-div2-article-div2">
+								<p class="article-div2-p1">
+									<i class="i-order fa fa-outdent" aria-hidden="true"></i>
+									<span><strong>个人中心</strong></span>
+								</p>
+								<ul class="article-div2-ul1">
+									<li>
+										<a class="article-div2-personal">个人资料</a>
+									</li>
+									<li>
+										<a class="active-div2-changePassword">修改密码</a>
+									</li>
+									<li>
+										<a class="active-div2-collect">我的收藏</a>
+									</li>
+									<li>
+										<a class="active-div2-commonlyUsed">常用入住人</a>
+									</li>
+									<li>
+										<a>我的发票</a>
+									</li>
+									<li>
+										<a>会员俱乐部</a>
+									</li>
+									<li>
+										<a class="active-div2-inform">通知</a>
+									</li>
+									<li>
+										<a class="active-div2-information">我的消息</a>
+									</li>
+								</ul>
+								<!--个人中心结束-->
+							</div>
+							<!--左边的条目结束-->
+						</div>
+						<!--右边的内容开始-->
+						<div class="cent-div2-content">
+							<!--隐藏修改个人资料的开始-->
+							<div class="content-personal">
+								<!--上面资料开始-->
+								<div class="content-personal-div1">
+									<p class="content-personal-div1-p1">资料</p>
+									<img class="content-personal-div1-img1" src="img/user-default.png" />
+									<div class="content-personal-div1-div1">
+										<p>
+											用户名：
+											<strong class="uNickName">　未填</strong>
+											<span class="content-personal-div1-a1 btn1" data-toggle="modal" data-target="#myModal"> 　填写</span>
+										</p>
+
+										<p>
+											邮　箱：
+											<strong class="uEmail">　未填</strong>
+											<span class="content-personal-div1-a1 btn2" data-toggle="modal" data-target="#myModal"> 　填写</span>
+										</p>
+										<p>
+											绑定手机：
+											<strong class="uPhone">123456890987</strong>
+										</p>
+										<p>
+											注册时间：
+											<strong class="uTime">2019年02月17日</strong>
+										</p>
+									</div>
+									<!--上面资料结束-->
+								</div>
+
+								<!--下面的数据开始-->
+								<div class="content-personal-div2">
+
+									<table>
+										<form id="usermsg">
+											<tr class="content-personal-div2-tr1">
+												<td class="content-personal-div2-td1 ">真实姓名：</td>
+												<td><input type="text" name="uName" class="content-personal-div2-txt1 uName" /></td>
+											</tr>
+											<tr class="content-personal-div2-tr1">
+												<td class="content-personal-div2-td1">性别：</td>
+												<td><input title="0" type="radio" name="uSex" value="0" />男 　　　 <input type="radio" title="1" name="uSex" value="1" />女</td>
+											</tr>
+											<tr class="content-personal-div2-tr1">
+												<td class="content-personal-div2-td1 ">身份证 ：</td>
+												<td><input type="text" name="uCardId" class="content-personal-div2-txt1 uCardId" /></td>
+											</tr>
+											<tr class="content-personal-div2-tr1">
+												<td class="content-personal-div2-td1">所在城市：</td>
+												<td>
+													<select class="form-control uProvince uProvince" name="uProvince" id="cmbProvince"></select>
+													<select class="form-control uCity uProvince" name="uCity" id="cmbCity"></select>
+													<select style="display: none;" class="form-control" id="cmbArea" name="cmbArea"></select>
+												</td>
+											</tr>
+
+											<tr class="content-personal-div2-tr1">
+												<td class="content-personal-div2-td1">行业：</td>
+												<td>
+													<select name="uOccupation" class="content-personal-div2-txt1 uOccupation">
+														<option>请选择行业</option>
+														<option>计算机/互联网/通讯/电子</option>
+														<option>会计/金融/银行/保险</option>
+														<option>贸易/消费/制造/营运</option>
+														<option>制药/医疗</option>
+														<option>程序员</option>
+														<option>广告/媒体</option>
+														<option>其他</option>
+													</select>
+												</td>
+											</tr>
+										</form>
+
+										<tr class="content-personal-div2-tr1">
+											<td class="content-personal-div2-td1"></td>
+											<td>
+												<a class="content-personal-div2-a1">修改并提交</a>
+											</td>
+										</tr>
+									</table>
+									<!--下面的数据结束-->
+								</div>
+								<!--隐藏修改个人资料的结束-->
+							</div>
+							<!--隐藏钻石卡绑定开始-->
+							<div hidden="hidden" class="content-diamond">
+								<!--钻石卡绑定头部开始-->
+								<div class="content-diamond-div1">
+									<strong>钻石卡绑定</strong>
+									<!--钻石卡绑定头部结束-->
+								</div>
+								<!--钻石卡绑定底部开始-->
+								<div class="content-diamond-div2">
+									<div class="content-diamond-div2-div1">
+										<p>
+											卡号<input type="text" class="content-diamond-div2-input1 diamond-div2-input1" placeholder="请输入钻石卡卡号" />
+											<span class="content-diamond-div2-span1">
+												<i class="fa fa-info-circle" aria-hidden="true"></i>
+												<span>请输入钻石卡号</span>
+											</span>
+										</p>
+										<p>
+											密码<input type="password" class="content-diamond-div2-input1 diamond-div2-input2" placeholder="请输入密码" />
+											<span class="content-diamond-div2-span1">
+												<i class="fa fa-info-circle" aria-hidden="true"></i>
+												<span>请输入密码</span>
+											</span>
+										</p>
+										<p>
+											<input type="button" class="content-diamond-div2-btn1" value="提交绑定" />
+										</p>
+									</div>
+									<!--钻石卡绑定底部结束-->
+								</div>
+								<!--隐藏钻石卡绑定结束->	
+							</div>
+							
+							
+						<!--右边的内容结束-->
+							</div>
+							<!--隐藏订单管理的开始-->
+							<div hidden="hidden" class="content-orders">
+								<!--订单管理头部开始-->
+								<div class="content-diamond-div1">
+									<strong>我的订单</strong>
+									<!--订单管理头部结束-->
+								</div>
+								<!--订单管理里面的内容开始-->
+								<div class="content-orders-div2">
+									<!--订单里面的导航开始-->
+									<ul class="nav nav-tabs nav-tabs2">
+										<li role="presentation" class="active2">
+											<a href="#" class="center-right-order-li1">国内订单</a>
+										</li>
+										<li role="presentation">
+											<a href="#" class="center-right-order-li1">海外·港台订单</a>
+										</li>
+										<!--订单里面的导航结束-->
+									</ul>
+									<div class="content-orders-div2-div1">
+										<p>
+											<span>
+												<input type="radio" name="order" checked="checked" />  全部订单　　　
+											</span>
+											<span>
+												<input type="radio" name="order" /> 未付款订单<span class="content-orders-div2-span1">(2)</span>
+											</span>
+										</p>
+										<!--一个订单的开始-->
+										<div class="content-orders-div2-div2">
+											<!--上面的div-->
+											<div class="content-orders-div2-div3">
+												<span>订单号：801472309222 （预付全额订单 ）</span>
+												<div class="content-orders-div2-div4">
+													<a>再次预定</a>
+													<a>删除订单</a>
+													<a>和房东聊天</a>
+													<a>订单详情</a>
+												</div>
+												<div class="content-orders-div2-div5">
+													<table>
+														<tr class="content-orders-div2-tr1">
+															<td rowspan="4" class="content-orders-div2-td1">
+																<img class="content-orders-div2-img1" src="img/201808081321199578_70_43.jpg" />
+															</td>
+															<td colspan="5">
+																<a>维尼熊两房一卫包接送代购门票【珠海】</a>
+															</td>
+														</tr>
+														<tr class="content-orders-div2-tr1">
+															<td>
+																入住：<span>2019-03-25</span>
+															</td>
+															<td>
+																退房：<span>2019-03-25</span>
+															</td>
+															<td>
+																套数：<span>1套</span>
+															</td>
+															<td>
+																房费：<span class="content-orders-div2-span2">￥358.00</span>
+															</td>
+															<td>
+																明细
+															</td>
+														</tr>
+														<tr class="content-orders-div2-tr1">
+
+															<td>
+																定金：<span class="content-orders-div2-span2">￥358.00</span>
+															</td>
+														</tr>
+														<tr class="content-orders-div2-tr1">
+
+															<td>
+																订单状态：<span>已取消(支付超时)</span>
+															</td>
+														</tr>
+													</table>
+
+												</div>
+											</div>
+											<!--一个订单的结束-->
+										</div>
+										<!--一个订单的开始-->
+										<div class="content-orders-div2-div2">
+											<!--上面的div-->
+											<div class="content-orders-div2-div3">
+												<span>订单号：801472309222 （预付全额订单 ）</span>
+												<div class="content-orders-div2-div4">
+													<a>再次预定</a>
+													<a>删除订单</a>
+													<a>和房东聊天</a>
+													<a>订单详情</a>
+												</div>
+												<div class="content-orders-div2-div5">
+													<table>
+														<tr class="content-orders-div2-tr1">
+															<td rowspan="4" class="content-orders-div2-td1">
+																<img class="content-orders-div2-img1" src="img/201808081321199578_70_43.jpg" />
+															</td>
+															<td colspan="5">
+																<a>维尼熊两房一卫包接送代购门票【珠海】</a>
+															</td>
+														</tr>
+														<tr class="content-orders-div2-tr1">
+															<td>
+																入住：<span>2019-03-25</span>
+															</td>
+															<td>
+																退房：<span>2019-03-25</span>
+															</td>
+															<td>
+																套数：<span>1套</span>
+															</td>
+															<td>
+																房费：<span class="content-orders-div2-span2">￥358.00</span>
+															</td>
+															<td>
+																明细
+															</td>
+														</tr>
+														<tr class="content-orders-div2-tr1">
+
+															<td>
+																定金：<span class="content-orders-div2-span2">￥358.00</span>
+															</td>
+														</tr>
+														<tr class="content-orders-div2-tr1">
+
+															<td>
+																订单状态：<span>已取消(支付超时)</span>
+															</td>
+														</tr>
+													</table>
+
+												</div>
+											</div>
+											<!--一个订单的结束-->
+										</div>
+
+									</div>
+									<!--订单管理里面的内容开始-->
+								</div>
+								<!--隐藏订单管理的结束-->
+							</div>
+							<!--隐藏点评管理的开始-->
+							<div hidden="hidden" class="content-remarkOn">
+								<!--点评管理头部开始-->
+								<div class="content-diamond-div1">
+									<strong class="content-remarkOn-strong1">未评价房屋</strong>|
+									<strong class="content-remarkOn-strong2">已评价房屋</strong>
+									<!--点评管理头部结束-->
+								</div>
+								<!--点评管理的内容开始-->
+								<div class="content-remarkOn-div2">
+									<p class="content-remarkOn-div2-p1">
+										<img src="img/tutu.png" />
+									</p>
+									<p class="content-remarkOn-div2-p1"><span class="content-remarkOn-div2-span1">您没有可点评的订单</span></p>
+									<!--点评管理的内容结束-->
+								</div>
+								<!--隐藏点评管理的结束-->
+							</div>
+							<!--隐藏账户余额的开始-->
+							<div hidden="hidden" class="content-balance">
+								<!--账户余额头部开始-->
+								<div class="content-diamond-div1">
+									<strong>账户余额</strong>
+									<!--账户余额头部结束-->
+								</div>
+								<div class="content-balance-div2">
+									<p class="content-balance-div2-p1">
+										可用余额：<span class="content-orders-div2-span2">0.00</span>元
+										<span class="content-balance-div2-span1">账户状态：<span class="content-orders-div2-span2">正常状态</span></span>
+										<a class="content-balance-div2-span2">提现</a>
+									</p>
+									<p>
+										类型：
+										<select class="content-balance-div2-txt1">
+											<option>全部</option>
+											<option>返现</option>
+											<option>提现</option>
+											<option>消费</option>
+											<option>退款</option>
+										</select>
+										日期：<input type="text" class="content-balance-div2-txt1" /> 至：
+										<input type="text" class="content-balance-div2-txt1" />
+										<input type="button" value="查询" class="content-balance-div2-btn1" />
+									</p>
+									<table class="content-balance-div2-table1">
+										<tr class="content-balance-div2-tr1">
+											<th>类型</th>
+											<th>金额</th>
+											<th>日期</th>
+											<th>备注</th>
+										</tr>
+										<tr class="content-balance-div2-tr1">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</table>
+								</div>
+								<!--隐藏账户余额的结束-->
+							</div>
+							<!--隐藏收款设置的开始-->
+							<div hidden="hidden" class="content-gathering">
+								<!--收款设置头部开始-->
+								<div class="content-diamond-div1">
+									<strong>收款设置</strong>
+									<!--收款设置头部结束-->
+								</div>
+								<!--收款设置中间的内容开始-->
+								<div class="content-gathering-div2">
+									<p class="content-gathering-div2-p1">
+										<input type="radio" name="gathering" class="content-gathering-div2-radio1" checked="checked" /> 支付宝
+										<input type="radio" name="gathering" class="content-gathering-div2-radio1" /> 银行账号
+										<span class="content-gathering-div2-span1"> 请您使用储蓄卡提现，抱歉不支持信用卡</span>
+									</p>
+									<!--支付宝下面隐藏的内容-->
+									<div class="content-gathering-zfb">
+										<table>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">手机号：</td>
+												<td class="content-gathering-zfb-td2">
+													<span>12435476453</span>
+													<span class="content-gathering-zfb-span1">获取验证码</span>
+												</td>
+											</tr>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">验证码：</td>
+												<td class="content-gathering-zfb-td2">
+													<input type="text" class="content-gathering-zfb-txt1" />
+												</td>
+											</tr>
+
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">真实姓名：</td>
+												<td class="content-gathering-zfb-td2">
+													<input type="text" class="content-gathering-zfb-txt1" />
+												</td>
+											</tr>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">支付宝账号：</td>
+												<td class="content-gathering-zfb-td2">
+													<input type="text" class="content-gathering-zfb-txt1" />
+												</td>
+												<td><span class="content-orders-div2-span2"> 用户不存在，请确认信息无误</span></td>
+											</tr>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1"></td>
+												<td class="content-gathering-zfb-td2">
+													<input type="button" value="保存" class="content-gathering-zfb-btn1" />
+												</td>
+											</tr>
+										</table>
+									</div>
+
+									<!--银行账号下面隐藏的内容-->
+									<div hidden="hidden" class="content-gathering-yhzh">
+										<table>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">开户银行名称：</td>
+												<td class="content-gathering-zfb-td2">
+													<input type="text" class="content-gathering-zfb-txt1" />
+												</td>
+											</tr>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">开户银行省份：</td>
+												<td class="content-gathering-zfb-td2">
+													<input type="text" class="content-gathering-zfb-txt1" />
+												</td>
+											</tr>
+
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">开户银行城市：</td>
+												<td class="content-gathering-zfb-td2">
+													<input type="text" class="content-gathering-zfb-txt1" />
+												</td>
+											</tr>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">开户银行支行：</td>
+												<td class="content-gathering-zfb-td2">
+													<input type="text" class="content-gathering-zfb-txt1" />
+												</td>
+											</tr>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">开户银行账号：</td>
+												<td class="content-gathering-zfb-td2">
+													<input type="text" class="content-gathering-zfb-txt1" />
+												</td>
+											</tr>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">再次确认账号：</td>
+												<td class="content-gathering-zfb-td2">
+													<input type="text" class="content-gathering-zfb-txt1" />
+												</td>
+											</tr>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1">银行开户姓名：</td>
+												<td class="content-gathering-zfb-td2">
+													<input type="text" class="content-gathering-zfb-txt1" />
+												</td>
+											</tr>
+											<tr class="content-gathering-zfb-tr1">
+												<td class="content-gathering-zfb-td1"></td>
+												<td class="content-gathering-zfb-td2">
+													<input type="button" value="保存" class="content-gathering-zfb-btn1" />
+												</td>
+											</tr>
+										</table>
+									</div>
+
+									<!--收款设置中间的内容结束-->
+								</div>
+
+								<!--隐藏收款设置的结束-->
+							</div>
+							<!--隐藏我的旅途卡开始-->
+							<div hidden="hidden" class="content-travel">
+								<!--我的旅途卡头部开始-->
+								<div class="content-diamond-div1">
+									<strong>我的旅途卡</strong>
+									<a class="content-travel-a1">旅途卡使用规则</a>
+									<!--我的旅途卡头部结束-->
+								</div>
+								<!--我的旅途卡中间内容的开始-->
+								<div class="content-travel-div2">
+									<p class="content-balance-div2-p1">
+										当前旅途卡余额：<span class="content-orders-div2-span2">0.00</span>元
+									</p>
+									<ul class="nav nav-tabs">
+										<li role="presentation" id="travel" class="active">
+											<a href="#" class="">旅途卡</a>
+										</li>
+										<li role="presentation" id="detail">
+											<a href="#" class="">使用明细</a>
+										</li>
+									</ul>
+									<!--隐藏旅途卡下面的内容开始-->
+									<div class="content-travel-div3">
+										<table class="content-travel-div3-table1">
+											<tr class="content-travel-div3-tr1">
+												<th>卡号</th>
+												<th>面值</th>
+												<th>激活日期</th>
+												<th>余额</th>
+												<th>有效期</th>
+												<th>状态</th>
+											</tr>
+											<tr class="content-travel-div3-tr2">
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</table>
+										<!--隐藏旅途卡下面的内容结束-->
+									</div>
+									<!--隐藏使用明细下面的内容开始-->
+									<div hidden="hidden" class="content-travel-detail">
+										<table class="content-travel-div3-table1">
+											<tr class="content-travel-div3-tr1">
+												<th>旅途卡</th>
+												<th>订单编号</th>
+												<th>房屋名称</th>
+												<th>入住日期</th>
+												<th>退房日期</th>
+												<th>套数</th>
+												<th>总房费</th>
+												<th>消费金额</th>
+												<th>备注</th>
+											</tr>
+											<tr class="content-travel-div3-tr2">
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</table>
+										<!--隐藏使用明细下面的内容结束-->
+									</div>
+									<!--绑定旅途卡开始-->
+									<p>
+										<a class="content-travel-div2-p2">绑定旅途卡</a>
+										<!--绑定旅途卡结束-->
+									</p>
+									<!--我的旅途卡中间内容的结束-->
+								</div>
+								<!--隐藏我的旅途卡结束-->
+							</div>
+							<!--隐藏我的红包开始-->
+							<div hidden="hidden" class="content-redPacket">
+								<!--我的旅途卡头部开始-->
+								<div class="content-diamond-div1">
+									<strong>我的红包</strong>
+									<!--我的旅途卡头部结束-->
+								</div>
+								<!--我的红包中间内容的开始-->
+								<div class="content-travel-div2">
+									<ul class="nav nav-tabs">
+										<li role="presentation" id="valid" class="active">
+											<a href="#" class="">有效红包</a>
+										</li>
+										<li role="presentation" id="disabled">
+											<a href="#" class="">失效或已消费的红包</a>
+										</li>
+										<li role="presentation" id="throughput">
+											<a href="#" class="">使用明细</a>
+										</li>
+									</ul>
+									<!--隐藏有效红包和失效或已消费红包下面的内容开始-->
+									<div class="content-redPacket-div3">
+										<table class="content-travel-div3-table1">
+											<tr class="content-travel-div3-tr1">
+												<th>红包名称</th>
+												<th>面值（元）</th>
+												<th>状态</th>
+												<th>有效开始日期</th>
+												<th>有效截止日期</th>
+												<th>来源</th>
+												<th>使用规则</th>
+											</tr>
+											<tr class="content-travel-div3-tr2">
+												<td>新用户专享红包</td>
+												<td>90.00</td>
+												<td>可用</td>
+												<td>2019-02-17</td>
+												<td>2019-02-24</td>
+												<td>本站AB红包-折扣</td>
+												<td>
+													<a>使用限制</a>
+												</td>
+											</tr>
+										</table>
+
+										<!--隐藏有效红包和失效或已消费红包下面的内容开始-->
+									</div>
+									<!--隐藏使用明细下面的内容开始-->
+									<div hidden="hidden" class="content-redPacket-detail">
+										<table class="content-travel-div3-table1">
+											<tr class="content-travel-div3-tr1">
+												<th>订单号</th>
+												<th>房屋名称</th>
+												<th>入住日期</th>
+												<th>退房日期</th>
+												<th>总房费</th>
+												<th>红包名称</th>
+												<th>消费方式 </th>
+												<th>消费红包（元）</th>
+											</tr>
+											<tr class="content-travel-div3-tr2">
+												<td>801471800612</td>
+												<td>珠海近拱北关口圆明新园精品双床房</td>
+												<td>2019-03-30</td>
+												<td>2019-03-30</td>
+												<td>238.00</td>
+												<td>新用户专享红包</td>
+												<td>全额退回</td>
+												<td>7.00</td>
+											</tr>
+										</table>
+										<!--隐藏使用明细下面的内容结束-->
+									</div>
+									<!--绑定红包开始-->
+									<p>
+										<a class="content-travel-div2-p2 content-redPacket-a1">绑定红包</a>
+										<!--绑定红包结束-->
+									</p>
+									<!--我的红包中间内容的结束-->
+								</div>
+								<!--隐藏我的红包结束-->
+							</div>
+							<!--隐藏我的积分开始-->
+							<div hidden="hidden" class="content-integral">
+								<!--我的积分头部开始-->
+								<div class="content-diamond-div1">
+									<strong>我的积分</strong>
+									<!--我的积分头部结束-->
+								</div>
+								<!--我的积分中间内容的开始-->
+								<div class="content-travel-div2">
+									<p class="content-balance-div2-p1">
+										当前共有积分 ：<span class="content-orders-div2-span2">0</span>分 （抵现金<span>0</span>元）
+									</p>
+									<ul class="nav nav-tabs">
+										<li role="presentation" id="income" class="active">
+											<a href="#" class="">积分收入明细</a>
+										</li>
+										<li role="presentation" id="record">
+											<a href="#" class="">积分消费记录</a>
+										</li>
+										<li role="presentation" id="overdue">
+											<a href="#" class="">已过期积分</a>
+										</li>
+									</ul>
+									<!--隐藏积分收入明细下面的内容开始-->
+									<div class="content-integral-income">
+										<table class="content-travel-div3-table1">
+											<tr class="content-travel-div3-tr1">
+												<th>积分变化原因</th>
+												<th>描述</th>
+												<th>积分数</th>
+												<th>可用积分</th>
+												<th>抵现金</th>
+												<th>时间</th>
+												<th>有效期</th>
+											</tr>
+											<tr class="content-travel-div3-tr2">
+
+											</tr>
+										</table>
+										<!--隐藏积分收入明细下面的内容结束-->
+									</div>
+									<!--隐藏积分消费记录下面的内容开始-->
+									<div hidden="hidden" class="content-integral-record">
+										<table class="content-travel-div3-table1">
+											<tr class="content-travel-div3-tr1">
+												<th>积分消费时间</th>
+												<th>消费方式</th>
+												<th>相关订单号</th>
+												<th>消耗积分</th>
+											</tr>
+											<tr class="content-travel-div3-tr2">
+
+											</tr>
+										</table>
+										<!--隐藏积分消费记录下面的内容结束-->
+									</div>
+									<!--隐藏已过期积分下面的内容开始-->
+									<div hidden="hidden" class="content-integral-overdue">
+										<table class="content-travel-div3-table1">
+											<tr class="content-travel-div3-tr1">
+												<th>积分来源</th>
+												<th>积分数</th>
+												<th>已使用积分</th>
+												<th>过期积分</th>
+												<th>有效日期</th>
+												<th>状态</th>
+											</tr>
+											<tr class="content-travel-div3-tr2">
+
+											</tr>
+										</table>
+										<!--隐藏已过期积分下面的内容结束-->
+									</div>
+									<!--我的积分详细说明开始-->
+									<div class="content-integral-div3">
+										<h4><strong>如何获得积分：</strong></h4>
+										<p>1、预订房屋并完成入住可获得积分奖励。</p>
+										<p>2、每条有效点评最高可获得积分1000分，抵10元订金。</p>
+										<p>3、登录社区、发表攻略游记、点评社区文章。</p>
+
+										<h4><strong>积分有效期：</strong></h4>
+										<p>1、积分有效期：根据不同积分来源，积分的有效期也各不相同，您可以通过积分收入明细中的有效期查看每笔积分的具体有效期。</p>
+										<p>2、积分入账时间：预订房屋的积分将在您成功结账退房后的7个工作日内到账(极少数房屋可能会晚于7个工作日)；注册、点评等行为产生的积分会在达成条件时实时入账。</p>
+
+										<h4><strong>积分如何使用：</strong></h4>
+										<p>1、途家积分目前可用于抵扣房费(仅线上支付部分，线下支付部分无法使用积分抵扣)未来积分可换取礼品、参与积分抽大奖等用途。敬请期待</p>
+
+										<h4>积分最终解释权归途家所有，规则如有调整将更新在此页面，恕不另行通知。</h4>
+									</div>
+									<!--我的旅途卡中间内容的结束-->
+								</div>
+								<!--隐藏我的积分结束-->
+							</div>
+							<!--隐藏修改密码的开始-->
+							<div hidden="hidden" class="content-changePassword">
+								<!--修改密码头部开始-->
+								<div class="content-diamond-div1">
+									<strong>修改密码</strong>
+									<!--修改密码头部结束-->
+								</div>
+								<!--修改密码的内容开始-->
+								<div class="content-changePassword-div2">
+									<table>
+
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">原密码：</td>
+											<td class="content-gathering-zfb-td2">
+												<input type="password" class="content-gathering-zfb-txt1 oldpwd" />
+											</td>
+											<td><span class="content-orders-div2-span2" id="oldmsg"> 请输入旧密码</span></td>
+										</tr>
+
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">新密码：</td>
+											<td class="content-gathering-zfb-td2">
+												<input type="password" class="content-gathering-zfb-txt1 newpwd1" />
+											</td>
+											<td><span class="content-orders-div2-span2"> 请输入新密码</span></td>
+										</tr>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">重复新密码：</td>
+											<td class="content-gathering-zfb-td2">
+												<input type="password" class="content-gathering-zfb-txt1 newpwd2" />
+											</td>
+											<td><span class="content-orders-div2-span2" id="msg"> 请重新输入新密码</span></td>
+										</tr>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1"></td>
+											<td class="content-gathering-zfb-td2">
+												<input type="button" value="确认修改" id="update_Userinformation_pwd" class="content-gathering-zfb-btn1" />
+											</td>
+										</tr>
+									</table>
+									<!--修改密码的内容结束-->
+								</div>
+								<!--隐藏修改密码的结束-->
+							</div>
+							<!--隐藏我的收藏开始-->
+							<div hidden="hidden" class="content-collect">
+								<!--我的收藏头部开始-->
+								<div class="content-diamond-div1">
+									<strong>我的收藏</strong>
+									<!--我的收藏头部结束-->
+								</div>
+								<!--我的收藏内容的开始-->
+								<div class="content-collect-div2 collect-warpper">
+									
+									<!--我的收藏内容的结束-->
+								</div>
+
+								<!--隐藏我的收藏结束-->
+							</div>
+							<!--隐藏常用入住人开始-->
+							<div hidden="hidden" class="content-commonlyUsed">
+								<!--常用入住人头部开始-->
+								<div class="content-diamond-div1">
+									<strong>常用入住人</strong>
+									<!--常用入住人头部结束-->
+								</div>
+								<!--常用入住人中间的内容-->
+								<div class="content-commonlyUsed-div2">
+									<table class="content-commonlyUsed-table1">
+										<tr class="content-commonlyUsed-tr1">
+											<th>
+												<input type="checkbox" />全选
+											</th>
+											<th>入住人姓名</th>
+											<th>性别</th>
+											<th>证件类型</th>
+											<th>证件号</th>
+											<th>出生日期</th>
+											<th>手机号</th>
+											<th>操作</th>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" />
+											</td>
+											<td>超人</td>
+											<td>男</td>
+											<td>身份证</td>
+											<td>111322435663</td>
+											<td>1998-07-29</td>
+											<td>1432543546</td>
+											<td>
+												<a>编辑</a>
+												<a>删除</a>
+											</td>
+										</tr>
+									</table>
+									<p class="ontent-commonlyUsed-p1" data-toggle="modal" data-target="#myModal">
+										<i class="ontent-commonlyUsed-i1 fa fa-plus" aria-hidden="true"></i>添加入住人
+									</p>
+								</div>
+								<!--隐藏常用入住人结束-->
+							</div>
+							<!--隐藏通知开始-->
+							<div hidden="hidden" class="content-inform">
+								<!--通知头部开始-->
+								<div class="content-diamond-div1">
+									<strong class="content-remarkOn-strong1">通知</strong>
+									<!--通知头部结束-->
+								</div>
+								<!--通知的内容开始-->
+								<div class="content-remarkOn-div2">
+									<p class="content-remarkOn-div2-p1">
+										<img src="img/tutu.png" />
+									</p>
+									<p class="content-remarkOn-div2-p1"><span class="content-remarkOn-div2-span1">暂无通知</span></p>
+									<!--通知的内容结束-->
+								</div>
+								<!--隐藏通知结束-->
+							</div>
+							<!--隐藏信息内容开始-->
+							<div hidden="hidden" class="content-information">
+								<!--消息头部开始-->
+								<div class="content-diamond-div1">
+									<strong class="content-remarkOn-strong1">消息</strong>
+									<!--消息头部结束-->
+								</div>
+								<!--消息内容的开始-->
+								<div class="content-information-div2">
+									<ul class="content-information-div2-ul1">
+										<li>
+											<img src="img/readPage.jpg" />
+											<a class="content-information-div2-a1">珠海爱尚精品公寓拱北口岸店</a>
+											<span>11:51:39 2019-02-19</span>
+										</li>
+										<li>
+											<img src="img/readPage.jpg" />
+											<a class="content-information-div2-a1">珠海爱尚精品公寓拱北口岸店</a>
+											<span>11:51:39 2019-02-19</span>
+										</li>
+									</ul>
+									<!--消息内容的结束-->
+								</div>
+								<!--隐藏信息内容结束-->
+							</div>
+
+							<!--隐藏绑定旅途卡和绑定红包开始-->
+							<div hidden="hidden" class="content-binding">
+								<!--绑定旅途卡头部开始-->
+								<div class="content-diamond-div1">
+									<strong class="content-remarkOn-strong1">绑定旅途卡</strong>
+									<a class="content-binding-a1"></a>
+
+									<!--绑定旅途卡头部结束-->
+								</div>
+								<!--绑定旅途卡的内容开始-->
+								<div class="content-binding-div2">
+									<table>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">
+												<span class="content-binding-div2-span1">旅途卡号：</span>
+											</td>
+											<td class="content-gathering-zfb-td2">
+												<input type="text" class="content-gathering-zfb-txt1" />
+											</td>
+										</tr>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">
+												<span class="content-binding-div2-span2">旅途卡密码：</span>
+											</td>
+											<td class="content-gathering-zfb-td2">
+												<input type="text" class="content-gathering-zfb-txt1" />
+											</td>
+										</tr>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1"></td>
+											<td class="content-gathering-zfb-td2">
+												<input type="button" value="提交绑定" class="content-gathering-zfb-btn1" />
+											</td>
+										</tr>
+									</table>
+									<!--绑定旅途卡的内容结束-->
+								</div>
+								<!--隐藏绑定旅途卡开始-->
+							</div>
+
+							<!--中间的内容结束-->
+						</div>
+
+						<!--居中70%部分结束-->
+					</div>
+
+					<!--中间部分结束-->
+				</div>
+				<!-- 模态框（Modal） -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header-div1">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+												</button>
+								<span class="modal-title" id="myModalLabel">
+													设置用户
+												</span>
+							</div>
+							<!--取消订单模态框主体的开始-->
+							<div class="modal-body">
+								<!--隐藏中间设置用户内容开始-->
+								<div hidden="hidden" class="modal-body-set">
+									<p>
+										用户名 <input class="modal-body-set-txt1" type="text" />
+									</p>
+									<p>
+										验证码
+										<input class="modal-body-set-txt2" type="text" />
+										<!--图片验证码-->
+										<img src="img/下载.jpg" />
+									</p>
+									<p>
+										<a class="modal-body-set-a1">确定</a>
+									</p>
+									<!--隐藏中间设置用户内容结束-->
+								</div>
+
+								<!--隐藏中间填写邮箱内容开始-->
+								<div hidden="hidden" class="modal-body-email">
+									<p>
+										邮　　箱 <input class="modal-body-email-txt1" type="email" />
+									</p>
+									<p>
+										验证　码
+										<input class="modal-body-email-txt1" type="text" />
+										<!--图片验证码-->
+										<img src="img/下载.jpg" />
+									</p>
+									<p>
+										<a class="modal-body-email-a1">确定</a>
+									</p>
+									<!--隐藏中间填写邮箱内容结束-->
+								</div>
+								<!--隐藏常用入住人新增入住人开始-->
+								<div hidden="hidden" class="modal-body-commonlyUsed">
+									<table>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">真实姓名：</td>
+											<td class="content-gathering-zfb-td2">
+												<input type="text" class="content-gathering-zfb-txt1" />
+											</td>
+										</tr>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">手机号：</td>
+											<td class="content-gathering-zfb-td2">
+												<input type="text" class="content-gathering-zfb-txt1" />
+											</td>
+										</tr>
+
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">性别：</td>
+											<td class="content-gathering-zfb-td2">
+												<input type="radio" name="sex1" style="margin-left: 30px;" /> 男
+												<input type="radio" name="sex1" style="margin-left: 30px;" /> 女
+											</td>
+										</tr>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">证件类型：</td>
+											<td class="content-gathering-zfb-td2">
+												<select class="content-gathering-zfb-txt1">
+													<option>身份证</option>
+													<option>军官证</option>
+													<option>护照</option>
+												</select>
+											</td>
+										</tr>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">证件号：</td>
+											<td class="content-gathering-zfb-td2">
+												<input type="text" class="content-gathering-zfb-txt1" />
+											</td>
+										</tr>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1">出生日期：</td>
+											<td class="content-gathering-zfb-td2">
+												<input type="text" class="content-gathering-zfb-txt1" />
+											</td>
+										</tr>
+										<tr class="content-gathering-zfb-tr1">
+											<td class="content-gathering-zfb-td1"></td>
+											<td class="content-gathering-zfb-td2">
+												<input type="button" value="保存" class="content-gathering-zfb-btn1" />
+											</td>
+										</tr>
+									</table>
+									<!--隐藏中间填写邮箱内容结束-->
+								</div>
+								<!--取消订单模态框主体的结束-->
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+				<!-- /.modal -->
+
+				<!--底部的内容开始-->
+				<div class="t-bottom">
+					<p>
+						<a>关于我们</a> |
+						<a>我是房客</a> |
+						<a>加入旅途</a> |
+						<a>网站地图</a>
+					</p>
+					<!--底部的内容结束-->
+				</div>
+
+				<!--全部的结束-->
+			</div>
+			<script>
+				//城市三级联动加载
+				$(document).ready(function() {
+					addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+				});
+
+				;
+				(function(win, $) {
+
+					//点击条目的修改个人资料和条目中的个人资料
+					$(".article-div1-personal,.article-div2-personal").mousedown(function() {
+						$(".t-middle-cent-span1").html("个人资料");
+						$(".content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-personal").prop("hidden", "");
+
+					});
+					//点击条目的钻石卡绑定
+					$(".article-div1-diamond").mousedown(function() {
+						$(".t-middle-cent-span1").html("钻石卡绑定");
+						$(".content-personal,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-diamond").prop("hidden", "");
+					});
+					//点击条目的订单管理
+					$(".article-div2-orders").mousedown(function() {
+						$(".t-middle-cent-span1").html("订单管理");
+						$(".content-personal,.content-diamond,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-orders").prop("hidden", "");
+					});
+					//点击条目里面的点评管理
+					$(".article-div1-remarkOn").mousedown(function() {
+						$(".t-middle-cent-span1").html("点评管理");
+						$(".content-personal,.content-diamond,.content-orders,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-remarkOn").prop("hidden", "");
+					});
+					//点击条目的账户余额
+					$(".article-div2-balance").mousedown(function() {
+						$(".t-middle-cent-span1").html("账户余额");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-balance").prop("hidden", "");
+					});
+					//点击条目的收款账号和账户余额里面的提现
+					$(".article-div2-gathering,.content-balance-div2-span2").mousedown(function() {
+						$(".t-middle-cent-span1").html("收款账号");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-gathering").prop("hidden", "");
+					});
+					//点击条目的我的旅途卡和绑定旅途卡里面的返回我的旅途卡
+					$(".artice-div2-travel").mousedown(function() {
+						$(".t-middle-cent-span1").html("我的旅途卡");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-travel").prop("hidden", "");
+
+					});
+					//点击条目的我的红包
+					$(".artice-div2-redPacket").mousedown(function() {
+						$(".t-middle-cent-span1").html("我的红包");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-redPacket").prop("hidden", "");
+					});
+					//点击条目的我的积分
+					$(".active-div2-integral").mousedown(function() {
+						$(".t-middle-cent-span1").html("我的积分");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-integral").prop("hidden", "");
+					});
+					//点击条目的常用入住人
+					$(".active-div2-commonlyUsed").mousedown(function() {
+						$(".t-middle-cent-span1").html("常用入住人");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-changePassword,.content-collect,.content-integral,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-commonlyUsed").prop("hidden", "");
+					});
+
+					//点击条目里面的修改密码
+					$(".active-div2-changePassword").mousedown(function() {
+						$(".t-middle-cent-span1").html("修改密码");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-collect,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-changePassword").prop("hidden", "");
+					});
+					//点击条目里面的我的收藏
+					$(".active-div2-collect").mousedown(function() {
+						$(".t-middle-cent-span1").html("我的收藏");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-collect").prop("hidden", "");
+					});
+					//点击条目里面的通知
+					$(".active-div2-inform").mousedown(function() {
+						$(".t-middle-cent-span1").html("通知");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-inform").prop("hidden", "");
+					});
+					//点击条目的消息
+					$(".active-div2-information").mousedown(function() {
+						$(".t-middle-cent-span1").html("通知");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-inform,.content-binding").prop("hidden", "hidden");
+						$(".content-information").prop("hidden", "");
+					});
+					//点击我的旅途卡里面的绑定旅途卡
+					$(".content-travel-div2-p2").mousedown(function() {
+						$(".t-middle-cent-span1").html("绑定旅途卡");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-inform,.content-information").prop("hidden", "hidden");
+						$(".content-binding").prop("hidden", "");
+						$(".content-binding-div2-span1").html("旅途卡号");
+						$(".content-binding-div2-span2").html("旅途卡密码");
+						$(".content-binding-a1").html("返回我的旅途卡")
+					});
+					//点击我的红包里面的绑定红包
+					$(".content-redPacket-a1").mousedown(function() {
+						$(".t-middle-cent-span1").html("绑定红包");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-inform,.content-information").prop("hidden", "hidden");
+						$(".content-binding").prop("hidden", "");
+						$(".content-binding-div2-span1").html("红包编号");
+						$(".content-binding-div2-span2").html("红包密码");
+						$(".content-binding-a1").html("返回我的红包")
+
+					});
+					//点击绑定旅途卡里面的返回我的旅途卡和我的红包里面的返回我的红包
+					$(".content-binding-a1").mousedown(function() {
+						console.log($(this).text());
+						var a1 = $(this).text();
+						if(a1 == "返回我的旅途卡") {
+							$(".t-middle-cent-span1").html("我的旅途卡");
+							$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+							$(".content-travel").prop("hidden", "");
+						} else if(a1 == "返回我的红包") {
+							$(".t-middle-cent-span1").html("我的红包");
+							$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+							$(".content-redPacket").prop("hidden", "");
+						}
+					});
+
+					//点击点评管理里面的未点评
+					$(".content-remarkOn-strong1").mousedown(function() {
+						$(".content-remarkOn-div2-span1").html("您没有可点评的订单");
+					});
+					//点击点评管理里面的已点评
+					$(".content-remarkOn-strong2").mousedown(function() {
+						$(".content-remarkOn-div2-span1").html("您还没有已点评的订单");
+					});
+
+					//收款账号里面的radio组的点击事件				
+					$(":radio[name='gathering']").click(function() {
+						var gathering = $(":radio[name='gathering']").index($(this));
+						if(gathering == 0) { //下标第一个为0，选中第1个时div显示
+							$(".content-gathering-yhzh").prop("hidden", "hidden");
+							$(".content-gathering-zfb").prop("hidden", "");
+
+						} else if(gathering == 1) { //选中第2个时div显示
+							$(".content-gathering-zfb").prop("hidden", "hidden");
+							$(".content-gathering-yhzh").prop("hidden", "");
+
+						}
+					})
+					//点击个人资料里面的用户设置
+					$(".btn1").mousedown(function() {
+						$(".modal-title").html("用户设置");
+						$(".modal-body-set").prop("hidden", "");
+						$(".modal-body-email,.modal-body-commonlyUsed").prop("hidden", "hidden");
+					});
+					//点击个人资料里面的填写邮箱
+					$(".btn2").mousedown(function() {
+						$(".modal-title").html("填写邮箱");
+						$(".modal-body-email").prop("hidden", "");
+						$(".modal-body-set,.modal-body-commonlyUsed").prop("hidden", "hidden");
+					});
+					//点击常用入住人里面的添加入住人弹框
+					$(".ontent-commonlyUsed-p1").mousedown(function() {
+						$(".modal-title").html("添加常用入住人");
+						$(".modal-body-commonlyUsed").prop("hidden", "");
+						$(".modal-body-set,.modal-body-email").prop("hidden", "hidden");
+					});
+					//点击我的旅途卡里面的旅途卡
+					$("#travel").mousedown(function() {
+						$("#detail").removeClass("active");
+						$("#travel").addClass("active");
+						$(".content-travel-div3").prop("hidden", "");
+						$(".content-travel-detail").prop("hidden", "hidden");
+					});
+					//点击我的旅途卡里面的使用明细
+					$("#detail").mousedown(function() {
+						$("#travel").removeClass("active");
+						$("#detail").addClass("active");
+						$(".content-travel-detail").prop("hidden", "");
+						$(".content-travel-div3").prop("hidden", "hidden");
+					});
+					//点击我的红包里面的有效红包
+					$("#valid").mousedown(function() {
+						$("#disabled,#throughput").removeClass("active");
+						$("#valid").addClass("active");
+						$(".content-redPacket-div3").prop("hidden", "");
+						$(".content-redPacket-detail").prop("hidden", "hidden");
+					});
+					//点击我的红包里面的失效或已使用红包
+					$("#disabled").mousedown(function() {
+						$("#valid,#throughput").removeClass("active");
+						$("#disabled").addClass("active");
+						$(".content-redPacket-div3").prop("hidden", "");
+						$(".content-redPacket-detail").prop("hidden", "hidden");
+					});
+					//点击我的红包里面的使用明细s
+					$("#throughput").mousedown(function() {
+						$("#valid,#disabled").removeClass("active");
+						$("#throughput").addClass("active");
+						$(".content-redPacket-detail").prop("hidden", "");
+						$(".content-redPacket-div3").prop("hidden", "hidden");
+					});
+					//点击我的积分里面的积分收入明细
+					$("#income").mousedown(function() {
+						$("#record,#overdue").removeClass("active");
+						$("#income").addClass("active");
+						$(".content-integral-record,.content-integral-overdue").prop("hidden", "hidden");
+						$(".content-integral-income").prop("hidden", "");
+					});
+					//点击我的积分里面的消费积分记录
+					$("#record").mousedown(function() {
+						$("#income,#overdue").removeClass("active");
+						$("#record").addClass("active");
+						$(".content-integral-income,.content-integral-overdue").prop("hidden", "hidden");
+						$(".content-integral-record").prop("hidden", "");
+					});
+					//点击我的积分里面的已过期积分
+					$("#overdue").mousedown(function() {
+						$("#income,#record").removeClass("active");
+						$("#overdue").addClass("active");
+						$(".content-integral-income,.content-integral-record").prop("hidden", "hidden");
+						$(".content-integral-overdue").prop("hidden", "");
+					});
+
+					//悬浮我的收藏里面的一个商品
+					$(".content-collect-div2").hover(function() {
+						var float = $(this).children().children("div");
+						/*content-collect-div2-div1类下面的子类再子类*/
+						$(float).children(".content-collect-div2-float1,.content-collect-div2-float2").prop("hidden", "");
+					}, function() {
+						$(this).children(".content-collect-div2-float1,.content-collect-div2-float2").prop("hidden", "hidden");
+					});
+				})(window, $);
+			</script>
+
+			<script type="text/javascript">
+				//跨域获取IP地址
+				var ip = "";
+				//收集表单信息
+				$.fn.serializeJson = function() {
+					var serializeObj = {};
+					$(this.serializeArray()).each(function() {
+						serializeObj[this.name] = this.value;
+					});
+					return serializeObj;
+				};
+				(function ipconfig() {
+					$.ajax({
+						type: "get",
+						url: "../js/ipconfig.json",
+						async: false,
+						success: function(data) {
+							ip = data.ip;
+						}
+					});
+				})();
+
+				//数据的修改操作
+				(function() {
+					var UserInformatio = {
+						init() {
+							UserInformatio.logon_status();
+							UserInformatio.binding();
+						},
+						//初始化数据(判断是否登录)
+						logon_status() {
+							$.ajax({
+								type: "get",
+								url: "http://" + util_lly.getIpconfig() + ":8080/UserInformation/logon_status",
+								async: false,
+								contentType: "application/json;charset=utf-8",
+								dataType: "json",
+								xhrFields: {
+									withCredentials: true
+								},
+								success: function(data) {
+									console.log(data);
+									$(".uNickName").text(data.uNickName);
+									$(".uEmail").text(data.uEmail);
+									$(".uPhone").text(data.uPhone);
+									$(".uTime").text(data.uTime);
+									$(".uName").val(data.uName);
+									$('input[name="uSex"][title="' + data.uSex + '"]').attr('checked', true)
+
+									$(".uCardId").val(data.uCardId);
+									//									$(".uProvince").prepend("<option>"+data.uProvince+"</option>");
+									$(".uCardId").val(data.uCardId);
+									$(".uCity").val(data.uCity);
+									//									$(".uCity").prepend("<option>"+data.uCity+"</option>");
+									$(".uOccupation").val(data.uOccupation);
+								},
+								error() {
+									window.location.href = "http://127.0.0.1:8020/MiQiHome_PC_1.2/mqhouse/index.html";
+								}
+
+							});
+						},
+						//修改用户名
+						update_Userinformation(data) {
+							console.log(data);
+							$.ajax({
+								type: "post",
+								url: "http://" + util_lly.getIpconfig() + ":8080/UserInformation/update_Userinformation",
+								data: data,
+								async: false,
+								contentType: "application/json;charset=utf-8",
+								dataType: "json",
+								xhrFields: {
+									withCredentials: true
+								},
+								success: function(data) {
+									console.log(data);
+									if(data > 0) {
+										$(".close").click();
+										alert("修改成功!!");
+										UserInformatio.logon_status();
+									}
+
+								},
+								error() {
+									console.log("错误");
+								}
+
+							});
+						},
+						//修改密码
+						update_Userinformation_pwd(data) {
+							console.log(data);
+							$.ajax({
+								type: "post",
+								url: "http://" + util_lly.getIpconfig() + ":8080/UserInformation/update_Userinformation_pwd?pwd1=" + data.pwd1 + "&pwd2=" + data.pwd2 + "&",
+								data: "",
+								async: false,
+								contentType: "application/json;charset=utf-8",
+								dataType: "json",
+								xhrFields: {
+									withCredentials: true
+								},
+								success: function(data) {
+									console.log(data);
+									if(data > 0) {
+										alert("修改成功!!");
+										$(".oldpwd").val("");
+										$(".newpwd1").val("");
+										$(".newpwd2").val("");
+										$("#oldmsg").text("请检查旧密码是否输入正确!").css("font-weight", "bold");
+
+									} else {
+										$("#oldmsg").text("	请输入旧密码!").css("font-weight", "normal");
+										$("#msg").text("请重新输入新密码").css("font-weight", "normal");
+									}
+
+								},
+								error() {
+									console.log("错误");
+								}
+
+							});
+						},
+
+						binding() {
+							//修改用户名
+							$(".modal-body-set-a1").click(function() {
+								var uNickName = $(".modal-body-set-txt1").val();
+
+								UserInformatio.update_Userinformation(JSON.stringify({
+									"uNickName": uNickName
+								}))
+
+							});
+							//修改邮箱
+							$(".modal-body-email-a1").click(function() {
+								var uEmail = $(".modal-body-email-txt1").val();
+
+								UserInformatio.update_Userinformation(JSON.stringify({
+									"uEmail": uEmail
+								}))
+							});
+							//修改用户个人信息
+							$(".content-personal-div2-a1").click(function() {
+								UserInformatio.update_Userinformation(JSON.stringify(
+									$("#usermsg").serializeJson()
+								))
+							});
+							//修改密码的事件
+							$("#update_Userinformation_pwd").click(function() {
+								var oldpwd = $(".oldpwd").val();
+								var newpwd1 = $(".newpwd1").val();
+								var newpwd2 = $(".newpwd2").val();
+								if(newpwd1 != newpwd2) {
+									$("#msg").text("两次密码不相同,请核对!").css("font-weight", "bold");
+								} else {
+
+									UserInformatio.update_Userinformation_pwd({
+										"pwd1": oldpwd,
+										"pwd2": newpwd2
+									})
+								}
+
+							});
+
+						}
+					}
+					UserInformatio.init();
+				})();
+				//收藏操作
+				(function() {
+					var com = {
+						init: function() {
+							com.load();
+							com.delCollect();
+							com.order();
+						},
+						//渲染收藏数据
+						load: function() {
+							$.ajax({
+								type: "post",
+								url: "http://" + util_lly.getIpconfig() + ":8080/collectionsController/select_ui_collection_list",
+								async: false,
+								contentType: "application/json;charset=utf-8",
+								dataType: "json",
+								xhrFields: {
+									withCredentials: true
+								},
+								success: function(data) {
+								console.log(data);
+									$.each(data, function(index, obj) {
+										if(obj.housebed.length>0) {
+											console.log(data)
+											console.log("收藏开始：");
+											console.log("编号：" + obj.haiId);
+											console.log(
+												"类型:" + obj.housedetails.housetypedetails.housetype.htName +
+												";室:" + obj.housedetails.houseapartment.haBedroom +
+												";厅:" + obj.housedetails.houseapartment.haLounage +
+												";卫:" + obj.housedetails.houseapartment.haBathroom +
+												";面积:" + (obj.housedetails.hdArea) +
+												";可住人数:" + obj.housedetails.hdLiveNumber +
+												";房间床数:" + obj.housebed[0].hbtNumber
+											);
+											console.log("收藏结束");
+
+											var colDiv = ("<div class='content-collect-div2-div1'><div class='content-collect-div2-div2'><div hidden='hidden' data-haiId=" + obj.haiId + " title='移出收藏房屋' class='content-collect-div2-float1'>X</div><img src='img/201812111921195361_300_200.jpg' style='width: 100%; height: 100%;' /><div hidden='hidden' class='content-collect-div2-float2'><span>立即预定</span></div></div><p><a>" + obj.housedecription.hdpName + "</a><span class='content-collect-div2-span1'>￥<span class='content-collect-div2-span2'><strong>" + obj.homeprice.hpPrice + "</strong></span> 起 </span></p><p><span title='" + obj.housedetails.housetypedetails.housetype.htName + "'>" + obj.housedetails.housetypedetails.housetype.htName + "</span> | <span title='" + obj.housedetails.houseapartment.haBedroom + "室" + obj.housedetails.houseapartment.haLounage + "厅" + obj.housedetails.houseapartment.haBathroom + "卫'>" + obj.housedetails.houseapartment.haBedroom + "室" + obj.housedetails.houseapartment.haLounage + "厅" + obj.housedetails.houseapartment.haBathroom + "卫</span> | <span title='" + obj.housebed[0].hbtNumber + "张床'>" + obj.housebed[0].hbtNumber + "张床</span> | <span title='宜住 5人'>宜住 " + obj.housedetails.hdLiveNumber + "人</span></p></div>");
+											$(".content-collect-div2").append(colDiv);
+										}
+									});
+								}
+							});
+						},
+						//删除收藏
+						delCollect: function() {
+							$(".content-collect-div2-float1").click(function() {
+								var haiId = $(this).data("haiid");
+								$.ajax({
+									type: "post",
+									url: "http://" + util_lly.getIpconfig() + ":8080/collectionsController/delete_collection?haiId=" + haiId + "",
+									contentType: "application/json;charset=utf-8",
+									dataType: "json",
+									async: false,
+									xhrFields: {
+										withCredentials: true
+									},
+									data: {
+										"haiId": JSON.stringify(haiId)
+									},
+									success: function(data) {
+										com.load();
+									}
+								});
+							})
+
+						},
+
+						//我的订单数据
+						order: function() {
+							var map = {
+
+							};
+							$.ajax({
+								type: "post",
+								url: "http://" + util_lly.getIpconfig() + ":8080/reserve/selectReserve",
+								contentType: "application/json;charset=utf-8",
+								dataType: "json",
+								async: false,
+								data: JSON.stringify(map),
+								xhrFields: {
+									withCredentials: true
+								},
+								success: function(data) {
+									$(".content-orders-div2-div2").remove();
+									$.each(data.data, function(index, o) {
+										console.log("\n\n我的订单开始start");
+										console.log("订单号：" + o.rvSerialNumber);
+										console.log("下单时间：" + o.rvBelowOrder);
+										var time = new Date(o.rvStartTime);
+										var time2 = new Date(o.rvEndTime);
+										var startTime = time.toLocaleDateString().replace(/\//g, "-");
+										//										var endTime = time2.toLocaleDateString().replace(/\//g, "-") + " " + time2.toTimeString().substr(0, 8);
+										var endTime = time2.toLocaleDateString().replace(/\//g, "-")
+										console.log("入住时间：" + endTime);
+										console.log("退房时间：" + startTime);
+										console.log("预定天数：" + o.rvTotalDay);
+										console.log("预定房屋套数：" + o.rvHouseNumeb);
+										console.log("入住人数：" + o.rvLiveNumber);
+										console.log("预定总额：" + o.rvSumMoney);
+										console.log("房屋名称：" + o.houseDecription.hdpName);
+										console.log("定金：" + (o.rvSumMoney) * 0.3);
+										var state = o.rvHomeState == 0 ? "待支付" : (o.rvHomeState == 1 ? "待确认" : (o.rvHomeState == 2 ? "待入住" : (o.rvHomeState == 3 ? "已入住" : (o.rvHomeState == 4 ? "已离店" : (o.rvHomeState == 5 ? "已取消" : "")))))
+
+										console.log("客房预定状态：" + (state));
+										console.log("我的订单结束end \n\n");
+
+										var order = "<div class='content-orders-div2-div2'><div class='content-orders-div2-div3'><span>订单号：" + o.rvSerialNumber + "（预付全额订单 ）</span><div class='content-orders-div2-div4'><a>再次预定</a><a class='del_order' data-id=" + o.rvId + ">删除订单</a><a>和房东聊天</a><a>订单详情</a></div><div class='content-orders-div2-div5'><table><tr class='content-orders-div2-tr1'><td rowspan='4' class='content-orders-div2-td1'><img class='content-orders-div2-img1' src='img/201808081321199578_70_43.jpg' /></td><td colspan='5'><a>" + o.houseDecription.hdpName + "</a></td></tr><tr class='content-orders-div2-tr1'><td>入住：<span>" + startTime + "</span></td><td>退房：<span>" + endTime + "</span></td><td>套数：<span>" + o.rvHouseNumeb + "套</span></td><td>房费：<span class='content-orders-div2-span2'>￥" + o.rvSumMoney + "</span></td><td>明细</td></tr><tr class='content-orders-div2-tr1'><td>定金：<span class='content-orders-div2-span2'>￥" + ((o.rvSumMoney) * 0.3) + "</span></td></tr><tr class='content-orders-div2-tr1'><td>订单状态：" + state + "</span></td></tr></table></div></div></div>";
+										$(".content-orders-div2-div1 p").append(order);
+									});
+								},
+
+							});
+						},
+					};
+					com.init();
+				})();
+
+				$(function() {
+					if(util_lly.getUrlParam("article") == "article-div2-orders") {
+						$(".t-middle-cent-span1").html("订单管理");
+						$(".content-personal,.content-diamond,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-orders").prop("hidden", "");
+					} else if(util_lly.getUrlParam("article") == "article-div2-balance") {
+						$(".t-middle-cent-span1").html("账户余额");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-commonlyUsed,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-balance").prop("hidden", "");
+					} else if(util_lly.getUrlParam("article") == "active-div2-collect") {
+						$(".t-middle-cent-span1").html("我的收藏");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-inform,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-collect").prop("hidden", "");
+					} else if(util_lly.getUrlParam("article") == "active-div2-inform") {
+						$(".t-middle-cent-span1").html("通知");
+						$(".content-personal,.content-diamond,.content-orders,.content-remarkOn,.content-balance,.content-gathering,.content-travel,.content-redPacket,.content-integral,.content-changePassword,.content-collect,.content-information,.content-binding").prop("hidden", "hidden");
+						$(".content-inform").prop("hidden", "");
+					}
+				})
+			</script>
+	</body>
+
+</html>

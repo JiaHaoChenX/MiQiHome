@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>房屋描述</title>
+
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+	</head>
+
+	<body>
+
+		<!--3、房屋描述-->
+		<div class="con_floor3 border">
+			<div class="right_tit">
+				<h1 class="right_tith1">房屋描述</h2>
+						</div>
+						<div class="right_tips_wapper">
+							<form class="tips_form" style="width: 500px;">
+								<div class="width">
+									<div class="right_tip1" style="margin-top: 20px;">
+										<p class="tip_tit fontSize12"><span class="tip_xing">*</span>房屋名称</p>
+										<div id="hourse_detail">
+											<div class="display_flex" style="width: 200%;">
+												<input type="text" id="hourse_detail_input" class="form-control" style="width: 500px;" placeholder="建议：地标+特色/亮点+户型">
+												<span style="display: none;" class="hourse_titMsg fontSize12 floor5_p_color">示例:后海简约风格湖景两局公寓</span>
+											</div>
+											<section class="tese_msg">
+												<span id="tese_msg_warn" style="font-size: 12px;color: red;display: none;">房屋名称需在2-20个字符</span>
+											</section>
+										</div>
+									</div>
+									
+									<div class="right_tip2">
+										<p class="tip_tit fontSize12"><span class="tip_xing">*</span>房屋特色</p>
+										<div>
+											<textarea autocomplete="off" onkeyup="wordStatic(this);" id="teaxtarea1"  spellcheck="false" placeholder="可描述房屋软装风格，家居配套，小区环境，物业管理等" rows="6" maxlength="1000" class="ivu-input"></textarea>
+											<section class="tese_msg">
+												<span class="tese_left" id="titContent">房屋特色需在30-1000个字符</span>
+												<span class="tese_number" id="num">0/1000</span>
+											</section>
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="">交通位置（选填）</p>
+										<div>
+											<textarea autocomplete="off" id="teaxtarea2" onkeyup="wordStatic2(this);" spellcheck="false" placeholder="位于朝阳门外大街，从朝阳门地铁站A口5分钟到达。楼下有38路、101路等多条公交线路，十分方便。" rows="6" maxlength="500" class="ivu-input"></textarea>
+											<section class="tese_msg">
+												<span class="tese_left">交通位置需在30-1000个字符</span>
+												<span class="tese_number" id="num2">0/1000</span>
+											</section>
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="">周边介绍（选填）</p>
+										<div>
+											 <textarea autocomplete="off" id="teaxtarea3"  onkeyup="wordStatic3(this);"  spellcheck="false" placeholder="小区东侧有条美食街，特别推荐冒牌火锅菜、海鲜烧烤；附近配有超市便利店、辉煌量贩式KTV、24小时药店、建行ATM，生活便利；最近的医院是**医院，距离2公里，车程仅5分钟，出租车起步价就到。" rows="6" maxlength="500" class="ivu-input"></textarea>
+											 <section class="tese_msg">
+												<span class="tese_left">周边介绍需在30-1000个字符</span>
+												<span class="tese_number" id="num3">0/1000</span>
+											</section>
+										</div>
+									</div>
+									<div class="tip_bottom" style="width:180%;margin-top: 60px;">
+										 <!--<button type="button" class="btn btn-primary nextbtn">下一步</button>-->
+										 
+										<a  class="btn btn-primary nextbtn" target="addHourse">下一步</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+			<script src="../js/jquery-1.11.3.js"></script>
+			<script type="text/javascript">		
+				
+				$(function(){
+					//ip
+					ipconfig();
+					//查询
+					select_houseDecription()
+				})
+				
+				function select_houseDecription(){
+					$.ajax({
+						type:"post",
+						url:"http://" + ip + ":8080/houseDescriptionController/select_houseDecription_by_haiId",
+						async:false,
+						data:{
+							haiId:GetRequest("haiid")
+						},
+						success:function(data){
+							$("#hourse_detail_input").val(data.hdpName);
+							$("#teaxtarea1").val(data.hdpCharacteristic);
+							$("#teaxtarea2").val(data.hdpTraffic);
+							$("#teaxtarea3").val(data.hdpRound);
+						}
+					});
+				}
+				
+				$(".nextbtn").click(function(){
+					insert_houseDecription();
+				})
+				
+				
+				
+				//添加房屋描述
+				function insert_houseDecription(){
+					var objectList=new Array();
+					objectList.push($("#hourse_detail_input").val());
+					objectList.push($("#teaxtarea1").val());
+					objectList.push($("#teaxtarea2").val());
+					objectList.push($("#teaxtarea3").val());
+					objectList.push(GetRequest("haiid"));
+					$.ajax({
+						type:"post",
+						url:"http://" + ip + ":8080/houseDescriptionController/insert_houseDecription",
+						async:true,
+						data:JSON.stringify(objectList),
+						contentType:"application/json;charset=utf-8",
+						success:function(res){
+							window.location="tujia_addHourse4.html?haiid="+GetRequest("haiid");
+						}
+					});
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			//获取IP地址
+			var ip='';
+			function ipconfig() {
+				$.ajax({
+					type: "get",
+					url: "../../js/ipconfig.json",
+					async: false,
+					success: function(data) {
+						ip = data.ip;
+					}
+				});
+			}
+			 //获取id
+		    function GetRequest(s) {
+		        var url = location.search; 		//获取url中"?"符后的字串
+		        var theRequest = new Object();
+		
+		        if (url.indexOf("?") != -1) {
+		            var str = url.substr(1);
+		            strs = str.split("&");
+		            for (var i = 0; i < strs.length; i++) {
+		                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+		            }
+		        }
+		        if (s) {
+		            return theRequest[s];
+		        }
+		        return theRequest;
+		    }
+				
+				function wordStatic(input) {
+					var msg=$("#teaxtarea1").val().length;
+					var content = document.getElementById('num');
+					content.innerHTML=msg+"/1000";
+				}
+				function wordStatic2(input) {
+					var msg=$("#teaxtarea2").val().length;
+					var content2 = document.getElementById('num2');
+					content2.innerHTML=msg+"/1000";
+				}
+				function wordStatic3(input) {
+					var msg=$("#teaxtarea3").val().length;
+					var content3 = document.getElementById('num3');
+					
+					content3.innerHTML=msg+"/1000";
+				}
+				$("#hourse_detail_input").keyup(function(){
+					var inut = $(this).val().length;
+					console.log(inut)
+					if(inut<2){
+						$("#tese_msg_warn").css({"display":"block"});
+					}else{
+						
+						$("#tese_msg_warn").css({"display":"none"});
+					}
+				});
+				$("#hourse_detail_input").focus(function(){
+					$(".hourse_titMsg").css("display","block");
+				});
+				
+				$("#hourse_detail_input").focusout(function(){
+					$(".hourse_titMsg").css("display","none");
+				})
+			</script>
+					
+	</body>
+</html>

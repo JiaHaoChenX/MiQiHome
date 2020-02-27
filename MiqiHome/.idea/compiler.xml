@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="MiqiHome-common" />
+        <module name="MiqiHome-dao" />
+        <module name="MiqiHome-entity" />
+        <module name="MiqiHome-service" />
+        <module name="MiqiHome-ui" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MiqiHome" target="1.5" />
+      <module name="MiqiHome-common" target="1.5" />
+      <module name="MiqiHome-dao" target="1.5" />
+      <module name="MiqiHome-entity" target="1.5" />
+      <module name="MiqiHome-service" target="1.5" />
+      <module name="MiqiHome-ui" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>价格</title>
+
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+	</head>
+
+	<body>
+		<!--7、价格-->
+		<div class="con_floor4 border" style="padding-bottom: 50px;">
+			<div class="right_tit">
+				<h1 class="right_tith1">价格</h1>
+						</div>
+						<div >
+							<div class="floor4_warpper_margin">
+								<form>
+									<div class="">
+										<div class="floor4_line" >											
+												<p class="floor7_tit">基础价</p>				
+												<p class="fontSize12">基础价是基本售卖价格，长期有效，如果您在房态日历中修改了特定日期的价格，则特定日期之外的所有日期按照此价格售卖</p>
+										
+											<!--售卖币种-->
+											<div class=" floor5_margin-top">												
+												<div class=" floor5_margin" >
+													<p class="floor5_p_color">售卖币种</p>
+													<p>
+														<select name="" class="form-control" style="width: 200px;" disabled="disabled">
+															<option value="">人民币</option>
+														</select><br />
+														<span class="fontSize12">国内房屋只能通过人民币售卖，不可更改</span>
+													</p>
+												</div>
+											</div>
+											<!--售卖价格-->
+											<div class=" floor5_margin-top">												
+												<div class=" floor5_margin" >
+													<p class="floor5_p_color"><span style="color: red;">*</span>售卖价格</p>
+													<div class="floor5_inline" style="font-size: 12px;">
+														<input type="text" class="form-control" style="width: 100px;" placeholder="320" name="" id="hpPrice" value="" /><span style="height: 30px;line-height: 30px;margin-left: 2px;">元</span>
+													</div>
+												</div>
+											</div>											
+										</div>
+										<!--连住折扣-->
+										<div class="floor4_line">
+											<p class="floor7_tit">连住折扣</p>
+											<div class="floor5_inline">
+												<span class="floor5_p_color" style="margin-right: 140px;" >连住天数</span>
+												<span class="floor5_p_color">折扣设置</span>
+											</div>	
+											<div id="discount">
+											</div>
+											<div>
+												<button id="add_day" type="button" class="btn btn-primary" style="margin-top: 40px;">+添加连住折扣</button>
+											</div>
+										</div>
+										
+										<div class="floor4_line">
+											<p class="floor7_tit" style="font-weight: normal;"><span style="color: red;">*</span>最少起订天数<span class="fontSize12"> 起订天数越少，越能满足更多人预订</span></p>
+											<div class="fontSize12 floor5_require">
+												<input type="text" class="form-control" name="" id="cdLeastDay" value="" placeholder="1"/><span style="height: 30px;line-height: 30px;margin-left: 2px;">天</span>
+											</div>	
+											<p class="floor5_p_color">押金金额<span class="fontSize12"> 途家网目前仅支持线上收取押金</span></p>
+											<input type="text" class="form-control" style="vertical-align: middle;margin-top: 0;" name="" id="cdDeposit" value="" placeholder="100"/>元
+											
+											<p class="floor7_day fontSize14">收款方式：全额预付<br><span class="fontSize12" style="margin: 13px 0;">途家网目前仅支持全额预付房费，并且通过平台线上收取</span></p>
+											<p class="floor7_tit" style="font-weight: normal;">退款规则<span class="fontSize12"> 宽松的退款规则会让更多的人预订您的房屋</span></p>
+											<p class="floor5_p_color floor7_backMoney">
+												入住
+												<select class="form-control" style="width: 100px;" id="cdFullRefund">
+													<option value="0">当天</option>
+													<option value="1">前1天</option>
+													<option value="2">前2天</option>
+													<option value="3">前3天</option>
+													<option value="4">前4天</option>
+													<option value="5">前5天</option>
+													<option value="6">前6天</option>
+													<option value="7">前7天</option>
+													<option value="15">前15天</option>
+												</select>
+												12点前取消订单，房屋可全额退还；
+											</p>
+											<p class="floor5_p_color floor7_backMoney">
+												在此之后取消订单，将收取未住宿房费的 
+												<select class="form-control" style="width: 100px;" id="cdSomeRefund">
+													<option value="0">0%</option>
+													<option value="0.1">1%</option>
+													<option value="0.2">2%</option>
+													<option value="0.3">3%</option>
+													<option value="0.4">4%</option>
+													<option value="0.5">5%</option>
+													<option value="0.6">6%</option>
+													<option value="0.7">7%</option>
+													<option value="0.8">8%</option>
+													<option value="0.9">9%</option>
+													<option value="1">100%</option>
+												</select>
+												作为违约金支付给房东。（包含未入住和提前离店）
+											</p>
+											<div class="floor7_day">
+												<p class=""><input type="checkbox" style="vertical-align: middle;margin: 0;" name="" id="" value="" />支持信用免押金</p>
+												<p class="fontSize12 floor5_p_color " style="text-indent: 1rem;">支持信用免押会提高房屋排序和推荐<span style="color: orange;"> 什么是信用免押金？</span></p>
+											</div>
+											<div class="floor7-tehui floor7_day">
+												<p class="floor5_p_color" style="font-weight: bold;">新房特惠</p>
+												<p class="fontSize12"><input type="checkbox" style="vertical-align: middle;margin: 0;" name="" id="" value="" />  为前三位房客提供折扣优惠</p>
+												<p>
+													<select class="form-control" disabled="" style="width: 120px;">
+														<option value="">8.0折</option>
+													</select>
+													
+												</p>
+												<p class="fontSize12 floor5_p_color " >参加后，此房的前三位房客享受折扣优惠，同时此房享受搜索推荐、排名优先和专属筛选标签 <span style="color: orange;"> 了解更多</span></p>
+											</div>
+										</div>
+										<div style="float: right;">
+											<a class="btn btn-primary nextbtn" name="addHourse">下一步</a>
+											<!--<input type="button" class="btn btn-primary nextbtn" value="下一步"/>-->
+										</div>
+										
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					
+			<script src="../js/jquery-1.11.3.js"></script>
+			<script type="text/javascript">
+				$(function(){
+					ipconfig() ;
+					select_homePrice();
+				});
+				function select_homePrice(){
+					$.ajax({
+						type:"post",
+						url:"http://" + ip + ":8080/Homeprice/select_arr_homePrice_haiId",
+						async:false,
+						data:{
+							haiId:GetRequest("haiid")
+						},
+						success:function(data){
+							$("#hpPrice").val(data.hpPrice);		//售卖价格
+							$("#cdLeastDay").val(data.cdLeastDay);		//最少起订天数
+							$("#cdDeposit").val(data.cdDeposit);		//收取住房押金
+							$("#cdFullRefund").val(data.cdFullrefund);	//入住前几天全额退款
+							$("#cdSomeRefund").val(data.cdSomeRefund);	//除此之外，收取住房费百分之多少(50%)，在这里为0.5
+							if(data.continuousdiscount){
+								$.each(data.continuousdiscount, function(i,obj) {
+									console.log(obj)
+									add_day();
+									$($(".select_day").get(i)).val(obj.cdDay)
+									$($(".text_day").get(i)).val(obj.cdDiscount)
+								});
+								
+							}
+						}
+					});
+				}
+				
+				$(".nextbtn").click(function(){
+					$.ajax({
+						type:"post",
+						url:"http://" + ip + ":8080/Homeprice/select_homePrice_haiId",
+						async:false,
+						data:{
+							haiId:GetRequest("haiid")
+						},
+						success:function(data){
+							var homeprice={
+							    hpPrice:$("#hpPrice").val(),			//售卖价格
+							    cdLeastDay:$("#cdLeastDay").val(),		//最少起订天数
+							    cdDeposit:$("#cdDeposit").val(),		//收取住房押金
+							    cdFullrefund:$("#cdFullRefund").val(),	//入住前几天全额退款
+							    cdSomeRefund:$("#cdSomeRefund").val(),	//除此之外，收取住房费百分之多少(50%)，在这里为0.5
+							    haiId:GetRequest("haiid")				//关联房屋全部信息表
+							}
+							if(data>0){
+								console.log(data)
+								$.ajax({
+									type:"post",
+									url:"http://" + ip + ":8080/Homeprice/update_homePrice",
+									async:false,
+									data:JSON.stringify(homeprice),
+									contentType : 'application/json',
+									dataType : 'json',
+									success:function(da){
+										$.ajax({
+											type:"post",
+											url:"http://" + ip + ":8080/Homeprice/delete_continuousDiscount",
+											async:true,
+											data:{
+												hpId:data
+											},
+											success:function(data){
+												console.log(data)
+											}
+										});
+										
+										$.each($(".select_day"), function(i,obj) {
+											$.ajax({
+												type:"post",
+												url:"http://" + ip + ":8080/Homeprice/insert_continuousDiscount",
+												async:true,
+												data:{
+													cdDay:$(this).val(),
+													cdDiscount:$(".text_day").get(i).value,
+													hpId:data
+												},
+												success:function(data){
+													console.log(data)
+												}
+											});
+										});
+									}
+								});
+							}else{
+								$.ajax({
+									type:"post",
+									url:"http://" + ip + ":8080/Homeprice/insert_homePrice",
+									async:false,
+									data:JSON.stringify(homeprice),
+									contentType : 'application/json',
+									dataType : 'json',
+									success:function(data){
+										$.each($(".select_day"), function(i,obj) {
+											$.ajax({
+												type:"post",
+												url:"http://" + ip + ":8080/Homeprice/insert_continuousDiscount",
+												async:true,
+												data:{
+													cdDay:$(this).val(),
+													cdDiscount:$(".text_day").get(i).value,
+													hpId:data
+												},
+												success:function(data){
+													console.log(data)
+												}
+											});
+										});
+									}
+								});
+							}
+						}
+					});
+					
+					window.location="tujia_addHourse8.html?haiid="+GetRequest("haiid");
+				})
+				
+				
+				
+			function add_day(){
+				$("#discount").append('<div class="floor5_inline floor5_day">'
+										+'	<div class="floor5_margin-right"  style="width: 180px;">'
+										+'		<select name="" class="form-control select_day">'
+										+'			<option value="2">2天</option>'
+										+'			<option value="3">3天</option>'
+										+'			<option value="4">4天</option>'
+										+'			<option value="5">5天</option>'
+										+'			<option value="7">7天</option>'
+										+'			<option value="15">15天</option>'
+										+'			<option value="30">30天</option>'
+										+'		</select>'
+										+'	</div>'
+										+'	<div >'
+										+'		<input type="text" class="form-control text_day" placeholder="请选择" name="" id="" value="" />折'
+										+'		<span class="floor5_del">删除</span>'
+										+'	</div>'
+										+'</div>');
+			}
+			$("#add_day").click(function(){
+				if($(".floor5_day").length<6){
+					add_day();
+				}else{
+					add_day();
+					$("#add_day").css("display","none");
+				}
+			})
+			$("body").on("click",".floor5_del",function(){
+				$(this).closest(".floor5_day").remove();
+					$("#add_day").css("display","flex");
+				
+			})
+			
+						 
+			 //获取id
+		    function GetRequest(s) {
+		        var url = location.search; 		//获取url中"?"符后的字串
+		        var theRequest = new Object();
+		
+		        if (url.indexOf("?") != -1) {
+		            var str = url.substr(1);
+		            strs = str.split("&");
+		            for (var i = 0; i < strs.length; i++) {
+		                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+		            }
+		        }
+		        if (s) {
+		            return theRequest[s];
+		        }
+		        return theRequest;
+		    } 
+						  
+			//获取IP地址
+			var ip='';
+			function ipconfig() {
+				$.ajax({
+					type: "get",
+					url: "../../js/ipconfig.json",
+					async: false,
+					success: function(data) {
+						ip = data.ip;
+					}
+				});
+			}
+			</script>
+	</body>
+</html>

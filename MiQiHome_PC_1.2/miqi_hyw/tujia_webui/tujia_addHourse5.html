@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>入住规则</title>
+
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		
+	</head>
+
+	<body>
+		<!--5、入住规则-->
+		<div class="con_floor4 border" style="padding-bottom: 50px;">
+			<div class="right_tit">
+				<h1 class="right_tith1">入住规则</h1>
+				<h2 class="right_tith2">请注明您的房屋入住相关说明，以保证能收到合适的订单。</h2>
+			</div>
+			<div>
+				<div class="floor4_warpper_margin">
+					<form>
+						<div class="">
+							<div class="floor4_line">
+								<div class="floor5_inline">
+									<div class="floor5_margin-right">
+										<p class="floor5_p_color">房客入住时间</p>
+										<select id="checkInTime" name="" class="form-control">
+										</select>
+									</div>
+									<div class="">
+										<p class="floor5_p_color">房客退房时间</p>
+										<select id="checkOutTime" name="" class="form-control">
+										</select>
+									</div>
+								</div>
+								<!--接待房客的时间-->
+								<div class=" floor5_margin-top">
+									<div class=" floor5_margin">
+										<p class="floor5_p_color">接待房客的时间</p>
+										<div class="server_time">
+										</div>
+										<p><button type="button" id="add_time" class="btn btn-primary" id="add_date" style="margin-top: 10px;">+添加接待时段</button></p>
+									</div>
+								</div>
+								<!--是否有前台-->
+								<div class=" floor5_margin-top">
+									<div class=" floor5_margin">
+										<p class="floor5_p_color">是否有前台</p>
+										<div class="floor5_inline" style="font-size: 12px;">
+											<div class=" floor5_margin-right">
+												<input type="radio" style="vertical-align:middle;margin-top: 0;" name="radios" id="" value="1" checked="checked" />是
+											</div>
+
+											<div class="">
+												<input type="radio" style="vertical-align:middle;margin-top: 0;" name="radios" id="" value="0" />否
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--接待性别-->
+								<div class=" floor5_margin-top">
+									<div class=" floor5_margin">
+										<p class="floor5_p_color">接待性别</p>
+										<div class="floor5_inline" style="font-size: 12px;">
+											<div class=" floor5_margin-right">
+												<input type="radio" style="vertical-align:middle;margin-top: 0;" name="sex" id="" value="0" checked="checked" />不限
+											</div>
+											<div class="floor5_margin-right">
+												<input type="radio" style="vertical-align:middle;margin-top: 0;" name="sex" id="" value="1" />男
+											</div>
+											<div class="">
+												<input type="radio" style="vertical-align:middle;margin-top: 0;" name="sex" id="" value="2" />女
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<!--接待特殊年龄段-->
+								<div class=" floor5_margin-top">
+									<div class=" floor5_margin">
+										<p class="floor5_p_color">接待特殊年龄段</p>
+										<div class="floor5_inline dd" style="font-size: 12px;">
+											<div class="floor5_margin-right">
+												<input type="radio" style="vertical-align:middle;margin-top: 0;" name="age" id="" value="0" checked="checked"/><label>不限</label>
+											</div>
+											<div class=" floor5_margin-right">
+												<input type="radio" style="vertical-align:middle;margin-top: 0;" name="age" id="" value="1"  /><label>儿童<span>(0-12岁)</span></label>
+											</div>
+											<div class="floor5_margin-right">
+												<input type="radio" style="vertical-align:middle;margin-top: 0;" name="age" id="" value="2" /><label>老人<span>(65岁以上)</span></label>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--打扫换洗方式-->
+							<div class="floor4_line">
+								<p class="floor5_p_color">打扫换洗方式</p>
+								<div class="floor5_inline">
+									<div class="floor5_margin-right">
+										<p class="floor5_p_color">多久提供打扫卫生</p>
+										<select id="cleanNum" name="" class="form-control">
+											<option value="1客1扫">1客1扫</option>
+											<option value="1天1扫">1天1扫</option>
+											<option value="2天1扫">2天1扫</option>
+											<option value="3天1扫">3天1扫</option>
+											<option value="4天1扫">4天1扫</option>
+											<option value="5天1扫">5天1扫</option>
+											<option value="6天1扫">6天1扫</option>
+											<option value="7天1扫">7天1扫</option>
+										</select>
+									</div>
+									<div class="">
+										<p class="floor5_p_color">多久提供被单更换</p>
+										<select id="changeNum" name="" class="form-control">
+											<option value="1客1换">1客1换</option>
+											<option value="1天1换">1天1换</option>
+											<option value="2天1换">2天1换</option>
+											<option value="3天1换">3天1换</option>
+											<option value="4天1换">4天1换</option>
+											<option value="5天1换">5天1换</option>
+											<option value="6天1换">6天1换</option>
+											<option value="7天1换">7天1换</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+							<!--对房客的要求-->
+							<div class="floor4_line">
+								<p class="floor5_p_color">对房客的要求</p>
+								<div class="fontSize12 floor5_require" id="require"></div>
+							</div>
+							<!--其他入住提示-->
+							<div class="floor4_line">
+								<p class="floor5_p_color">其他入住提示（选填）</p>
+								<div class="fontSize12 floor5_require" style="width: 400px;">
+									<textarea spellcheck="false" id="teaxtarea4" onkeyup="wordStatic4(this);" placeholder="不可录入“发票”“押金”等信息，不可与已录入信息矛盾，否则不会审核通过哦~若对客有其他入住要求，请说明。例如：水电燃气费、额外打扫费用、入住所需证件等。" rows="4" maxlength="500" class="ivu-input"></textarea>
+									<section class="tese_msg">
+										<span class="tese_number" id="num4">0/500</span>
+									</section>
+								</div>
+							</div>
+							<div style="float: right;">
+								<!--<input type="button" class="btn btn-primary nextbtn" value="下一步"/>-->
+
+								<a  class="btn btn-primary nextbtn" target="addHourse">下一步</a>
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			function wordStatic4(input) {
+				var msg = $("#teaxtarea4").val().length;
+				var content4 = document.getElementById('num4');
+				content4.innerHTML = msg + "/500";
+			};
+			var homerequirement = {};
+			var ip='';
+			var com = {
+				//ip
+				ipconfig() {
+					$.ajax({
+						type: "get",
+						url: "../../js/ipconfig.json",
+						async: false,
+						success: function(data) {
+							ip = data.ip;
+						}
+					});
+				},
+				select_HomeRules(){
+					$.ajax({
+						type:"get",
+						url:"http://" + ip + ":8080/HomeRules/select_HomeRules_haiId",
+						async: false,
+						data:{
+							haiId:GetRequest("haiid")
+						},
+						success:function(data){
+							$("#checkInTime").val(data.homerules.hrCheckin);						//入住时间
+							$("#checkOutTime").val(data.homerules.hrCheckout);					//退房时间
+							$('input[name="radios"][value="'+data.homerules.hrproscenium+'"]').attr("checked",true);	//是否有前台
+							$('input[name="sex"][value="'+data.homerules.hrSex+'"]').attr("checked",true);				//接待性别
+							$('input[name="age"][value="'+data.homerules.hrSpecialage+'"]').attr("checked",true);		//接待特殊年龄段
+							$("#cleanNum").val(data.homerules.hrHygiene);							//多久提供打扫卫生
+							$("#changeNum").val(data.homerules.hrSheets);							//多久提供被单更换
+							$("#teaxtarea4").val(data.homerules.hrTip)	;
+							
+							$.each(data.homerules.receptiontime, function(i,obj) {
+								com.add_bind();
+								$($(".rtStartTime").get(i)).val(obj.rtStartTime)
+								$($(".rtEndTime").get(i)).val(obj.rtEndTime);
+							});
+							$.each(data.homerules.homerequirementreflect, function(i,obj) {
+								$("input[type='checkbox'][value='"+obj.hreId+"']").attr("checked",true);
+							});
+							return data;
+						}
+					});
+				}
+				//添加入住规则
+				,insert_HomeRules(){
+					
+					var homerules={
+						hrCheckin:$("#checkInTime").val(),						//入住时间
+						hrCheckout:$("#checkOutTime").val(),					//退房时间
+						hrproscenium:$('input[name="radios"]:checked').val(),	//是否有前台
+						hrSex:$('input[name="sex"]:checked').val(),				//接待性别
+						hrSpecialage:$('input[name="age"]:checked').val(),		//接待特殊年龄段
+						hrHygiene:$("#cleanNum").val(),							//多久提供打扫卫生
+						hrSheets:$("#changeNum").val(),							//多久提供被单更换
+						hrTip:$("#teaxtarea4").val(),							//入住提示
+						haiId:GetRequest("haiid"),								//关联房屋全部信息表
+					}
+					$.ajax({
+						type:"get",
+						url:"http://" + ip + ":8080/HomeRules/select_HomeRules_haiId",
+						async: false,
+						data:{
+							haiId:GetRequest("haiid")
+						},
+						success:function(data){
+							var ds=data;
+							if(data.homerules.hrId){
+								//修改房屋详细表
+								$.ajax({
+									type:"post",
+									url:"http://" + ip + ":8080/HomeRules/update_HomeRules",
+									async:false,
+									data:JSON.stringify(homerules),
+									contentType : 'application/json',
+									dataType : 'json',
+									success:function(data){
+										//删除接待房客时间表(关联入住规则表)
+										$.ajax({
+											type:"post",
+											url:"http://" + ip + ":8080/Receptiontime/delete_Receptiontime_hrId",
+											async: false,
+											data:{
+												hrId:ds.homerules.hrId
+											},
+											success:function(data){
+												console.log(data)	
+											}
+										});
+//										//添加接待房客时间表(关联入住规则表)
+										$.each($(".serverTime"), function(i,obj) {
+											var receptiontime={
+												rtStartTime:$(obj).find (".rtStartTime").val(),
+												rtEndTime:$(obj).find (".rtEndTime").val(),
+												hrId:ds.homerules.hrId
+											}
+											$.ajax({
+												type:"post",
+												url:"http://" + ip + ":8080/Receptiontime/insert_Receptiontime",
+												async: false,
+												data:JSON.stringify(receptiontime),
+												contentType : 'application/json',
+												dataType : 'json',
+												success:function(data){
+													
+												}
+											});
+										});
+										//删除对房客的要求表对应表
+										$.ajax({
+											type:"post",
+											url:"http://" + ip + ":8080/HomeRequirementReflect/delete_HomeRequirementReflect_hrId",
+											async: false,
+											data:{
+												hrId:ds.homerules.hrId
+											},
+											success:function(data){
+												console.log(data)	
+											}
+										});
+										//添加对房客的要求表对应表
+										$.each($('input[type=checkbox]:checked'), function(i,obj){
+											var homerequirementreflect={		
+											    hrId:ds.homerules.hrId ,//'关联入住规则表',
+											    hreId:$(obj).val() //'关联对房客的要求表',
+											}
+											$.ajax({
+												type:"post",
+												url:"http://" + ip + ":8080/HomeRequirementReflect/insert_HomeRequirementReflect",
+												async: false,
+												data:JSON.stringify(homerequirementreflect),
+												contentType : 'application/json',
+												dataType : 'json',
+												success:function(data){
+													
+												}
+											});
+										})
+									}
+								})
+							}else{
+								//添加房屋详细表
+								$.ajax({
+									type:"post",
+									url:"http://" + ip + ":8080/HomeRules/insert_HomeRules",
+									async:false,
+									data:JSON.stringify(homerules),
+									contentType : 'application/json',
+									dataType : 'json',
+									success:function(data){
+										//接待房客时间表(关联入住规则表)
+										$.each($(".serverTime"), function(i,obj) {
+											var receptiontime={
+												rtStartTime:$(obj).find (".rtStartTime").val(),
+												rtEndTime:$(obj).find (".rtEndTime").val(),
+												hrId:data
+											}
+											$.ajax({
+												type:"post",
+												url:"http://" + ip + ":8080/Receptiontime/insert_Receptiontime",
+												async: false,
+												data:JSON.stringify(receptiontime),
+												contentType : 'application/json',
+												dataType : 'json',
+												success:function(data){
+													
+												}
+											});
+										});
+										//对房客的要求表对应表
+										$.each($('input[type=checkbox]:checked'), function(i,obj){
+											var homerequirementreflect={		
+											    hrId:data ,//'关联入住规则表',
+											    hreId:$(obj).val() //'关联对房客的要求表',
+											}
+											$.ajax({
+												type:"post",
+												url:"http://" + ip + ":8080/HomeRequirementReflect/insert_HomeRequirementReflect",
+												async: false,
+												data:JSON.stringify(homerequirementreflect),
+												contentType : 'application/json',
+												dataType : 'json',
+												success:function(data){
+													
+												}
+											});
+										})
+									}
+								});
+							}
+						}
+					});
+					
+					
+				 	
+//					
+					window.location="tujia_addHourse6.html?haiid="+GetRequest("haiid");
+				}
+				//渲染对房客的要求
+				,select_Homerequirement() {
+					$.ajax({
+						type: "post",
+						url: "http://localhost:8080/HomeRequirement/select_Homerequirement",
+						contentType: "application/json;charset=utf-8",
+						dataType: "json",
+						async: false,
+						data: JSON.stringify(homerequirement),
+						success: function(data) {
+							console.log(data)
+							$("#require p").remove();
+							$.each(data, function(index, obj) {
+								var input = "<p><input type='checkbox' value='"+obj.hreId+"' style='vertical-align:middle;margin-top: 0;'/>" + obj.hreName + "</p>";
+								$("#require").append(input);
+							});
+
+						}
+					});
+				},
+				//入住时间 
+				checkInTime() {
+					//24小时
+					for(var i = 0; i <= 24; i++) {
+						$("#checkInTime").append("<option value='" + i + ":00'>" + i + ":00</option>");
+						$("#checkOutTime").append("<option value='" + i + ":00'>" + i + ":00</option>");
+						$("#receptionStartTime").append("<option value='" + i + ":00'>" + i + ":00</option>");
+						$("#receptionEndTime").append("<option value='" + i + ":00'>" + i + ":00</option>");
+					}
+					//7天
+					for(var i=0;i<7;i++){
+						$("#cleanNum").append("<option value='" + (i+1) + "天1扫'>" + (i+1) + "天1扫</option>");
+						$("#changeNum").append("<option value='" + (i+1) + "天1换'>" + (i+1) + "天1换</option>");
+					}
+					
+				},
+				add_bind(){
+						var op = $("#checkInTime").html();
+						$(".server_time").append("<p class='serverTime' style='margin-top: 10px;'><select class='form-control rtStartTime'>"+op+"</select><span style='font-size: 12px;margin: 0 4px;'>至</span><select name=''class='form-control rtEndTime'>"+op+"</select><span class='floor5_del'>删除</span></p>");
+						
+						//class="serverTime"出现的次数
+						pNum = $(".serverTime").length;
+						//如果class="serverTime"出现的次>=2，按钮“添加接待时段”hide
+						if(pNum>=3){
+							$("#add_time").hide();
+						}
+				},
+				del_bind(){
+						$(this).parent().remove();
+						//class="serverTime"出现的次数
+						pNum = $(".serverTime").length;
+						//如果class="serverTime"出现的次数<2，按钮“添加接待时段”show
+						if(pNum<=2){
+							$("#add_time").show();
+						}
+				},init(){
+					//ip
+					com.ipconfig();
+					com.select_Homerequirement();
+					com.checkInTime();
+//					com.add_bind();
+					com.select_HomeRules();
+					//添加接待时段
+					$("body").on("click", "#add_time",com.add_bind);
+					//删除接待时段
+					$("body").on("click", ".floor5_del",com.del_bind)
+					//
+					$(".nextbtn").click(com.insert_HomeRules)
+				}
+
+			}
+			com.init();
+			
+			
+			
+			
+			
+			 //获取id
+		    function GetRequest(s) {
+		        var url = location.search; 		//获取url中"?"符后的字串
+		        var theRequest = new Object();
+		
+		        if (url.indexOf("?") != -1) {
+		            var str = url.substr(1);
+		            strs = str.split("&");
+		            for (var i = 0; i < strs.length; i++) {
+		                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+		            }
+		        }
+		        if (s) {
+		            return theRequest[s];
+		        }
+		        return theRequest;
+		    }
+		</script>
+
+	</body>
+
+</html>

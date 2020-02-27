@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单管理</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+	</head>
+
+	<body>
+		<div class="div3">
+			<div class="floor4_warpper_margin" style="overflow: hidden;">
+				<div class="border_bottom" style="padding-bottom: 10px;font-size: 20px;">
+					<h4>订单管理</h4>
+				</div>
+				<div class="order_ul">
+					<ul class="order_content_ul">
+						<li class="active">全部</li>
+						<li>待支付</li>
+						<li>待确认</li>
+						<li>代入住</li>
+						<li>已入住</li>
+						<li>已离店</li>
+						<li>已取消</li>
+					</ul>
+					<ul class="order_content_ul2" style="float: right;">
+						<li style="display: flex;">
+							<select name="" class="form-control" style="width: 105px;">
+								<option value="入住人">入住人</option>
+								<option value="订单号">订单号</option>
+								<!--<option value="入住日期">入住日期</option>
+								<option value="下单日期">下单日期</option>-->
+							</select>
+							<div class="" style="margin: 0 5px;">
+								<input type="text" id="seachMsg" class="form-control" style="width: 150px;" placeholder="入住人" name="" id="" value="" />
+							</div>
+							<input type="button" id="seachBtn" class="btn btn-primary" value="搜索" />
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="floor4_warpper_margin">
+				<table class="diary_table" id="order_table" border="1px">
+					<tbody>
+						<tr>
+							<th>姓名</th>
+							<th>房屋</th>
+							<th>入住时间</th>
+							<th>退房时间</th>
+							<th>下单时间</th>
+							<th>订单号</th>
+							<th>状态</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--<div class="floor4_warpper_margin empty_order">-->
+			<!--<p>暂无优选数据</p>-->
+			<!--</div> -->
+			<div class="page_box">
+
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				$("body").on("click", ".order_content_ul li", function() {
+
+					$(this).siblings('li').removeClass('active'); // 删除其他兄弟元素的样式
+
+					$(this).addClass('active'); // 添加当前元素的样式
+
+				});
+
+				$("body").on("click", ".order_content_ul2 option", function() {
+
+					alert(this.innerHTML)
+
+				});
+
+			});
+		</script>
+		<script type="text/javascript">
+			//跨域获取IP地址
+			var ip = "";
+			var curr = 1;
+			var pageNo = 0;
+			var limit = 3;
+			(function ipconfig() {
+				$.ajax({
+					type: "get",
+					url: "../../js/ipconfig.json",
+					async: false,
+					success: function(data) {
+						ip = data.ip;
+					}
+				});
+			})();
+
+			(function() {
+				var com = {
+					//开始页
+					init: function() {
+						com.landlordOrder();
+						com.bind()
+					},
+					landlordOrder: function(uName, rvHomeState, rvBelowOrder, rvStartTime, rvSerialNumber) {
+						var map = {
+							"uName": uName,
+							"rvHomeState": rvHomeState,
+							"rvBelowOrder": rvBelowOrder,
+							"rvStartTime": rvStartTime,
+							"rvSerialNumber": rvSerialNumber,
+							//							"pageNumber":1,
+							//							"pageSize":5
+						};
+						$.ajax({
+							type: "post",
+							url: "http://" + ip + ":8080/reserve/selectLandlordReserve",
+							dataType: "json",
+							contentType: 'application/json;charset=utf-8',
+							async: false,
+							data: JSON.stringify(map),
+							xhrFields: {
+								withCredentials: true
+							},
+							success: function(data) {
+								console.log(data);
+								console.log("aa:" + rvSerialNumber);
+								$("#order_table tr:not(:first-child)").remove();
+								$.each(data.dataCount, function(index, land) {
+									//入住时间
+									var time = new Date(land.rvStartTime);
+									//退房时间
+									var time2 = new Date(land.rvEndTime);
+									//下单时间
+									var time3 = new Date(land.rvBelowOrder);
+									var startTime = time.toLocaleDateString().replace(/\//g, "-");
+									var endTime = time2.toLocaleDateString().replace(/\//g, "-");
+									var belowTime = time3.toLocaleDateString().replace(/\//g, "-");
+									//<td>"+land.userinformation.uPhone+"</td>
+									state = land.rvHomeState == 0 ? "待支付" : (land.rvHomeState == 1 ? "待确认" : (land.rvHomeState == 2 ? "待入住" : (land.rvHomeState == 3 ? "已入住" : (land.rvHomeState == 4 ? "已离店" : (land.rvHomeState == 5 ? "已取消" : "")))))
+									var td = "<tr><td>" + land.userinformation.uName + "</td><td>" + land.houseDecription.hdpName + "</td><td>" + startTime + "</td><td>" + endTime + "</td><td>" + belowTime + "</td><td>" + land.rvSerialNumber + "</td><td class='blue'>" + state + "</td></tr>";
+
+									$("#order_table").append(td);
+
+								});
+							}
+						});
+					},
+					bind: function() {
+						$("body").on("click", ".order_content_ul", function() {
+							var li = $(this).children("li");
+							for(var i = 0; i < li.length; i++) {
+								li[i].onclick = function() {
+									rvHomeState = $(this).index() - 1;
+									//									console.log("start")
+									//									console.log(rvHomeState)
+									if(rvHomeState == null || rvHomeState == "") {
+										rvHomeState = null;
+									}
+									//									console.log(com.landlordOrder(rvHomeState));
+									com.landlordOrder(null, rvHomeState, null);
+									//									console.log("end");
+								}
+							}
+
+						});
+
+						$("body").on("click", "#seachBtn", function() {
+
+							//							var seachMsg = $("#seachMsg").val();
+							uName = $("#seachMsg").val();
+							rvSerialNumber = $("#seachMsg").val();
+							if(uName == null || uName == "") {
+								uName = null;
+							}
+							if(rvSerialNumber == null || rvSerialNumber == "") {
+								rvSerialNumber = null;
+							}
+							com.landlordOrder(uName, null, null, null, rvSerialNumber);
+
+						})
+					},
+				};
+				com.init();
+			})();
+		</script>
+	</body>
+
+</html>

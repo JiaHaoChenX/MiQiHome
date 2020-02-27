@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    <configuration>
+    <!--&lt;!&ndash;导入dbconfig.properties文件中的所有key-value数据&ndash;&gt;
+    <properties resource="dbconfig.properties"></properties>-->
+    <!--设置-->
+    <settings>
+        <!--设置日志文件-->
+        <setting name="cacheEnabled" value="true"></setting>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <!--&lt;!&ndash;别名&ndash;&gt;
+    <typeAliases>
+        <package name="com.zhangyuwei.depend.entities" ></package>
+    </typeAliases>
+    &lt;!&ndash;环境配置，default为默认选择的环境&ndash;&gt;
+    <environments default="development">
+        &lt;!&ndash;开发&ndash;&gt;
+        <environment id="development">
+            &lt;!&ndash;事务管理&ndash;&gt;
+            <transactionManager type="JDBC"/>
+            &lt;!&ndash;连接池&ndash;&gt;
+            <dataSource type="POOLED">
+                &lt;!&ndash;引用属性${mysql.driver}&ndash;&gt;
+                <property name="driver" value="${mysql.DBDRIVER}"/>
+                <property name="url" value="${mysql.DBURL}"/>
+                <property name="username" value="${mysql.DBUSER}"/>
+                <property name="password" value="${mysql.DBPWD}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="Mapper/GoodMapper.xml"/>
+    </mappers>-->
+</configuration>

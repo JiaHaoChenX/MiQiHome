@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    div {
+            position: relative;
+            line-height: 30px;
+        }
+ 
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+        }
+ 
+        label {
+            position: absolute;
+            left: 5px;
+            top: 3px;
+            width: 20px;
+            height: 20px;
+            border-radius: 20%;
+            border: 1px solid #999;
+        }
+ 
+        /*设置选中的input的样式*/
+        /* + 是兄弟选择器,获取选中后的label元素*/
+        input:checked+label {
+            background-color: #349EDF;
+            border: 1px solid #349EDF;
+        }
+ 
+        input:checked+label::after {
+            position: absolute;
+            content: "";
+            width: 5px;
+            height: 10px;
+            top: 3px;
+            left: 6px;
+            border: 2px solid #fff;
+            border-top: none;
+            border-left: none;
+            transform: rotate(45deg)
+        }s
+    </style>
+</head>
+ 
+<body>
+    <div>
+        <input id="item1" type="checkbox" name="item" value="item1" checked>
+        <label for="item1"></label>
+        <span>选项一</span>
+    </div>
+    <div>
+        <input id="item2" type="checkbox" name="item" value="item2">
+        <label for="item2"></label>
+        <span>选项二</span>
+    </div>
+</body>
+</html>

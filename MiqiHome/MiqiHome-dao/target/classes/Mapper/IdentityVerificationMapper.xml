@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    发布者：one
+    命名空间应该是对应接口的包名+接口名
+-->
+
+<mapper namespace="com.miqi.miqihome.dao.IIdentityverificationDao"><!--接口名-->
+
+    <!--
+        查询返回的结果集
+    -->
+      <resultMap id="select_Identityverification_resultMap" type="Identityverification">
+          <id property="ivId"  column="ivId"></id>
+          <result column="ivName" property="ivName"></result>
+          <result column="ivUrl" property="ivUrl"></result>
+          <result column="ivUIDName" property="ivUIDName"></result>
+          <result column="IvUIDNo" property="IvUIDNo"></result>
+          <result column="haiId" property="haiId"></result>
+          <!--关联房屋全部信息表-->
+          <association property="homeallinformation" javaType="Homeallinformation">
+              <id column="haiId" property="haiId"></id>
+              <result column="uiId" property="uiId"></result>
+              <!--关联用户信息表-->
+              <association property="userinformation" javaType="Userinformation">
+                  <!--共用-->
+                  <id column="uiId" property="uiId"></id>
+                  <result column="uPhone" property="uPhone"></result>
+                  <!--  <result column="uPassword" property="uPassword"></result>-->
+                  <result column="uPicture" property="uPicture"></result>
+                  <result column="uNickName" property="uNickName"></result>
+                  <result column="uEmail" property="uEmail"></result>
+                  <result column="uTime" property="uTime"></result>
+                  <!--房东-->
+                  <result column="uName" property="uName"></result>
+                  <result column="uSex" property="uSex"></result>
+                  <result column="uAge" property="uAge"></result>
+                  <result column="uDocumentType" property="uDocumentType"></result>
+                  <result column="uCardId" property="uCardId"></result>
+                  <result column="uNation" property="uNation"></result>
+                  <result column="uConstellation" property="uConstellation"></result>
+                  <result column="uBloodType" property="uBloodType"></result>
+                  <result column="uProvince" property="uProvince"></result>
+                  <result column="uCity" property="uCity"></result>
+                  <result column="uOccupation" property="uOccupation"></result>
+                  <result column="uDesc" property="uDesc"></result>
+                  <result column="uState" property="uState"></result>
+              </association>
+          </association>
+      </resultMap>
+
+    <!--
+        查询全部以及其他关联信息
+    -->
+    <select id="select_all_identityVerification" resultMap="select_Identityverification_resultMap">
+            select * from identityVerification as v join homeAllInformation as h join Userinformation as u
+        <where>
+             v.haiId=h.haiId and h.uiId=u.uiId and
+            <if test="ivId!=null and ivId gt 0">
+                  v.ivId=#{ivId}
+            </if>
+            <if test="haiId!=null and haiId gt 0">
+                 v.haiId=#{haiId}
+            </if>
+            <if test="uiId!=null and uiId gt 0">
+                u.uiId=#{uiId}
+            </if>
+        </where>
+    </select>
+    
+    <!--
+        修改
+    -->
+    <update id="update_identityVerification" >
+      update identityVerification
+      <set>
+          <if test="ivName!=null and ivName!=''">
+              ivName=#{ivName},
+          </if>
+          <if test="ivUIDName!=null and ivUIDName!=''">
+              ivUIDName=#{ivUIDName},
+          </if>
+          <if test="ivUIDNo!=null and ivUIDNo!=''">
+              IvUIDNo=#{ivUIDNo},
+          </if>
+          <if test="ivUrl!=null and ivUrl!=''">
+              ivUrl=#{ivUrl}
+          </if>
+      </set>
+      <where>
+          haiId=#{haiId}
+      </where>
+    </update>
+    
+    <!--
+        新增
+    -->
+    <insert id="insert_identityVerification"  parameterType="Identityverification">
+        insert into identityVerification
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="ivName != null">
+                ivName,
+            </if>
+            <if test="ivUIDName != null">
+                ivUIDName,
+            </if>
+            <if test="ivUIDNo != null">
+                IvUIDNo,
+            </if>
+            <if test="ivUrl != null">
+                ivUrl,
+            </if>
+            <if test="haiId != null">
+                haiId
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="ivName != null">
+                #{ivName},
+            </if>
+            <if test="ivUIDName != null">
+                #{ivUIDName},
+            </if>
+            <if test="ivUIDNo != null">
+                #{IvUIDNo},
+            </if>
+            <if test="ivUrl != null">
+                #{ivUrl},
+            </if>
+            <if test="haiId != null">
+                #{haiId}
+            </if>
+        </trim>
+    </insert>
+
+
+    <select id="select_identityVerification" resultType="int">
+        select count(*) from identityVerification where haiId=#{haiId};
+    </select>
+    <!--根据房源id查询-->
+    <select id="select_identityVerification_haiId" resultType="int">
+        select count(*) from identityVerification where haiId=#{haiId};
+    </select>
+    <select id="select_identityVerification_haiId2" resultType="Identityverification">
+        select * from identityVerification where haiId=#{haiId};
+    </select>
+
+</mapper>

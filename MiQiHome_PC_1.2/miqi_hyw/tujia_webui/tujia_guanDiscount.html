@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>折扣与优惠设置</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<style>
+				/*背景层*/
+			
+			#popLayer {
+				display: none;
+				background-color: #B3B3B3;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 10;
+				-moz-opacity: 0.8;
+				opacity: .80;
+				filter: alpha(opacity=80);
+				/* 只支持IE6、7、8、9 */
+			}
+			/*弹出层*/
+			
+			#popBox {
+				display: none;
+				background-color: #FFFFFF;
+				z-index: 11;
+				width: 500px;
+				height: 120px;
+				line-height: 120px;
+				border-radius: 10px;
+				text-align: center;
+				line-height: 50px;
+				position: fixed;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			.closedilog {
+				text-align: right;				
+			}
+			.closedilog a{
+				font-size: 15px;
+				padding-top: -10px;
+				color: #000000;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="div3">
+			<div class="floor4_warpper_margin" style="overflow: hidden;">
+				<div class="border_bottom" style="padding-bottom: 10px;font-size: 20px;">
+					<h4>甩卖尾房</h4>
+				</div>
+				<div class="height_margin sell_hourse_header">
+					<div class="banner-wrap" style="background-image: url(../img/icon/bg.png);height: 220px;color: #fff;text-align: center;">
+						<h2 style="font-size: 40px;padding-top: 65px;">甩卖尾房 订单满满</h2>
+						<div class="desc"><img src="../img/icon/left.png"> <span>尾房是指临近24点还未售出的当天房源</span> <img src="../img/icon/right.png"></div>
+						<div onclick="popBox()" class="sell_hourse_btn"><span>添加甩卖房源</span></div>
+						<!--start 弹出层-->
+						<!--<div id="popLayer"></div>
+						<div id="popBox">
+							<div class="closedilog">
+								<a href="javascript:void(0)" onclick="closeBox()">关闭 </a>
+							</div>
+							<div >没有可以添加的在架房源</div>
+						</div>-->
+						<!--end 弹出层-->
+					</div>
+				</div>
+			</div>
+			<div class="sell_hourse_content floor4_warpper_margin">
+				<div>
+					<img src="../img/icon/prompt-icon.png" style="width: 18px;height: 18px;" />温馨提示：
+				</div>
+				<ul class="sell_hourse_ul">
+					<li>尾房是指临近24点还未售出的当天房源；</li>
+					<li>房东只能选择在架房源进行设置，设置尾房在当天的售卖时间以及售卖折扣，其中售卖的折扣是以房源价格日历为基准进行计算，房东设置的折扣优惠自行承担，佣金正常收取；</li>
+					<li>房东设置的甩卖尾房不会与连住优惠、新房特惠、特卖等优惠叠加；</li>
+					<li>尾房产品在设置时间点之后开始售卖，当天24点前预订，且入住日期为当天。
+						<p class="floor5_p_color" style="margin-left: 0;margin-bottom: 40px;">例如，房东选择房源A进行甩卖尾房，设置的每天售卖时间为20:00，售卖折扣为8折。2018年3月1日，房源A在20点还有剩余库存，当晚房费将会按照价格日历上当日价格的8折进行售卖，当房客选择入住日期为2018年3月1日，将享受甩卖折扣；当房客选择入住日期为2018年3月2日，将无法享受甩卖折扣。</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			/*点击弹出按钮*/
+		    function popBox() {
+		    	alert("没有可以添加的在架房源");
+//		        var popBox = document.getElementById("popBox");
+//		        var popLayer = document.getElementById("popLayer");
+//		        popBox.style.display = "block";
+//		        popLayer.style.display = "block";
+//		    };
+//		 
+//		    /*点击关闭按钮*/
+//		    function closeBox() {
+//		        var popBox = document.getElementById("popBox");
+//		        var popLayer = document.getElementById("popLayer");
+//		        popBox.style.display = "none";
+//		        popLayer.style.display = "none";
+			}
+		</script>
+</body>
+
+</html>

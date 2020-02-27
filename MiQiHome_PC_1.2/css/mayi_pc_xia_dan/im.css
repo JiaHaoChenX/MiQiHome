@@ -1,0 +1,1489 @@
+﻿@charset:'utf-8';
+h1,h2,h3,h4,h5,h6,strong{
+	font-weight: normal;
+}
+.C_22bb62{
+	color:#22bb62;
+}
+.IM_content{
+	position:fixed;
+	right:20px;
+	bottom:60px;
+	z-index:100002;
+	display:none;
+	height:514px;
+	width:813px;
+	overflow:hidden;
+	box-shadow: 0 0 5px rgba(0,0,0,0.75);
+	background-color:#fff;
+	border:1px solid #d7d7d7;
+}
+.IM_content *{
+	font-size:12px;
+}
+.IM_btn {
+	position: fixed;
+	right: 90px;
+	bottom: 10px;
+	z-index: 100001;
+	display: block;
+	display: block;
+	box-sizing: border-box;
+	width: 74px;
+	height: 58px;
+	border: 1px solid rgba(255,255,255,.5);
+	border-right: none;
+	border-radius: 5px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	background: rgba(0,0,0,.5);
+	color: #fafafa;
+	text-align: center;
+	font-size: 14px;
+	line-height: 40px;
+	line-height: 86px;
+}
+
+.IM_btn_span {
+	position: absolute;
+	top: 11px;
+	 left: 25px;
+    width: 25px;
+    height: 20px;
+	background:url(../Images/shan.png) no-repeat;
+	background-position: 0 0;
+}
+
+.IM_btn:hover,.IM_btn_hover{
+	background:#ade6c6;
+	color:#322c27;
+	background-position: 0 -235px;
+} 
+.IM_btn_span i{
+	position:absolute;
+	right:-12px;
+	top:-7px;
+	min-width:10px;
+	height:14px;
+	padding:2px 4px;
+	background:#fc5e56;
+	border-radius: 10px;
+	color:#fff;
+	text-align: center;
+	line-height: 14px;
+	font-size:12px;
+}
+.IM_btn:hover .IM_btn_span,.IM_btn_hover .IM_btn_span{
+	background-position: 0 -35px;
+}
+.null_list{
+	margin-top:26px;
+	line-height:30px;
+	color:#888887;
+	font-size:14px;
+	padding-left:20px;
+}
+.check_near{
+	color:#5bcb8a;
+	font-size:14px;
+	line-height:30px;
+	display:block;
+	padding-left:20px;
+}
+
+/*最近联系人*/
+.contacter_left{
+	width:160px;
+	height:100%;
+	background:#f6f8f9;
+	font-size:12px;
+	position:relative;
+	left:0;
+	top:0;
+}
+.contacter_left h3{
+	padding-top:2px;
+	line-height:38px;
+	padding-left:20px;
+	color:#322c27;
+	font-size:14px;
+	border-bottom:1px solid #e4e7e9;
+}
+.contacter_ul{
+	max-height:474px;
+	overflow-y: auto;
+}
+.contacter_ul li{
+	padding:10px 0;
+	cursor:pointer;
+	position:relative;
+	left:0;
+	top:0;
+}
+.contacter_ul li.on,.contacter_ul li:hover{
+	background:#fff;
+}
+.contacter_ul li.on .talk_num{
+	display:none;
+}
+/*.contacter_ul li.on .IM_contacter_close,*/.contacter_ul li:hover .IM_contacter_close{
+	display:block;
+	background:url(../Images/im_sprit.png) no-repeat;
+	background-position:-54px 2px;
+}
+.contacter_ul .IM_head_photo{
+	width:40px;
+	height:40px;
+	border-radius: 22px;
+}
+.contacter_ul .IM_contacter_close{
+	width:12px;
+	height:12px;
+	margin-top:15px;
+	margin-left:4px;
+	margin-right:4px;
+}
+.contacter_ul li:hover .IM_contacter_close:hover{
+	background:url(../Images/im_sprit.png) no-repeat;
+	background-position:-55px -14px;
+}
+.talk_num{
+	float:none;
+	position: absolute;
+	right:6px;
+	top:22px;
+	min-width:10px;
+	text-align: center;
+	padding:2px 4px;
+	line-height:14px;
+	height:14px;
+	background:#ff5d51;
+	color:#fff;
+	border-radius:9px;
+}
+.contacter_ul .IM_contacter{
+	display:block;
+	padding:10px 0 10px 10px;		
+	line-height:20px;
+	color:#322c27;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width:54px;
+}
+.contacter_right_talk{
+	border-right:1px solid #e4e7e9;
+	position:relative;
+	left:0;
+	top:0;
+}
+
+.contacter_right{
+	width:650px;
+	border-left:1px solid #e4e7e9;
+}
+.contacter_right_room{
+	width:168px;
+}
+/*中间聊天内容头像部分*/
+.head_talk{
+	height:75px;
+}
+.head_talk img{
+	width:55px;
+	height:55px;
+	margin:10px;
+	border-radius:30px;
+}
+.head_talk strong{
+	line-height:36px;
+	padding:22px 6px 16px;
+	font-size:16px;
+	color:#322c27;
+}
+/*聊天内容滚动条*/
+.container1 {
+	width: 368px;
+	height: auto;
+}
+.container1 .div_scroll {
+	width: 368px;
+	height: 284px;
+	overflow: auto;
+}	
+
+.container1 .scroll_container {
+	overflow: hidden;
+	position: relative;
+}
+
+.container1 .scroll_absolute {
+    position: absolute;
+}
+
+.container1 .scroll_vertical_bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 100%;
+    background: green;
+    margin: 0;
+    padding: 0;
+}
+
+.container1 .scroll_track {
+	position: relative;
+	background-color: #BCB794;
+}
+
+.container1 .scroll_drag {
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	background-color: #827B51;
+}
+
+.container1 .scroll_arrow {
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+	background-color: #D6B74B;
+}
+
+.container1 .scroll_vertical_bar .scroll_arrow {
+    height: 16px;
+}
+
+/*聊天内容显示部分*/
+.contacter_talk {
+    padding-top: 8px;
+    text-align: center;
+    border-top: 1px solid #e4e7e9;
+    width: 480px;
+    height: 284px;
+    overflow: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+}
+.talk_parent{
+	padding-bottom:20px;
+	
+}
+
+.IM_content *::-webkit-scrollbar{
+    width:8px;
+    height:4px;
+}
+.IM_content *::-webkit-scrollbar-track{
+    background:#eee;
+}
+.IM_content *::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+.IM_content *::-webkit-scrollbar-corner{
+    background:#82AFFF;
+}
+.IM_content *::-webkit-scrollbar-resizer{
+    background:#FF0BEE;
+}
+
+.contacter_talk h6{
+	max-width:390px;
+	padding:4px 10px;
+	margin:6px auto 6px;
+	background-color:#e4e7e9;
+	border-radius: 6px;
+	line-height:18px;
+	display:inline-block;
+	text-align: left;
+	color:#777776;
+}
+.contacter_talk .block_h6_bj{
+	padding-left:26px;
+	background-image:url(../Images/talk_jiao.png);
+	background-repeat: no-repeat;
+	background-position:6px -73px;
+}
+.contacter_talk time{
+	display:block;
+	padding-top:4px;
+	text-align: center;
+	padding-bottom:4px;	
+}
+.talk_p,.talk_p_room{
+	line-height:16px;
+	color:#3f3a35;
+	border-radius: 8px;
+	position:relative;
+	left:0;
+	top:0;
+}
+.talk_p{
+	padding:4px 6px;
+}
+
+.talk_p i{
+	display:inline-block;
+	position:relative;
+	left:0;
+	top:0;
+	line-height:16px;
+	color:#322c27;
+	border-radius: 8px;
+	padding:8px 10px;
+}
+.talk_p .talk_text span{
+	position:absolute;
+	top:3px;
+	width:8px;
+	height:8px;
+}
+.talk_text img{
+	display:block;
+	max-width:400px;
+	max-height:200px;
+}
+.talk_left{
+	margin-left:10px;
+	margin-right: 28px;
+}
+.talk_left i{
+	display:inline-block;
+	background-color:#8ef0b7;
+	padding-left:10px;
+	float:left;
+	word-break:break-all; 
+	word-wrap:break-word;
+	text-align: left;
+}
+.talk_left span.talk_L_bj{
+	left:-5px;
+	background-image:url(../Images/talk_jiao.png);
+	background-position: -4px -30px;
+	background-repeat: no-repeat;
+}
+/*消息未发送出去,正在发送中*/
+.talk_right span.no_send,.talk_right span.loading_send{
+	position:absolute;
+	left:-22px;
+	top:50%;
+	margin-top:-9px;
+	width:18px;
+	height:18px;
+}
+.talk_right span.no_send{
+	cursor: pointer;
+	background:url(../Images/talk_jiao.png) no-repeat;
+	background-position:-1px -53px;
+}
+.talk_right span.loading_send{
+	background:url(../Images/loading.gif) no-repeat;
+	background-size: 18px 18px;
+}
+/*重新发送提示*/
+.again_send{
+	color:#22bb62;
+	cursor: pointer;
+}
+.again_send:hover{
+	text-decoration: underline;
+}
+.talk_right{
+	margin-right:10px;
+ 	margin-left: 28px;
+ 	word-break:break-all; 
+}
+.talk_p_head{
+	line-height: 20px;
+	margin-left:4px;
+	color:#777776;
+	font-size:12px;
+	display:block;
+	text-align: left;
+}
+.talk_right .talk_p_head{
+	text-align: right;
+	margin-right:4px;
+}
+.talk_right i{
+	display:inline-block;
+	background:#f0f0f0;
+	float:right;
+	padding-right:10px;
+	min-height:16px;
+	word-break:break-all; 
+	word-wrap:break-word;
+	text-align: left;
+	max-width: 100%;
+    box-sizing: border-box;
+}
+.talk_right span.talk_R_bj{
+	right:-5px;
+	background-image:url(../Images/talk_jiao.png);
+	background-position:-1px -15px;
+	background-repeat: no-repeat;
+}
+/*聊天房源展示*/
+.talk_p_room{
+	padding:8px 10px;
+	border-radius: 8px;
+	border:1px solid #e4e7e9;
+	position:relative;
+	left:0;
+	top:0;
+}
+.talk_p_room .sanjiao{
+	width:10px;
+	height:10px;
+	position:absolute;
+	top:0px;
+	background:url(../Images/talk_jiao.png) no-repeat;	
+}
+.talk_p_room .sanjiaoL{
+	left:-6px;
+	background-position: -3px 0;
+}
+ .talk_p_room .sanjiaoR{
+	right:-8px;
+	background-position: -3px -39px;
+}
+
+.room{
+	background:#fff !important;
+	position:relative;
+}
+.room img{
+	width:120px;
+	height:80px;
+}
+.room_foot{
+	font-size:12px;
+}
+.room_instro {
+	margin-top:2px;
+	padding-left:10px;
+	box-sizing:border-box;
+}
+.room_instro strong{
+	line-height:18px;
+	display:block;
+	color:#322c27;
+	max-width:234px;
+	font-size:14px;
+	text-align:left;
+	max-height: 72px;
+    overflow: hidden;
+}
+.room_foot,.room_foot2{
+	color:#898988;
+	text-align: left;
+}
+.room_foot li{
+	float:left;
+	font-size:12px;
+	line-height:18px;
+}
+
+/*消息记录*/
+.xiaoxi_record{
+	display:block;
+	border-top:1px solid #e4e7e9;
+	text-align: right;
+	padding-right:10px;
+	height:28px;
+}
+.xiaoxi_record_a{
+	display:inline-block;
+}
+.xiaoxi_record i{
+	display:inline-block;
+	line-height: 30px;
+	padding-left:6px;
+	font-size: 12px;
+	color:#4d4843;
+	
+}
+.xiaoxi_bj{
+	display:block;
+	width:14px;
+	height:14px;
+	margin-top:8px;
+	background:url(../Images/xiaoxi.png) no-repeat;
+	background-position: -23px 0;
+}
+.xiaoxi_record_a:hover i{
+	color:#19aa55;
+}
+.xiaoxi_record_a:hover .xiaoxi_bj{
+	background-position: -1px 0;
+}
+.xiaoxi_text{
+	padding:0 10px;
+	resize:none;
+	height:66px;
+	display:block;
+	width:460px;
+}
+/*取消、发送按钮*/
+.xiaoxi_btn{
+	border-top:1px solid #e4e7e9;
+	padding:5px 6px;
+	margin-top:10px;
+	height:30px;
+}
+/*左下角提示轮播*/
+.tj_swiper_wrap_div
+{
+    padding-left: 10px;
+    position: absolute;
+    width: 222px;
+    height: 30px;
+    bottom: 8px;
+}
+.tj_swiper_wrap_div ul .tooltip_warm_li{
+	white-space: normal!important;
+	margin-bottom: 10px;
+}
+.send_room_link{
+    display:  inline-block;
+    width:  92px !important;
+    height: 30px;
+    border: 1px solid #3eb382;
+    text-align:  center;
+    line-height:  30px;
+    box-sizing:  border-box;
+    position:  absolute;
+    right: 87px;
+    color: #3eb382;
+	background: #fff;
+}
+
+.swiper_wrap_div{
+	line-height:30px;
+	padding-left:10px;
+	position: absolute;
+	width: 374px;
+	height:30px;
+	bottom:5px;
+	overflow: hidden;
+}
+ .font_inner_ul{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.tooltip_warm_li{
+	display:block;
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+}
+.xiaoxi_btn button{
+	width:70px;
+	height:30px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+.send{
+	background:#0ebd5f;
+	color:#fff;
+}
+.send:hover,.warn-btn:hover{
+	background:#19aa55;
+}
+/*右侧房源*/
+.room_recommend_roomer{
+	padding:0 10px;
+	margin-top:40px;
+}
+.room_recommend_roomer img{
+	width:150px;
+	height:108px;
+	display:block;
+}
+.room_recommend_roomer{
+	padding-top:12px;
+	border-top:1px solid #e4e7e9;
+}
+.now_room_parent{
+	padding-top:0px;
+	padding-bottom:8px;
+	margin-top:34px;
+}
+.now_room_parent h5{
+	 line-height: 34px;
+    color: #322c27;
+    font-size: 14px;
+
+}
+
+/*房东端发送图片和自动回复*/
+.img_btn,.auto_reply,.auto_reply_img{
+	display:block;
+	width:20px;
+	height:20px;
+	
+}
+.img_btn{
+	background:url(../Images/img_btn.png) no-repeat;
+	background-position: 0 0;
+	margin-left:10px;
+	margin-top:4px;
+	display:none;
+}
+.img_btn:hover{
+	background-position: 0 -28px;
+}
+.file_img{
+	position: absolute;
+	left:0;
+	top:0;
+	opacity: 0;
+	filter:Alpha(opacity=0);
+	width:20px;
+	height:20px;
+	overflow: hidden;
+}
+/*快捷回复*/
+.auto_reply_parent,.auto_reply_img{
+	margin-top:2px;
+	margin-left:7px;
+	width:28px;
+	height:19px;
+	border:1px solid #fff;
+	border-bottom:none;
+}
+.auto_reply_hover{
+	background:#f6f8f9;
+	border:1px solid #e4e7e9;
+	border-bottom:none;
+}
+
+.auto_reply,.auto_reply_img{
+	margin:1px 0 0 5px;
+	background:url(../Images/auto_reply.png) no-repeat;
+	background-position: 0 0;
+}
+.auto_reply:hover{
+	background-position: 0 -23px;
+}
+.auto_reply_img{
+	background-position: -1px -23px;
+}
+.auto_reply_hover{
+	margin-left:0;
+	position:absolute;
+	left:-1px;
+	top:-25px;
+	height:24px;
+}
+
+/*快捷回复弹层*/ 
+.auto_reply_tan {
+    display: none;
+    width: 404px;
+    top:394px;
+    left: 168px;
+    background: #f6f8f9;
+    border: 1px solid #e4e7e9;
+    z-index: 100;
+}
+
+.auto_reply_tan_ul{
+	padding:6px 10px 0;
+	text-align: left;
+	max-height:74px;
+	overflow: auto;
+}
+.auto_reply_tan_ul li{
+	font-size:12px;
+	line-height:20px;
+	padding:2px 0;
+	color:#4c4743;
+	padding-right:16px;
+	border-top:1px solid #e4e7e9;
+	position:relative;
+	left:0;
+	top:0;
+	cursor:pointer;
+}
+.auto_reply_tan_ul li:hover{
+	color:#22bb62;
+}
+.text_reply{
+	display:block;
+	max-width:366px;
+}
+.auto_reply_tan_ul li:nth-of-type(1){
+	border-top:0;
+}
+.reply_x,.add_reply_dui,.add_reply_x{
+	position: absolute;
+	right:6px;
+	top:7px;
+	width:12px;
+	height:12px;
+	background:url(../Images/im_sprit.png) no-repeat;
+	background-position: -54px 1px;
+}
+.reply_x{
+	display:none;
+}
+.auto_reply_tan_ul li:hover .reply_x{
+	display:block;	
+}
+.reply_x:hover,.add_reply_x:hover{
+	background-position:-55px -14px;
+}
+/*添加自定义回复*/
+.add_reply_li{
+	display:none;
+}
+.add_reply_btn{
+	border-top:1px solid #e4e7e9;
+	text-align: center;
+	margin-top:3px;
+}
+.add_reply_btn button{
+	line-height: 28px;
+	font-size:12px;
+	color:#3f3a35;
+	background:none;
+	cursor:pointer;
+}
+.add_reply_btn button.add{
+	color:#c1c1c1;
+}
+.add_reply_btn button:hover{
+	color:#22bb62;
+}
+.add_reply_btn button.add:hover{
+	color:#c1c1c1;
+}
+.add_reply_input{
+	padding:2px 4px;
+	width:90%;
+	line-height:16px;
+	font-size:12px;
+	margin-top:3px;
+	border:1px solid #e4e7e9;
+}
+.add_reply_dui{
+	width:14px;
+	right:24px;
+	background-position: -34px -19px;
+}
+.add_reply_dui{
+	top:12px;
+}
+.add_reply_x{
+	top:10px;
+}
+/*推荐房源*/
+
+.tuij_room_parent{
+	margin-top:0;
+	padding:0 0 32px;
+	
+}
+.tuij_room_parent h5{
+	padding:0 10px;
+}
+.now_room_child{
+	  padding-bottom: 20px;
+}
+.tuij_room{
+	height:198px;
+	overflow: hidden;
+	margin-bottom:14px;
+	padding:0 10px;
+}
+.rihgt_roomer{
+	height:514px;
+	overflow: hidden;
+	width:168px;
+}
+.click_more{
+	position:absolute;
+	bottom:0;
+	right:0;
+	text-align: center;
+	font-size:14px;
+	line-height: 22px;
+	padding-bottom:10px;
+	color:#777776;
+	cursor:pointer;
+	width:168px;
+	background:#fff;
+	z-index:10;
+}
+.click_more:hover{
+	color:#22bb62;
+}
+.room_recommend_roomer strong{
+	position:relative;
+	left:0;
+	top:0;
+	font-size:14px;
+	color:#322c27;
+	line-height:22px;
+	padding-top:6px;
+	display:block;
+	width:150px; 
+}
+.room_recommend_roomer strong span{
+	font-size:14px;
+	color:#322c27;
+	line-height:22px;
+}
+.room_recommend_roomer .room_price{
+	color:#fc5e56;
+	line-height:24px;
+	font-size: 16px;
+	position:absolute;
+	left: 0;
+	top:-34px;
+    background: rgba(50,44,39,.9);
+    padding: 0 10px;
+    color: #fff;
+}
+.content-box .date-box:last-child{display:none;}
+
+/*IM房东右侧推荐房源*/
+.IM_content .im_room_nav,.IM_content  .room_nav_a{
+	left:0;
+	top:0;
+	width:100%;
+}
+.IM_content .im_room_nav li,.IM_content .room_nav_a span{
+	padding:0 10px;
+	line-height:40px;
+	font-size:14px;
+	float:left;
+	color: #322c27;
+
+} 
+.IM_content .room_nav_a span{
+	padding-right:6px;
+}
+.IM_content .room_nav_a span{
+	line-height: 34px;
+	height:34px;
+}
+.IM_content .room_nav_a .right_go{
+	width:10px;
+	height:14px;
+	margin-top:10px;
+	margin-bottom:10px;
+	background:url(../Images/right_go.png) no-repeat;
+	background-position:-1px 0;
+}
+.IM_content .room_nav_a:hover span{
+	color:#22bb62;
+}
+.IM_content .room_nav_a:hover .right_go{
+	background-position: -1px -16px;
+}
+.IM_content .room_parent{
+	text-align: center;
+	padding:10px 10px 20px;
+	border-bottom:1px solid #edf3f5;
+	
+}
+
+/*推荐此房源按钮*/
+.recommend_btn{
+	margin:8px auto 0;
+	text-align: center;
+	width:138px;
+	padding:4px 0;
+	border:1px solid #fc5e56;
+}
+.recommend_btn a{
+	display:inline-block;
+	position:relative;
+	left:0;
+	top:0;
+	height:20px;
+	padding-left:20px;
+	font-size: 14px;
+	line-height: 20px;
+	color:#fc5e56;
+	background:url(../Images/tuijian_zan.png) no-repeat;
+	background-position:0 1px;
+}
+/*右上角三角形*/
+.IM_content .about{
+	position:absolute;
+}
+.about_left,.roomer_about_left{
+	width:284px;
+	height:522px;
+	bottom: 60px;
+    right:56px;
+    background:#fff;
+   	box-shadow:0 0 12px rgba(0,0,0,0.44);
+ 	border-left:1px solid #d7d7d7;
+ 	border-top:1px solid #d7d7d7;
+}
+.roomer_about_left{
+	width:767px;
+}
+.about_right{
+	width:285px;
+	height:488px;
+	right:-41px;
+	bottom:0;
+	background-image:url(../Images/shadow.png);
+	background-position: right 0;
+	background-repeat: no-repeat;
+}
+.right_open_btn{
+	position:absolute;
+	right:-1px;
+	top:-2px;
+	width:40px;
+	height:40px;
+	background-image: url(../Images/right_close.png);
+	background-repeat: no-repeat;
+	z-index:5;
+	cursor:pointer;
+}
+.right_open_btn:hover{
+	background-image: url(../Images/right_close_hover.png);
+}
+
+
+/*兼容IE8*/
+@media \0screen\,screen\9 {
+	
+	.IM_btn{ 
+		background:#000;
+		opacity:0.5;
+		filter:Alpha(opacity=50); 
+	}
+	.IM_btn:hover,.IM_btn_hover{
+		filter:Alpha(opacity=100);
+		background:#ade6c6;
+		color:#322c27;
+	}
+}
+
+/*推荐房源效果*/
+.now_room_parent.now_hid{
+	padding-bottom:0;
+	overflow:hidden;
+}
+.tuij_room.tuij_hide{
+	   height: 254px;
+    overflow-y: auto;
+}
+ 
+
+/*无聊天对象*/
+.room_recommend_roomer_none{
+	border-top:none;
+}
+.send_none{
+	background:#bdbdbd !important;
+}
+.send_none:hover{
+	background:#bdbdbd;
+}
+.xiaoxi_text_none{
+	background:#fff;
+}
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+
+
+/*房客查看该房东更多房源*/
+.landlord_more_room,.talk_more_room{
+	position: relative;
+	left:0;
+	top:0;
+	display:block;
+	border:1px solid #e4e7e9;
+	border-left:none;
+	border-right:none;
+	margin-top:10px;
+	padding-right:12px;
+	line-height: 32px;
+	font-size: 14px;
+	color:#322c27;
+	text-align: center;
+}
+.room_sanjiao{
+	margin-top:-8px;
+}
+.room_sanjiao,.sanjiao_i{
+	top:50%;
+	width:0;
+	height:0;
+	position:absolute;
+	right:8px;
+	top:50%;
+	border-color:transparent transparent transparent #322c27;
+	border-style: solid;
+	border-width:8px 0 8px 8px ;
+}
+.sanjiao_i{
+	border-color:transparent transparent transparent #fff;
+	border-width:8px 0 8px 8px ;
+	right:2px;
+	top:-8px;
+}
+.go_order{
+	display:block;
+	margin:10px 10px 0;
+	text-align: center;
+	color:#fff;
+	background:#22bb62;
+	line-height:28px;
+	border-radius: 2px;
+	font-size:14px;
+}
+/*日历*/
+.rili_talk{
+	padding:6px 0 6px 6px;
+	position:relative;
+	left:0;
+	top:0;
+}
+
+.data_send{
+	color:#22bb62;
+	cursor:pointer;
+	background:none;
+}
+.data_send:hover{
+	color:#19AA55;
+}
+
+/*房东不在电脑边的系统回复*/
+.block_h6_room{
+	width:390px;
+	margin:6px auto;
+	border:1px solid #e4e7e9;
+	border-radius: 6px;
+	
+}
+.block_h6_room .room{
+	border-radius:6px;
+}
+.block_h6_room .room a{
+	display:block;
+	height:80px;
+}
+.ptb8{
+	padding-top:8px;
+	padding-bottom:8px;
+}
+.block_h6_room .borderT{
+	border-top:1px solid #e4e7e9;
+	border-radius:0 0 6px 6px;
+}
+.talk_more_room{
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	text-align: center;
+	padding:0 10px;
+	margin-top:0;
+	color:#22bb62;
+}
+.talk_more_room a{
+	position:relative;
+	left:0;
+	top:0;
+	padding-right:18px;
+	display:inline-block;
+	line-height: 32px;
+	color:#22bb62;
+}
+
+.xuanzhuan{
+	display:block;
+	position:absolute;
+	right:0;
+	top:10px;
+	width:13px;
+	height:13px;
+	background:url(../Images/loading_im.png) no-repeat;
+	background-position: 0 0;
+	
+}
+.xuanzhuan_loding{
+	display:block;
+	position:absolute;
+	right:0;
+	top:10px;
+	width:13px;
+	height:13px;
+	background:url(../Images/loading_im_a.gif) no-repeat;
+	background-position: 0 0;
+	
+}
+/*房东端设置房源为不可租状态*/
+.room_status{
+	width:290px;
+	margin:6px auto;
+	background:#f6f8f9;
+	border:1px solid #E4E7E9;
+	padding-bottom:10px;
+	
+}
+.room_status p{
+	padding:12px 0;
+	line-height: 20px;
+	
+}
+.room_status input{
+	width:70px;
+	line-height: 30px;
+	background:#bdbdbd;
+	color:#fff;
+	border-radius: 2px;
+	cursor: pointer;
+}
+.room_status .yes{
+	margin-right:20px;
+}
+.room_status .no{
+	margin-left:20px;
+}
+.room_status input.on{
+	background:#22bb62;
+}
+.room_status input.on:hover{
+	background:#19AA55;
+}
+
+
+/*修改房态*/
+.img_btn_room{
+	width:18px;
+	height:18px;
+	margin-left: 5px;
+    margin-top: 4px;
+	background:url(../Images/room_status.png) no-repeat;
+	background-position: -1px 1px;
+}
+.img_btn_room.on,.img_btn_room:hover{
+	background-position: -1px -21px;
+}
+
+
+/*修改房态弹层*/
+.room_status_tan{
+	display:none;
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.6);
+	z-index:11;
+}
+
+.room_instro ul{
+	position:absolute;
+	bottom:10px;
+	left:138px;
+}
+.room_instro ul li{
+	float: left;
+    line-height: 22px;
+    color: #777776;
+    font-size:12px;
+}
+
+/*右下角推荐*/
+.right_bottom{
+	position:absolute;
+	bottom:10px;
+	line-height:24px;
+	color:#322c27;
+	right:12px;
+}
+.right_bottom span{
+	color:#22bb62;
+	cursor:pointer;
+}
+.right_bottom span:hover{
+	color:#19aa55;
+}
+.Online_btn{position: fixed;right: 12px;bottom: 10px;display: block;line-height: 86px;color: #fafafa;height: 58px;width: 78px;font-size: 14px;background:rgba(0,0,0,0.5);border-radius: 5px;z-index: 100000;border: 1px solid rgba(255,255,255,0.5);border-left:0;box-sizing:border-box;border-bottom-left-radius: 0;border-top-left-radius: 0;padding:7px 0;}
+	.Online_btn:hover{background:#ade6c6;}
+	.border-left{position:relative;left:0;width:1px;height:100%;background:rgba(255,255,255,0.5);display:block;float:left;}
+	.Online_img{float:left;margin-top:-7px;width:74px;height:58px;display:block;}
+	.Only_Online{border-bottom-left-radius: 5px !important;border-top-left-radius: 5px !important;border-left:1px solid rgba(255,255,255,0.5)}
+	.Only_Online .border-left{display:none;}
+#live800icon{margin-left:4px;margin-top:9px;}
+	
+	
+	/*兼容IE8*/
+@media \0screen\,screen\9 {
+	
+	.Online_btn{
+		position: fixed;
+		right: 14px;
+		bottom: 10px;
+		display: block;
+		line-height: 86px;
+		color: #fafafa;
+		height: 58px;
+		width: 76px;
+		font-size: 14px;
+		background:#000;
+		opacity:0.5;
+		filter:Alpha(opacity=50);
+		border-radius: 5px;
+		z-index: 100000;
+		border: 1px solid rgba(255,255,255,0.5);
+		border-left:0;
+		box-sizing:border-box;
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+		padding:7px 0;
+	}
+	.Online_btn:hover{
+		filter:Alpha(opacity=100);
+		background:#ade6c6;
+	}
+	.border-left{
+		position:relative;
+		left:0;
+		width:1px;
+		height:100%;
+		background:#fff;
+		opacity:0.5;
+		filter:Alpha(opacity=50);
+		display:block;
+		float:left;
+	}
+}
+#live800iconlink{position: fixed;margin-top: -7px;height: 56px;}
+
+/*快捷发送键*/
+.shortcutKey{
+	display: inline-block;
+    line-height: 30px;
+    font-size: 12px;
+    color: #777776;
+    margin-left:14px;
+}
+/*防诈骗提醒*/
+.pt72{
+	padding-top:72px;
+}
+.IM_remind {
+    position: absolute;
+    left: 161px;
+    top: 76px;
+    width: 480px; 
+    box-sizing: border-box;
+    z-index: 2000;
+    padding: 7px 38px;
+    background: #fffbdf;
+    color: #333;
+}
+.IM_biaohong,.IM_closeremind{
+	position: absolute;
+	display:block;
+	background: url(../Images/talk_jiao.png) no-repeat;
+  
+}
+.IM_biaohong{
+	width:18px;
+	height:18px;
+	left:10px;
+	top:10px;
+	background-position: -1px -53px;
+}
+.IM_closeremind{
+	width:22px;
+	height:22px;
+	top:50%;
+	right:10px;
+	margin-top:-11px;
+	background-position: -1px -53px;
+	background:url(../Images/im_close.png) no-repeat;
+	cursor:pointer;
+	transform: scale(0.8);
+}
+.IM_closeremind:hover{
+	transform: scale(1);
+	transitiom:0.5;
+}
+.IM_remind strong{
+	line-height:16px;
+}
+
+/* 2016/12/7 */						
+.add_chat{
+	width: 145px;
+	height: 168px;
+	border:1px solid #d8d8d8;
+	box-shadow: 0 0 4px #d8d8d8;
+	background: #ffffff;
+	right: -4px;
+	top: 125px;
+}
+.add_chat img{
+	margin: auto;
+	text-align: center;
+	display: block;
+	margin-top: 20px;
+}
+.add_chat span{
+	text-align: center;
+	display: block;
+	margin-top: 5px;
+}
+.chat_ma{
+	display: block;
+}
+
+.dowload_app{
+	width: 137px;
+	display: block;
+	font-size: 14px;
+	color: #4d4d4d;
+	margin-left: 18px;
+	margin-top: 15px;
+}
+.dowload_app span{
+	color: #ffc256;
+}
+
+.chat_img{
+	background: url("../Images/app_down_im.png") no-repeat center;
+	width: 90px;
+	height: 90px;
+	display: block;
+	margin-left: 44px;
+	margin-top: 10px;
+}
+
+.report_link{
+	color:#0054ff;
+	text-decoration:underline;
+}
+.report_link:hover{
+	text-decoration: none;
+}
+
+/*-----IM举报相关---2016.12.15--start----*/
+.report_IM_btn{line-height: 36px;padding: 22px 6px 16px;font-size: 16px;color:#3d7dca;float: right;margin-right: 10px;cursor: pointer;}
+.f30{font-size:30px}
+.c999{color:#999}
+.c666{color:#666}
+.c22bb62{color:#22bb62}
+.fff{background-color:#fff}
+.mt5{margin-top:5px}
+.pr5{padding-right:5px!important}
+.report-t-left{text-align:left}
+.report-alert-title{position:relative;height:45px;border-bottom:#ccc solid 1px;background:#fff;line-height:45px;text-align:center;font-size:16px;color:#4c4c4c}
+.report-alert-box{width:500px;border:#bababa solid 1px;overflow:hidden;box-shadow:0 2px 7px #BABABA;background:#fff;padding-bottom:10px;padding-left:20px;padding-right:20px;color:#322c27;}
+ul.jubao{width:360px;margin-left:auto;margin-right:auto}
+ul.jubao li{cursor:pointer;border:1px solid #ccc;box-sizing:border-box;width:100%;height:36px;line-height:36px;text-align:center}
+ul.jubao li.on,ul.jubao li:hover{border:1px solid #22bb62;color:#22bb62}
+.tc_submit{width:360px;margin-left:auto;margin-right:auto;background-color:#ccc;color:#fff;line-height:36px;text-align:center}
+.report_btn_checked{background-color:#22bb62;cursor:pointer}
+.report_btn_checked:hover{background-color:#19aa55}
+.report-green-btn{background-color:#22bb62;color:#fff;border-radius:2px;cursor:pointer;text-align:center}
+#jubaoSuccessBoxclose{width:140px;height:36px;line-height:36px;margin:30px auto 0}
+#jubaoSuccess{width:384px;height:260px;padding:45px 25px 0;box-sizing:border-box}
+#layer_settimeout{width:280px;height:60px;border-radius:5px;background:rgba(0,0,0,.7);color:#fff;position:fixed;top:300px;left:50%;margin-left:-140px;z-index:999999999;line-height:60px;text-align:center;display:none}
+a.xubox_close1{right: 12px !important;top: 6px !important;background:url(../Images/close_tc.png) no-repeat center center !important}
+a.xubox_close1:hover{background:url(../Images/close_tc_hover.png) no-repeat center center !important}
+
+.report_tan{z-index: 45895674;}
+.report_cont_tan{width: 500px;padding-bottom: 50px;background: #fff;position: fixed;left: 60%;top: 50%;box-sizing: border-box;margin-top: -330px;margin-left: -385px;}
+.report_host{width: 465px;height: 60px;margin: 0 auto;border-bottom: 1px solid #e5e5e5;}
+.report_host p{text-align: center;line-height: 60px;color: #666666;font-size: 16px;}
+.report_host img{width: 18px;height: 18px;display: block;float: right;margin-top: 20px;cursor: pointer;}
+.report_add_pic{width: 465px;margin: 0 auto;margin-bottom: 14px;text-align: center;line-height: 30px;max-height: 438px;overflow:hidden}
+.report_add_pic .up_img{color: #333333;}
+.report_add_pic .chat_desc{color: #666666;}
+.report_add_pic .img_box{width: 465px;height: 365px;margin-top: 15px;}
+.report_add_pic .img_box li{margin-left: 7px;width: 145px;height: 100px;border: 1px dotted #cccccc;float: left;margin-top: 10px;background: url(../Images/mayi_uploading.jpg) no-repeat;}
+.report_add_pic .img_box li .add_btn{margin: 0 auto;margin-top: 30px;}
+.ml7{margin-left: 7px;}
+.report-upload-bar, .report-upload-colse{position: absolute;display: block;}
+.report-upload-bar{bottom: 0;left: 0;height: 15px;background: #ace3a7;}
+.report-upload-colse{background-image: url(../Images/upload_handle.png);background-repeat: no-repeat;}
+.report-pic-con{width: 145px;height: 100px;overflow: hidden;position: relative;}
+#jubaochatUpImage{padding: 0px 0px 30px 0px;}
+#li_IM_upload{background-image: none;}
+
+/*-----IM举报相关---12.15--end----*/
+
+.room{
+	background: #F0F0F0!important;
+	border-radius: 8px;
+	width: 327px;
+	height: 102px;
+	box-sizing: border-box;
+	/*float: right;*/
+}
+.roomImg{
+	width: 111px!important;
+	height: 102px!important;
+	border-radius: 4px 0 0 4px;
+}
+.room_instro{
+	padding:  15px 7px;
+}
+.roomTitle{
+	width: 185px;
+	font-size: 14px;
+	color: #2B2F33;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
+}
+.roomPrice{
+	font-size: 18px;
+	color: #2B2F33;
+	text-align: left;
+}
+.detail_list{
+	text-align: left;
+}
+.detail_list span{
+	display: inline-block;
+	font-size: 12px;
+	color: #B4B9BF;
+
+}
+.icon_after:after {
+	content: "|";
+	padding: 0 2px 0 4px;
+	font-weight: 200;
+}
+.room_addres:before{
+	content: '';
+	background: url(../Images/homepage_map.png) no-repeat center;
+	width: 10px;
+	height: 13px;
+	background-size: cover;
+	display: inline-block;
+	margin-right: 5px;
+}
+.ml100{
+	margin-left: 100px;
+}

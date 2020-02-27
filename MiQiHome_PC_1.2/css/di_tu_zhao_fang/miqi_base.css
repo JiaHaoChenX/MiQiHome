@@ -1,0 +1,516 @@
+@charset "utf-8";
+/*
+* 项目名称：首页改版
+* 日期：2018-07-13
+* coder: Mopecat
+* 备注：首页公共样式
+*/
+/* style reset start*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+a,
+span,
+i,
+b,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+body,
+button,
+input,
+select,
+textarea,
+li,
+div,
+ul,
+h4 {
+  font-family: "PingFang SC", "Hiragino Sans GB", Arial, Verdana, Tahoma, "微软雅黑" !important;
+  font-size: 14px;
+}
+body {
+  color: #777776;
+  background: #fff;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+address,
+em,
+i {
+  font-style: normal;
+}
+div,
+table,
+form,
+input,
+button,
+select,
+textarea,
+fieldset,
+legend {
+  outline: none;
+  border: none;
+}
+ul,
+ol {
+  list-style: none outside none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  color: #322c27;
+}
+a:hover {
+  text-decoration: none;
+}
+img {
+  border: 0;
+}
+b {
+  font-weight: normal;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+input,
+button,
+textarea,
+select,
+optgroup,
+option,
+pre {
+  border: 0 none;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: none;
+}
+li {
+  list-style: none;
+}
+body {
+  min-width: 1200px;
+}
+/* style reset end*/
+/* position start */
+.relave {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.asote,
+.absot {
+  position: absolute;
+}
+.fixed_top {
+  position: fixed;
+  top: 0;
+  z-index: 30;
+}
+.fixed_bottom {
+  position: fixed;
+  bottom: 0;
+}
+/* position end */
+/* width start*/
+.w10 {
+  width: 10%;
+}
+.w20 {
+  width: 20%;
+}
+.w30 {
+  width: 30%;
+}
+.w25 {
+  width: 25%;
+}
+.w50 {
+  width: 50%;
+}
+.w100 {
+  width: 100%;
+}
+.w64 {
+  width: 64%;
+  margin: 0 auto;
+}
+.w1000 {
+  width: 1000px;
+  margin: 0 auto;
+}
+.w1050 {
+  width: 1050px;
+  margin: 0 auto;
+}
+.w1190 {
+  width: 1190px;
+  margin: 0 auto;
+}
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* width end*/
+/* font start */
+.f0 {
+  font-size: 0;
+}
+.f12 {
+  font-size: 12px;
+}
+.f14 {
+  font-size: 14px;
+}
+.f16 {
+  font-size: 16px;
+}
+.f18 {
+  font-size: 18px;
+}
+.f20 {
+  font-size: 20px;
+}
+.f22 {
+  font-size: 22px;
+}
+.f24 {
+  font-size: 24px;
+}
+.f28 {
+  font-size: 28px;
+}
+.f32 {
+  font-size: 32px;
+}
+.f36 {
+  font-size: 36px;
+}
+.f40 {
+  font-size: 40px;
+}
+.f48 {
+  font-size: 48px;
+}
+.f66 {
+  font-size: 66px;
+}
+.fw400 {
+  font-weight: 400;
+}
+.fw500 {
+  font-weight: 500;
+}
+.fw600 {
+  font-weight: 600;
+}
+.fw700 {
+  font-weight: 700;
+}
+/* font end */
+/* color start*/
+.c_green {
+  color: #17BD88;
+}
+.c_white {
+  color: #ffffff;
+}
+.c_red {
+  color: #e03846;
+}
+.c_orange {
+  color: #FA8100;
+}
+.c_gold {
+  color: #e0c25e;
+}
+.c_black {
+  color: #2b2f33;
+}
+.c_gray_dark {
+  color: #484848;
+}
+.c_gray {
+  color: #767676;
+}
+.c_gray_light {
+  color: #bdbdbd;
+}
+/* color end */
+/* margin start */
+.ml5 {
+  margin-left: 5px;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.mb5 {
+  margin-bottom: 5px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mlr10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.ml15 {
+  margin-left: 15px;
+}
+.mr15 {
+  margin-right: 15px;
+}
+.mb15 {
+  margin-bottom: 15px;
+}
+.mr20 {
+  margin-right: 20px;
+}
+.ml20 {
+  margin-left: 20px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.mlr20 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.mb25 {
+  margin-bottom: 25px;
+}
+.mr25 {
+  margin-right: 25px;
+}
+.mt25 {
+  margin-top: 25px;
+}
+.ml25 {
+  margin-left: 25px;
+}
+.mt28 {
+  margin-top: 28px;
+}
+.ml28 {
+  margin-left: 28px;
+}
+.mr30 {
+  margin-right: 30px;
+}
+.ml30 {
+  margin-left: 30px;
+}
+.mt30 {
+  margin-top: 30px;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.mlr30 {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.mr40 {
+  margin-right: 40px;
+}
+.ml40 {
+  margin-left: 40px;
+}
+.mt40 {
+  margin-top: 40px;
+}
+.mb40 {
+  margin-bottom: 40px;
+}
+.mlr40 {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+/* margin end */
+/* padding start */
+.p10 {
+  padding: 10px;
+}
+.pt10 {
+  padding-top: 10px;
+}
+.pb10 {
+  padding-bottom: 10px;
+}
+.plr10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.pt30 {
+  padding-top: 30px;
+}
+.pb20 {
+  padding-bottom: 20px;
+}
+.pl50 {
+  padding-left: 50px;
+}
+.pr50 {
+  padding-right: 50px;
+}
+.plr50 {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.pb50 {
+  padding-bottom: 50px;
+}
+.pl40 {
+  padding-left: 40px;
+}
+.plr40 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.pl60 {
+  padding-left: 60px;
+}
+.pl80 {
+  padding-left: 80px;
+}
+.pl110 {
+  padding-left: 110px;
+}
+/* padding end*/
+.cursorpt {
+  cursor: pointer;
+}
+.over-hidden {
+  overflow: hidden;
+}
+/* float start */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfloat {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+/* float end*/
+.lineht34 {
+  line-height: 34px;
+}
+.lineht45 {
+  line-height: 45px;
+}
+.t-center {
+  text-align: center;
+}
+.t-left {
+  text-align: left;
+}
+.t-right {
+  text-align: right;
+}
+.t-justify {
+  text-align: justify;
+}
+.ver-t {
+  vertical-align: top;
+}
+.ver-b {
+  vertical-align: bottom;
+}
+.ver-m {
+  vertical-align: middle;
+}
+.ver-tb {
+  vertical-align: text-bottom;
+}
+.circle {
+  border-radius: 50%;
+  behavior: url(PIE.htc);
+}
+.radius-6 {
+  border-radius: 6px;
+  behavior: url(PIE.htc);
+}
+.radius-12 {
+  border-radius: 12px;
+  behavior: url(PIE.htc);
+}
+.hidden-txt {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.hidden {
+  display: none;
+}
+.block {
+  display: block !important;
+}
+.inline-block {
+  display: inline-block;
+}
+.flex {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+}
+.flex-1 {
+  flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+}
+/*# sourceMappingURL=mayi_base.css.map */

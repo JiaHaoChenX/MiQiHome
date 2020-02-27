@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>途家优选</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/dialog.css" />
+	</head>
+
+	<body>
+		<div>
+			<div style="overflow: hidden;">
+				<div class="border_bottom">
+					<h4 style="margin-bottom: 15px;">途家优选</h4>
+				</div>
+				<div class="height_margin" style="background-image: url(../img/icon/big1.png);height: 80px;line-height: 80px;width: 100%;background-repeat:round;">
+					<input class="optimization_btn btn btn-primary" onclick="btnClick()" value="查看规则" />
+				</div>
+			</div>
+			<div class="border">
+				<div class="floor4_warpper_margin empty_optimization ">
+
+					<p style="padding-top: 100px;">暂无优选数据</p>
+					<p>新房屋的优选数据将在每月20日更新</p>
+				</div>
+			</div>
+		</div>
+		
+
+		</div>
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script src="../js/dialog.js"></script>
+		<script>
+			function btnClick() {
+				var d = dialog({
+					title: '途家优选介绍',
+//					fixed: true,
+					content: '<div class="height_margin"><div class="optimization_rule"><p>途家优选规则</p><ul class="floor5_p_color fontSize12"><li>1、达成开通闪订、房屋质量分数≥3、图片质量分数≥3、近3个月内点评平均分≥4.8、近3个月内差评率&lt;10%，即可成为途家优选房源</li><li>2、每月20日更新数据，届时可以登录途家管家系统，在【经营管理】-【途家优选】中查看最新数据。</li></ul></div><div class="optimization_rule"><p>途家优选推广支持</p><ul class="floor5_p_color fontSize12"><li>1、专属标签：<ul><li>符合优选标准的房源均自动添加“途家优选”标识；</li><li>享有优选专属筛选项；</li><li>享有APP及PC首页优选专属展示区。</li></ul></li><li>2、排序加权：<ul><li>排序加权30%以上，让您的房源获得更多的展示机会；</li><li>成单率增加3倍，房客对优选房源更加信赖，能大大提升成单率。</li></ul></li><li>3、活动优先：<ul><li>途家的各类活动优先参加，包括大促及每周四特卖活动。</li></ul></li><li>4、多渠道推广：<ul><li>优先展示在携程、去哪儿、艺龙、微信、支付宝、飞猪、蚂蚁搜索内。</li></ul></li></ul></div>',
+				});
+				d.show();
+			}
+		</script>
+	</body>
+
+</html>

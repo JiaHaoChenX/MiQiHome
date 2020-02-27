@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    发布者：张育威
+-->
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="com.miqi.miqihome.dao.IHouseFacilitiesReflectDao"><!--接口名-->
+    <!--对设施服务表进行的操作-->
+    <!--查询设施服务表-->
+    <select id="select_houseFacilities" resultType="HouseFacilities">
+        select *from HouseFacilities
+    </select>
+    <!--添加-->
+    <insert id="insert_houseFacilities" parameterType="String">
+        insert into HouseFacilities(hfName) values(#{hfName})
+    </insert>
+    <!--修改-->
+    <update id="update_houseFacilities">
+        update HouseFacilities set hfName=#{hfName} where hfId=#{hfId}
+    </update>
+    <!--对设施服务详细表进行操作-->
+    <!--添加-->
+    <insert id="insert_housefacilitiesdetails">
+        insert into HouseFacilitiesDetails(hfId,hfdName) values(#{hfId},#{hfdName})
+    </insert>
+    <!--根据设施服务详细编号和设施服务编号修改设施服务名称-->
+    <update id="update_housefacilitiesdetails">
+        update HouseFacilitiesDetails set hfdName=#{hfdName},hfId=#{hfId} where hfdId=#{hfdId}
+    </update>
+    <!--查询设施服务表与设施服务详细表(多对一)关系映射-->
+    <resultMap id="select_housefacilitiesdetails_resultMap" type="Housefacilitiesdetails">
+        <id column="hfdId" property="hfdId"></id>
+        <result column="hfdName" property="hfdName"></result>
+        <result column="hfId" property="hfId"></result>
+        <association property="houseFacilities" javaType="HouseFacilities">
+            <id column="hfId" property="hfId"></id>
+            <result column="hfName" property="hfName"></result>
+        </association>
+    </resultMap>
+    <!--查询设施服务表与设施服务详细表设施表用户信息表（多对多，多对一）关系映射-->
+    <!--设施服务映射表-->
+    <resultMap id="select_HouseFacilitiesReflect_resultMap" type="HouseFacilitiesReflect">
+        <id column="hfrId" property="hfrId"></id>
+        <result column="hrdId" property="hfdId"></result>
+        <result column="haiId" property="haiId"></result>
+        <!--设施服务详细表-->
+        <association property="housefacilitiesdetails" javaType="Housefacilitiesdetails">
+            <id column="hfdId" property="hfdId"></id>
+            <result column="hfdName" property="hfdName"></result>
+            <result column="hfId" property="hfId"></result>
+            <!--设施服务表-->
+            <association property="houseFacilities" javaType="HouseFacilities">
+                <id column="hfId" property="hfId"></id>
+                <result column="hfName" property="hfName"></result>
+            </association>
+        </association>
+        <!--房间全部信息表-->
+        <association property="homeallinformation" javaType="Homeallinformation">
+            <id column="haiId" property="haiId"></id>
+            <result column="uiId" property="uiId"></result>
+            <!--用户信息表-->
+            <association property="userinformation" javaType="Userinformation">
+                <id column="uiId" property="uiId"></id>
+                <result column="uPhone" property="uPhone"></result>
+                <result column="upicture" property="upicture"></result>
+                <result column="uPassword" property="uPassword"></result>
+                <result column="upicture" property="upicture"></result>
+                <result column="uNickName" property="uNickName"></result>
+                <result column="uEmail" property="uEmail"></result>
+                <result column="uTime" property="uTime"></result>
+                <result column="uName" property="uName"></result>
+                <result column="uSex" property="uSex"></result>
+                <result column="uAge" property="uAge"></result>
+                <result column="uDocumentType" property="uDocumentType"></result>
+                <result column="uCardId" property="uCardId"></result>
+                <result column="uNation" property="uNation"></result>
+                <result column="uConstellation" property="uConstellation"></result>
+                <result column="uBloodType" property="uBloodType"></result>
+                <result column="uProvince" property="uProvince"></result>
+                <result column="uCity" property="uCity"></result>
+                <result column="uOccupation" property="uOccupation"></result>
+                <result column="uDesc" property="uDesc"></result>
+                <result column="uState" property="uState"></result>
+            </association>
+        </association>
+    </resultMap>
+    <!--查询设施服务表与设施服务详细表-->
+    <select id="select_housefacilitiesdetails" resultMap="select_housefacilitiesdetails_resultMap">
+        select *from HouseFacilitiesDetails hfd left join HouseFacilities hf on hfd.hfId=hf.hfId
+        <where>
+            <if test="hfId !=null and hfId !=''">
+                hf.hfId=#{hfId}
+            </if>
+        </where>
+        limit ${page},${limit}
+    </select>
+    <!--查询总数-->
+    <!--<select id="select_housefacilitiesdetails_count" resultMap="select_housefacilitiesdetails_resultMap">
+        select count(*)from HouseFacilitiesDetails hfd left join HouseFacilities hf on hfd.hfId=hf.hfId
+        <where>
+            <if test="hfId !=null and hfId !=''">
+                hf.hfId=#{hfId}
+            </if>
+        </where>
+        limit ${page},${limit}
+    </select>-->
+    <!--查询设施服务表对应表（里面包括用户信息，房屋信息，设施所有信息）-->
+    <select id="select_houseFacilitiesReflect" resultMap="select_HouseFacilitiesReflect_resultMap">
+        select *from HouseFacilitiesReflect hfr left join HouseFacilitiesDetails hfd on hfr.hfdId=hfd.hfdId
+        left join homeAllInformation hai on hfr.haiId=hai.haiId
+        left join HouseFacilities hf on hfd.hfId=hf.hfId left join userInformation ui on hai.uiId=ui.uiId
+        <where>
+            <if test="hfdId !=null and hfdId !=''">
+                hfd.hfdId=#{hfdId}
+            </if>
+            <if test="haiId !=null and haiId !=''">
+                or hai.haiId=#{haiId}
+            </if>
+            <if test="hfId !=null and hfId !=''">
+                or hf.hfId=#{hfId}
+            </if>
+            <if test="uiId !=null and uiId !=''">
+                or ui.uiId=#{uiId}
+            </if>
+            <if test="hfrId !=null and hfrId !=''">
+                or hfrId=#{hfrId}
+            </if>
+        </where>
+    </select>
+    <!--添加设施服务表对应表-->
+    <insert id="insert_houseFacilitiesReflect">
+        insert into HouseFacilitiesReflect(haiId,hfdId) VALUES(#{haiId},#{hfdId})
+    </insert>
+    <!--修改设施服务对应表-->
+    <update id="update_houseFacilitiesReflect">
+        update HouseFacilitiesReflect set haiId=#{haiId},hfdId=#{hfdId} where hfrId=#{hfrId}
+    </update>
+    <!--删除设施服务对应表信息-->
+    <delete id="delete_houseFacilitiesReflect" >
+        delete from HouseFacilitiesReflect where haiId=#{haiId}
+    </delete>
+
+    <!--根据房源id查询设施服务-->
+    <select id="select_HouseFacilitiesDetails_haiId" resultType="HouseFacilitiesReflect">
+        select * from HouseFacilitiesReflect where haiId=#{haiId};
+    </select>
+</mapper>
+

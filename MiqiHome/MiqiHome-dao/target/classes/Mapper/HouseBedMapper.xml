@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    发布者：张育威
+    操作  房屋详细
+-->
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="com.miqi.miqihome.dao.IHouseBedDao"><!--接口名-->
+    <!--对出租方式表的操作-->
+    <!--查询-->
+    <select id="select_rentalMode" resultType="Rentalmode">
+        select *from rentalMode
+    </select>
+    <!--添加-->
+    <insert id="insert_rentalMode" parameterType="String">
+        insert into rentalMode(rmName) values(#{rmName})
+    </insert>
+    <!--修改-->
+    <update id="update_rentalMode">
+        update rentalMode set rmName=#{rmName} where rmId=#{rmId}
+    </update>
+    <!--对房屋类型表的操作-->
+    <!--查询-->
+    <select id="select_houseType" resultType="Housetype">
+        select *from houseType
+    </select>
+    <!--添加-->
+    <insert id="insert_houseType" parameterType="String">
+        insert into houseType(htName) values(#{htName})
+    </insert>
+    <!--修改-->
+    <update id="update_houseType">
+        update houseType set htName=#{htName} where htId=#{htId}
+    </update>
+    <!--对房屋类型详细表(与房屋类型表之间是多对一的关系)的操作-->
+    <resultMap id="select_houseTypeDetails_resultMap" type="Housetypedetails">
+        <id column="htdId" property="htdId"></id>
+        <result column="htdName" property="htdName"></result>
+        <result column="htdDesc" property="htdDesc"></result>
+        <result column="htId" property="htId"></result>
+        <association property="housetype" javaType="Housetype">
+            <id column="htId" property="htId"></id>
+            <result column="htName" property="htName"></result>
+        </association>
+    </resultMap>
+    <!--查询全部-->
+    <select id="select_houseTypeDetails" resultMap="select_houseTypeDetails_resultMap">
+        select *from houseTypeDetails
+    </select>
+    <!--添加-->
+    <insert id="insert_houseTypeDetails" parameterType="Housetypedetails">
+        insert into houseTypeDetails(htId,htdName,htdDese) VALUES(#{htId},#{htdName},#{htdDese})
+    </insert>
+    <!--修改-->
+    <update id="update_houseTypeDetails" parameterType="Housetypedetails">
+        update houseTypeDetails set htId=#{htId},htdName=#{htdName},htdDese=#{htdDese} where htdId=#{htdId}
+    </update>
+    <!--对房屋景观表的操作-->
+    <!--查询-->
+    <select id="select_houseScenery" resultType="Housescenery">
+        select *from houseScenery
+    </select>
+    <!--添加-->
+    <insert id="insert_houseScenery" parameterType="String">
+        insert into houseScenery(hcName) values(#{hcName})
+    </insert>
+    <!--修改-->
+    <update id="update_houseScenery">
+        update houseScenery set hcName=#{hcName} where hcId=#{hcId}
+    </update>
+    <!--对房屋户型表的操作-->
+    <!--查询-->
+    <select id="select_houseApartment" resultType="Houseapartment">
+          select ha.haId,haBedroom,haBathroom,haLounage,haKitchen,haBookStudy,haBalcony
+                from houseDetails hd join houseApartment ha on hd.haId=ha.haId
+                where haiId=#{haiid};
+    </select>
+    <!--添加户型-->
+    <insert id="insert_houseApartment" parameterType="Houseapartment">
+        <selectKey keyProperty="haId" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+        insert into houseApartment(haBedroom,haBathroom,haLounage,haKitchen,haBookStudy,haBalcony) values(#{haBedroom},#{haBathroom},#{haLounage},#{haKitchen},#{haBookStudy},#{haBalcony})
+    </insert>
+    <!--修改-->
+    <update id="update_houseApartment" parameterType="Houseapartment">
+        update houseApartment set haBedroom=#{haBedroom},haBathroom=#{haBathroom},haLounage=#{haLounage},haKitchen=#{haKitchen},haBookStudy=#{haBookStudy},haBalcony=#{haBalcony} where haId=#{haId}
+    </update>
+    <!--对房屋详细表的操作-->
+    <resultMap id="select_houseDetails_resultMap" type="Housedetails">
+        <id column="hdId" property="hdId"></id>
+        <result column="hdArea" property="hdArea"></result>
+        <result column="hdLiveNumber" property="hdLiveNumber"></result>
+        <result column="hdHouseNumebr" property="hdHouseNumebr"></result>
+        <result column="rmId" property="rmId"></result>
+        <result column="htdId" property="htdId"></result>
+        <result column="hcId" property="hcId"></result>
+        <result column="haId" property="haId"></result>
+        <result column="haiId" property="haiId"></result>
+        <!--关联出租方式表-->
+        <association property="rentalmode" javaType="Rentalmode">
+            <id column="rmId" property="rmId"></id>
+            <result column="rmName" property="rmName"></result>
+        </association>
+        <!--关联房屋类型详细表-->
+        <association property="housetypedetails" javaType="Housetypedetails">
+            <id column="htdId" property="htdId"></id>
+            <result column="htdName" property="htdName"></result>
+            <result column="htdDese" property="htdDese"></result>
+            <result column="htId" property="htId"></result>
+            <!--关联房屋类型表-->
+            <association property="housetype" javaType="Housetype">
+                <id column="htId" property="htId"></id>
+                <result column="htName" property="htName"></result>
+            </association>
+        </association>
+        <!--关联房屋景观表-->
+        <association property="housescenery" javaType="Housescenery">
+            <id column="hcId" property="hcId"></id>
+            <result column="hcName" property="hcName"></result>
+        </association>
+        <!--关联房屋户型表-->
+        <association property="houseapartment" javaType="Houseapartment">
+            <id column="haId" property="haId"></id>
+            <result column="haBedroom" property="haBedroom"></result>
+            <result column="haBathroom" property="haBathroom"></result>
+            <result column="haLounage" property="haLounage"></result>
+            <result column="haKitchen" property="haKitchen"></result>
+            <result column="haBookStudy" property="haBookStudy"></result>
+            <result column="haBalcony" property="haBalcony"></result>
+        </association>
+        <!--关联房屋全部信息表-->
+        <association property="homeallinformation" javaType="Homeallinformation">
+            <id column="haiId" property="haiId"></id>
+            <result column="uiId" property="uiId"></result>
+            <!--用户信息表-->
+            <association property="userinformation" javaType="Userinformation">
+                <id column="uiId" property="uiId"></id>
+                <result column="uPhone" property="uPhone"></result>
+                <result column="upicture" property="upicture"></result>
+                <result column="uPassword" property="uPassword"></result>
+                <result column="upicture" property="upicture"></result>
+                <result column="uNickName" property="uNickName"></result>
+                <result column="uEmail" property="uEmail"></result>
+                <result column="uTime" property="uTime"></result>
+                <result column="uName" property="uName"></result>
+                <result column="uSex" property="uSex"></result>
+                <result column="uAge" property="uAge"></result>
+                <result column="uDocumentType" property="uDocumentType"></result>
+                <result column="uCardId" property="uCardId"></result>
+                <result column="uNation" property="uNation"></result>
+                <result column="uConstellation" property="uConstellation"></result>
+                <result column="uBloodType" property="uBloodType"></result>
+                <result column="uProvince" property="uProvince"></result>
+                <result column="uCity" property="uCity"></result>
+                <result column="uOccupation" property="uOccupation"></result>
+                <result column="uDesc" property="uDesc"></result>
+                <result column="uState" property="uState"></result>
+            </association>
+        </association>
+    </resultMap>
+    <!--查询-->
+    <select id="selct_houseDetails" resultMap="select_houseDetails_resultMap">
+        select *from houseDetails hd inner join rentalMode rm on hd.rmId=rm.rmId
+        left join houseTypeDetails htd on hd.htdId=htd.htdId
+        left join houseScenery hc on hd.hcId=hc.hcId
+        left join houseApartment ha on hd.haId=ha.haId
+        left join homeAllInformation hai on hd.haiId=hai.haiId
+        left join userInformation ui on hai.uiId=ui.uiId
+        <where>
+            <if test="rmId !=null and rmId !=''">
+                rm.rmId=#{rmId}
+            </if>
+            <if test="htdId !=null and htdId !=''">
+                and htd.htdId=#{htdId}
+            </if>
+            <if test="hcId !=null and hcId !=''">
+                and hc.hcId=#{hcId}
+            </if>
+            <if test="haiId !=null and haiId !=''">
+                and hai.haiId=#{haiId}
+            </if>
+            <if test="uiId !=null and uiId !=''">
+                and ui.uiId=#{uiId}
+            </if>
+        </where>
+    </select>
+    <!--添加-->
+    <insert id="insert_houseDetails" parameterType="Housedetails">
+        <selectKey keyProperty="hdId" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+        insert into houseDetails(hdArea,hdLiveNumber
+        ,hdHouseNumebr,rmId,htdId,hcId,haId,haiId) VALUES(#{hdArea},#{hdLiveNumber},#{hdHouseNumebr},#{rmId},#{htdId},#{hcId},#{haId},#{haiId})
+    </insert>
+    <!--修改-->
+    <update id="update_houseDetails" parameterType="Housebed">
+      update houseDetails set hdArea=#{hdArea},hdLiveNumber=#{hdLiveNumber},hdHouseNumebr=#{hdHouseNumebr},
+      rmId=#{rmId},htdId=#{htdId},hcId=#{hcId},haId=#{haId} where haiId=#{haiId}
+    </update>
+    <!--对床型床类型表的操作-->
+    <!--查询 加分页-->
+    <select id="select_houseBedTypeCount" resultType="int">
+        select count(*) from houseBedType;
+    </select>
+
+    <!--查询 加分页-->
+    <select id="select_houseBedType" resultType="Housebedtype" parameterType="java.util.Map">
+        select *from houseBedType limit #{pageno},#{pagesize}
+    </select>
+    <!--添加-->
+    <insert id="insert_houseBedType" parameterType="String">
+        insert into houseBedType(hbtName) values(#{hbtName})
+    </insert>
+    <!--修改-->
+    <update id="update_houseBedType">
+        update houseBedType set hbtName=#{hbtName} where hbtId=#{hbtId}
+    </update>
+    <!--对床型床宽高表的操作-->
+    <resultMap id="select_houseBedSize_map" type="Housebedsize">
+        <id property="hdsId" column="hdsId"></id>
+        <result column="hbsSize" property="hbsSize"></result>
+        <association property="housebedtype" javaType="Housebedtype">
+            <id property="hbtId" column="hbtId"></id>
+            <result column="hbtName" property="hbtName"></result>
+        </association>
+    </resultMap>
+    <!--
+        查询总数
+    -->
+    <select id="select_houseBedSize_count" resultType="int">
+        select count(*) from housebedsize as h join housebedtype as t on  h.hbtid=t.hbtid;
+    </select>
+    <!--查询
+        修改：one
+    -->
+    <select id="select_houseBedSize" resultMap="select_houseBedSize_map" parameterType="java.util.Map">
+        select * from housebedsize as h join housebedtype as t on  h.hbtid=t.hbtid order by h.hdsId asc
+        limit #{pageno},#{pagesize};
+    </select>
+
+    <!--zywds-->
+    <!--查询床型床类型表-->
+    <select id="select_houseBedTypes" resultType="Housebedtype">
+        select *from houseBedType
+    </select>
+    <!--查询床型床类型对应宽高-->
+    <select id="select_houseBedSizes" resultMap="select_houseBedSize_map">
+        select * from housebedsize hbt inner join housebedtype ht on hbt.hbtId=ht.hbtId
+        <where>
+            <if test="hbtId !=null and hbtId !=''">
+                hbt.hbtId=#{hbtId}
+            </if>
+        </where>
+    </select>
+    <!--添加-->
+    <insert id="insert_houseBedSize">
+        insert into houseBedSize(hbtId,hbsSize) VALUES(#{hbtId},#{hbsSize})
+    </insert>
+    <!--修改-->
+    <update id="update_houseBedSize">
+        update houseBedSize set hbtId=#{hbtId},hbsSize=#{hbsSize} where hdsId=#{hdsId}
+    </update>
+    <!--对床型表(一个房子有多个床型),关联房屋详细表的操作-->
+    <resultMap id="select_houseBed_resultMap" type="Housebed">
+        <id column="hbId" property="hbId"></id>
+        <result column="hdsId" property="hdsId"></result>
+        <result column="hbtNumber" property="hbtNumber"></result>
+        <result column="hdId" property="hdId"></result>
+        <association property="housedetails" javaType="Housedetails">
+            <id column="hdId" property="hdId"></id>
+            <result column="hdArea" property="hdLiveNumber"></result>
+            <result column="hdHouseNumebr" property="hdHouseNumebr"></result>
+            <result column="rmId" property="rmId"></result>
+            <result column="htdId" property="htdId"></result>
+            <result column="hcId" property="hcId"></result>
+            <result column="haId" property="haId"></result>
+            <result column="haiId" property="haiId"></result>
+            <!--关联出租方式表-->
+            <association property="rentalmode" javaType="Rentalmode">
+                <id column="rmId" property="rmId"></id>
+                <result column="rmName" property="rmName"></result>
+            </association>
+            <!--关联房屋类型详细表-->
+            <association property="housetypedetails" javaType="Housetypedetails">
+                <id column="htdId" property="htdId"></id>
+                <result column="htdName" property="htdName"></result>
+                <result column="htdDese" property="htdDese"></result>
+                <result column="htId" property="htId"></result>
+                <!--关联房屋类型表-->
+                <association property="housetype" javaType="Housetype">
+                    <id column="htId" property="htId"></id>
+                    <result column="htName" property="htName"></result>
+                </association>
+            </association>
+            <!--关联房屋景观表-->
+            <association property="housescenery" javaType="Housescenery">
+                <id column="hcId" property="hcId"></id>
+                <result column="hcName" property="hcName"></result>
+            </association>
+            <!--关联房屋户型表-->
+            <association property="houseapartment" javaType="Houseapartment">
+                <id column="haId" property="haId"></id>
+                <result column="haBedroom" property="haBedroom"></result>
+                <result column="haBathroom" property="haBathroom"></result>
+                <result column="haLounage" property="haLounage"></result>
+                <result column="haKitchen" property="haKitchen"></result>
+                <result column="haBookStudy" property="haBookStudy"></result>
+                <result column="haBalcony" property="haBalcony"></result>
+            </association>
+            <!--关联房屋全部信息表-->
+            <association property="homeallinformation" javaType="Homeallinformation">
+                <id column="haiId" property="haiId"></id>
+                <result column="uiId" property="uiId"></result>
+                <!--用户信息表-->
+                <association property="userinformation" javaType="Userinformation">
+                    <id column="uiId" property="uiId"></id>
+                    <result column="uPhone" property="uPhone"></result>
+                    <result column="upicture" property="upicture"></result>
+                    <result column="uPassword" property="uPassword"></result>
+                    <result column="upicture" property="upicture"></result>
+                    <result column="uNickName" property="uNickName"></result>
+                    <result column="uEmail" property="uEmail"></result>
+                    <result column="uTime" property="uTime"></result>
+                    <result column="uName" property="uName"></result>
+                    <result column="uSex" property="uSex"></result>
+                    <result column="uAge" property="uAge"></result>
+                    <result column="uDocumentType" property="uDocumentType"></result>
+                    <result column="uCardId" property="uCardId"></result>
+                    <result column="uNation" property="uNation"></result>
+                    <result column="uConstellation" property="uConstellation"></result>
+                    <result column="uBloodType" property="uBloodType"></result>
+                    <result column="uProvince" property="uProvince"></result>
+                    <result column="uCity" property="uCity"></result>
+                    <result column="uOccupation" property="uOccupation"></result>
+                    <result column="uDesc" property="uDesc"></result>
+                    <result column="uState" property="uState"></result>
+                </association>
+            </association>
+        </association>
+        <association property="housebedsize" javaType="Housebedsize">
+            <id column="hdsId" property="hdsId"></id>
+            <result column="hbsSize" property="hbsSize"></result>
+            <result column="hbtId" property="hbtId"></result>
+            <association property="housebedtype" javaType="Housebedtype">
+                <id column="hbtId" property="hbtId"></id>
+                <result column="hbtName" property="hbtName"></result>
+            </association>
+        </association>
+    </resultMap>
+    <!--查询-->
+    <select id="select_houseBed" resultMap="select_houseBed_resultMap">
+        select *from houseBed hb
+        left join houseDetails hd on hb.hdId=hd.hdId
+        left join houseBedSize hds on hb.hdsId=hds.hdsId
+        left join rentalMode rm on hd.rmId=rm.rmId
+        left join houseTypeDetails htd on hd.htdId=htd.htdId
+        left join houseScenery hc on hd.hcId=hc.hcId
+        left join houseApartment ha on hd.haId=ha.haId
+        left join homeAllInformation hai on hd.haiId=hai.haiId
+        left join userInformation ui on hai.uiId=ui.uiId
+        <where>
+            <if test="hdId !=null and hdId !=''">
+                hd.hdId=#{hdId}
+            </if>
+            <if test="hdsId !=null and hdsId !=''">
+                and hds.hdsId=#{hdsId}
+            </if>
+            <if test="rmId !=null and rmId !=''">
+                and rm.rmId=#{rmId}
+            </if>
+            <if test="htdId !=null and htdId !=''">
+                and htd.htdId=#{htdId}
+            </if>
+            <if test="hcId !=null and hcId !=''">
+                and hc.hcId=#{hcId}
+            </if>
+            <if test="haiId !=null and haiId !=''">
+                and hai.haiId=#{haiId}
+            </if>
+            <if test="uiId !=null and uiId !=''">
+                and ui.uiId=#{uiId}
+            </if>
+        </where>
+    </select>
+    <!--添加-->
+    <insert id="insert_houseBed">
+        insert into housebed(hdId,hdsId,hbtNumber) values(#{hdId},#{hdsId},#{hbtNumber})
+    </insert>
+    <!--修改-->
+    <update id="update_houseBed">
+        update housebed set hdId=#{hdId},hdsId=#{hdsId},hbtNumber=#{hbtNumber} where hbId=#{hbId}
+    </update>
+
+
+
+
+
+
+    <select id="select_houseDetails" resultMap="HomeallinformationMap">
+        select * from
+			homeAllInformation hai
+                            -- 房屋详细表
+							 left join houseDetails 		hd on hai.haiId=hd.haiId
+								-- 床型
+                             left join houseBed 			hb on hd.hdId=hb.hdId
+							 left join houseBedSize 		hbs on hb.hdsId=hbs.hdsId
+							 left join houseBedType 		hbt on hbt.hbtId=hbs.hbtId
+								-- 出租方式表
+							 left join rentalMode 		rm on hd.rmId=rm.rmId
+								-- 关联房屋类型
+							 left join houseTypeDetails 	htd on hd.htdId=htd.htdId
+								-- 房屋类型
+                             left join houseType 		ht on ht.htId=htd.htId
+								-- 房屋景观
+							 left join houseScenery 		hsc on hsc.hcId=hd.hcId
+								-- 房屋户型【卧室、卫生间、客厅、厨房、书房、阳台】
+                             left join houseApartment 	ha on ha.haId=hd.haId
+                             where hai.haiId=#{haiId}
+    </select>
+
+    <resultMap id="HomeallinformationMap" type="Homeallinformation">
+        <id column="haiId" property="haiId"></id>
+        <result column="uiId" property="uiId"></result>
+        <!--房屋详细表-->
+        <association property="housedetails" javaType="Housedetails">
+            <id column="hdId" property="hdId"></id>
+            <result column="hdArea" property="hdArea"></result>
+            <result column="hdLiveNumber" property="hdLiveNumber"></result>
+            <result column="hdHouseNumebr" property="hdHouseNumebr"></result>
+            <result column="rmId" property="rmId"></result>
+            <result column="htdId" property="htdId"></result>
+            <result column="hcId" property="hcId"></result>
+            <result column="haId" property="haId"></result>
+            <result column="haiId" property="haiId"></result>
+            <!--关联出租方式表-->
+            <association property="rentalmode" javaType="Rentalmode">
+                <id column="rmId" property="rmId"></id>
+                <result column="rmName" property="rmName"></result>
+            </association>
+            <!--关联房屋类型详细表-->
+            <association property="housetypedetails" javaType="Housetypedetails">
+                <id column="htdId" property="htdId"></id>
+                <result column="htdName" property="htdName"></result>
+                <result column="htdDese" property="htdDese"></result>
+                <result column="htId" property="htId"></result>
+                <!--关联房屋类型表-->
+                <association property="housetype" javaType="Housetype">
+                    <id column="htId" property="htId"></id>
+                    <result column="htName" property="htName"></result>
+                </association>
+            </association>
+            <!--关联房屋景观表-->
+            <association property="housescenery" javaType="Housescenery">
+                <id column="hcId" property="hcId"></id>
+                <result column="hcName" property="hcName"></result>
+            </association>
+            <!--关联房屋户型表-->
+            <association property="houseapartment" javaType="Houseapartment">
+                <id column="haId" property="haId"></id>
+                <result column="haBedroom" property="haBedroom"></result>
+                <result column="haBathroom" property="haBathroom"></result>
+                <result column="haLounage" property="haLounage"></result>
+                <result column="haKitchen" property="haKitchen"></result>
+                <result column="haBookStudy" property="haBookStudy"></result>
+                <result column="haBalcony" property="haBalcony"></result>
+            </association>
+        </association>
+        <!--床型-->
+        <collection property="housebed" ofType="Housebed">
+            <id column="hbId" property="hbId"></id>
+            <result column="hdsId" property="hdsId"></result>
+            <result column="hbtNumber" property="hbtNumber"></result>
+            <result column="hdId" property="hdId"></result>
+            <association property="housebedsize" javaType="Housebedsize">
+                <id column="hdsId" property="hdsId"></id>
+                <result column="hbsSize" property="hbsSize"></result>
+                <result column="hbtId" property="hbtId"></result>
+                <association property="housebedtype" javaType="Housebedtype">
+                    <id column="hbtId" property="hbtId"></id>
+                    <result column="hbtName" property="hbtName"></result>
+                </association>
+            </association>
+        </collection>
+        <!--设施服务-->
+        <collection property="houseFacilities" ofType="HouseFacilities">
+            <id column="hfId" property="hfId"></id>
+            <result column="hfName" property="hfName"></result>
+            <collection property="housefacilitiesdetails" ofType="Housefacilitiesdetails">
+                <id column="hfdId" property="hfdId"></id>
+                <result column="hfdName" property="hfdName"></result>
+                <result column="hfId" property="hfId"></result>
+            </collection>
+        </collection>
+    </resultMap>
+
+    <select id="selct_houseDetails_haiId" resultType="Housedetails">
+        select * from houseDetails where haiId=#{haiId};
+    </select>
+    <!--根据房屋详细表id删除床型表-->
+    <delete id="delete_houseBed">
+          delete from houseBed where hdId=#{hdId};
+    </delete>
+</mapper>
+

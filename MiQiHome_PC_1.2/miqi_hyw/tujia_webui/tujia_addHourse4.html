@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>设施服务</title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+	</head>
+	<body>
+		<!--4、设施服务-->
+		<div class="con_floor4 border" style="padding-bottom: 50px;">
+			<div class="right_tit">
+				<h1 class="right_tith1">设施服务</h1>
+				<h2 class="right_tith2">房客可以按照他们想要的配套设施选择房屋。因此，请在页面上尽可能地全面展示您的房屋的配套设施。</h2>
+			</div>
+			<div>
+				<div class="floor4_warpper_margin">
+					<form>
+						<div class="">
+							<div class="floor4_line">
+								<p class="floor4_tit">居家</p>
+								<div class="floor4_sel floor4_sel1">
+								</div>
+							</div>
+
+							<div class="floor4_line">
+								<p class="floor4_tit">卫浴</p>
+								<div class="floor4_sel floor4_sel2">
+
+								</div>
+							</div>
+							<div class="floor4_line">
+								<p class="floor4_tit">餐厨</p>
+								<div class="floor4_sel floor4_sel3">
+
+								</div>
+							</div>
+							<div class="floor4_line">
+								<p class="floor4_tit">娱乐</p>
+								<div class="floor4_sel floor4_sel4">
+
+								</div>
+							</div>
+							<div class="floor4_line">
+								<p class="floor4_tit">安全</p>
+								<div class="floor4_sel floor4_sel5">
+
+								</div>
+							</div>
+							<div class="floor4_line">
+								<p class="floor4_tit">建筑</p>
+								<div class="floor4_sel floor4_sel6">
+
+								</div>
+							</div>
+							<div class="floor4_line">
+								<p class="floor4_tit">周边</p>
+								<div class="floor4_sel floor4_sel7">
+
+								</div>
+
+							</div>
+							<div class="floor4_line">
+								<p class="floor4_tit">其他</p>
+								<div class="floor4_sel floor4_sel8">
+
+								</div>
+
+							</div>
+							<div style="float: right;margin-bottom: 20px;">
+								<!--<input type="button" class="btn btn-primary nextbtn" value="下一步"/>-->
+								<a class="btn btn-primary nextbtn" target="addHourse">下一步</a>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+		<script>
+			
+			//获取IP地址
+			var ip='';
+			
+			var app = {
+				//ip
+				ipconfig(){
+					$.ajax({
+						type: "get",
+						url: "../../js/ipconfig.json",
+						async: false,
+						success: function(data) {
+							ip = data.ip;
+						}
+					});
+				},
+				 select_HouseFacilitiesDetails_haiId(){
+					$.ajax({
+						type:"post",
+						url:"http://"+ip+":8080/houseFacilitiesReflect/select_HouseFacilitiesDetails_haiId",
+						async:false,
+						data:{
+							haiId:GetRequest("haiid")
+						},
+						success:function(data){
+							$.each(data, function(i,obj) {
+								$('input[name="hfdId"][title="'+obj.hfdId+'"]').attr('checked',true);
+							});
+						}
+					});
+				},
+				//渲染
+				HouseFacilitiesDetailsRenders() {
+					$.ajax({
+						type: "get",
+						url: "http://localhost:8080/houseFacilitiesReflect/select_housefacilitiesdetails?page=1&limit=100",
+						success: function(data) {
+							$(".floor4_sel label").remove();
+							$.each(data.data, function(index, obj) {
+								var label1 = $("<label><span class='floor4_check floor4_label'><input type='checkbox' name='hfdId' class='floor4_label' style='margin: 0; vertical-align:middle;' value='"+obj.hfdId+"' title='"+obj.hfdId+"'/> <span>" + obj.hfdName + "</span></span></label>");
+								if(obj.hfId == 1) {
+									$(".floor4_sel1").append(label1);
+								} else if(obj.hfId == 2) {
+									$(".floor4_sel2").append(label1);
+								} else if(obj.hfId == 3) {
+									$(".floor4_sel3").append(label1);
+								} else if(obj.hfId == 4) {
+									$(".floor4_sel4").append(label1);
+								} else if(obj.hfId == 5) {
+									$(".floor4_sel5").append(label1);
+								} else if(obj.hfId == 6) {
+									$(".floor4_sel6").append(label1);
+								} else if(obj.hfId == 7) {
+									$(".floor4_sel7").append(label1);
+								} else if(obj.hfId == 8) {
+									$(".floor4_sel8").append(label1);
+								}
+							});
+							app.select_HouseFacilitiesDetails_haiId();
+						}
+					})
+				},
+				insert_houseFacilitiesReflect(){
+					$.ajax({
+						type:"get",
+						url:"http://" + ip + ":8080/houseFacilitiesReflect/delete_houseFacilitiesReflect",
+						async:false,
+						data:{
+							haiId:GetRequest("haiid")
+						},
+						success:function(data){
+							console.log(data)
+						}
+					});
+					
+					$.each($('input[type=checkbox]:checked'), function(i,obj) {
+						$.ajax({
+							type:"post",
+							url:"http://" + ip + ":8080/houseFacilitiesReflect/insert_houseFacilitiesReflect",
+							async:false,
+							data:{
+								haiId:GetRequest("haiid"),
+								hfdId:$(obj).val()
+							},
+							success:function(data){
+//								console.log(data)
+							}
+						});
+					});
+					window.location="tujia_addHourse5.html?haiid="+GetRequest("haiid");
+				}
+				,init() {
+					//执行渲染
+					app.HouseFacilitiesDetailsRenders();
+					//ip
+					app.ipconfig();
+					
+					$(".nextbtn").click(app.insert_houseFacilitiesReflect);
+
+				}
+			}
+
+			app.init();
+			
+			
+			
+			 //获取id
+		    function GetRequest(s) {
+		        var url = location.search; 		//获取url中"?"符后的字串
+		        var theRequest = new Object();
+		
+		        if (url.indexOf("?") != -1) {
+		            var str = url.substr(1);
+		            strs = str.split("&");
+		            for (var i = 0; i < strs.length; i++) {
+		                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+		            }
+		        }
+		        if (s) {
+		            return theRequest[s];
+		        }
+		        return theRequest;
+		    }
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    发布者：one
+    命名空间应该是对应接口的包名+接口名
+-->
+
+<mapper namespace="com.miqi.miqihome.dao.IHouseDecriptionDao"><!--接口名-->
+
+    <!--查询语句的返回集合-->
+    <resultMap id="select_HouseDecription_resultMap" type="HouseDecription">
+        <id column="hdpId" property="hdpId"></id>
+        <result column="hdpName" property="hdpName"></result>
+        <result column="hdpCharacteristic" property="hdpCharacteristic"></result>
+        <result column="hdpTraffic" property="hdpTraffic"></result>
+        <result column="hdpRound" property="hdpRound"></result>
+        <result column="haiId" property="haiId"></result>
+        <!--关联全部信息表-->
+            <association property="homeallinformation" javaType="Homeallinformation">
+                <id column="haiId" property="haiId"></id>
+                <result column="uiId" property="uiId"></result>
+                <!--关联用户信息表-->
+                <association property="userinformation" javaType="Userinformation">
+                    <!--共用-->
+                    <id column="uiId" property="uiId"></id>
+                    <result column="uPhone" property="uPhone"></result>
+                    <!--  <result column="uPassword" property="uPassword"></result>-->
+                    <result column="uPicture" property="uPicture"></result>
+                    <result column="uNickName" property="uNickName"></result>
+                    <result column="uEmail" property="uEmail"></result>
+                    <result column="uTime" property="uTime"></result>
+                    <!--房东-->
+                    <result column="uName" property="uName"></result>
+                    <result column="uSex" property="uSex"></result>
+                    <result column="uAge" property="uAge"></result>
+                    <result column="uDocumentType" property="uDocumentType"></result>
+                    <result column="uCardId" property="uCardId"></result>
+                    <result column="uNation" property="uNation"></result>
+                    <result column="uConstellation" property="uConstellation"></result>
+                    <result column="uBloodType" property="uBloodType"></result>
+                    <result column="uProvince" property="uProvince"></result>
+                    <result column="uCity" property="uCity"></result>
+                    <result column="uOccupation" property="uOccupation"></result>
+                    <result column="uDesc" property="uDesc"></result>
+                    <result column="uState" property="uState"></result>
+                </association>
+            </association>
+    </resultMap>
+
+    <!--查询全部-->
+    <select id="select_all_houseDecription" resultMap="select_HouseDecription_resultMap">
+        select * from houseDecription as h join homeallinformation as i join userinformation as u on h.haiId=i.haiId and i.uiId=u.uiId;
+    </select>
+
+    <!--通过 描述编号主键 查询房屋描述表-->
+    <select id="select_houseDecription_by_hdpId" parameterType="int" resultMap="select_HouseDecription_resultMap">
+       select * from houseDecription as h join homeallinformation as i join userinformation as u on h.haiId=i.haiId and i.uiId=u.uiId where h.hdpId=#{hdpId};
+    </select>
+
+    <!--通过 房屋信息表的外键 查询关联房屋全部信息表-->
+    <select id="select_houseDecription_by_haiId" parameterType="int" resultMap="select_HouseDecription_resultMap">
+        select * from houseDecription as h join homeallinformation as i join userinformation as u on h.haiId=i.haiId and i.uiId=u.uiId where i.haiId=#{haiId};
+    </select>
+
+    <!--插入一条房屋信息-->
+    <insert id="insert_houseDecription" parameterType="java.util.Map">
+        insert into houseDecription
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="hdpName != null">
+                hdpName,
+            </if>
+            <if test="hdpCharacteristic != null">
+                hdpCharacteristic,
+            </if>
+            <if test="hdpTraffic != null">
+                hdpTraffic,
+            </if>
+            <if test="hdpRound != null">
+                hdpRound,
+            </if>
+            <if test="haiId != null">
+                haiId
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="hdpName != null">
+                #{hdpName},
+            </if>
+            <if test="hdpCharacteristic != null">
+                #{hdpCharacteristic},
+            </if>
+            <if test="hdpTraffic != null">
+                #{hdpTraffic},
+            </if>
+            <if test="hdpRound != null">
+                #{hdpRound},
+            </if>
+            <if test="haiId != null">
+                #{haiId}
+            </if>
+        </trim>
+    </insert>
+
+    <!--通过表的主键 修改一条房屋信息-->
+    <update id="update_houseDecription" parameterType="java.util.Map">
+          update houseDecription set
+                                      hdpName=#{hdpName},
+                                      hdpCharacteristic=#{hdpCharacteristic},
+                                      hdpTraffic=#{hdpTraffic},
+                                      hdpRound=#{hdpRound}
+                                      where haiId=#{haiId}
+    </update>
+	
+	<!--查询总数-->
+	<select id="select_all_houseDecription_count"  resultType="int">
+		select count(*) from houseDecription;
+	</select>
+
+    <!---->
+    <select id="select_houseDecription_haiId" resultType="int">
+        select count(*) from houseDecription where haiId=#{haiId};
+    </select>
+	
+</mapper>

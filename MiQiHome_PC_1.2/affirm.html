@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>确认交易</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/public_js/utils.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				text-decoration: none;
+			}
+			
+			body {
+				background-color: #f9f9f9;
+			}
+			
+			.wk {
+				width: 100%;
+			}
+			
+			.price {
+				margin-top: 30px;
+				text-align: center;
+				font-size: 40px;
+			}
+			
+			.price .price_span {
+				font-size: 40px;
+			}
+			
+			.wk .payee {
+				width: 100%;
+				margin-top: 20px;
+				height: 30px;
+				background-color: #fff;
+				line-height: 28px;
+			}
+			
+			.payee span {
+				font-size: 17px;
+				padding: 0 10px 0 10px;
+			}
+			
+			.wk .button {
+				margin-top: 10px;
+				text-align: center;
+			}
+			
+			.wk .button #payment {
+				display: inline-block;
+				width: 90%;
+				border: none;
+				font-size: 25px;
+				color: #fff;
+				background-color: #00B83F;
+				line-height: 40px;
+				border-radius: 5px;
+				outline: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app" class="wk">
+			<div class="price">
+				￥<span id="price" class="price_span"></span>
+			</div>
+			<div class="payee">
+				<span>收款方</span>
+				<span style="float: right;" id="uNickName">妙妙屋团队</span>
+			</div>
+			<div class="button">
+				<button id="payment">确认支付</button>
+			</div>
+		</div>
+		<script>
+			$(function() {
+				$("#price").text(util.getUrlParam("sumPrice"));
+
+				$("#payment").click(function() {
+					var entity = {};
+					entity.rvId = util.getUrlParam("rvId");
+					entity.rvPayState = 1;
+					$.ajax({
+						type: "post",
+						url: "http://172.20.10.4:8080/reserve/updateReserve",
+						contentType: 'application/json;charset=utf-8',
+						dataType: 'json',
+						async: true,
+						data: JSON.stringify(entity),
+						success: function(data) {
+							if(data > 0) {
+								alert("支付成功!");
+							}
+						}
+					});
+				})
+			})
+		</script>
+	</body>
+
+</html>

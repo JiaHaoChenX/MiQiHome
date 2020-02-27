@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>房东管理</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<script src="../../js/public_js/utils_hyw.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="">
+			<!--除标题栏外的内容-->
+			<div class="content" style="margin-bottom: 30px;display: flex;">
+				<!--左侧的nav-->
+				<nav class="landlord_nav ">
+					<ul class="landlord_left box_shadow border-top">
+						<li style="margin-top: -10px;">
+							<h5 class="landlord_left_h5">
+								<span class=""><i class="landlord_icon landlord_icon1 ul_icon"></i></span>
+								<span class="fontSize14">交易管理</span>
+							</h5>
+							<div class="landlord_a fontSize12">
+								<a href="tujia_guanOrder_list.html" target="iframeRight">订单管理</a>
+								<a href="tujia_guanComments.html" target="iframeRight">点评管理</a>
+							</div>
+						</li>
+						<li>
+							<h5 class="landlord_left_h5">
+								<span class=""><i class="landlord_icon landlord_icon2 ul_icon"></i></span>
+								<span class="fontSize14">房源管理</span>
+							</h5>
+							<div class="landlord_a fontSize12">
+								<a href="tujia_guanHoures.html" target="iframeRight">房屋管理</a>
+								<a target="iframeRight">房态管理</a>
+								<a href="tujia_guanHourse_price.html" target="iframeRight">价格管理</a>
+							</div>
+						</li>
+						<li>
+							<h5 class="landlord_left_h5">
+								<span class=""><i class="landlord_icon landlord_icon3 ul_icon"></i></span>
+								<span class="fontSize14">营销推广</span>
+							</h5>
+							<div class="landlord_a fontSize12">
+								<a href="tujia_guanDiscount.html" target="iframeRight">折扣与优惠设置</a>
+								<a href="tujia_guanActive.html" target="iframeRight">平台征集活动</a>
+								<a href="tujia_guanPartner.html" target="iframeRight">途家合伙人</a>
+								<a href="tujia_guanFdong_story.html" target="iframeRight">房东故事征集</a>
+							</div>
+						</li>
+						<li>
+							<h5 class="landlord_left_h5">
+								<span class=""><i class="landlord_icon landlord_icon4 ul_icon"></i></span>
+								<span class="fontSize14">服务帮手</span>
+							</h5>
+							<div class="landlord_a fontSize12">
+								<a href="tujia_guanKeep_clear.html" target="iframeRight">途家保洁</a>
+								<a href="">房屋拍卖</a>
+								<a href="https://cscmerchant.tujia.com/csc-merchant-web/view/merchant/pc/DoorlockProduct.jsp?merchantId=1499231&serviceTypeId=5">智能门锁</a>
+								<a href="tujia_guanCoupon.html" target="iframeRight">门店卡券</a>
+								<a href="tujia_guanService.html" target="iframeRight">服务单</a>
+							</div>
+						</li>
+						<li>
+							<h5 class="landlord_left_h5">
+								<span class=""><i class="landlord_icon landlord_icon5 ul_icon"></i></span>
+								<span class="fontSize14">经营管理</span>
+							</h5>
+							<div class="landlord_a fontSize12">
+								<a href="tujia_guanCondition.html" target="iframeRight">经营概况</a>
+								<a href="tujia_guanOptimization.html" target="iframeRight">途家优选</a>
+								<a href="tujia_guanMoney_box.html" target="iframeRight">钱箱</a>
+								<a href="tujia_guanAuthentication.html" target="iframeRight">身份验证</a>
+								<a href="tujia_guanMessage.html" target="iframeRight">短信</a>
+								<a href="tujia_guanGuest_Manage.html" target="iframeRight">宾客管理</a>
+							</div>
+						</li>
+						<li>
+							<h5 class="landlord_left_h5">
+								<span class=""><i class="landlord_icon landlord_icon6 ul_icon"></i></span>
+								<span class="fontSize14">门店管理</span>
+							</h5>
+							<div class="landlord_a fontSize12">
+								<a href="tujia_guanStore_settings.html" target="iframeRight">门店设置</a>
+								<a href="tujia_guanDiary.html" target="iframeRight">途商日记</a>
+							</div>
+						</li>
+					</ul>
+					<section class="landlord_left border-top" style="margin-top: 20px;background: #fff;">
+						<div class="hotphone_num">
+							<p class="fontSize12 floor5_p_color">商户服务热线</p>
+							<strong>010-81400100</strong>
+
+						</div>
+						<p class="fontSize12 floor5_p_color" style="margin:15px 10px;">服务时间 0:00-24:00</p>
+					</section>
+				</nav>
+
+				<div>
+					<iframe src="tujia_guanFirst.html" width="960" height="2000" name="iframeRight" scrolling="no" frameborder="0" id="iframeRight"></iframe>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				if(util_hyw.getUrlParam("iframeRight") != "" && util_hyw.getUrlParam("iframeRight") != null) {
+					$("#iframeRight").attr("src",util_hyw.getUrlParam("iframeRight"));
+				}
+			})
+		</script>
+	</body>
+
+</html>

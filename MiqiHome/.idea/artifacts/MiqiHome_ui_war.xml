@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MiqiHome-ui:war">
+    <output-path>$PROJECT_DIR$/MiqiHome-ui/target</output-path>
+    <root id="archive" name="MiqiHome-ui.war">
+      <element id="artifact" artifact-name="MiqiHome-ui:war exploded" />
+    </root>
+  </artifact>
+</component>

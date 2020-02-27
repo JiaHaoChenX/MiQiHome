@@ -1,0 +1,188 @@
+.all {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	display: none;
+	z-index: 10000;
+}
+
+.middle {
+	width: 600px;
+	height: 330px;
+	margin: 0 auto;
+	border: 1px solid #C0C0C0;
+	padding: 30px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+}
+
+.reg-left {
+	float: left;
+	width: 300px;
+	height: 90%;
+}
+
+.form-field {
+	height: 30px;
+}
+
+.reg-left-type {
+	height: 40px;
+}
+
+.reg-left-type>button {
+	width: 50%;
+	height: 38px;
+	float: left;
+	color: #adadad;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: white;
+	outline-color: #2db3a6;
+	border-width: 0 0 0 0;
+}
+
+.reg-left-type>button:hover {
+	color: #22BB62;
+}
+
+.text {
+	width: 100%;
+	height: 38px;
+	padding: 0 0 0 33px;
+	margin: 15px 0;
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+	outline-color: #2db3a6;
+}
+
+.button--mini {
+	border: none;
+	padding: 0 10px 0 0;
+	background: 0 0;
+	color: #666;
+	cursor: pointer;
+	outline: none;
+	font-size: 12px;
+	position: absolute;
+	right: 0;
+	top: 24px;
+}
+
+.form-field-text {
+	position: relative;
+}
+
+.button {
+	width: 100%;
+	height: 38px;
+	margin: 8px 0 0 0;
+	color: white;
+	cursor: pointer;
+	outline-color: #22BB62;
+	box-sizing: border-box;
+	background-color: #22BB62;
+	border-width: 0 0 0 0;
+	border-radius: 2px;
+}
+
+.reg-left-span1 {
+	font-size: 14px;
+	color: #666697;
+}
+
+.reg-left-p1 {
+	font-size: 15px;
+	color: #FF8800;
+}
+
+.i-input {
+	position: absolute;
+	display: inline-block;
+	top: 24px;
+	left: 9px;
+	line-height: 20px;
+	color: #666;
+	vertical-align: text-top;
+}
+
+.reg-left-span2 {
+	color: #9B9DA2;
+	font-size: 14px;
+}
+
+.reg-left-span3 {
+	color: #52A5CC;
+	font-size: 14px;
+}
+
+.reg-right {
+	float: right;
+	width: 200px;
+	height: 300px;
+	border-left: 1px solid #CCCCCC;
+	text-align: center;
+	padding-left: 20px;
+}
+
+.reg-right-p1 {
+	color: #777776;
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+
+.reg-right-span {
+	padding: 5px 6px 13px 7px;
+	border-radius: 50%;
+}
+
+.reg-right-span1 {
+	color: #0EBC5F;
+	border: 1px solid #0EBC5F;
+}
+
+.i-span {
+	font-size: 19px;
+	    left: 2px;
+    position: relative;
+    font-size: 19px;
+    top: 3px;
+}
+
+.reg-right-font {
+	margin-left: 10px;
+	color: #777776;
+}
+
+.reg-right-weixin {}
+
+.reg-right-span2 {
+	color: #00BCEA;
+	border: 1px solid #00BCEA;
+}
+
+.reg-right-span3 {
+	color: #FC7212;
+	border: 1px solid #FC7212;
+}
+
+.reg-right-p {
+	margin: 35px 0;
+}
+
+.middle_close:hover {
+	color: red;
+}
+
+
+/*登录状态*/
+#logging_status{
+	float: right;
+	color: red;
+}

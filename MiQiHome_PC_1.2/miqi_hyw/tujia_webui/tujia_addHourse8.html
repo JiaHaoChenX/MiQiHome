@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>身份验证</title>
+
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../../js/layui-2.4.5/dist/css/layui.css" />
+
+		<style type="text/css">
+			input[type=file] {
+				margin-left: -245px;
+			}
+			
+			#test1 {
+				width: 100px;
+				height: 100px;
+				margin-top: 10px;
+				border: 1px dashed #000;
+				background-size: 100px 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!--8、身份验证-->
+		<div class="con_floor4 border" style="padding-bottom: 50px;">
+			<div class="right_tit">
+				<h1 class="right_tith1">身份验证</h1>
+				<h2 class="right_tith2">请注明您的房屋入住相关说明，以保证能收到合适的订单。</h2>
+			</div>
+			<div>
+				<div class="floor4_warpper_margin">
+					<form>
+						<div class="">
+							<div class="floor4_line">
+								<p class="floor7_tit" style="font-weight: normal;">房东昵称/门店名称<span class="fontSize12"> 客人可通过名称快速搜索到您的小家</span></p>
+								<div class="fontSize12 floor5_require">
+									<input type="text" class="form-control" style="width: 300px;" name="" id="ivName" value="" placeholder="真是姓名或个性昵称" />
+									<span id="getName" class="fontSize12 orangeCol" style="line-height: 30px;margin-left: 12px;">怎么取一个好的名称</span>
+									<div class="fontSize12 border get_name" style="width: 320px;">
+										<p>好的名称能让人印象深刻，请起一个真实或具有个人特色的名称。</p>
+										<p>1、 若您有门店招牌，请与门店招牌名称一致或相似</p>
+										<p>2、 若没有门店招牌，那名称中包含明确识别词，不能包含地址、地标、户型等信息。</p>
+										<p>合规例子：“兰亭小筑”、“水云阁民宿”、“岁月人家民宿”</p>
+										<p>不合规例子：“北京公寓”、“回龙观小区民宿”</p>
+									</div>
+								</div>
+
+								<div class="floor7_day">
+									<!--<p class="fontSize12" style="color: red;">电话格式不正确</p>-->
+									<div class="fontSize12 border get_name2" style="width: 320px;">
+										<p>提供一个便于客人联系您的号码，该号码在客人拨打给您的时候将显示为170或400开头的中转电话，温馨提示：若安全管家或来电拦截等app，请勿拦截该号码</p>
+									</div>
+								</div>
+								<div class="">
+									<p class="fontSize14">房东头像/门店标志</p><br />
+									<div class="floor8_zhaopian">
+										<div class="layui-upload">
+											<div id="demo1" class="demo">
+												<button type="button" class="uploading_List" id="test1" value="'+data+'">+</button>
+											</div>
+										</div>
+										<div class="floor7_backMoney fontSize12 floor5_p_color floor8_upRequire">
+											<p>上传请求：</p>
+											<p>1、请上传真实头像，若有营业执照也可以上传品牌logo，否则审核不会通过哟</p>
+											<p>2、请上传2MB以内的JPG、JPEG、GIF、PNG格式图片文件</p>
+										</div>
+									</div>
+								</div>
+								<div class="floor7_day">
+									<p class="">资质认证 <span class="fontSize12 floor5_p_color">验证您的身份，能提升客人对您的信任</span></p>
+
+								</div>
+								<div>
+									<!--身份证-->
+									<div id="card" class="fontSize13">
+										<label class="sfyz">
+														<p>姓名：</p>
+														<input type="text" class="form-control" id="ivUIDName" placeholder="请输入姓名..."/>
+													</label>
+										<br>
+										<label class="sfyz">
+														<p>身份证号：</p>
+														<input type="text" class="form-control" id="IvUIDNo" placeholder="请输入身份证号..."/>
+													</label>
+									</div>
+								</div>
+
+							</div>
+							<div class="" style="float: left;border: none;margin-top: 20px;">
+								<input type="checkbox" style="vertical-align: middle;margin-top: 0;">
+								<span class="fontSize13">同意并接受</span>
+								<span class="orangeCol fontSize12">《法律声明及服务条款》</span>
+							</div>
+							<div style="float: right;margin-bottom: 20px;">
+								<input type="button" class="btn btn-primary nextbtn" value="提交发布" />
+							</div>
+
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script src="../../js/layui-2.4.5/dist/layui.all.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/layui-2.4.5/dist/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//ip
+				ipconfig()
+				select_identityVerification()
+			})
+
+			function select_identityVerification() {
+				$.ajax({
+					type: "get",
+					url: "http://" + ip + ":8080/identityVerificationController/select_identityVerification_haiId2",
+					async: false,
+					data: {
+						haiId: GetRequest("haiid")
+					},
+					success: function(data) {
+						console.log(data)
+						$("#ivName").val(data.ivName); //房东昵称
+						var img = "http://" + ip + ":8080/" + data.ivUrl;
+						console.log(img)
+						$("#test1").css("background-image", "url(" + img + ")"); //房东头像
+						$("#ivUIDName").val(data.ivUIDName); //身份证姓名
+						$("#IvUIDNo").val(data.ivUIDNo); //身份证编号
+
+					}
+				});
+			}
+
+			$(".nextbtn").click(function() {
+				insert_identityVerification();
+
+			})
+
+			function insert_identityVerification() {
+				var identityverification = {
+					ivName: $("#ivName").val(), //房东昵称
+					ivUrl: "", //房东头像
+					ivUIDName: $("#ivUIDName").val(), //身份证姓名
+					ivUIDNo: $("#IvUIDNo").val(), //身份证编号
+					haiId: GetRequest("haiid") //关联房屋全部信息表
+				}
+				$.ajax({
+					type: "post",
+					url: "http://" + ip + ":8080/identityVerificationController/insert_identityVerification",
+					async: false,
+					data: JSON.stringify(identityverification),
+					contentType: 'application/json',
+					dataType: 'json',
+					contentType: "application/json;charset=utf-8",
+					success: function(data) {
+						if(data > 0) {
+							top.location= "http://127.0.0.1:8020/MiQiHome_PC_1.2/mqhouse/index.html";
+						}
+						console.log(data);
+					}
+				});
+			}
+
+			layui.use('upload', function() {
+				var $ = layui.jquery,
+					upload = layui.upload;
+				upload.render({
+					elem: '#test1',
+					url: "http://" + ip + ":8080/identityVerificationController/insert_identityVerification_picture",
+					multiple: false,
+					data: {
+						haiId: GetRequest("haiid")
+					},
+					before: function(obj) {},
+					done: function(res) {
+						select_identityVerification()
+					}
+				});
+			});
+
+			//获取id
+			function GetRequest(s) {
+				var url = location.search; //获取url中"?"符后的字串
+				var theRequest = new Object();
+
+				if(url.indexOf("?") != -1) {
+					var str = url.substr(1);
+					strs = str.split("&");
+					for(var i = 0; i < strs.length; i++) {
+						theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+					}
+				}
+				if(s) {
+					return theRequest[s];
+				}
+				return theRequest;
+			}
+
+			//获取IP地址
+			var ip = '';
+
+			function ipconfig() {
+				$.ajax({
+					type: "get",
+					url: "../../js/ipconfig.json",
+					async: false,
+					success: function(data) {
+						ip = data.ip;
+					}
+				});
+			}
+			$("body").on("click", "#getName", function() {
+				$(".get_name").toggle();
+			});
+			$("body").on("click", "#telFun", function() {
+				$(".get_name2").toggle();
+			});
+		</script>
+	</body>
+
+</html>

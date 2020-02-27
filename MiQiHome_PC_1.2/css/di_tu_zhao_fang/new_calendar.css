@@ -1,0 +1,237 @@
+﻿@charset "utf-8";
+
+#index_list_calendar-box {
+    position: absolute;
+    width:680px;
+    z-index: 10000;
+    top: 112px;
+    left: -240px;
+    background: #FFFFFF;
+    box-shadow: 0 0 12px 0 rgba(0,0,0,0.04), 0 0 6px 0 rgba(0,0,0,0.08);
+    padding: 30px 50px 10px 50px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    color: #484848;
+    font-size: 0;
+    behavior: url(../../Images/pie.htc);
+}
+
+.calendar-month {
+    float: left;
+    width:280px;
+    font-size: 14;
+}
+.calendar-month+.calendar-month{
+    margin-left: 20px;
+}
+.calendar-title {
+    position: relative;
+    color: #484848;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.calendar-title h2 {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700
+}
+
+.calendar-week {
+    position: relative;
+    overflow: hidden
+}
+.calendar-week .red{
+    color: #FF3F3F;
+}
+.calendar-month li {
+    position: relative;
+    float:left;
+    width: 40px;
+    height:45px;
+    line-height: 48px;
+    /*border:1px solid #ebebeb;*/
+    box-sizing: border-box;
+    /*margin-left:-1px;*/
+    /*margin-bottom: -1px;*/
+    cursor: pointer;
+    text-align: center;
+}
+.calendar-month li.bor-none{
+    border: none;
+}
+
+/*.calendar-day {
+    overflow: hidden
+}*/
+
+.calendar-month .old, .calendar-month .unselectable {
+    color: #bebebe;
+    cursor: default
+}
+
+.calendar-month .line3 {
+    line-height: 20px
+}
+
+.calendar-month .cal_select, .calendar-month li.show-date:hover
+{
+    background: #21C58E;
+    color:#fff;
+    /*border:1px solid #ebebeb;*/
+    cursor: pointer
+}
+
+.calendar-week li {
+    border:none;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom:5px;
+    font-size: 12px;
+}
+
+.calendar-week .pink {
+    color: #FF3F3F;
+}
+
+/* 选中 区间样式*/
+.calendar-month .cal_select.between{
+    background: #D3F4E9;
+}
+.calendar-month .cal_select.between{
+    color: #484848;
+}
+/* 节日和周末 休字 */
+.calendar-month .cal_select .work:before,.calendar-month .cal_select .weekend:before,.calendar-month .cal_select .festival:before{
+    color: #fff;
+}
+.calendar-month .cal_select.between .work:before,.calendar-month .cal_select.between .weekend:before,.calendar-month .cal_select.between .festival:before{
+    color: #FF3F3F;
+}
+.work:before{
+    content: '班';
+    display: block;
+    font-size: 10px;
+    color: #FF3F3F;
+    position: absolute;
+    top: 1px;
+    left: 14px;
+    line-height: 14px;
+    text-align: center;
+}
+.weekend:before,.festival:before{
+    content: '休';
+    display: block;
+    font-size: 10px;
+    color: #FF3F3F;
+    position: absolute;
+    top: 1px;
+    left: 14px;
+    line-height: 14px;
+    text-align: center;
+}
+
+.calendar-month .line3 em {
+    display: block
+}
+
+.calendar-month .cal_select em {
+    color: #fff
+}
+
+.calendar-month .cal_noRoom {
+    background: #ebebeb;
+}
+.calendar-month li.cal_noRoom:hover {
+    background: #ebebeb;
+    color: #484848;
+}
+
+.div_fixed {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999
+}
+
+.calendar_top {
+    padding: 10px
+}
+
+.cal_te {
+    text-align: center;
+    color: #F05B72;
+    line-height: 15px
+}
+
+.cal_tu {
+    padding: 10px
+}
+
+.marginL25 {
+    margin-left: 25px
+}
+
+/*.clear_date {
+    display:none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: url(../../Images/clear_data_gray.png) no-repeat center center;
+}*/
+
+/*.clear_date:hover {
+    background: url(../../Images/clear_data_green.png) no-repeat center center
+    !important;
+}*/
+
+.prev-btn{
+    position: absolute;
+    top: -5px;
+    left:0;
+    width: 32px;
+    height:32px;
+    cursor: pointer;
+    background: url('../Images/month-prev.png') no-repeat center;
+}
+.next-btn{
+    position: absolute;
+    cursor: pointer;
+    top:-5px;
+    right: 7px;
+    width: 32px;
+    height:32px;
+    background: url('../../Images/month-next.png') no-repeat center;
+}
+
+.cal_next, .cal_pre {
+    width: 32px;
+    height:32px;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+}
+
+.cal_pre {
+    top: 20px;
+    left:55px;
+    background: url('../../Images/month-prev.png') no-repeat center;
+}
+
+.cal_next {
+    top: 20px;
+    right: 55px;
+    background: url('../../Images/month-next.png') no-repeat center;
+}
+
+/*
+.ipt_search {
+    width: 100%;
+    color: #322c27
+}*/

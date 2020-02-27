@@ -1,0 +1,1414 @@
+<!--
+	页面：妙妙屋短租首页-地区房间类型。
+	起：2019年1月20日。结：2019年1月25日。
+	by：罗立一。
+-->
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>【妙妙屋短租】短租房_短租公寓_民宿_家庭旅馆_日租房-预订首选</title>
+		<meta name="baidu-site-verification" content="yjzOLunz2Q" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="applicable-device" content="pc">
+		<meta name="mobile-agent" content="format=html5;url=http://m.mayi.com" />
+		<meta name="mobile-agent" content="format=xhtml;url=http://m.mayi.com" />
+		<meta name="mobile-agent" content="format=wml;url=http://m.mayi.com" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="短租房,短租公寓,民宿,家庭旅馆,日租房" />
+		<meta name="description" content="妙妙屋短租(mayi.com)是国内领先的公寓,民宿,家庭旅馆在线短租平台,
+	    	致力于为休闲度假旅游人群提供高性价比的住宿服务,房源配备客厅厨房,可洗衣做饭,是家庭出游新选择。" />
+		<!--图标-->
+		<link rel="shortcut icon" href="img/index/logo.png" type="image/x-icon">
+		<!--样式重置 reset-->
+		<link rel="stylesheet" href="css/reset.css" />
+		<!--样式-->
+		<link rel="stylesheet" href="css/select.css" />
+		<!--layui样式-->
+		<link rel="stylesheet" href="js/layui-2.4.5/dist/css/layui.css" />
+		<!--字体-->
+		<link rel="stylesheet" type="text/css" href="../js/font-awesome-4.7.0(字体图标)/css/font-awesome.min.css" />
+		<!--日历-->
+		<link rel="stylesheet" href="js/cander/dateRange.css" />
+		<link rel="stylesheet" type="text/css" href="js/cander/monthPicker.css" />
+		<script src="../js/public_js/utils_lly.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--最大div 用来固定宽高-->
+		<div class="index_maxContainer">
+			<!--头部-->
+			<div class="index_header">
+				<div class="nav index_nav line_h50">
+					<!--logo-->
+					<div class="logo fl f20 c_gray_dark fw600 lineht34">
+						<img src="img/select/logo.png" />
+						<span class="title"><a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/mqhouse/index.html"  style="color: white;">妙妙屋短租</a></span>
+					</div>
+					<!--右边导航栏-->
+					<ul class="fr nav-list clearfloat">
+						<li>
+							<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/mqhouse/index.html">首页</a>
+						</li>
+						<li>
+							<i class="layui-icon layui-icon-cellphone"></i>
+							<a href="">客服热线</a>
+						</li>
+						<li>
+							<i class="layui-icon layui-icon-download-circle"></i>
+							<a href="">下载APP送500元大礼包</a>
+							<i class="layui-icon layui-icon-down"></i>
+						</li>
+						<li>
+							<a href="">商旅合作</a>
+						</li>
+						<li>
+							<a href="">帮助中心</a>
+						</li>
+						<li class="showlibox ">
+						</li>
+					</ul>
+					<!--房东房客-->
+					<ul class="hover-list radius-6" style="">
+						<li class="">
+							<a class="" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html" style="font-weight:bold;font-size: 18px;">我是房客</a>
+						</li>
+						<li class="">
+							<a class="" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html?article=article-div2-orders">我的订单</a>
+							<a class="" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html?article=article-div2-balance">我的账户</a>
+						</li>
+						<li class="">
+							<a class="" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html?article=active-div2-collect">我的收藏</a>
+							<a class="" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html?article=active-div2-inform">消息通知</a>
+						</li>
+						<li class="">
+							<a class="" href="javascript:void(0);">邀请好友</a>
+						</li>
+						<hr class="">
+						<li class="">
+							<a class="" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html" style="font-weight:bold;font-size: 18px;">我是房东</a>
+						</li>
+						<li class="">
+							<a class=" " href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanOrder_list.html">订单管理</a>
+							<a class="" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanHoures.html">房源管理</a>
+						</li>
+						<li class="">
+							<a class="" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanComments.html">点评管理</a>
+							<a class="" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanHourse_price.html">价格管理</a>
+						</li>
+						<li class="">
+							<a class=" " href="">房东微信</a>
+							<a class=" " href="">下载APP</a>
+						</li>
+						<li class="">
+							<a class="" href="">房东微店</a>
+							<a class="" href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html">我的设置</a>
+						</li>
+						<li class="out_login" style="">
+							<a class="">退出登录</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<!--主体部分-->
+			<div class="index_center" >
+				<!--主体部分容器-->
+				<div class="index_center_container">
+					<!--搜索-->
+					<div class="list_search_top">
+						<!--搜索内容-->
+						<div class="clearfloat b_white search_main relave">
+							<!--目的地-->
+							<div class="myplace">
+								<span>目的地</span>
+								<input id="myplaceval" type="text" value="柳州" />
+								<!--下拉框-->
+								<div class="t-left-place-xiala">
+									<ul class="clearfloat city_tab">
+										<li id="city_inland" class="city_inland active" _mayi_rp="webindex|searchtab|cityinland">国内·港澳台</li>
+									</ul>
+									<ul class="select-title clearfloat tab" id="cityselecttitleul">
+										<li class="active">
+											<a value="hotcity" id="hotcity" class="selected" href="javascript:void(0)">国内热门</a>
+										</li>
+										<li class="">
+											<a data-value="A_B_C_D" id="a_b_c_d" href="javascript:void(0)" class="letter">ABCD</a>
+										</li>
+										<li class="">
+											<a data-value="E_F_G_H" id="e_f_g_h" href="javascript:void(0)" class="letter">EFGH</a>
+										</li>
+										<li class="">
+											<a data-value="J_K_L_M" id="j_k_l_m" href="javascript:void(0)" class="letter">JKLM</a>
+										</li>
+										<li class="">
+											<a data-value="N_P_Q_R" id="n_p_q_r" href="javascript:void(0)" class="letter">NPQR</a>
+										</li >
+										<li class="">
+											<a data-value="S_T_W" id="s_t_w" href="javascript:void(0)" class="letter">STW</a>
+										</li>
+										<li class="">
+											<a data-value="X_Y_Z" id="x_y_z" href="javascript:void(0)" class="letter">XYZ</a>
+										</li>
+									</ul>
+									<ul class="select-citycon clearfloat tab-content" id="cityselectul" name="cityselectul" tabindex="5" style="overflow: hidden; outline: none;">
+
+									</ul>
+								</div>
+							</div>
+							<!--住宿日期-->
+							<div class="mydate">
+								<span>住宿日期</span>
+								<input id="mylogin" type="text" placeholder="入住日期" />
+								<img src="img/select/night-count.png" />
+								<span id="myorderday">0晚</span>
+								<input id="myexit" type="text" placeholder="退房日期" />
+								<!--入住日期-->
+								<!--日历-->
+								<div class="index_list_calendar-box" id="div_date_demo3">
+
+									<div class="ta_date" id="div_date_demo3">
+										<span class="date_title" id="date_demo3"></span>
+										<a class="opt_sel" id="input_trigger_demo3" href="#">
+											<i class="i_orderd"></i>
+										</a>
+									</div>
+									<div id="datePicker"></div>
+								</div>
+
+							</div>
+							<!--入住人数-->
+							<div class="mypeople">
+								<span>入住人数</span>
+								<input id="chosepeonum" type="text" placeholder="不限" />
+								<i class="layui-icon layui-icon-down"></i>
+								<!--选择人数-->
+								<div id="ruzhunum">
+									<ul>
+										<li peoplenum="不限" data-r="">不限</li>
+										<li peoplenum="1" data-r="1">1人</li>
+										<li peoplenum="2" data-r="2">2人</li>
+										<li peoplenum="3" data-r="3">3人</li>
+										<li peoplenum="4" data-r="4">4人</li>
+										<li peoplenum="5" data-r="5">5人</li>
+										<li peoplenum="6" data-r="6">6人</li>
+										<li peoplenum="7" data-r="7">7人</li>
+										<li peoplenum="8" data-r="8">8人</li>
+										<li peoplenum="9" data-r="9">9人+</li>
+									</ul>
+								</div>
+							</div>
+							<!--关键词-->
+							<div class="mykey">
+								<span>关键词</span>
+								<input type="text" id='size' placeholder="位置、标题、房东等" />
+							</div>
+							<!--搜索民宿-->
+							<div class="mysearch">
+								搜索民宿
+							</div>
+						</div>
+					</div>
+					<!--揌选区-->
+					<div class="cont1 b_white">
+						<!--顶部信息-->
+						<div class="path_link w94_94">
+							<a href="/" rel="nofollow">首页</a>
+							<span>></span>
+							<h1 class="f14">北京短租房</h1>
+							<span class="ml10 f12">北京的房源获得超过11392400次房客评价，平均得分4.9分（满分5分）</span>
+						</div>
+						<!--内容-->
+						<div class="cont1_content">
+							<!--第一栏-->
+							<ul>
+								<div class="layui-form layui-form-item">
+									<label class="layui-form-label" style="width: 30px;padding: 9px 0;line-height: 24px;font-weight: bold;">房型</label>
+									<div class="layui-input-block" style="margin-left: 55px;">
+										<input type="radio" name="houseType" class="houseType" lay-filter="houseType" value="" title="不限" checked>
+										<input type="radio" name="houseType" class="houseType" lay-filter="houseType" value="公寓" title="公寓">
+										<input type="radio" name="houseType" class="houseType" lay-filter="houseType" value="客栈" title="客栈">
+										<input type="radio" name="houseType" class="houseType" lay-filter="houseType" value="别墅" title="别墅">
+									</div>
+								</div>
+							</ul>
+							<!--第二栏-->
+							<ul style="line-height: 45px;" class="di2">
+								<!-- 推荐标签 -->
+								<li>
+									<div class="lt-icon">位置</div>
+								</li>
+								<li class="on_all on_all_dp">
+									<span class="bux">不限</span>
+								</li>
+								<li>
+									<span>商圈</span>
+									<i></i>
+									<!-- 商业街 -->
+									<div class="lever result-business pr60">
+										<div class="lever_open" id="circles">
+
+										</div>
+									</div>
+								</li>
+								<li>
+									<span>景点</span>
+									<i></i>
+									<!-- 景点 -->
+									<div class="lever result-business pr60">
+										<div class="lever_open" id="scenic_spots">
+
+										</div>
+									</div>
+								</li>
+								<li>
+									<span>学校</span>
+									<i></i>
+									<!-- 学校 -->
+									<div class="lever result-business pr60">
+										<div class="lever_open" id="college">
+
+										</div>
+									</div>
+								</li>
+							</ul>
+							<!--第三栏-->
+							<ul>
+								<!-- 推荐标签 -->
+								<div class="layui-form layui-form-item">
+									<label class="layui-form-label" style="width: 30px;padding: 9px 0;line-height: 24px;font-weight: bold;">户型</label>
+									<div class="layui-input-block" style="margin-left: 55px;">
+										<input type="radio" name="house" lay-filter="house" value="" title="不限" checked>
+										<input type="radio" name="house" lay-filter="house" value="1" title="一居">
+										<input type="radio" name="house" lay-filter="house" value="2" title="二居">
+										<input type="radio" name="house" lay-filter="house" value="3" title="三居">
+										<input type="radio" name="house" lay-filter="house" value="4" title="四居及以上">
+									</div>
+								</div>
+							</ul>
+							<!--第四栏-->
+							<div class="jiage">
+								<ul class="jiage1">
+									<!-- 推荐标签 -->
+									<li>
+										<div class="lt-icon">价格</div>
+									</li>
+									<li class="on_all">
+										<span>不限</span>
+									</li>
+									<li>
+										<div id="slideTest9" class="demo-slider"></div>
+										<div id="test-slider-tips2">￥60-￥1000</div>
+									</li>
+								</ul>
+
+								<!--第五栏-->
+								<div class="jiage">
+									<ul>
+										<!-- 推荐标签 -->
+										<li>
+											<div class="lt-icon">更多</div>
+										</li>
+										<li class="on_all">
+											<span>不限</span>
+										</li>
+										<li>
+											<span>设施</span>
+											<i></i>
+											<div class="lever result-business pr60" style="top: 25px;">
+												<div class="lever_open" id="House">
+													<span>
+														<input type="checkbox" style="top: -5px;" class="House_Facilities" name="House_Facilities" value="1"/>
+		                                            	<a style="position:relative;" title="网络" _mayi_rp="weblist|sem_condition|position0">网络</a>
+													</span>
+													<span>
+														<input type="checkbox" style="top: -5px;" class="House_Facilities" name="House_Facilities" value="3"/>
+		                                            	<a style="position:relative;" title="电视" _mayi_rp="weblist|sem_condition|position0">电视</a>
+													</span>
+													<span>
+														<input type="checkbox" style="top: -5px;" class="House_Facilities" name="House_Facilities" value="11"/>
+		                                            	<a style="position:relative;" title="冰箱" _mayi_rp="weblist|sem_condition|position0">冰箱</a>
+													</span>
+													<span>
+														<input type="checkbox" style="top: -5px;" class="House_Facilities" name="House_Facilities" value="13"/>
+		                                            	<a style="position:relative;" title="洗衣机"  _mayi_rp="weblist|sem_condition|position0">洗衣机</a>
+													</span>
+													<span>
+														<input type="checkbox" style="top: -5px;" class="House_Facilities" name="House_Facilities" value="7"/>
+		                                            	<a style="position:relative;" title="空调"  _mayi_rp="weblist|sem_condition|position0">空调</a>
+													</span>
+													<span>
+														<input type="checkbox" style="top: -5px;" class="House_Facilities" name="House_Facilities" value="29"/>
+		                                            	<a style="position:relative;" title="淋浴" _mayi_rp="weblist|sem_condition|position0">淋浴</a>
+													</span>
+													<span>
+														<input type="checkbox" style="top: -5px;" class="House_Facilities" name="House_Facilities" value="17"/>
+		                                            	<a style="position:relative;" title="暖气"  _mayi_rp="weblist|sem_condition|position0">暖气</a>
+													</span>
+													<span>
+														<input type="checkbox" style="top: -5px;" class="House_Facilities" name="House_Facilities" value="40"/>
+		                                            	<a style="position:relative;" title="厨房" _mayi_rp="weblist|sem_condition|position0">厨房</a>
+													</span>
+													<span>
+														<input type="checkbox" style="top: -5px;" class="House_Facilities" name="House_Facilities" value="52"/>
+		                                            	<a style="position:relative;" title="允许聚会"  _mayi_rp="weblist|sem_condition|position0">允许聚会</a>
+													</span>
+													<span>
+														<input type="checkbox" style="top: -5px;" class="House_Facilities" name="House_Facilities" value="65"/>
+		                                            	<a style="position:relative;" title="电梯"  _mayi_rp="weblist|sem_condition|position0">电梯</a>
+													</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--主体图片内容区域-->
+					<div class="cont2 b_white">
+						<!--内容区域-->
+						<div class="cont2_content">
+							<!--左边内容区域-->
+							<div class="cont2_left_content">
+								<!--排序-->
+								<div id="sortDiv">
+									<a class="Tsort sortType" data-sort="0">推荐排序</a>
+
+									<a class="room_price_choice">价格</a>
+									<span class="fa fa-long-arrow-up	sortType " data-sort="2" aria-hidden="true"></span>
+									<span class="fa fa-long-arrow-down	sortType " data-sort="1" aria-hidden="true"></span>
+
+									<a class="room_price_choice"> 评论数</a>
+									<span class="fa fa-long-arrow-down	sortType " data-sort="3" aria-hidden="true"></span>
+
+									<a class="room_price_choice"> 预定数</a>
+									<span class="fa fa-long-arrow-down	sortType " data-sort="4" aria-hidden="true"></span>
+									<span class="totalCount fr c_gray_dark">
+									<b id="totalCount">56900+</b>
+									套房屋符合条件
+								</span>
+								</div>
+								<!--图片-->
+								<div class="downloadApp">
+									<img src="img/select/downloadApp.png" />
+								</div>
+								<!-- 搜索到的已有房源start -->
+								<div class="searchRoom clearfloat homestay" id="searchRoom">
+									<div class="homestay-fl">
+
+										<!--查看更多-->
+										<div class="more-cursorpt">
+											查看更多
+										</div>
+									</div>
+									<!--分页-->
+									<div id="demo1"></div>
+								</div>
+							</div>
+							<!--右边区域-->
+							<div class="cont2_right_content">
+								<!--地图-->
+								<div class="ditu_link relave">
+									<!--超链接-->
+									<a href="../di_tu_zhao_fang.html">
+										<img src="img/select/ditu.png" />
+										<span>试试地图找房</span>
+									</a>
+								</div>
+								<!--平台宣传-->
+								<ul class="safeplan">
+									<li>
+										<a href="/new_page/realhouse" target="_blank" _mayi_rp="weblist|anxin|realhouse">
+											<i class="zsfy"></i>
+											<span class="span1">真实房源</span>
+											<span class="span2">上门实拍资质备案</span>
+										</a>
+									</li>
+									<li>
+										<a href="/supportplan/" target="_blank" _mayi_rp="weblist|anxin|supportplan">
+											<i class="axrz"></i>
+											<span class="span1">安心入住</span>
+											<span class="span2">到店无房赔付</span>
+										</a>
+									</li>
+									<li>
+										<a href="/new_page/zmxy" target="_blank" _mayi_rp="weblist|anxin|zmxy">
+											<i class="zmxy"></i>
+											<span class="span1">芝麻信用</span>
+											<span class="span2">房东房客实名认证</span>
+										</a>
+									</li>
+									<li>
+										<a href="/new_page/zykf" class="bordernone" target="_blank" _mayi_rp="weblist|anxin|zykf">
+											<i class="zykf"></i>
+											<span class="span1">专业客服</span>
+											<span class="span2">7 x 24小时</span>
+										</a>
+									</li>
+								</ul>
+								<!--我的足迹-->
+								<div class="my_right mt10">
+									<ul class="right_nav">
+										<li class="right_nav_active">
+											我的足迹
+										</li>
+										<li>
+											猜你喜欢
+										</li>
+									</ul>
+								</div>
+								<!--喜欢的房子-->
+								<div class="right_nav_footmark">
+									<div class="oneroominfo">
+										<a class="homestay-fl-left homestay-relave radius-12 w248 mr20 mt20" _mayi_rp="webindex|lvxing1|lyf">
+
+											<div class="collect_love">
+
+											</div>
+											<img class="radius-12 lazy" src="../Picture/08f22157-16f4-496f-81ac-36573dcada9b.jpg" style="display: inline;">
+											<span class="f20 c_gray_dark fw600 three">￥448</span>
+										</a>
+										<div class="room-info">
+											<h2 class="fw700 hidden-txt">玉林城南现代简约靛蓝</h2>
+											<p class="c_orange f14">
+												<span class="c_orange_p">5.0分</span>
+												<span class="c_orange_p">完美!</span> ·
+												<span class="mr10">76条评价</span>
+												<span class="mr10">|</span>
+												<span class="mr10">1居</span><span class="mr10">|</span>
+												<span class="mr10">成都</span>
+											</p>
+											<div class="room_intro_p">
+												<span class="biaoqian_style" style="background: rgba(255,205,76,0.25);color: #FA9A00;">速订</span>
+												<span class="biaoqian_style" style="background:#f4f4f4;">实拍</span>
+												<span class="biaoqian_style" style="background:#f4f4f4;"> 可做饭</span>
+											</div>
+										</div>
+										<!--翻页-->
+										<div class="link_page">
+											<i class="layui-icon layui-icon-left prev_link"></i>
+											<span class="page_num_link"><i class="pageleft">1</i>
+												/
+												<i class="pagelong">1</i>
+											</span>
+											<i class="layui-icon layui-icon-right next_link"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--尾部-->
+			<div class="foot">
+				<div class="foot-center">
+					<div class="foot-center-head">
+						<ul>
+							<li>
+								<h3 class="f16 mb10">联系我们</h3>
+								<p class="mb15">客户服务</p>
+								<p class="f22">400-028-6868</p>
+								<!--    <p>Email：kefu.duanzu@mayi.com</p>-->
+								<p>Email：service@mayi.com</p>
+								<p class="mb10 mt25">商务合作</p>
+								<p>QQ：2656860348</p>
+								<p>Email：marketing@mayi.com</p>
+							</li>
+							<li>
+								<h3 class="f16 mb10">帮助中心</h3>
+								<p>
+									<a href="/roomauditrule/" target="_blank">房源审核规范</a>
+								</p>
+								<!--<p><a href="/landoperaterule/" target="_blank">房东经营行为管理规范</a></p>-->
+								<p>
+									<a href="/supportplan/" target="_blank">房客安心计划</a>
+								</p>
+								<p>
+									<a href="/goodhouseplan/" target="_blank">优质住宿计划</a>
+								</p>
+								<p>
+									<a href="/sitemap/" target="_blank">网站地图</a>
+								</p>
+								<p>
+									<a href="/questions/" target="_blank">房客帮助</a>
+								</p>
+							</li>
+							<li>
+								<h3 class="f16 mb10">公司信息</h3>
+								<p>
+									<a rel="nofollow" href="/aboutcompany/" target="">关于妙妙屋</a>
+								</p>
+								<p>
+									<a rel="nofollow" href="/culture/" target="">加入我们</a>
+								</p>
+								<p>
+									<a rel="nofollow" href="/partner/" target="">战略合作</a>
+								</p>
+								<p>
+									<a rel="nofollow" href="/mediareport/" target="_blank">媒体报道</a>
+								</p>
+								<p>
+									<a rel="nofollow" href="/agreement/" target="_blank">服务协议</a>
+								</p>
+								<p>
+									<a rel="nofollow" href="/privacypolicy/" target="_blank">隐私政策</a>
+								</p>
+								<p>
+									<a rel="nofollow" href="/webdisclaimer/" target="_blank">免责声明</a>
+								</p>
+							</li>
+							<li>
+								<!-- 四元组控制下载元素显示情况 -->
+								<h3 class="f16 mb10" style="text-align:center">下载APP<br><span style="color:#ff5d51;font-size:11px">注册立送500元大礼包</span></h3>
+								<p><img class="mt10 app_download_qr" style="width:104px;" src="img/index/app.jpg"></p>
+								<p>
+									<a class="app mt10 t-center" rel="nofollow" href="/download/android/update" _mayi_rp="webaround|seafooter|andriod">Android下载</a>
+								</p>
+								<p>
+									<a class="app mt10 t-center" rel="nofollow" href="/download/ios/update" target="_blank" _mayi_rp="webaround|seafooter|ios">iOS下载</a>
+								</p>
+							</li>
+							<li>
+								<h3 class="f16 mb10">关注我们</h3>
+								<div class="fl mr20 cursorpt showinfo relave">
+									<img src="img/index/weixin_logo.png">
+									<!-- <img src="//staticnew.mayi.com/resourcesWeb/v201510/images/commom/weixin.jpg" class="head_pop absot"> -->
+									<div class="head_pop absot app-img1" style="display: none;">
+										<div class="fl app-img1-fl">
+											<p class="app-img1-uup">了解优惠活动</p>
+											<img src="//i1.mayi.com/mayi90/M36/HV/GW/9RECJCBRBXKLMF4VSGRKRY7YJTJ2JH.jpg" class=" rt-app1">
+											<p class="app-img1-udp">蚂蚁短租公众号</p>
+										</div>
+										<div>
+											<p class="app-img1-uup">扫码快速预订</p>
+											<img src="//i1.mayi.com/mayi93/M28/DY/DU/8UMAAN78AJGFBPGZQJ3VHJLEJCWU37.jpg" class="rt-app1">
+											<p class="app-img1-udp">蚂蚁短租小程序</p>
+										</div>
+									</div>
+								</div>
+								<p class="cursorpt cursorpt-web fl"><img src="img/index/xinlang_logo.png" rel="nofollow" onclick="sinaWeibo();"></p>
+							</li>
+						</ul>
+					</div>
+					<!--中间部分-->
+					<div class="foot-center-center">
+						<ul class="city_classify">
+							<li class="">热门城市</li>
+							<li class="choiced_bg_color">网站导航</li>
+							<li class="">友情链接</li>
+							<li class="">手机版</li>
+						</ul>
+						<ul class="clearfloat">
+							<li>
+								<a href="">民宿</a>
+							</li>
+							<li>
+								<a href="">短租公寓</a>
+							</li>
+							<li>
+								<a href="">住宿</a>
+							</li>
+							<li>
+								<a href="">酒店</a>
+							</li>
+							<li>
+								<a href="">宾馆</a>
+							</li>
+							<li>
+								<a href="">短租别墅</a>
+							</li>
+							<li>
+								<a href="">旅游景点</a>
+							</li>
+							<li>
+								<a href="">游记攻略</a>
+							</li>
+							<li>
+								<a href="">周租房</a>
+							</li>
+							<li>
+								<a href="">月租房</a>
+							</li>
+							<li>
+								<a href="">租房攻略</a>
+							</li>
+						</ul>
+						<!--最新预定-->
+						<div class="carousel_box">
+							<span>最新预定：</span>
+							<span id="winbox">
+			                    	<span>桂林北站高铁旁恒达商圈高层温馨两居室40分钟前被用户*****4263预定</span>
+							<span>经济大床房37分钟前被用户*****8045预定</span>
+							</span>
+						</div>
+						<!--客户服务-->
+						<div class="mt40">
+							<p class="t-center f12 c777776">客户服务：400-028-6868 |
+								<a href="/tenantlogin/" target="_blank" class="c777776">&nbsp;用户答疑&nbsp;|</a>
+								<a href="/aboutcompany/" target="_blank" class="c777776">&nbsp;公司信息&nbsp;|</a>
+								<a href="/sitemap/" target="_blank" class="c777776">&nbsp;网站地图&nbsp;|</a>
+								<a href="http://www.mayi.com" target="_blank" class="c777776">&nbsp;短租房&nbsp;|</a>
+								<a href="/activity/app50" target="_blank" class="c777776">&nbsp;app下载&nbsp;|</a>关注我们
+							</p>
+							<p class="t-center f12 c777776">网站备案/许可证号：京ICP证130021号
+								<a class="c777776" href="https://i1.mayi.com/mayi41/M99/YJ/EZ/UFM6JS6W3CJCKVTKB7XZBH7QEPN4ZY.jpg" target="_blank">营业执照编号：102585576</a> 易云游网络技术（北京）有限公司
+							</p>
+							<a target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802022835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="//staticnew.mayi.com/resourcesWeb/images/babs.png" style="float:left;">
+								<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802022835号</p>
+							</a>
+							<!--图标提示-->
+							<div class="titletips" style="width: 320px;margin:0 auto;">
+								<!--可信网站图片LOGO安装开始-->
+								<a href="//ss.knet.cn/verifyseal.dll?sn=e17040711010867294rryk000000&amp;ct=df&amp;a=1&amp;pa=0.21657814006757303" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" class="mr20" style="display:inline-block;">
+									<img src="//staticnew.mayi.com/resourcesWeb/images/cnnic1.png" style="width: 80px;" oncontextmenu="return false;" alt="可信网站">
+								</a>
+								<!--可信网站图片LOGO安装结束-->
+								<a id="___szfw_logo___" target="_blank" href="//credit.szfw.org/CX20170406033535570197.html" style="display:inline-block;" class="mr20">
+									<img src="//staticnew.mayi.com/resourcesWeb/images/cert.png" style="width: 80px;" alt="诚信网站">
+								</a>
+								<!--工商局活动页-->
+								<a target="_blank" href="http://www.mayi.com/announcegsj" style="display:inline-block;">
+									<img src="//staticnew.mayi.com/resourcesWeb/images/gsj.png" style="width: 80px;" alt="诚信经营">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--在线聊天-->
+		<a class="IM_btn" style="display: block;" href="javascript:;" _mayi_rp="webaround|other|online"><span class="IM_btn_span"><i style="display:none;">0</i></span>在线聊天</a>
+		<div style="" class="Online_btn">
+			<span class="border-left"></span>
+			<a href="javascript:void(0)" id="live800iconlink" _mayi_rp="room|sem_contact|message"><img border="0" onclick="qimoChatClick()" src="http://i1.mayi.com/mayi98/M99/OK/GL/5635PVPKQGH6CND3UTE6WAYHLUXAXB.jpg" id="live800icon" name="live800icon"></a>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="js/layui-2.4.5/dist/layui.js"></script>
+	<!--日历-->
+	<script type="text/javascript" src="js/cander/dateRange.js"></script>
+	<script type="text/javascript" src="js/cander/monthPicker.js"></script>
+	<script>
+	</script>
+	<script type="text/javascript">
+		var dateRange = new pickerDateRange('date_demo3', {
+			aRecent7Days: 'aRecent7DaysDemo3', //最近7天
+			isTodayValid: false,
+			//startDate : '2013-04-14',
+			//endDate : '2013-04-21',
+			//needCompare : true,
+			//isSingleDay : true,
+			//shortOpr : true,
+			defaultText: ' 至 ',
+			inputTrigger: 'input_trigger_demo3',
+			theme: 'ta',
+			success: function(obj) {
+				$("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+				$("#mylogin").val(obj.startDate);
+				$("#myexit").val(obj.endDate);
+				var result = dateDiff(obj.startDate, obj.endDate);
+				$("#myorderday").html(result + "晚");
+				$(".index_list_calendar-box").css("display", "none");
+			}
+		});
+
+		//计算两个日期的天数差
+		function dateDiff(firstDate, secondDate) {
+			var firstDate = new Date(firstDate);
+			var secondDate = new Date(secondDate);
+			var diff = Math.abs(firstDate.getTime() - secondDate.getTime())
+			var result = parseInt(diff / (1000 * 60 * 60 * 24));
+			return result;
+		}
+	</script>
+	<script>
+		var jg1 = 60;
+		var jg2 = 1000;
+		layui.use('slider', function() {
+			var $ = layui.$,
+				slider = layui.slider;
+			//开启范围选择
+			slider.render({
+				elem: '#slideTest9',
+				range: true, //范围选择
+				value: [60, 1000], //初始值
+				max: 1000, //最大值
+				change: function(vals) {
+					jg1 = vals[0];
+					jg2 = vals[1];
+					$('#test-slider-tips2').html('￥' + vals[0] + '  -  ' + '￥' + vals[1]);
+				}
+			});
+		});
+
+		//收藏
+		$(".homestay").on("click", ".collect_love", function() {
+			$.ajax({
+				type: "get",
+				url: "http://" + util_lly.getIpconfig() + ":8080/collectionsController/add_collection",
+				async: false,
+				data: {
+					haiId: $(this).data("love")
+				},
+				xhrFields: {
+					withCredentials: true
+				},
+				success: function(data) {
+					homeAllInformation();
+				}
+			});
+
+			//			if(!$(this).hasClass("collect_check_love")) {
+			//				$(this).addClass("collect_check_love")
+			//			} else {
+			//				$(this).removeClass("collect_check_love")
+			//			}
+			return false;
+		})
+
+		//筛选城市
+		$(".myplace").click(function() {
+			$(".t-left-place-xiala").css("display", "block");
+		})
+		$("#mylogin").click(function() {
+			$(".index_list_calendar-box").css("display", "block");
+		})
+		$(".tab-content").on("click", "li", function() {
+			var v = ($(this).find("a").get(0).innerHTML);
+			$("#myplaceval").val(v);
+			//商圈
+			circles();
+			HomeAllInformation_count()
+			homeAllInformation();
+			$(".t-left-place-xiala").css("display", "none");
+			return false;
+		});
+		$(".mypeople").click(function() {
+			$("#ruzhunum").fadeIn();
+		})
+		$(".mypeople").on("click", "li", function() {
+			$("#chosepeonum").val($(this).html());
+			$("#ruzhunum").fadeOut();
+			return false;
+		})
+
+		//显示信息
+		$(".showlibox").mouseenter(function() {
+			$(".hover-list").css("display", "block");
+		});
+
+		$(".hover-list").mouseleave(function() {
+			$(".hover-list").css("display", "none");
+		});
+	</script>
+	<!--登录-->
+	<link rel="stylesheet" type="text/css" href="../font-awesome-4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/public_css/login.css" />
+	<script src="../js/public_js/cander/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/public_js/loginHtml.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/public_js/login.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+
+	<script type="text/javascript">
+		//弹出/关闭登录页面
+		$("body").on("click", ".showlibox", function() {
+			$(".all").css("display", "block")
+		})
+
+		$(function() {
+			//跨域获取IP地址
+			//				ipconfig();
+			//判断登录状态
+			logon_status();
+			//国内热门
+			hotcity();
+			//位置
+			circles()
+			//房源
+			HomeAllInformation_count();
+			//			//房源数量
+			homeAllInformation();
+		})
+
+		//人数
+		var ruzhunum_r = '';
+		$("#ruzhunum ul li").click(function() {
+			ruzhunum_r = $(this).data("r");
+			HomeAllInformation_count()
+			homeAllInformation()
+		})
+		//关键词
+		$("#size").change(function() {
+			HomeAllInformation_count()
+			homeAllInformation();
+		})
+		//位置
+		var place = '';
+		$("body").on("click", ".place", function() {
+			place = $(this).attr("title");
+			$(".place").removeClass("place_pitch");
+			$(".di2 li").removeClass("place_pitch");
+
+			$(this).addClass("place_pitch");
+			$(this).closest("li").addClass("place_pitch");
+
+			$(".on_all_dp").addClass("on_all_s");
+			HomeAllInformation_count()
+			homeAllInformation()
+		})
+		$(".bux").click(function() {
+			place = '';
+			$(".on_all_dp").removeClass("on_all_s");
+			$(".place").removeClass("place_pitch");
+			$(".di2 li").removeClass("place_pitch");
+			HomeAllInformation_count()
+			homeAllInformation()
+		})
+		//设施
+		var HouseFacilitiesDetails = [];
+		$(".House_Facilities").click(function() {
+			HouseFacilitiesDetails = [];
+			$.each($('.House_Facilities:checked'), function(i, obj) {
+				HouseFacilitiesDetails[i] = $(this).val();
+			});
+			HomeAllInformation_count()
+			homeAllInformation();
+		})
+		//排序
+		var sorts = 0;
+		$(".sortType").click(function() {
+			sorts = $(this).data("sort");
+			$(".sortType").removeClass("Tsort");
+			$(this).addClass("Tsort");
+			homeAllInformation();
+		})
+		var page = '';
+		var limit = '';
+
+		function HomeAllInformation_count() {
+			//房源数量
+			$.ajax({
+				type: "get",
+				url: "http://" + util_lly.getIpconfig() + ":8080/HomeAllInformation/select_HomeAllInformation_count",
+				async: false,
+				data: {
+					hsCity: $("#myplaceval").val(), //目的地
+					hdLiveNumber: ruzhunum_r, //入住人数
+					hSite: $("#size").val(), //关键字
+					htName: house, //房型
+					hsSite: place, //位置
+					haBedroom: houses, //户型
+					hpPrice1: jg1, //价格一
+					hpPrice2: jg2, //价格二
+					hfdId: HouseFacilitiesDetails, //设施
+				},
+				traditional: true, //防止深度序列化【传数组必带】
+				contentType: "application/json;charset=utf-8",
+				dataType: "json",
+				xhrFields: {
+					withCredentials: true
+				},
+				success: function(data) {
+					//分页
+					layui.use('laypage', function() {
+						var laypage = layui.laypage;
+						laypage.render({
+							elem: 'demo1',
+							count: data, //数据总数
+							limit: 12,
+							jump: function(obj) {
+								page = obj.curr;
+								limit = obj.limit;
+								homeAllInformation();
+							}
+						});
+					});
+				}
+			});
+		}
+
+		//查询房源
+		function homeAllInformation() {
+			$.ajax({
+				type: "get",
+				url: "http://" + util_lly.getIpconfig() + ":8080/HomeAllInformation/select_multi_HomeAllInformation",
+				async: false,
+				data: {
+					hsCity: $("#myplaceval").val(), //目的地
+					hdLiveNumber: ruzhunum_r, //入住人数
+					hSite: $("#size").val(), //关键字
+					htName: house, //房型
+					hsSite: place, //位置
+					haBedroom: houses, //户型
+					hpPrice1: jg1, //价格一
+					hpPrice2: jg2, //价格二
+					hfdId: HouseFacilitiesDetails, //设施
+					page: page,
+					limit: limit,
+					sort: sorts
+				},
+				traditional: true, //防止深度序列化【传数组必带】
+				contentType: "application/json;charset=utf-8",
+				dataType: "json",
+				xhrFields: {
+					withCredentials: true
+				},
+				success: function(data) {
+					console.log(data);
+					$(".homestay-fl").html("");
+					$.each(data, function(i, obj) {
+						console.log("-----");
+						console.log(obj.housedetails.houseapartment.haBedroom)
+						//获取评论数量
+						var evaluate = 0;
+						$.ajax({
+							type: "post",
+							url: "http://" + util_lly.getIpconfig() + ":8080/evaluateController/select_evaluate_count",
+							async: false,
+							data: {
+								haiid: obj.haiId
+							},
+							success: function(data) {
+								if(data != null) {
+									evaluate = data;
+								}
+
+							}
+						});
+						//房屋图片
+						var select_all_img = '';
+						$.ajax({
+							type: "post",
+							url: "http://" + util_lly.getIpconfig() + ":8080/pictureController/select_all_img",
+							async: false,
+							data: {
+								haiId: obj.haiId
+							},
+							success: function(data) {
+								if(data.length > 0) {
+									select_all_img = data[0].pUrl;
+								}
+
+							}
+						});
+						//判断用户是否收藏该房源
+						var collection_id = '';
+						$.ajax({
+							type: "get",
+							url: "http://" + util_lly.getIpconfig() + ":8080/collectionsController/select_ui_collection",
+							async: false,
+							data: {
+								haiId: obj.haiId
+							},
+							xhrFields: {
+								withCredentials: true
+							},
+							success: function(data) {
+								if(data > 0) {
+									collection_id = "collect_check_love"
+								}
+							}
+						});
+
+						$(".homestay-fl").append('<div class="oneroominfo" data-haiId="' + obj.haiId + '">' +
+							'<a class="homestay-fl-left homestay-relave radius-12 w248 mr20 mt20"  href="../miqi_pc_xiang_qing.html?haiId=' + obj.haiId + '"  _mayi_rp="webindex|lvxing1|lyf">' +
+							'	<img class="surprice" src="img/select/level9-2_1.png" />' +
+							'	<div class="collect_love ' + collection_id + '" data-love="' + obj.haiId + '">' +
+							'	</div>' +
+							'	<img class="radius-12 lazy" src="img/select/G75KBH9HQEWXE45VU3RQYCSCHGEXCG.jpg_566x377c'+i+'.jpg" style="display: inline;">' +
+							'	<span class="f20 c_gray_dark fw600 three">￥' + obj.homeprice.hpPrice + '</span>' +
+							'</a>' +
+							'<div class="room-info">' +
+							'	<h2 class="fw700 hidden-txt">' + obj.housedecription.hdpName + '</h2>' +
+							'	<p class="c_orange f14">' +
+							'		<span class="c_orange_p">5.0分</span>' +
+							'		<span class="c_orange_p">完美!</span> ·' +
+							'		<span class="mr10">' + evaluate + '条评价</span>' +
+							'		<span class="mr10">·</span>' +
+							'		<span class="mr10">' + obj.housedetails.houseapartment.haBedroom + '居</span><span class="mr10">·</span>' +
+							'		<span class="mr10">可居住' + obj.housedetails.hdLiveNumber + '人</span>' +
+							'	</p>' +
+//							'	<img class="headimg fr circle" src="' + obj.userinformation.upicture + '" alt="头像">' +
+							'	<img class="headimg fr circle" src="../Picture/cgehp1cxdoxuq,q-aabd0owykf8682.jpg_150x150c.jpg" alt="头像">' +
+							'	<div class="room_intro_p">' +
+							'		<span class="biaoqian_style" style="background: rgba(255,205,76,0.25);color: #FA9A00;">速订</span>' +
+							'		<span class="biaoqian_style" style="background:#f4f4f4;">实拍</span>' +
+							'		<span class="biaoqian_style" style="background:#f4f4f4;"> 可做饭</span>' +
+							'	</div>' +
+							'</div>' +
+							'</div>');
+					});
+				},
+				error() {
+					console.log("错误")
+				}
+			});
+		}
+		//取消收藏
+		//			$("body").on("click",".collect_love",function(){
+		//				alert(1)
+		//			})
+		//收藏
+
+		//目的地
+		$('.letter').click(function() {
+			$("#cityselecttitleul li").removeClass('active');
+			$(this.parentNode).addClass('active');
+			$('#cityselectul').html('');
+			var lest = $(this).data("value").split('_');
+			$.each(lest, function(i, obj) {
+				select_geography(obj);
+			});
+		})
+		//查询目的地
+		function select_geography(obj) {
+			$.ajax({
+				type: "get",
+				url: "http://" + util_lly.getIpconfig() + ":8080/houseSite/select_geography",
+				async: false,
+				data: {
+					region: obj
+				},
+				success: function(data) {
+					$('#cityselectul').append('<span class="letters">' + obj + '</span>');
+					$.each(data, function(i, obj) {
+						$('#cityselectul').append('<li class="citylili">' +
+							'<a class="cityselecta" href="javascript:void(0)" title="' + obj.region + '" cityname="' + obj.region + '" >' + obj.region + '</a>' +
+							'</li>'
+						);
+					});
+				}
+			});
+		}
+		//位置
+		function circles() {
+			//商圈
+			$.ajax({
+				type: "get",
+				url: "http://" + util_lly.getIpconfig() + ":8080/circles/select_Circles",
+				async: true,
+				data: {
+					City: $("#myplaceval").val()
+				},
+				success: function(data) {
+					$("#circles").html("");
+					$.each(data, function(i, obj) {
+						if(i <= 100) {
+							$("#circles").append('' +
+								'<span>' +
+								'<a style="position:relative;" class="place" title="' + obj.name + '"  _mayi_rp="weblist|sem_condition|position0">' + obj.name + '</a>' +
+								'</span>');
+						}
+					});
+				}
+			});
+			//景点
+			$.ajax({
+				type: "get",
+				url: "http://" + util_lly.getIpconfig() + ":8080/scenic_spots/select_Scenic_spots",
+				async: true,
+				data: {
+					City: $("#myplaceval").val()
+				},
+				success: function(data) {
+					$("#scenic_spots").html("");
+					$.each(data, function(i, obj) {
+						$("#scenic_spots").append('' +
+							'<span>' +
+							'<a style="position:relative;" class="place" title="' + obj.ssTitle + '"  _mayi_rp="weblist|sem_condition|position0">' + obj.ssTitle + '</a>' +
+							'</span>');
+					});
+				}
+			});
+			//高校
+			$.ajax({
+				type: "get",
+				url: "http://" + util_lly.getIpconfig() + ":8080/college/select_College",
+				async: true,
+				data: {
+					City: $("#myplaceval").val()
+				},
+				success: function(data) {
+					$("#college").html("");
+					$.each(data, function(i, obj) {
+						$("#college").append('<span>' +
+							'<a style="position:relative;" class="place" title="' + obj.coSchool + '" _mayi_rp="weblist|sem_condition|position0">' + obj.coSchool + '</a>' +
+							'</span>');
+					});
+				}
+			});
+		}
+
+		window.callback = function(res) {
+			if(res.ret === 0) {
+				$("#TencentCaptcha").html("验证成功");
+				$("#TencentCaptcha").css("background-color", "darkcyan");
+				$("#TencentCaptcha").css("color", "#fff")
+				$("#TencentCaptcha").prop('disabled', 'disabled');
+			}
+		}
+
+		//判断登录状态
+		function logon_status() {
+			$.ajax({
+				type: "get",
+				url: "http://" + util_lly.getIpconfig() + ":8080/UserInformation/logon_status",
+				async: false,
+				contentType: "application/json;charset=utf-8",
+				dataType: "json",
+				xhrFields: {
+					withCredentials: true
+				},
+				success: function(data) {
+					console.log(data)
+					if(data != null) {
+						$(".showlibox").prepend('' +
+							'<div class="login_ok"  style="width: 100px;">' +
+//							'	<img src="' + data.upicture + '" class="user_img"/>' +
+							'	<img src="../Picture/cgehp1cxdoxuq,q-aabd0owykf8682.jpg_150x150c.jpg" class="user_img"/>' +
+							'	<span class="user_name">' + data.uNickName + '</span>' +
+							'</div>');
+						HomeAllInformation_count();
+						homeAllInformation();
+					} else {
+						$(".showlibox").prepend('<button id="btnLogin">登录/注册</button>');
+					}
+				},
+				error() {
+					console.log("错误");
+				}
+
+			});
+		}
+
+		//登录
+		$("#register02").click(function() {
+			$.ajax({
+				type: "get",
+				url: "http://" + util_lly.getIpconfig() + ":8080/UserInformation/users_login",
+				async: true,
+				data: {
+					uPhone: $("#uid").val(),
+					uPassword: $("#pwd").val()
+				},
+				contentType: "application/json;charset=utf-8",
+				dataType: "json",
+				xhrFields: {
+					withCredentials: true
+				},
+				success: function(data) {
+					if(data > 0) {
+						$("#loginshow").css("display", "none");
+						$(".all").css("display", "none");
+						logon_status();
+					} else {
+						$("#logging_status").html("用户名或密码错误");
+					}
+				}
+			});
+		})
+
+		//登录与未登录的切换
+		function islogin(data) {
+			$(".showlibox").prepend('' +
+				'<div class="showinfo">' +
+				'<a target="_self"><img src="' + data.upicture + '"  class="user_img">' +
+				'	<span class="name" id="head_nickname">' + data.uNickName + '</span></a>' +
+				'<div class="head_pop">' +
+				'	<div class="pop_column">' +
+				'		<p>' +
+				'			<a  target="_self"  rel="nofollow">我的订单</a>' +
+				'		</p>' +
+				'		<p>' +
+				'			<a  target="_self" rel="nofollow" class="slideactive">我的账户</a>' +
+				'		</p>' +
+				'		<p>' +
+				'			<a  target="_self"  rel="nofollow">我的收藏</a>' +
+				'		</p>' +
+				'		<p>' +
+				'			<a  target="_self"  rel="nofollow">消息通知</a>' +
+				'		</p>' +
+				'		<p class="Invite_friends">邀请好友</p>' +
+				'		<p class="textCt">' +
+				'			<a id="loginoutbut" target="_self" class="stclick" clicktag="1_6">退出登录</a>' +
+				'		</p>' +
+				'	</div>' +
+				'</div>' +
+				'</div>');
+		}
+
+		//登录后的房东管理
+		function s_islandlord() {
+			$(".logon_status").after('' +
+				'<li>' +
+				'<div class="showinfo">' +
+				'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html" target="_self" class="stclick">我是房东</a>' +
+				'<div class="head_pop">' +
+				'<div class="pop_column plr10">' +
+				'<p>' +
+				'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanOrder_list.html">订单管理</a>' +
+				'</p>' +
+				'<p>' +
+				'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanHoures.html">房源管理</a>' +
+				'</p>' +
+				'<p>' +
+				'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanComments.html">点评管理</a>' +
+				'</p>' +
+				'<p>' +
+				'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/miqi_hyw/tujia_webui/tujia_fwMain.html?iframecontent=tujia_fwGuanLi.html?iframeRight=tujia_guanHourse_price.html">价格管理</a>' +
+				'</p>' +
+				'<p>' +
+				'<a href="">关注房东微信</a>' +
+				'</p>' +
+				'<p>' +
+				'<a href="">下载APP</a>' +
+				'</p>' +
+				'<p hidden="" id="s_micro" style="display: block;">' +
+				'<a href="/user/landlord/microshopmanager/">房东微店</a>' +
+				'</p>' +
+				'<p>' +
+				'<a href="http://127.0.0.1:8020/MiQiHome_PC_1.2/homestay2_wym/index.html">我的设置</a>' +
+				'</p>' +
+				'</div>' +
+				'</div>' +
+				'</div>' +
+				'</li>');
+		}
+
+		function hotcity() {
+			$('#cityselectul').html('');
+			$('#cityselectul').append('' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="北京" cityname="北京" surl="/beijing" citypinyin="beijing">北京</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="上海" cityname="上海" surl="/shanghai" citypinyin="shanghai">上海</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="三亚" cityname="三亚" surl="/sanya" citypinyin="sanya">三亚</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="成都" cityname="成都" surl="/chengdu" citypinyin="chengdu">成都</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="青岛" cityname="青岛" surl="/qingdao" citypinyin="qingdao">青岛</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="广州" cityname="广州" surl="/guangzhou" citypinyin="guangzhou">广州</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="杭州" cityname="杭州" surl="/hangzhou" citypinyin="hangzhou">杭州</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="大连" cityname="大连" surl="/dalian" citypinyin="dalian">大连</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="苏州" cityname="苏州" surl="/suzhou" citypinyin="suzhou">苏州</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="香港" cityname="香港" surl="/xianggang" citypinyin="xianggang">香港</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="秦皇岛" cityname="秦皇岛" surl="/qinhuangdao" citypinyin="qinhuangdao">秦皇岛</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="西安" cityname="西安" surl="/xian" citypinyin="xian">西安</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="威海" cityname="威海" surl="/weihai" citypinyin="weihai">威海</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="深圳" cityname="深圳" surl="/shenzhen" citypinyin="shenzhen">深圳</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="哈尔滨" cityname="哈尔滨" surl="/haerbin" citypinyin="haerbin">哈尔滨</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="昆明" cityname="昆明" surl="/kunming" citypinyin="kunming">昆明</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="重庆" cityname="重庆" surl="/chongqing" citypinyin="chongqing">重庆</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="南京" cityname="南京" surl="/nanjing" citypinyin="nanjing">南京</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="武汉" cityname="武汉" surl="/wuhan" citypinyin="wuhan">武汉</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="济南" cityname="济南" surl="/jinan" citypinyin="jinan">济南</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="天津" cityname="天津" surl="/tianjin" citypinyin="tianjin">天津</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="沈阳" cityname="沈阳" surl="/shenyang" citypinyin="shenyang">沈阳</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="厦门" cityname="厦门" surl="/xiamen" citypinyin="xiamen">厦门</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="长沙" cityname="长沙" surl="/changsha" citypinyin="changsha">长沙</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="郑州" cityname="郑州" surl="/zhengzhou" citypinyin="zhengzhou">郑州</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="石家庄" cityname="石家庄" surl="/shijiazhuang" citypinyin="shijiazhuang">石家庄</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="海口" cityname="海口" surl="/haikou" citypinyin="haikou">海口</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="北海" cityname="北海" surl="/beihai" citypinyin="beihai">北海</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="珠海" cityname="珠海" surl="/zhuhai" citypinyin="zhuhai">珠海</a>' +
+				'</li>' +
+				'<li class="citylili">' +
+				'	<a class="cityselecta" href="javascript:void(0)" title="长春" cityname="长春" surl="/changchun" citypinyin="changchun">长春</a>' +
+				'</li>'
+			);
+		}
+
+		$('#hotcity').click(function() {
+			$("#cityselecttitleul li").removeClass('active');
+			$(this.parentNode).addClass('active');
+			hotcity();
+		})
+
+		//房型
+		var house = '';
+		var houses = '';
+		layui.use('form', function() {
+			var form = layui.form;
+			//房型
+			form.on('radio(houseType)', function(data) {
+
+				//			  		if(data.value!="on"){
+				house = data.value;
+				//				  		console.log(house)
+
+				//			  		}
+				HomeAllInformation_count()
+				homeAllInformation();
+			});
+			//户型
+			form.on('radio(house)', function(data) {
+				houses = data.value;
+				HomeAllInformation_count();
+				homeAllInformation();
+			});
+
+		});
+	</script>
+	<!--登录end-->
+
+</html>

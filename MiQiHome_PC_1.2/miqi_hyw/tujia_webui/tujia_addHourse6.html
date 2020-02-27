@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>房屋照片</title>
+
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../../js/layui-2.4.5/dist/css/layui.css"/>
+		<style>
+			.black_overlay {
+				display: none;
+				position: absolute;
+				top: 0%;
+				left: 0%;
+				width: 100%;
+				height: 200%;
+				background-color: black;
+				z-index: 1001;
+				-moz-opacity: 0.8;
+				opacity: .80;
+				filter: alpha(opacity=88);
+			}
+			
+			.white_content {
+				display: none;
+				position: absolute;
+				top: 0%;
+				left: 15%;
+				;
+				padding: 20px;
+				z-index: 1002;
+				overflow: auto;
+			}
+			
+			input[type=file] {
+				width: 220px;
+				height: 140px;
+			}
+			.uploading_List{    
+				border: 1px dashed darkgray;
+			    height: 145px;
+			    width: 214px;
+			    background: none;
+			    float: left;
+			    font-size: 70px;
+			    color: darkgray;
+				margin: 0 15px 15px 0;
+			}
+			.uploading_List:hover{
+				border: 1px dashed royalblue;
+			    color: royalblue;
+			}
+			.demo{
+				float: left;
+			}
+			.demo img{
+			    height: 145px;
+			    width: 214px;
+				margin: 0 15px 15px 0;
+			}
+			.del_picture{
+				position: absolute;
+			    margin-left: -40px;
+			    margin-top: 5px;
+			    background: darkgray;
+			    display: inline-block;
+			    width: 20px;
+			    height: 20px;
+			    border-radius: 50px;
+			    text-align: center;
+			    line-height: 20px;
+			    color: azure;
+			    cursor: pointer;
+			}
+			.del_picture:hover{
+			    background: red;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<!--6、房屋照片-->
+		<div class="con_floor4 border">
+			<div class="right_tit">
+				<h1 class="right_tith1">房屋照片</h1>
+							<h2 class="right_tith2" >上传真实、漂亮的房屋照片更能吸引房客</h2>
+						</div>
+						<div >
+							<div class="floor4_warpper_margin" style="padding-bottom: 50px;">
+								<form>
+									<div class="">
+										<div class="floor6_msg">
+											<div class="floor6_msg2">
+												<p>照片需满足以下类型</p>
+												<p class="fontSize12 floor6_margin_right">
+												</p>
+												<p class="fontSize12 spanColor">
+													<span>请保证上传的图片高清、无水印、无logo和联系方式；为了避免房屋图片与户型不符产生客诉，请根据所选户型上传。</span><br />
+													<span>如未找到图片所属类型，可返回房屋详情修改户型信息</span>
+												</p>
+											</div>
+											
+										</div>
+										
+										<div class="floor6_msg3">
+											<ul class="floor6_ul">	
+											</ul>
+										</div>
+									
+										<div class="floor6_li_tit " >
+											<div class="floor6_msg  floor6_margin" style="height: 1px;padding: 0;background: #DDD;"></div>											
+										</div>
+										<div style="float: right;">
+											<a class="btn btn-primary nextbtn" name="addHourse">下一步</a>
+											<!--<input type="button" class="btn btn-primary nextbtn" value="下一步"/>-->
+										</div>
+									</div>
+									
+								</form>
+							</div>
+						</div>
+					</div>
+					<script src="../js/jquery-1.11.3.js"></script>
+					<script src="../../js/layui-2.4.5/dist/layui.all.js" type="text/javascript" charset="utf-8"></script>
+					<script src="../../js/layui-2.4.5/dist/layui.js" type="text/javascript" charset="utf-8"></script>
+					<script type="text/javascript">
+						$(function(){
+							//ip
+						  	ipconfig()
+						  	//
+						  	select_houseApartment()
+						  	//
+						  	select_picture()
+						})
+						function select_picture(){
+							$.ajax({
+								type:"post",
+								url:"http://" + ip + ":8080/pictureTypeController/select_pictureType_by_haiId",
+								async:false,
+								data:{
+									haild:GetRequest("haiid")
+								},
+								success:function(data){
+									$.each(data, function(i,obj) {
+										console.log(obj)
+										if(obj.ptName=="卧室"){
+											$.each(obj.pictures, function(i,obj) {
+												$('#demo1').append('<img src="http://' + ip + ':8080/'+ obj.pUrl +'" alt="'+ obj.pUrl +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+											});
+										}if(obj.ptName=="卫生间"){
+											$.each(obj.pictures, function(i,obj) {
+												$('#demo2').append('<img src="http://' + ip + ':8080/'+ obj.pUrl +'" alt="'+ obj.pUrl +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+											});
+											
+										}if(obj.ptName=="客厅"){
+											$.each(obj.pictures, function(i,obj) {
+												$('#demo3').append('<img src="http://' + ip + ':8080/'+ obj.pUrl +'" alt="'+ obj.pUrl +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+											});
+											
+										}if(obj.ptName=="厨房"){
+											$.each(obj.pictures, function(i,obj) {
+												$('#demo4').append('<img src="http://' + ip + ':8080/'+ obj.pUrl +'" alt="'+ obj.pUrl +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+											});
+											
+										}if(obj.ptName=="书房"){
+											$.each(obj.pictures, function(i,obj) {
+												$('#demo5').append('<img src="http://' + ip + ':8080/'+ obj.pUrl +'" alt="'+ obj.pUrl +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+											});
+											
+										}if(obj.ptName=="阳台"){
+											$.each(obj.pictures, function(i,obj) {
+												$('#demo6').append('<img src="http://' + ip + ':8080/'+ obj.pUrl +'" alt="'+ obj.pUrl +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+											});
+										}
+									});
+								}
+							});
+								
+						}
+						function select_houseApartment(){
+							$.ajax({
+								type:"get",
+								url:"http://" + ip + ":8080/houseBed/select_houseApartment",
+								async:false,
+								data:{
+									haiid:GetRequest("haiid")
+								},
+								success:function(data){
+									if(data.data.haBedroom>0){				//卧室
+										var objectList=new Array();
+										objectList.push('卧室');
+										objectList.push(GetRequest("haiid"));
+										$.ajax({
+											type:"post",
+											url:"http://" + ip + ":8080/pictureTypeController/insert_pictureType",
+											async:false,
+											data:JSON.stringify(objectList),
+											contentType:"application/json;charset=utf-8",
+											success:function(data){
+												$(".floor6_ul").append(''
+														+'<li>'
+														+'	<div class="floor6_li_tit " >'
+														+'		<div class="">'
+														+'			<div class="floor6_msg floor6_msg3 floor6_margin">'
+														+'				<p class="">'
+														+'					<label>卧室</label>'
+														+'					<span class="fontSize12 spanColor">1/20</span>	'															
+														+'				</p>'
+														+'				<p>'
+														+'					<span class="floor6_tt">至少上传1张，展现完整床铺</span>	'														
+														+'				</p>'
+														+'				<span onclick ="openDialog()" id="example_photo1" class="floor6_shilitu" >示例图</span>'
+														+'				<div id="light" class="white_content">'
+														+'					<img src="../img/house/201809191543399865.jpg"/>'
+														+'					  <a href = "javascript:void(0)" onclick = "closeDialog()">点这里关闭本窗口</a>'
+														+'				</div>'
+														+'				<div id="fade" class="black_overlay"></div>'
+														+'			</div>		'													
+														+'		</div>		'												
+														+'	</div>'
+														+'	<div class="floor6_image">'
+														+'		<div class="layui-upload">'
+														+'		    <div id="demo1" class="demo">'
+														+'		  		<button type="button" class="uploading_List" id="test1" value="'+data+'">+</button> '
+														+'		    </div>'
+														+'		</div>'
+														+'	</div>'
+														+'</li>');
+														//文件上传
+														layui.use('upload', function(){
+														  var $ = layui.jquery
+														  ,upload = layui.upload;
+														  
+														  //1
+														  upload.render({
+														    elem: '#test1'
+														    ,url: "http://" + ip + ":8080/pictureController/insert_picture"
+														    ,multiple: true
+														    ,data:{
+														    	ptId:$("#test1").val()
+														    }
+														    ,before: function(obj){
+														      //预读本地文件示例，不支持ie8
+														      obj.preview(function(index, file, result){
+														        $('#demo1').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+														      });
+														    }
+														    ,done: function(res){
+														    	console.log(res)
+														      //上传完毕
+														    }
+														  });
+														});		
+														
+											}
+										});
+										$(".floor6_margin_right").append("<span>卧室：1张</span>");
+									}
+									if(data.data.haBathroom>0){	//卫生
+										
+										var objectList=new Array();
+										objectList.push('卫生间');
+										objectList.push(GetRequest("haiid"));
+										$.ajax({
+											type:"post",
+											url:"http://" + ip + ":8080/pictureTypeController/insert_pictureType",
+											async:false,
+											data:JSON.stringify(objectList),
+											contentType:"application/json;charset=utf-8",
+											success:function(data){
+												$(".floor6_ul").append(''
+												+'<li>'
+												+'	<div class="floor6_li_tit " >'
+												+'		<div class="">'
+												+'			<div class="floor6_msg floor6_msg3 floor6_margin">'
+												+'				<p class="">'
+												+'					<label>卫生间</label>'
+												+'					<span class="fontSize12 spanColor">1/20</span>	'															
+												+'				</p>'
+												+'				<p>'
+												+'					<span class="floor6_tt">至少上传1张，卫浴设施完整，地面整洁</span>	'														
+												+'				</p>'
+												+'				<span onclick ="openDialog()" id="example_photo1" class="floor6_shilitu" >示例图</span>'
+												+'				<div id="light" class="white_content">'
+												+'					<img src="../img/house/201809191543399865.jpg"/>'
+												+'					  <a href = "javascript:void(0)" onclick = "closeDialog()">点这里关闭本窗口</a>'
+												+'				</div>'
+												+'				<div id="fade" class="black_overlay"></div>'
+												+'			</div>		'													
+												+'		</div>		'												
+												+'	</div>'
+												+'	<div class="floor6_image">'
+												+'		<div class="layui-upload">'
+												+'		    <div id="demo2" class="demo">'
+												+'		  		<button type="button" class="uploading_List" id="test2" value="'+data+'">+</button> '
+												+'		    </div>'
+												+'		</div>'
+												+'	</div>'
+												+'</li>')
+												//文件上传
+												layui.use('upload', function(){
+												  var $ = layui.jquery
+												  ,upload = layui.upload;
+												  //2
+												  upload.render({
+												    elem: '#test2'
+												    ,url: "http://" + ip + ":8080/pictureController/insert_picture"
+												    ,multiple: true
+												    ,data:{
+												    	ptId:$("#test2").val()
+												    }
+												    ,before: function(obj){
+												      //预读本地文件示例，不支持ie8
+												      obj.preview(function(index, file, result){
+												        $('#demo2').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+												      });
+												    }
+												    ,done: function(res){
+												    	console.log(res)
+												      //上传完毕
+												    }
+												  });
+												  
+												});		
+											}
+										});
+										
+										$(".floor6_margin_right").append("<span>卫生间：1张</span>");
+										
+									}
+									if(data.data.haLounage>0){				//客厅
+										
+										var objectList=new Array();
+										objectList.push('客厅');
+										objectList.push(GetRequest("haiid"));
+										$.ajax({
+											type:"post",
+											url:"http://" + ip + ":8080/pictureTypeController/insert_pictureType",
+											async:false,
+											data:JSON.stringify(objectList),
+											contentType:"application/json;charset=utf-8",
+											success:function(data){
+												$(".floor6_ul").append(''
+												+'<li>'
+												+'	<div class="floor6_li_tit " >'
+												+'		<div class="">'
+												+'			<div class="floor6_msg floor6_msg3 floor6_margin">'
+												+'				<p class="">'
+												+'					<label>客厅</label>'
+												+'					<span class="fontSize12 spanColor">1/20</span>	'															
+												+'				</p>'
+												+'				<p>'
+												+'					<span class="floor6_tt">至少上传1张，尽量显示配套设施（空调、电视等）及客厅全景</span>	'														
+												+'				</p>'
+												+'				<span onclick ="openDialog()" id="example_photo1" class="floor6_shilitu" >示例图</span>'
+												+'				<div id="light" class="white_content">'
+												+'					<img src="../img/house/201809191543399865.jpg"/>'
+												+'					  <a href = "javascript:void(0)" onclick = "closeDialog()">点这里关闭本窗口</a>'
+												+'				</div>'
+												+'				<div id="fade" class="black_overlay"></div>'
+												+'			</div>		'													
+												+'		</div>		'												
+												+'	</div>'
+												+'	<div class="floor6_image">'
+												+'		<div class="layui-upload">'
+												+'		    <div id="demo3" class="demo">'
+												+'		  		<button type="button" class="uploading_List" id="test3" value="'+data+'">+</button> '
+												+'		    </div>'
+												+'		</div>'
+												+'	</div>'
+												+'</li>')
+												//文件上传
+												layui.use('upload', function(){
+												  var $ = layui.jquery
+												  ,upload = layui.upload;
+												  //3
+												  upload.render({
+												    elem: '#test3'
+												    ,url: "http://" + ip + ":8080/pictureController/insert_picture"
+												    ,multiple: true
+												    ,data:{
+												    	ptId:$("#test3").val()
+												    }
+												    ,before: function(obj){
+												      //预读本地文件示例，不支持ie8
+												      obj.preview(function(index, file, result){
+												        $('#demo3').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+												      });
+												    }
+												    ,done: function(res){
+												    	console.log(res)
+												      //上传完毕
+												    }
+												  });
+												  
+												});		
+											}
+										});
+										
+										$(".floor6_margin_right").append("<span>客厅：1张</span>");
+										
+									}
+									if(data.data.haKitchen>0){				//厨房
+										var objectList=new Array();
+										objectList.push('厨房');
+										objectList.push(GetRequest("haiid"));
+										$.ajax({
+											type:"post",
+											url:"http://" + ip + ":8080/pictureTypeController/insert_pictureType",
+											async:false,
+											data:JSON.stringify(objectList),
+											contentType:"application/json;charset=utf-8",
+											success:function(data){
+												$(".floor6_ul").append(''
+												+'<li>'
+												+'	<div class="floor6_li_tit " >'
+												+'		<div class="">'
+												+'			<div class="floor6_msg floor6_msg3 floor6_margin">'
+												+'				<p class="">'
+												+'					<label>厨房</label>'
+												+'					<span class="fontSize12 spanColor">1/20</span>	'															
+												+'				</p>'
+												+'				<p>'
+												+'					<span class="floor6_tt">至少上传1张，照片包含灶具和厨具</span>	'														
+												+'				</p>'
+												+'				<span onclick ="openDialog()" id="example_photo1" class="floor6_shilitu" >示例图</span>'
+												+'				<div id="light" class="white_content">'
+												+'					<img src="../img/house/201809191543399865.jpg"/>'
+												+'					  <a href = "javascript:void(0)" onclick = "closeDialog()">点这里关闭本窗口</a>'
+												+'				</div>'
+												+'				<div id="fade" class="black_overlay"></div>'
+												+'			</div>		'													
+												+'		</div>		'												
+												+'	</div>'
+												+'	<div class="floor6_image">'
+												+'		<div class="layui-upload">'
+												+'		    <div id="demo4" class="demo">'
+												+'		  		<button type="button" class="uploading_List" id="test4" value="'+data+'">+</button> '
+												+'		    </div>'
+												+'		</div>'
+												+'	</div>'
+												+'</li>')
+												//文件上传
+												layui.use('upload', function(){
+												  var $ = layui.jquery
+												  ,upload = layui.upload;
+												  //4
+												  upload.render({
+												    elem: '#test4'
+												    ,url: "http://" + ip + ":8080/pictureController/insert_picture"
+												    ,multiple: true
+												    ,data:{
+												    	ptId:$("#test4").val()
+												    }
+												    ,before: function(obj){
+												      //预读本地文件示例，不支持ie8
+												      obj.preview(function(index, file, result){
+												        $('#demo4').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+												      });
+												    }
+												    ,done: function(res){
+												    	console.log(res)
+												      //上传完毕
+												    }
+												  });
+												  
+												});		
+											}
+										});
+										
+										$(".floor6_margin_right").append("<span>厨房：1张</span>");
+										
+									}
+									if(data.data.haBookStudy>0){			//书房
+										
+										var objectList=new Array();
+										objectList.push('书房');
+										objectList.push(GetRequest("haiid"));
+										$.ajax({
+											type:"post",
+											url:"http://" + ip + ":8080/pictureTypeController/insert_pictureType",
+											async:false,
+											data:JSON.stringify(objectList),
+											contentType:"application/json;charset=utf-8",
+											success:function(data){
+												$(".floor6_ul").append(''
+												+'<li>'
+												+'	<div class="floor6_li_tit " >'
+												+'		<div class="">'
+												+'			<div class="floor6_msg floor6_msg3 floor6_margin">'
+												+'				<p class="">'
+												+'					<label>书房</label>'
+												+'					<span class="fontSize12 spanColor">1/20</span>	'															
+												+'				</p>'
+												+'				<span onclick ="openDialog()" id="example_photo1" class="floor6_shilitu" >示例图</span>'
+												+'				<div id="light" class="white_content">'
+												+'					<img src="../img/house/201809191543399865.jpg"/>'
+												+'					  <a href = "javascript:void(0)" onclick = "closeDialog()">点这里关闭本窗口</a>'
+												+'				</div>'
+												+'				<div id="fade" class="black_overlay"></div>'
+												+'			</div>		'													
+												+'		</div>		'												
+												+'	</div>'
+												+'	<div class="floor6_image">'
+												+'		<div class="layui-upload">'
+												+'		    <div id="demo5" class="demo">'
+												+'		  		<button type="button" class="uploading_List" id="test5" value="'+data+'">+</button> '
+												+'		    </div>'
+												+'		</div>'
+												+'	</div>'
+												+'</li>')
+												//文件上传
+												layui.use('upload', function(){
+												  var $ = layui.jquery
+												  ,upload = layui.upload;
+												  //5
+												  upload.render({
+												    elem: '#test5'
+												    ,url: "http://" + ip + ":8080/pictureController/insert_picture"
+												    ,multiple: true
+												    ,data:{
+												    	ptId:$("#test5").val()
+												    }
+												    ,before: function(obj){
+												      //预读本地文件示例，不支持ie8
+												      obj.preview(function(index, file, result){
+												        $('#demo5').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+												      });
+												    }
+												    ,done: function(res){
+												    	console.log(res)
+												      //上传完毕
+												    }
+												  });
+												  
+												});		
+											}
+										});
+										
+										$(".floor6_margin_right").append("<span>书房：1张</span>");
+										
+									}
+									if(data.data.haBalcony>0){				//阳台
+										
+										var objectList=new Array();
+										objectList.push('阳台');
+										objectList.push(GetRequest("haiid"));
+										$.ajax({
+											type:"post",
+											url:"http://" + ip + ":8080/pictureTypeController/insert_pictureType",
+											async:false,
+											data:JSON.stringify(objectList),
+											contentType:"application/json;charset=utf-8",
+											success:function(data){
+												$(".floor6_ul").append(''
+												+'<li>'
+												+'	<div class="floor6_li_tit " >'
+												+'		<div class="">'
+												+'			<div class="floor6_msg floor6_msg3 floor6_margin">'
+												+'				<p class="">'
+												+'					<label>阳台</label>'
+												+'					<span class="fontSize12 spanColor">1/20</span>	'															
+												+'				</p>'
+												+'				<span onclick ="openDialog()" id="example_photo1" class="floor6_shilitu" >示例图</span>'
+												+'				<div id="light" class="white_content">'
+												+'					<img src="../img/house/201809191543399865.jpg"/>'
+												+'					  <a href = "javascript:void(0)" onclick = "closeDialog()">点这里关闭本窗口</a>'
+												+'				</div>'
+												+'				<div id="fade" class="black_overlay"></div>'
+												+'			</div>		'													
+												+'		</div>		'												
+												+'	</div>'
+												+'	<div class="floor6_image">'
+												+'		<div class="layui-upload">'
+												+'		    <div id="demo6" class="demo">'
+												+'		  		<button type="button" class="uploading_List" id="test6" value="'+data+'">+</button> '
+												+'		    </div>'
+												+'		</div>'
+												+'	</div>'
+												+'</li>');
+												//文件上传
+												layui.use('upload', function(){
+												  var $ = layui.jquery
+												  ,upload = layui.upload;
+												  //6
+												  upload.render({
+												    elem: '#test6'
+												    ,url: "http://" + ip + ":8080/pictureController/insert_picture"
+												    ,multiple: true
+												    ,data:{
+												    	ptId:$("#test6").val()
+												    }
+												    ,before: function(obj){
+												      //预读本地文件示例，不支持ie8
+												      console.log(obj)
+												      obj.preview(function(index, file, result){
+												        $('#demo6').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img"><span class="del_picture" data-id="'+obj.pId+'">X</span>')
+												      });
+												    }
+												    ,done: function(res){
+//												    	console.log(res)
+												      //上传完毕
+												    }
+												  });
+												  
+												});		
+											}
+										});
+										
+										$(".floor6_margin_right").append("<span>阳台：1张</span>");
+										
+									}
+								}
+							});
+						}
+						  
+			$(".nextbtn").click(function(){
+				window.location="tujia_addHourse7.html?haiid="+GetRequest("haiid");
+			})
+			 
+			//根据id删除图片
+			$("body").on("click",".del_picture",function(){
+				var t=this;
+				if(confirm("你确定要删除吗？")){
+					$.ajax({
+						type:"post",
+						url:"http://" + ip + ":8080/pictureController/delete_picture",
+						async:true,
+						data:{
+							pId:$(this).data("id")
+						},
+						success:function(data){
+							$(t.previousElementSibling).remove()
+							$(t).remove()
+						}
+					});
+				}
+			})
+				  
+						  
+						  
+						  
+						  
+						  
+						 
+			 //获取id
+		    function GetRequest(s) {
+		        var url = location.search; 		//获取url中"?"符后的字串
+		        var theRequest = new Object();
+		
+		        if (url.indexOf("?") != -1) {
+		            var str = url.substr(1);
+		            strs = str.split("&");
+		            for (var i = 0; i < strs.length; i++) {
+		                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+		            }
+		        }
+		        if (s) {
+		            return theRequest[s];
+		        }
+		        return theRequest;
+		    } 
+						  
+			//获取IP地址
+			var ip='';
+			function ipconfig() {
+				$.ajax({
+					type: "get",
+					url: "../../js/ipconfig.json",
+					async: false,
+					success: function(data) {
+						ip = data.ip;
+					}
+				});
+			}
+						        function openDialog(){
+						            document.getElementById('light').style.display='block';
+						            document.getElementById('fade').style.display='block'
+						        }
+						        function closeDialog(){
+						            document.getElementById('light').style.display='none';
+						            document.getElementById('fade').style.display='none'
+						        }function openDialog2(){
+						            document.getElementById('light2').style.display='block';
+						            document.getElementById('fade2').style.display='block'
+						        }
+						        function closeDialog2(){
+						            document.getElementById('light2').style.display='none';
+						            document.getElementById('fade2').style.display='none'
+						        }
+					</script>
+					
+	</body>
+</html>

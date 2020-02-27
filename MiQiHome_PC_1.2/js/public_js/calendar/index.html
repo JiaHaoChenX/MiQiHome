@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/calendar-pro.css" />
+	</head>
+	<style type="text/css">
+		html,body{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        #div0{
+            width: 100%;
+            height: 100%;
+            background: #000;
+            margin: auto;
+            position: absolute;
+            left: 0;top: 0;bottom: 0;right: 0;
+            display: none;
+        }
+		#div_calendar{
+			/*width: 650px;
+			height: 450px;*/
+			width: 730px;
+			height: 510px;
+            margin: auto;
+            position: absolute;
+            left: 0;top: 0;bottom: 0;right: 0;
+			/*display: none;*/
+		}
+	</style>
+	<body>
+		<div>
+			<input type="button" value="弹出遮罩层" id="input1"/>
+		</div>
+		
+		<!-- 容器布局 -->
+		<div id="div0">
+			<div class="calendar-box demo-box" id="div_calendar"></div>
+		</div>
+		
+		<!--<button onclick="getActive()">获取选中日期值</button>-->
+	</body>
+	<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/calendar-pro.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$('.calendar-box').calendar({
+			ele : '.demo-box', //依附
+			title : '选择预约时间',
+			beginDate : '2017-10-07',
+			endDate : '2017-12-04',
+			data : [
+				{date:'2017-10-07',data:'107',dataState:'无房'},
+				{date:'2017-10-08',data:'108',dataState:'无房'},
+				{date:'2017-10-09',data:'109',dataState:'无房'},
+				{date:'2017-10-10',data:'110',dataState:'无房'},
+				{date:'2017-10-11',data:'111',dataState:'无房'},
+				{date:'2017-10-12',data:'112',dataState:'无房'},
+				{date:'2017-10-13',data:'113',dataState:'无房'},
+//				{date:'2017-10-14',data:'114'},
+				{date:'2017-10-15',data:'115',dataState:'无房'},
+				{date:'2017-10-16',data:'116',dataState:'剩余一套'},
+				{date:'2017-10-17',data:'117',dataState:'剩余一套'},
+				{date:'2017-10-18',data:'118',dataState:'剩余一套'},
+				{date:'2017-10-19',data:'119',dataState:'剩余一套'},
+				{date:'2017-10-20',data:'120',dataState:'剩余一套'},
+				{date:'2017-10-21',data:'121',dataState:'剩余一套'},
+				{date:'2017-10-22',data:'122',dataState:'剩余一套'},
+				{date:'2017-10-23',data:'123',dataState:'剩余一套'},
+				{date:'2017-10-24',data:'124',dataState:'剩余一套'},
+				{date:'2017-10-25',data:'125',dataState:'剩余一套'},
+				{date:'2017-10-26',data:'126',dataState:'剩余一套'},
+				{date:'2017-10-27',data:'127',dataState:'剩余一套'},
+				{date:'2017-10-28',data:'128',dataState:'剩余一套'},
+				{date:'2017-10-29',data:'129',dataState:'剩余一套'},
+//				{date:'2017-10-30',data:'130'},
+				{date:'2017-10-31',data:'131',dataState:'无房'},
+				{date:'2017-11-01',data:'101',dataState:'无房'},
+				{date:'2017-11-02',data:'102',dataState:'无房'},
+				{date:'2017-11-03',data:'103',dataState:'无房'},
+				{date:'2017-11-04',data:'104',dataState:'无房'},
+				{date:'2017-11-05',data:'105',dataState:'无房'},
+				{date:'2017-11-06',data:'106',dataState:'无房'},
+				{date:'2017-11-07',data:'107',dataState:'无房'},
+				{date:'2017-11-08',data:'108',dataState:'无房'},
+				{date:'2017-11-09',data:'109',dataState:'无房'},
+				{date:'2017-11-10',data:'110',dataState:'无房'},
+				{date:'2017-11-11',data:'111',dataState:'无房'},
+//				{date:'2017-11-12',data:'112'},
+				{date:'2017-11-13',data:'113',dataState:'剩余一套'},
+				{date:'2017-11-14',data:'114',dataState:'剩余一套'},
+				{date:'2017-11-15',data:'115',dataState:'剩余一套'},
+				{date:'2017-11-16',data:'116',dataState:'剩余一套'},
+				{date:'2017-11-17',data:'117',dataState:'剩余一套'},
+				{date:'2017-11-18',data:'118',dataState:'剩余一套'},
+				{date:'2017-11-19',data:'119',dataState:'剩余一套'},
+				{date:'2017-11-20',data:'120',dataState:'剩余一套'},
+				{date:'2017-11-21',data:'121',dataState:'剩余一套'},
+				{date:'2017-11-22',data:'122',dataState:'剩余一套'},
+				{date:'2017-11-23',data:'123',dataState:'剩余一套'},
+				{date:'2017-11-24',data:'124',dataState:'剩余一套'},
+//				{date:'2017-11-25',data:'125'},
+				{date:'2017-11-26',data:'126',dataState:'剩余一套'},
+				{date:'2017-11-27',data:'127',dataState:'剩余一套'},
+				{date:'2017-11-28',data:'128',dataState:'剩余一套'},
+				{date:'2017-11-29',data:'129',dataState:'剩余一套'},
+				{date:'2017-11-30',data:'130',dataState:'剩余一套'},
+				{date:'2017-12-01',data:'121',dataState:'剩余一套'},
+				{date:'2017-12-02',data:'122',dataState:'剩余一套'},
+				{date:'2017-12-03',data:'123',dataState:'剩余一套'},
+				{date:'2017-12-04',data:'124',dataState:'剩余一套'},
+			]
+		});
+		$("#input1").click(function(){
+            $("#div0").css("display","block");
+        });
+		/*function getActive(){
+			var data = $('.calendar-box').calendarGetActive();
+			console.log(data);
+			alert(data.date+"--¥"+data.money);
+		}*/
+	</script>
+</html>

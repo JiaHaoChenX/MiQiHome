@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    预定信息表
+    发布者：xyz
+-->
+
+<mapper namespace="com.miqi.miqihome.dao.IReserveDao"><!--接口名-->
+
+    <!--添加自增,把自增带入到对象中-->
+    <insert id="insertReserve" parameterType="Reserve" useGeneratedKeys="true" keyProperty="rvId" >
+       insert into reserve(rvSerialNumber,rvBelowOrder,rvStartTime,rvEndTime,rvTotalDay,rvHouseNumeb,rvSumMoney
+        ,rvPhone,uiId,rvInvoice,rvLiveNumber
+        <if test="rvPayState >0">
+            rvPayState,
+        </if>
+        <if test="rvHomeState >0">
+            rvHomeState,
+        </if>
+        ,haiId) values(#{rvSerialNumber},#{rvBelowOrder},
+        #{rvStartTime},#{rvEndTime},#{rvTotalDay},#{rvHouseNumeb},#{rvSumMoney},#{rvPhone},#{uiId},#{rvInvoice},#{rvLiveNumber},
+        <if test="rvPayState >0">
+            rvPayState=#{rvPayState},
+        </if>
+        <if test="rvHomeState >0">
+            rvHomeState=#{rvHomeState},
+        </if>
+        #{haiId})
+    </insert>
+
+    <!--修改日期价格-->
+    <update id="updateReserve" parameterType="Reserve">
+        update reserve
+         <set>
+             <if test="rvSerialNumber !=null and rvSerialNumber !=''">
+                 rvSerialNumber=#{rvSerialNumber},
+             </if>
+             <if test="rvBelowOrder !=null">
+                 rvBelowOrder=#{rvBelowOrder},
+             </if>
+             <if test="rvStartTime !=null">
+                 rvStartTime=#{rvStartTime},
+             </if>
+             <if test="rvEndTime !=null">
+                 rvEndTime=#{rvEndTime},
+             </if>
+             <if test="rvTotalDay >0">
+                 rvStartTime=#{rvStartTime},
+             </if>
+             <if test="rvHouseNumeb >0">
+                 rvHouseNumeb=#{rvHouseNumeb},
+             </if>
+             <if test="rvSumMoney >0">
+                 rvSumMoney=#{rvSumMoney},
+             </if>
+             <if test="uiId >0">
+                 uiId=#{uiId},
+             </if>
+             <if test="rvInvoice >0">
+                 rvInvoice=#{rvInvoice},
+             </if>
+             <if test="rvLiveNumber >0">
+                 rvLiveNumber=#{rvLiveNumber},
+             </if>
+             <if test="rvPayState >0">
+                 rvPayState=#{rvPayState},
+             </if>
+             <if test="rvHomeState >0">
+                 rvHomeState=#{rvHomeState},
+             </if>
+             <if test="haiId >0">
+                 haiId=#{haiId},
+             </if>
+             <if test="haiId >0">
+                 haiId=#{haiId},
+             </if>
+             <if test="rvPayState >0">
+                 rvPayState=#{rvPayState},
+             </if>
+             <if test="rvHomeState >0">
+                 rvHomeState=#{rvHomeState},
+             </if>
+         </set>
+         where rvId=#{rvId};
+    </update>
+
+    <sql id="integratedQuery">
+        <if test="uiId >=0 and uiId != null">
+            and uiId=#{uiId}
+        </if>
+        <if test="rvPayState >=0 and rvPayState != null">
+            and rvPayState=#{rvPayState}
+        </if>
+        <if test="rvHomeState >=0 and rvHomeState != null">
+            and rvHomeState=#{rvHomeState}
+        </if>
+        <if test="rvSerialNumber !=null and rvSerialNumber !='' ">
+            and rvSerialNumber=#{rvSerialNumber}
+        </if>
+    </sql>
+
+    <resultMap id="ReserveMap" type="Reserve">
+        <id column="rvId" property="rvId"></id>
+        <result column="rvSerialNumber" property="rvSerialNumber"></result>
+        <result column="rvBelowOrder" property="rvBelowOrder"></result>
+        <result column="rvStartTime" property="rvStartTime"></result>
+        <result column="rvEndTime" property="rvEndTime"></result>
+        <result column="rvTotalDay" property="rvTotalDay"></result>
+        <result column="rvTotalDay" property="rvTotalDay"></result>
+        <result column="rvHouseNumeb" property="rvHouseNumeb"></result>
+        <result column="rvSumMoney" property="rvSumMoney"></result>
+        <result column="uiId" property="uiId"></result>
+        <result column="rvInvoice" property="rvInvoice"></result>
+        <result column="rvLiveNumber" property="rvLiveNumber"></result>
+        <result column="rvPayState" property="rvPayState"></result>
+        <result column="rvHomeState" property="rvHomeState"></result>
+        <result column="haiId" property="haiId"></result>
+        <association property="houseDecription" javaType="Housedecription">
+            <id column="hdpId" property="hdpId"></id>
+            <result column="hdpName" property="hdpName"></result>
+        </association>
+    </resultMap>
+
+    <!--查询房屋的所有日期价格-->
+    <select id="selectReserves" parameterType="map" resultMap="ReserveMap" >
+        select rvId,rvSerialNumber,rvBelowOrder,rvStartTime,rvEndTime,rvTotalDay,rvHouseNumeb,rvSumMoney
+          ,uiId,rvInvoice,rvLiveNumber,rvPayState,rvHomeState,reserve.haiId,hdpId,hdpName from reserve
+          left join houseDecription on houseDecription.haiId=reserve.haiId
+          <where>
+              <include refid="integratedQuery"></include>
+          </where>
+          <if test="pageNumber>=0 and pageSize>0">
+              LIMIT #{pageNumber},#{pageSize}
+          </if>
+          ORDER by rvId desc
+    </select>
+
+    <!--获取综合查询数量-->
+    <select id="selectCount" parameterType="map" resultType="int">
+        select count(rvId) from reserve
+        <where>
+            <include refid="integratedQuery"></include>
+        </where>
+    </select>
+
+    <resultMap id="stateCount" type="Reserve">
+        <result column="homestateCount" property="rvPayState"></result>
+        <result column="rvHomeState" property="rvHomeState"></result>
+    </resultMap>
+
+    <!--查询房东各种状态数量-->
+    <select id="selectStateCount" resultMap="stateCount">
+        SELECT rvHomeState,COUNT(rvHomeState) homestateCount from reserve
+        where haiId in (select haiId from homeAllInformation where uiId =#{uiId} )
+        GROUP BY rvHomeState
+    </select>
+
+    <resultMap id="evaluateSum" type="Evaluate">
+        <id column="eIdCount" property="eId"></id>
+        <result column="hygieneSum" property="eHygiene"></result>
+        <result column="trafficSum" property="eTraffic"></result>
+        <result column="environmentalSum" property="eEnvironmental"></result>
+        <result column="serviceSum" property="eService"></result>
+        <result column="costperformanceSum" property="eCostPerformance"></result>
+    </resultMap>
+
+    <!--总查询-->
+    <select id="selectEvaluateSum" resultMap="evaluateSum">
+        select count(eId) eIdCount, sum(eHygiene) hygieneSum,sum(eTraffic) trafficSum
+        ,sum(eEnvironmental) environmentalSum,sum(eService) serviceSum
+        ,sum(eCostPerformance) costperformanceSum from evaluate
+        where haiId in (select haiId from homeAllInformation where uiId =#{uiId})
+    </select>
+
+    <!--根据房东编号查询房东-->
+    <select id="selectUserInformation" resultType="Userinformation">
+        select uiId,uNickName  from userInformation where uiId = #{uiId}
+    </select>
+    
+</mapper>

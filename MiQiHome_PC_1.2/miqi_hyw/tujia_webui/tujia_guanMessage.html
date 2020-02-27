@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>身份验证</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/dialog.css" />
+	</head>
+
+	<body>
+		<!--标题：短信-->
+		<div class="" style="overflow: hidden; ">
+			<div class="border_bottom" style="padding-bottom: 10px;font-size: 20px;">
+				<h4>短信
+					<span class="fontSize12 floor4_warpper_margin">（当前门店当月发送短信<em class="blue font_style">0</em>条，剩余 <em  class="blue font_style">300</em>条）</span>
+				</h4>
+			</div>
+			<div class="height_margin">
+				<ul class="coupon_tab verify_method">
+					<li>
+						<a href="##">发送短信</a>
+					</li>
+					<li>
+						<a href="##">短信记录</a>
+					</li>
+					<li>
+						<a href="##">充值</a>
+					</li>
+					<li>
+						<a href="##">设置</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<!--发送短信内容-->
+		<div class="border height_margin cardID_verigy" ">
+			<div >
+				<!--发送短信内容-->
+				<div class="msg_content " style="display: none; ">
+					<div class="height_margin ">
+						<label class="price-label msg_label_tit " >发送给：</label>
+						<div>
+							<textarea name=" " rows="5 " cols="55 " style="resize:none;font-size: 14px;padding: 20px;word-wrap: break-word; "></textarea>
+							<!--<p style="margin-left: 45px; "><a class="blue " style="cursor: pointer; " onclick="add_btn() "><span style="font-weight: bold;font-size: 20px;margin-top: 3px; ">+</span>添加</a></p>-->
+						</div>
+					</div>
+					<div class="height_margin ">
+						<label class="price-label msg_label_tit " style="margin-left: -10px; ">短信模板：</label>
+						<div>
+							<select class="form-control " style="border-radius: 0; ">
+								<option>选择模板</option>
+								<option>天气预报</option>
+								<option>客栈信息</option>
+								<option>客户回访</option>
+							</select>
+						</div>
+					</div>
+					<div class="height_margin ">
+						<label class="price-label msg_label_tit "  style="margin-left: -10px; " >短信内容：</label>
+						<div>
+							<textarea rows="3 " cols="55 " placeholder="暂未选择模板 " readonly="readonly " style="resize:none;font-size: 14px;padding: 20px;word-wrap: break-word; "></textarea>
+							 <!--placeholder="[北京天气]1月19日[【途家房东】190119094011] "-->
+							 <!--[北京天气]1月19日[【途家房东】190119094011]-->
+							 <p style="margin-left: 45px; "  class=" floor5_p_color ">您已输入<span >13</span>个字，选择<span>5</span>位收件人，<span>5</span>条短信计算</p>
+						</div>
+					</div>
+					<div class="center "><input style="width: 90px;border-radius: 0; " type="button " class="btn btn-primary " value="发送 " /></div>
+				</div>
+				
+				<!--短信记录-->
+				<div style="display: none;">
+					<div class="msg_history " >
+						<span style="margin-right: 30px; ">姓名/手机号：
+							<input type="text " class="form-control " name=" " id=" " value=" " />
+						</span>
+						<span >发送时间范围：
+							<input type="date" class="form-control " name=" " id=" " value=" " />
+							<span style="margin: 0 5px; ">至</span>
+							<input type="date" class="form-control " value=" " />
+							<input type="button " style="line-height: 12px;margin-top: -3px;width: 50px; " class="btn btn-primary " value="查询 " />
+						</span>
+						<p class="fontSize12 floor5_p_color height_margin ">共<span>0</span>条</p>
+					</div>
+					<div style="overflow: hidden;" class="border">
+						
+						<ul class="coupon_tab verify_method height_margin">
+							<li>
+								<a href="## ">手动短信</a>
+							</li>
+							<li>
+								<a href="## ">自动短信</a>
+							</li>
+						</ul>
+						<table class="table table-striped" >
+							<tbody class="border">
+							<tr>
+								<th>姓名 </th>
+								<th>手机号</th>
+								<th>短信名称</th>
+								<th>短信内容</th>
+								<th>发送时间</th>
+								<th>发送状态</th>
+							</tr>
+							<tr>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+				<!--设置-->
+				<div>
+					<div >
+						
+						<ul class="coupon_tab verify_method height_margin">
+							<li>
+								<a href="## ">手动短信</a>
+							</li>
+							<li>
+								<a href="## ">自动短信</a>
+							</li>
+						</ul>
+						<table  class="table table-striped" style="display: none;">
+							<tbody class="border">
+								<tr>
+									<th>短信名称</th>
+									<th style="width: 479px;text-align: left;">短信内容</th>
+									<th>操作</th>
+									<th>状态</th>
+								</tr>
+								<tr>
+									<td>入住同住</td>
+									<td style="text-align: left;">欢迎入住【途家房东】190119094011，地址：北京市北京，未填充，联系电话：15089418450；本店wifi账号：XXXXXXX，密码XXXXXX。温馨提示：XXXXXX订单信息：入住人****，入住时间*****，共**间夜，已为您安排***房间。</td>
+									<td><a class="blue">修改</a></td>
+									<td class="blue">审核通过</td>
+								</tr>
+								<tr>
+									<td>入住同住</td>
+									<td style="text-align: left;">欢迎入住【途家房东】190119094011，地址：北京市北京，未填充，联系电话：15089418450；本店wifi账号：XXXXXXX，密码XXXXXX。温馨提示：XXXXXX订单信息：入住人****，入住时间*****，共**间夜，已为您安排***房间。</td>
+									<td><a class="blue">修改</a></td>
+									<td class="blue">审核通过</td>
+								</tr>
+							</tbody>
+						</table>
+						<!--手动短信-->
+						<table  class="table table-striped" >
+							<tbody class="border">
+								<tr>
+									<th>短信名称</th>
+									<th style="width: 479px;text-align: left;">短信内容</th>
+									<th>操作</th>
+									<th>状态</th>
+								</tr>
+								<tr>
+									<td>天气预报</td>
+									<td style="text-align: left;">[北京天气]1月19日[【途家房东】190119094011]</td>
+									<td class="blue"><a class="floor4_warpper_margin">修改</a><a >删除</a></td>
+									<td class="blue">审核通过</td>
+								</tr>
+								<tr>
+									<td>客栈信息</td>
+									<td style="text-align: left;">【途家房东】190119094011，客栈位置：北京市北京，未填充, 联系电话：15089418450；公交路线：从xxxx乘车在xxxx下车。[【途家房东】190119094011静候您的光临]</td>
+									<td class="blue"><a class="floor4_warpper_margin">修改</a><a >删除</a></td>
+									<td class="blue">审核通过</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<script src="../js/jquery-1.11.3.js "></script>
+		<script src="../js/dialog.js "></script>
+		<script type="text/javascript ">
+			
+		function add_btn() {
+				var d = dialog({
+					title: '添加宾客',
+					fixed: true,
+					content: '<table class="table table-striped "><tr><th style="text-align: left; "><input type="checkbox " />姓名 </th><th>手机号</th><th>会员信息</th></tr></table>',
+					okValue: '确 定',
+					cancelValue: '取消',
+					width:800,
+					ok:function(){
+						
+					},
+					cancel:function(){
+						
+					}
+				});
+				d.show();
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,44 @@
+﻿.tese_tiyan li{
+    display: inline-block;
+    margin-top: 20px;
+}
+.tese_tiyan li img{
+    float: left;
+    padding-right: 40px;
+}
+.make_what{
+    font-size: 16px;
+    color: #2b2f33;
+}
+.make-detail{
+    font-size: 14px;
+    line-height: 21px;
+    color: #868686;
+    margin-top: 3px;
+    word-break: break-all; 
+}
+.tese_tiyan li span{
+   font-size: 16px;
+    display: inline-block;
+    margin-top: 18px;
+    height: 16px;
+    line-height: 16px;
+}
+.Col_fc5e56{
+    color: #fc5e56;
+}
+.mt25{
+    margin-top: 25px;
+}
+.tiyan_addres{
+    margin-left: 40px;
+    border-right: 2px solid #868686;
+    padding-right: 5px;
+}
+.times-long{
+    padding-left: 3px;
+}
+.tiyan_addres,.times-long{
+    color: #868686;
+}
+

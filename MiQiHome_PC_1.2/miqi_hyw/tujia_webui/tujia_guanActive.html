@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>平台征集活动</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+	</head>
+
+	<body>
+		<div class="div3">
+			<div class="floor4_warpper_margin" style="overflow: hidden;">
+				<div class="border_bottom" style="padding-bottom: 10px;font-size: 20px;">
+					<h4>促销活动</h4>
+				</div>
+			</div>
+			<div class="floor4_warpper_margin sell_hourse_tabs">
+				
+				<div class="order_ul">
+					<ul class="order_content_ul active_ul">
+						<li class="active">全部</li>
+						<li>报名进行中</li>
+						<li>报名历史</li>
+					</ul>
+				</div>
+				<div class="">
+					<div>
+						<div class="no_active">
+							<img src="../img/icon/active.png"/>
+							<p >当前还没有任何活动</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				$("body").on("click", ".order_content_ul li", function() {
+
+					$(this).siblings('li').removeClass('active'); // 删除其他兄弟元素的样式
+
+					$(this).addClass('active'); // 添加当前元素的样式
+
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

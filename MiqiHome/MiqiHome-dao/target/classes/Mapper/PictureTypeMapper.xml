@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    发布者：one
+    命名空间应该是对应接口的包名+接口名
+-->
+
+<mapper namespace="com.miqi.miqihome.dao.IPictureTypeDao"><!--接口名-->
+
+    <!--
+         查询结果集合
+     -->
+    <resultMap id="select_pictureType_resultMap" type="Picturetype">
+        <id column="ptId" property="ptId"></id>
+        <result column="ptName" property="ptName"></result>
+        <result column="haiId" property="haiId"></result>
+        <association property="homeallinformation" javaType="Homeallinformation">
+            <id column="" property=""></id>
+            <result column="" property=""></result>
+        </association>
+        <!--一对多关系-->
+        <collection property="pictures" ofType="Picture">
+            <id column="pId" property="pId"></id>
+            <result column="pUrl" property="pUrl"></result>
+            <result column="pPagePicture" property="pPagePicture"></result>
+            <result column="ptId" property="ptId"></result>
+        </collection>
+    </resultMap>
+
+    <!--查询所有房屋图片表类型-->
+    <select id="select_all_pictureType" resultMap="select_pictureType_resultMap">
+         select * from picturetype as t join picture as p join homeAllInformation as h on t.haiId=h.haiId and t.ptId=t.ptId ;
+    </select>
+
+    <!--通过 主键 查询 单个房屋图片类型-->
+    <select id="select_pictureType_by_ptId" resultMap="select_pictureType_resultMap" parameterType="int">
+         select * from picturetype as t join picture as p join homeAllInformation as h on t.haiId=h.haiId and t.ptId=p.ptId  where t.ptId=#{ptId};
+    </select>
+
+    <!--通过 外键 查询单个房屋信息表的图片类型-->
+    <select id="select_pictureType_by_haiId" resultMap="select_pictureType_resultMap" parameterType="int">
+       select * from picturetype as t join picture as p join homeAllInformation as h on t.haiId=h.haiId and t.ptId=p.ptId  where t.haiId=#{haiId};
+    </select>
+
+    <!--判断存不存在-->
+    <select id="select_pictureType_haiId_ptName" resultType="int">
+          select count(*) from pictureType where ptName=#{ptName} and haiId=#{haiId};
+    </select>
+    <!--存在操作-->
+    <select id="select_pictureType" resultType="picturetype">
+        select * from pictureType where  ptName=#{ptName} and haiId=#{haiId};
+    </select>
+    <!--新增-->
+    <insert id="insert_pictureType" parameterType="Picturetype">
+        <selectKey keyProperty="ptId" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+        insert into picturetype(ptName,haiId) values (#{ptName},#{haiId});
+    </insert>
+
+    <!--修改-->
+    <update id="update_pictureType" parameterType="java.util.Map">
+        update picturetype
+        <set>
+            <if test="ptName!=null and ptName!=''">
+                ptName=#{ptName},
+            </if>
+            <if test="haiId!=null and haiId gt 0">
+                haiId=#{haiId}
+            </if>
+        </set>
+        <where>
+            ptId=#{ptId}
+        </where>
+    </update>
+
+</mapper>

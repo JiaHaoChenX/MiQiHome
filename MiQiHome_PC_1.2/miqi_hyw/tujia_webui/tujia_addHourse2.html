@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>房屋详情</title>
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia01.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/tujia02.css" />
+		<link rel="stylesheet" type="text/css" href="../css/trcss/bootstrap.css" />
+
+		<script src="../js/tujia.js"></script>
+		<style>
+			.xiang_span-span1 {
+				vertical-align: middle ;
+			}
+			.aaa{
+				
+				background:#F3F5FF !important;
+				border:1px solid #6e80e !important;
+				color:#6e80e3 !important;
+				background-position:-675px -478px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!--2、房屋详情-->
+		<div class="con_floor2 border" id="div02">
+			<div class="right_tit">
+				<h1 class="right_tith1">房屋详情</h2>
+							<h2 class="right_tith2">客房一般根据房型、户型等信息，选择合适的房屋。</h3>			
+						</div>
+						<div class="right_tips_wapper">
+							<form class="tips_form">
+								<div class="floor2_content">
+									<div class="right_tip1">
+										<p class="tip_tit">出租方式</p>
+										<div>
+											<ul class="floor2_ul">
+												<li class="aaa">
+													<div class="left_icon housingtype housingtype1"></div>
+													<span class="" id="hourse_all" data-rmId="1">整套房间</span>
+												</li>
+												<li >
+													<div class="left_icon housingtype housingtype2"></div>
+													<span id="hourse_owner" data-rmId="2">独立房间</span>
+												</li>
+											</ul>
+										</div><br /><br /><br />
+										<span class="tip_tishi" style="margin-left: -220px;top: 20px	;">该信息审核通过后不可修改</span>
+									</div>									
+									<div class="right_tip2">
+										<p class="tip_tit">房屋类型</p>
+										<div class="xiang_span">
+											 <p class="xiang_span-p1">
+											 	<!--<span><input type="radio" name="" value="" />公寓</span>-->
+												
+											</p>
+											<p>
+												<!--房屋类型-->
+												<div class="hoursetype">
+													<div class="housetype_select">
+														<span class="no_select">请选择</span>
+														<i class="housetype_after"></i>
+													</div>
+													<div class="select_infomation" style="position: absolute;background: #fff;z-index: 1002;">
+														<ul class="border select_infomation-ul1">
+															<li class="select_content">
+																<p class="fontSize14" data-htdid="1">普通公寓</p>
+																<p class="fontSize12 floor5_p_color">个人房东经营的小区、公寓楼内房屋</p>
+															</li>
+															<li class="select_content">
+																<p class="fontSize14" data-htdid="2">酒店式公寓</p>
+																<p class="fontSize12 floor5_p_color">个人房东经营的小区、公寓楼内房屋</p>
+															</li>
+														</ul>
+														
+													</div>
+												</div>
+											</p>
+											<p>
+												<div style="font-size: 12px;margin-top: 14px;">
+													<p>房屋面积</p>
+													<input type="text" class="form-control select_style hdArea"  placeholder="整套房屋的使用面积">平米
+												</div>
+											</p>
+										</div>
+										
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">房屋景观</p>
+										<div >
+											 <select class="form-control select_style houseScenery">
+												<option style="font-size: 12px;" value="">无</option>
+											</select>
+											
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">房屋户型</p>
+										<div class="xiang_span" style="font-size: 12px;width: 880px;">
+											<span>
+												卧室<input type="text" class="form-control haBedroom" value="1" style="width: 100px;">
+											</span>
+											<span>
+												卫生间<input type="text" class="form-control haBathroom" value="1" style="width: 100px;">
+											</span>
+											<span>
+												客厅<input type="text" class="form-control haLounage" value="1" style="width: 100px;">
+											</span>
+											<span>
+												厨房<input type="text" class="form-control haKitchen" value="1" style="width: 100px;">
+											</span>
+											<span>
+												书房<input type="text" class="form-control haBookStudy" value="1" style="width: 100px;">
+											</span>
+											<span>
+												阳台<input type="text" class="form-control haBalcony" value="1" style="width: 100px;">
+											</span>
+											<p style="margin-top: 5px;"><span class="tip_tishi">该信息审核通过后不可修改</span></p>
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">床型</p>
+										<div class="xiang_span xiang_span-div2  " style="font-size: 12px;width: 880px;">
+											<div class="xiang_span-div1 xiang_span-div2">
+												
+											</div>
+											<button type="button" class="xiang_span-btn1 btn btn-primary" style="width: 150px;margin-top: 10px;">+继续添加床型</button>
+										</div>
+									</div>
+									<div class="right_tip2">
+										<p class="tip_tit">宜住人数</p>
+										<div >
+											 <input class="form-control hdLiveNumber" value="1" />
+										</div>
+										<p style="font-size: 12px; margin-top: 15px;"><span class="tip_xing">*</span>同房类型数量</p>
+										
+										<p><span class="tip_tishi">房屋数量是指相同类型房屋的数量，最终会以库存的形式呈现。</span></p>
+										<div style="font-size: 12px;">
+											 <input type="text"  class="form-control hdHouseNumebr" style="width: 210px;">套
+										</div>
+										<p><span class="tip_tishi" >该信息审核通过后不可修改</span></p>
+										<div class="tip_bottom">
+											<!--tujia_addHourse3.html-->
+											<a  class="btn btn-primary nextbtn" target="addHourse">下一步</a>
+										 <!--<button type="button" class="btn btn-primary nextbtn">下一步</button>-->
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+				
+			
+				var ip='';
+				var app ={
+					
+				ipconfig(){
+					$.ajax({
+						type: "get",
+						url: "../../js/ipconfig.json",
+						async: false,
+						success: function(data) {
+							ip = data.ip;
+						}
+					});
+				}
+				//查询数据
+				,select_houseDetails(){
+					$.ajax({
+						type:"get",
+						url:"http://"+ip+":8080/houseBed/select_houseDetails",
+						async:false,
+						data:{
+							haiId:GetRequest("haiid")
+						},
+						success:function(data){
+							console.log(data)
+							console.log()
+							console.log();
+							
+							if(data.housedetails.rentalmode){
+//								console.log(1111111)
+								$(".floor2_ul li").removeClass("aaa");
+								$($(".floor2_ul li").get(data.housedetails.rentalmode.rmId-1)).addClass("aaa");
+							}
+							if(data.housedetails.housetypedetails){
+								$('input[name="radio1"][title='+data.housedetails.housetypedetails.housetype.htId+']').attr('checked','checked')
+							 	$(".no_select").html(data.housedetails.housetypedetails.htdName);
+							 	$(".no_select").attr("s",data.housedetails.housetypedetails.htdId);
+							}
+						 	$(".hdArea").val(data.housedetails.hdArea);
+						 	if(data.housedetails.housescenery){
+						 		$(".houseScenery").val(data.housedetails.housescenery.hcId);
+						 	}
+						 	if(data.housedetails.houseapartment){
+							 	$(".haBedroom").val(data.housedetails.houseapartment.haBedroom);
+							 	$(".haBathroom").val(data.housedetails.houseapartment.haBathroom);
+							 	$(".haLounage").val(data.housedetails.houseapartment.haLounage);
+							 	$(".haKitchen").val(data.housedetails.houseapartment.haKitchen);
+							 	$(".haBookStudy").val(data.housedetails.houseapartment.haBookStudy);
+							 	$(".haBalcony").val(data.housedetails.houseapartment.haBalcony);
+						 	}
+						 	$.each(data.housebed, function(i,obj) {
+						 		app.addHouseBedType()
+						 		try{
+						 			$($(".select_style1").get(i)).val(obj.housebedsize.housebedtype.hbtId)
+									
+						 		}catch(err){
+						 			
+						 		}
+								
+						 		
+						 		try{
+						 			app.houseBedSizeRenders2(obj.housebedsize.housebedtype.hbtId,$($(".select_style2").get(i)))
+						 			
+							 		$($(".select_style2").get(i)).val(obj.housebedsize.hdsId)
+							 		$($(".select_style3").get(i)).val(obj.hbtNumber)
+						 		}catch(err){
+						 			
+						 		}
+						 	});
+						 	
+						 	$(".hdLiveNumber").val(data.housedetails.hdLiveNumber)
+						 	$(".hdHouseNumebr").val(data.housedetails.hdHouseNumebr)
+						 	
+						}
+					});
+				}
+				//渲染出租方式的数据
+//				,rentalModeRenders(){
+//				 	$.ajax({
+//				 		type:"get",
+//				 		url:"http://"+ip+":8080/houseBed/select_rentalMode",
+//						async:false,
+//              		success: function (data) {
+//              			//显示整套房屋
+//              			$("#hourse_all").text(data.data[0].rmName);
+//              			$("#hourse_all").data("rmId",data.data[0].rmId)
+//              			//显示独立房间
+//              			$("#hourse_owner").text(data.data[1].rmName);
+//              			$("#hourse_owner").data("rmId",data.data[1].rmId)
+//              		}
+//				 	});
+//				}
+				 //渲染房屋类型
+				 ,houseTypeRenders(){
+				 	$.ajax({
+				 		type:"get",
+				 		url:"http://"+ip+":8080/houseBed/select_houseType",
+						async:false,
+				 		success: function (data) {		
+				 			$(".xiang_span-p1 span").remove();
+				 			$.each(data.data, function(index,obj) {	
+				 				var span1 = $("<span><input type='radio' class='xiang_span-radio1' name='radio1' title='"+obj.htId+"' value='"+obj.htId+"'/><span class='xiang_span-span1'> "+obj.htName+"</span></span>");			 				
+				 				$(".xiang_span-p1").append(span1);				 				
+				 			});
+				 			$('input:radio:first').attr('checked', 'checked');
+				 		}
+				 	});
+				 }
+				 //根据房屋类型查询房子类型细节
+				 ,houseTypeDetailsRenders(){
+				 	$.ajax({
+				 		type:"get",
+				 		url:"http://"+ip+":8080/houseBed/select_houseTypeDetails",
+						async:false,
+				 		success: function (data) {	
+				 			$(".no_select").html("请选择");
+				 			//获取到radio1的值
+				 			var val = $("[name=radio1]:checked").val();
+				 			$(".select_infomation-ul1 li").remove();
+				 			$.each(data.data, function(index,obj) {
+				 				//判断值是否与id相等
+				 				if(val==obj.htId){
+				 					var li1 = $("<li class='select_content'><p class='fontSize14' data-htdId='"+obj.htdId+"' >"+obj.htdName+"</p><p class='fontSize12 floor5_p_color'>个人房东经营的小区、公寓楼内房屋</p></li>");
+				 					$(".select_infomation-ul1").append(li1);
+				 				}
+				 			});
+				 		}
+				 	});
+				}
+				 //选中房屋类型详细
+				 ,select_content(){
+				 	$(".no_select").html($(this.firstElementChild).html());
+				 	$(".no_select").attr("s",$(this.firstElementChild).attr("data-htdId"))
+				 }
+				//房屋景观查询		
+				,select_houseScenery(){
+				 	$.ajax({
+				 		type:"get",
+				 		url:"http://"+ip+":8080/houseBed/select_houseScenery",
+						async:false,
+				 		success: function (data) {
+				 			$.each(data.data, function(i,obj) {
+					 			$(".houseScenery").append('<option style="font-size: 12px;" value="'+obj.hcId+'">'+obj.hcName+'</option>')
+				 			});
+//							
+				 		}
+				 	});
+				}
+				//添加床型
+				 ,addHouseBedType(){
+				 	var p = $("<p><select class='form-control select_style select_style1' style='width: 210px;'><option disabled selected hidden >-- 请选择 --</option></select>"
+				 	+"<select class='form-control select_style select_style2' style='width: 210px;'><option disabled selected hidden >-- 请选择 --</option></select>  "+
+				 	"<select class='form-control select_style select_style3' style='width: 210px;'><option style='font-size: 14px;' value='1'>1</option><option style='font-size: 14px;' value='2'>2</option>"+
+				 	"<option style='font-size: 14px;' value='3'>3</option><option style='font-size: 14px;' value='4'>4</option><option style='font-size: 14px;' value='5'>5</option>"+
+				 	"<option style='font-size: 14px;' value='6'>6</option><option style='font-size: 14px;' value='7'>7</option><option style='font-size: 14px;' value='8'>8</option>"+
+				 	"<option style='font-size: 14px;' value='9'>9</option><option style='font-size: 14px;' value='10'>10</option></select><span class='floor5_del'>删除</span></p>");
+				 	
+				 	$(".xiang_span-div1").append(p);
+				 	app.houseBedTypeRenders();
+				 	return p;
+				 }
+				
+				//渲染床型
+				 ,houseBedTypeRenders(boo){
+				 	//var that = this;
+				 	$.ajax({
+				 		type:"get",
+				 		url:"http://"+ip+":8080/houseBed/select_houseBedType?no=1&pagesize=100",
+						async:false,
+				 		success:function(data){
+				 			/*$(".select_style1").children().remove();*/
+				 			$.each(data.data, function(index,obj) {
+				 				var option1 = $("<option style='font-size: 14px;' class='select_style1-option' value='"+obj.hbtId+"'>"+obj.hbtName+"</option>");
+				 				if(!boo){
+				 					var count = $(".select_style1").length-1;
+				 					if(count==0){
+				 						$(".select_style1").append(option1);
+				 					} else {
+				 						$($(".select_style1").get(count)).append(option1);
+				 					}
+				 				}
+				 			});				 			
+				 		}
+				 	});
+				 
+				 }
+				 
+				 //渲染床型床宽高
+				 ,houseBedSizeRenders(){
+				 	var that = this;
+				 	$.ajax({
+				 		type:"get",
+				 		url:"http://"+ip+":8080/houseBed/select_houseBedSize?no=1&pagesize=100",
+						async:false,
+				 		success:function(data){
+				 			console.log(data);
+				 			var select1=$(that).val();
+				 			console.log(select1);
+				 			//$(".select_style2 option").remove();
+				 			$(that).next().children().remove();	
+				 			$.each(data.data, function(index,obj) {
+				 				if(select1==obj.housebedtype.hbtId){
+				 					var option2 = $("<option style='font-size: 14px;' value='"+obj.hdsId+"'>"+obj.hbsSize+"</option>");
+				 					$(that).next().append(option2);		 					
+				 				}
+				 			});
+				 		}
+				 	})
+				 	return false;
+				 }
+				 //渲染床型床宽高
+				 ,houseBedSizeRenders2(id,t){
+				 	$.ajax({
+				 		type:"get",
+				 		url:"http://"+ip+":8080/houseBed/select_houseBedSize?no=1&pagesize=100",
+						async:false,
+				 		success:function(data){
+				 			var select1=id;
+				 			//$(".select_style2 option").remove();
+//				 			$(that).next().children().remove();	
+				 			$.each(data.data, function(index,obj) {
+				 				if(select1==obj.housebedtype.hbtId){
+				 					var option2 = $("<option style='font-size: 14px;' value='"+obj.hdsId+"'>"+obj.hbsSize+"</option>");
+				 					$(t).append(option2);
+				 				}
+				 			});
+				 		}
+				 	})
+				 	return false;
+				 }
+				 //删除床
+				 ,floor5_del(){
+				 	$(this).closest("p").remove()
+				 }
+				 //添加
+				 ,insert_houseDetails(){
+				 	
+					var houseapartment={
+						haBedroom:$(".haBedroom").val(),		//卧室
+						haBathroom:$(".haBathroom").val(),		//卫生间
+						haLounage:$(".haLounage").val(),		//客厅
+						haKitchen:$(".haKitchen").val(),		//厨房
+						haBookStudy:$(".haBookStudy").val(),	//书房
+						haBalcony:$(".haBalcony").val()			//阳台
+					}
+					$.ajax({
+						type:"get",
+						url:"http://" + ip + ":8080/houseBed/selct_houseDetails_haiId",
+						async:false,
+						data:{
+							haiId:GetRequest("haiid")
+						},
+						success:function(data){
+							console.log(data)
+							var d=data;
+							if(data.haId>0){
+								
+								console.log(data.haId)
+								var houseapartments={
+									haId:data.haId,							//编号
+									haBedroom:$(".haBedroom").val(),		//卧室
+									haBathroom:$(".haBathroom").val(),		//卫生间
+									haLounage:$(".haLounage").val(),		//客厅
+									haKitchen:$(".haKitchen").val(),		//厨房
+									haBookStudy:$(".haBookStudy").val(),	//书房
+									haBalcony:$(".haBalcony").val()			//阳台
+								}
+								//修改户型
+								$.ajax({
+									type:"put",
+									url:"http://" + ip + ":8080/houseBed/update_houseApartment",
+									async:false,
+									data:JSON.stringify(houseapartments),
+									contentType : 'application/json',
+									dataType : 'json',
+									success:function(data){
+										//修改房屋详细
+										var houseDetailss={
+										    hdArea:$(".hdArea").val(),					//'房屋面积',
+										    hdLiveNumber:$(".hdLiveNumber").val(),		//'居住人数',
+										    hdHouseNumebr:$(".hdHouseNumebr").val(),	//'同类房屋数量(套)(最终会以库存的数量显示)',
+										    rmId :$($(".aaa")[0].lastElementChild).data("rmid"),				//'关联出租方式表',
+										    htdId :$(".no_select").attr("s"),			//'关联房屋类型表',
+										    hcId :$(".houseScenery").val(),				//'关联房屋景观表',
+										    haId :d.haId,									//'关联房屋户型表',
+										    haiId :GetRequest("haiid")					//'关联房屋全部信息表',
+										}
+										$.ajax({
+											type:"put",
+											url:"http://" + ip + ":8080/houseBed/update_houseDetails",
+											async:false,
+											data:JSON.stringify(houseDetailss),
+											contentType : 'application/json',
+											dataType : 'json',
+											success:function(data){
+//												//根据房屋详细表id删除
+												$.ajax({
+													type:"post",
+													url:"http://" + ip + ":8080/houseBed/delete_houseBed",
+													async:false,
+													data:{
+														hdId:d.hdId
+													},
+													success:function(data){
+														console.log(data)
+													}
+												});
+												
+											 	$.each($(".xiang_span-div1")[0].children, function(i,obj) {
+													$.ajax({
+														type:"post",
+														url:"http://" + ip + ":8080/houseBed/insert_houseBed",
+														async:false,
+														data:{
+															hdId:d.hdId,			
+															hdsId:$(obj).find(".select_style2").val(),
+															hbtNumber:$(obj).find(".select_style3").val()
+														},
+														success:function(data){
+															
+														}
+													});
+											 	});
+											 	 	window.location="tujia_addHourse3.html?haiid="+GetRequest("haiid");
+											
+											}
+										});
+									}
+								});
+							}else{		
+							 	//添加户型
+								$.ajax({
+									type:"post",
+									url:"http://" + ip + ":8080/houseBed/insert_houseApartment",
+									async:false,
+									data:JSON.stringify(houseapartment),
+									contentType : 'application/json',
+									dataType : 'json',
+									success:function(data){
+										var houseDetails={
+										    hdArea:$(".hdArea").val(),					//'房屋面积',
+										    hdLiveNumber:$(".hdLiveNumber").val(),		//'居住人数',
+										    hdHouseNumebr:$(".hdHouseNumebr").val(),	//'同类房屋数量(套)(最终会以库存的数量显示)',
+										    rmId :$($(".aaa")[0].lastElementChild).data("rmid"),				//'关联出租方式表',
+										    htdId :$(".no_select").attr("s"),			//'关联房屋类型表',
+										    hcId :$(".houseScenery").val(),				//'关联房屋景观表',
+										    haId :data,									//'关联房屋户型表',
+										    haiId :GetRequest("haiid")					//'关联房屋全部信息表',
+										}
+							 			//添加房屋详细表
+										$.ajax({
+											type:"post",
+											url:"http://" + ip + ":8080/houseBed/insert_houseDetails",
+											async:false,
+											data:JSON.stringify(houseDetails),
+											contentType : 'application/json',
+											dataType : 'json',
+											success:function(data){
+											 	$.each($(".xiang_span-div1")[0].children, function(i,obj) {
+													$.ajax({
+														type:"post",
+														url:"http://" + ip + ":8080/houseBed/insert_houseBed",
+														async:false,
+														data:{
+															hdId:data,			
+															hdsId:$(obj).find(".select_style2").val(),
+															hbtNumber:$(obj).find(".select_style3").val()
+														},
+														success:function(data){
+														}
+													});
+											 	});
+											 	window.location="tujia_addHourse3.html?haiid="+GetRequest("haiid");
+											}
+										});
+									}
+								});
+							}
+							
+						}
+					});
+				 }
+				 
+				
+				 ,init(){
+				 	//ip
+				 	app.ipconfig();
+				 	//执行渲染出租方式的数据
+//				 	app.rentalModeRenders();
+				 	//执行渲染房屋类型
+				 	app.houseTypeRenders();
+				 	//执行根据房屋类型查询房子类型细节
+				 	$(".xiang_span-p1").on("click",".xiang_span-radio1",app.houseTypeDetailsRenders);
+				 	//房屋景观查询		
+					app.select_houseScenery()
+				 	//执行添加床型
+//				 	app.addHouseBedType()
+				 	$(".xiang_span-btn1").click(app.addHouseBedType);
+				 	//执行渲染床型
+				 	app.houseBedTypeRenders();
+				 	var clickselect = 0;
+				 	 //执行渲染床型床宽高	
+				 	$(".xiang_span-div2").on("change",".select_style1",app.houseBedSizeRenders);
+				 	$("body").on("click",".floor5_del",app.floor5_del)
+				 	//选中房屋类型查询房子类型细节
+				 	$("body").on("click",".select_content",app.select_content);
+				 	//添加
+				 	$(".nextbtn").click(function(){
+				 		app.insert_houseDetails()
+				 	})
+				 	
+				 	//查询信息
+				 	app.select_houseDetails();
+				 }
+			}
+			
+			app.init();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			 //获取id
+		    function GetRequest(s) {
+		        var url = location.search; 		//获取url中"?"符后的字串
+		        var theRequest = new Object();
+		
+		        if (url.indexOf("?") != -1) {
+		            var str = url.substr(1);
+		            strs = str.split("&");
+		            for (var i = 0; i < strs.length; i++) {
+		                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+		            }
+		        }
+		        if (s) {
+		            return theRequest[s];
+		        }
+		        return theRequest;
+		    }
+			$("body").on("click",".floor2_ul li:first-child",function(){
+				$(".floor2_ul li:first-child").addClass("aaa");
+				$(".floor2_ul li:last-child").removeClass("aaa");
+				
+				
+//				$(".floor2_ul li:last-child").css({"background":"#fff"},{"border":"1px solid #ddd"});
+//				$(".floor2_ul li:last-child span").css({"color":"#000"});
+//				$(".housingtype2").css({"background-position":"-709px -410px"});
+			});
+			$("body").on("click",".floor2_ul li:last-child",function(){
+				
+				$(".floor2_ul li:first-child").removeClass("aaa");
+				$(".floor2_ul li:last-child").addClass("aaa");
+				
+//				$(".floor2_ul li:last-child").css({"background":"#F3F5FF"},{"border":"1px solid #6e80e3"});
+//				$(".floor2_ul li:last-child span").css({"color":"#6e80e3"});
+//				$(".housingtype2").css({"background-position":"-675px -444px"});
+//				
+//				$(".floor2_ul li:first-child").css({"background":"#fff"},{"border":"1px solid #ddd"});
+//				$(".floor2_ul li:first-child span").css({"color":"#000"});
+//				$(".housingtype1").css({"background-position":"-709px -444px"});
+			});
+			$("body").on("click",".hoursetype",function(){
+				$(".housetype_after").css({"content":"\25BC"});
+				$(".select_infomation ul ").toggle();
+			})
+		</script>
+	</body>
+</html>
