@@ -23,7 +23,7 @@
         <MiqiHome-entity.version>1.0-SNAPSHOT</MiqiHome-entity.version>
         <MiqiHome-common.version>1.0-SNAPSHOT</MiqiHome-common.version>
         <MiqiHome-service.version>1.0-SNAPSHOT</MiqiHome-service.version>
-        <jackson.version>2.7.4</jackson.version>
+        <jackson.version>2.9.10.8</jackson.version>
         <commons-lang3.version>3.4</commons-lang3.version>
         <log4j.version>2.6.1</log4j.version>
         <junit.version>4.12</junit.version>
